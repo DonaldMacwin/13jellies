@@ -1,0 +1,27 @@
+.tap_list {
+  opacity: 0.5;
+
+  img {
+    width: 7%;
+    height: 7%;
+    transition: transform 0.2s;
+  }
+
+  .tap_item_politics {
+    position: absolute;
+        top: 11.5%;
+        left: 16%;
+  }
+
+  .tap_item_2 {
+    position: absolute;
+    top: 20%;
+    left: 20%;
+  }
+
+  .tap_item_3 {
+    position: absolute;
+    top: 30%;
+    left: 30%;
+  }
+}
