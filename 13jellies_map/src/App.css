@@ -1,27 +1,86 @@
 .tap_list {
   opacity: 0.5;
 
-  img {
-    width: 7%;
-    height: 7%;
+  li {
+    width: 3%;
     transition: transform 0.2s;
   }
 
   .tap_item_politics {
     position: absolute;
-        top: 11.5%;
-        left: 16%;
+    top: 12.5%;
+    left: 16%;
   }
 
-  .tap_item_2 {
+  .tap_item_industry {
     position: absolute;
-    top: 20%;
-    left: 20%;
+    bottom: 16%;
+    left: 13%;
   }
 
-  .tap_item_3 {
+  .tap_item_art {
+    position: absolute;
+    top: 1%;
+    left: 30%;
+  }
+
+  .tap_item_social {
+    position: absolute;
+    top: 23%;
+    left: 32%;
+  }
+
+  .tap_item_medichine {
+    position: absolute;
+    top: 40%;
+    left: 31%;
+  }
+
+  .tap_item_biology {
+    position: absolute;
+    bottom: -2%;
+    left: 34%;
+  }
+
+  .tap_item_SpaceTime1 {
+    position: absolute;
+    top: 16%;
+    left: 49.5%;
+  }
+
+  .tap_item_SpaceTime2 {
+    position: absolute;
+    bottom: 25%;
+    left: 54%;
+  }
+
+  .tap_item_philosophy {
+    position: absolute;
+    top: 9.5%;
+    left: 67%;
+  }
+
+  .tap_item_chemistry {
     position: absolute;
     top: 30%;
-    left: 30%;
+    left: 68%;
+  }
+
+  .tap_item_physics {
+    position: absolute;
+    bottom: 6%;
+    right: 28.5%;
+  }
+
+  .tap_item_linguistics {
+    position: absolute;
+    top: 11%;
+    right: 12%;
+  }
+
+  .tap_item_mathematics {
+    position: absolute;
+    bottom: 20%;
+    right: 11%;
   }
 }

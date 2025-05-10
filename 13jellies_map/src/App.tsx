@@ -1,6 +1,8 @@
-import { useState } from 'react'
-import type { MouseEvent, WheelEvent } from 'react'
+import { useState, useEffect, useRef } from 'react'
+import type { MouseEvent } from 'react'
 import './App.css'
+import jelliesImage from './assets/13jellies_C.png';
+import iconTap from './assets/icon_tap.png';
 import '../../../13jellies/asset/css/common.css'
 
 function App() {
@@ -10,6 +12,30 @@ function App() {
   const [offsetX, setOffsetX] = useState<number>(0);
   const [offsetY, setOffsetY] = useState<number>(0);
   const [scale, setScale] = useState<number>(1);
+  const imageWrapRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const imageWrap = imageWrapRef.current;
+
+    const handleWheel = (e: WheelEvent) => {
+      const scaleFactor = 1.2;
+      const newScale = e.deltaY > 0 ? scale / scaleFactor : scale * scaleFactor;
+      // 最小1.0倍、最大2.0倍に制限
+      setScale(Math.min(Math.max(newScale, 1.0), 2.0));
+      e.preventDefault();
+      e.stopPropagation();
+    };
+
+    if (imageWrap) {
+      imageWrap.addEventListener('wheel', handleWheel, { passive: false });
+    }
+
+    return () => {
+      if (imageWrap) {
+        imageWrap.removeEventListener('wheel', handleWheel);
+      }
+    };
+  }, [scale]);
 
   const handleMouseDown = (e: MouseEvent<HTMLDivElement>) => {
     setIsDragging(true);
@@ -36,19 +62,11 @@ function App() {
     }
   };
 
-  const handleWheel = (e: WheelEvent<HTMLDivElement>) => {
-    const scaleFactor = 1.2;
-    // deltaYが正の場合は縮小、負の場合は拡大
-    const newScale = e.deltaY > 0 ? scale / scaleFactor : scale * scaleFactor;
-    // 最小0.9倍、最大2.0倍まで拡大縮小可能
-    setScale(Math.min(Math.max(newScale, 0.9), 2.0));
-    e.preventDefault();
-  };
-
   return (
     <>
       <div
         id="image_wrap"
+        ref={imageWrapRef}
         style={{
           position: 'relative',
           transform: `translate(${offsetX}px, ${offsetY}px) scale(${scale})`,
@@ -59,21 +77,50 @@ function App() {
         onMouseUp={handleMouseUp}
         onMouseLeave={handleMouseUp}
         onMouseMove={handleMouseMove}
-        onWheel={handleWheel}
       >
         <ul className='tap_list'>
           <li className='tap_item_politics'>
-            <a href="../../../13jellies.php#politics"><img src="/src/assets/icon_tap.png" alt="" className="img" /></a>
+            <a href="https://cf268321.cloudfree.jp/13jellies/13jellies.php#politics" target="_top"><img src={iconTap} alt="" className="img" /></a>
           </li>
-          <li className='tap_item_2'>
-            <img src="/src/assets/icon_tap.png" alt="" className="img" />
+          <li className='tap_item_industry'>
+            <a href="https://cf268321.cloudfree.jp/13jellies/13jellies.php#industry" target="_top"><img src={iconTap} alt="" className="img" /></a>
           </li>
-          <li className='tap_item_3'>
-            <img src="/src/assets/icon_tap.png" alt="" className="img" />
+          <li className='tap_item_art'>
+            <a href="https://cf268321.cloudfree.jp/13jellies/13jellies.php#art" target="_top"><img src={iconTap} alt="" className="img" /></a>
           </li>
-          </ul>
+          <li className='tap_item_social'>
+            <a href="https://cf268321.cloudfree.jp/13jellies/13jellies.php#social" target="_top"><img src={iconTap} alt="" className="img" /></a>
+          </li>
+          <li className='tap_item_medichine'>
+            <a href="https://cf268321.cloudfree.jp/13jellies/13jellies.php#medichine" target="_top"><img src={iconTap} alt="" className="img" /></a>
+          </li>
+          <li className='tap_item_biology'>
+            <a href="https://cf268321.cloudfree.jp/13jellies/13jellies.php#biology" target="_top"><img src={iconTap} alt="" className="img" /></a>
+          </li>
+          <li className='tap_item_SpaceTime1'>
+            <a href="https://cf268321.cloudfree.jp/13jellies/13jellies.php#SpaceTime" target="_top"><img src={iconTap} alt="" className="img" /></a>
+          </li>
+          <li className='tap_item_SpaceTime2'>
+            <a href="https://cf268321.cloudfree.jp/13jellies/13jellies.php#SpaceTime" target="_top"><img src={iconTap} alt="" className="img" /></a>
+          </li>
+          <li className='tap_item_philosophy'>
+            <a href="https://cf268321.cloudfree.jp/13jellies/13jellies.php#philosophy" target="_top"><img src={iconTap} alt="" className="img" /></a>
+          </li>
+          <li className='tap_item_chemistry'>
+            <a href="https://cf268321.cloudfree.jp/13jellies/13jellies.php#chemistry" target="_top"><img src={iconTap} alt="" className="img" /></a>
+          </li>
+          <li className='tap_item_physics'>
+            <a href="https://cf268321.cloudfree.jp/13jellies/13jellies.php#physics" target="_top"><img src={iconTap} alt="" className="img" /></a>
+          </li>
+          <li className='tap_item_linguistics'>
+            <a href="https://cf268321.cloudfree.jp/13jellies/13jellies.php#linguistics" target="_top"><img src={iconTap} alt="" className="img" /></a>
+          </li>
+          <li className='tap_item_mathematics'>
+            <a href="https://cf268321.cloudfree.jp/13jellies/13jellies.php#mathematics" target="_top"><img src={iconTap} alt="" className="img" /></a>
+          </li>
+        </ul>
         <figure>
-          <img src="/src/assets/13jellies_C.png" alt="" className="img" />
+          <img src={jelliesImage} alt="" className="img" />
         </figure>
       </div>
     </>
