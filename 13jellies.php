@@ -9,13 +9,9 @@
 
 <body>
     <main class="inner">
-
-        test
-        <!-- Reactアプリがマウントされるコンテナ -->
         <div id="root"></div>
-
-        <!-- Reactアプリケーションを読み込む -->
-        <!--<script src="./asset/js/aaa_react.js"></script>-->
+        <script type="module" crossorigin src="./jelliy_contents/dist/jelliy_contents.js"></script>
+        <link rel="stylesheet" crossorigin href="./jelliy_contents/dist/assets/index-D8b4DHJx.css">
     </main>
 </body>
 
