@@ -89,10 +89,10 @@ function App() {
             <a href="https://cf268321.cloudfree.jp/13jellies/13jellies.php#art" target="_top"><img src={iconTap} alt="" className="img" /></a>
           </li>
           <li className='tap_item_social'>
-            <a href="https://cf268321.cloudfree.jp/13jellies/13jellies.php#social" target="_top"><img src={iconTap} alt="" className="img" /></a>
+            <a href="https://cf268321.cloudfree.jp/13jellies/13jellies.php#society" target="_top"><img src={iconTap} alt="" className="img" /></a>
           </li>
           <li className='tap_item_medichine'>
-            <a href="https://cf268321.cloudfree.jp/13jellies/13jellies.php#medichine" target="_top"><img src={iconTap} alt="" className="img" /></a>
+            <a href="https://cf268321.cloudfree.jp/13jellies/13jellies.php#medicine" target="_top"><img src={iconTap} alt="" className="img" /></a>
           </li>
           <li className='tap_item_biology'>
             <a href="https://cf268321.cloudfree.jp/13jellies/13jellies.php#biology" target="_top"><img src={iconTap} alt="" className="img" /></a>

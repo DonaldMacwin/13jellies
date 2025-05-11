@@ -12,15 +12,15 @@
     // include "./asset/html/header.html"; 
     ?>
 
-    <main class="inner">
-        <section class="top_first_view">
+    <main class="inner top_page">
+        <section class="top_1st_view">
             <h1>ここに13個のゼリーがある</h1>
             <figure><img src="./asset/img/13jellies_A.png"></figure>
-            <p>13 jelly beans 13 jelly beans 13 jelly beans 13 jelly beans 13 jelly beans 13 jelly beans 13 jelly beans 13 jelly beans 13 jelly beans 13 jelly beans 13 jelly beans </p>
+            <p class="text">13 jelly beans 13 jelly beans 13 jelly beans 13 jelly beans 13 jelly beans 13 jelly beans 13 jelly beans 13 jelly beans 13 jelly beans 13 jelly beans 13 jelly beans </p>
         </section>
-        <section>
+        <section class="top_2nd_view">
             <figure><img src="./asset/img/13jellies_B.png"></figure>
-            <p>13 jelly beans 13 jelly beans 13 jelly beans 13 jelly beans 13 jelly beans 13 jelly beans 13 jelly beans 13 jelly beans 13 jelly beans 13 jelly beans 13 jelly beans </p>
+            <p class="text">13 jelly beans 13 jelly beans 13 jelly beans 13 jelly beans 13 jelly beans 13 jelly beans 13 jelly beans 13 jelly beans 13 jelly beans 13 jelly beans 13 jelly beans </p>
         </section>
         <section class="jellies_map">
             <!--
