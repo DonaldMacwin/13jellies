@@ -16,7 +16,9 @@
     }
 
     .text {
-        margin: 3rem 0 10rem 0;
+        margin: 6rem auto;
+        width: fit-content;
+        line-height: 3.0;
     }
 
     .jellies_map {

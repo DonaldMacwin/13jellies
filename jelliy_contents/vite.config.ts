@@ -10,7 +10,7 @@ export default defineConfig({
       output: {
         entryFileNames: 'jelliy_contents.js',
         chunkFileNames: 'chunks/[name].js',
-        //assetFileNames: 'assets/[name].[ext]'
+        assetFileNames: 'assets/[name].[ext]'
       }
     }
   }
