@@ -323,11 +323,11 @@ a:not([class]) {
 }
 
 /* 固有設定追加 */
-body {
+/*body {
   background: url(../img/background01.jpg) top center / cover no-repeat;
   background-attachment: fixed;
   line-height: calc(0.35rem + 1em + 0.35rem);
-}
+}*/
 
 .inner {
   margin: 0 auto;
@@ -393,8 +393,28 @@ header .header_bttn {
   opacity: 0.75;
 }
 
+.relative_position {
+  position: relative;
+}
+
+.grid-paper {
+  background-color: white;
+  background-image: 
+    /* 交点の丸印（2rem間隔=ひとつおき） */
+    radial-gradient(circle, #ccc 2px, transparent 2px), 
+    /* 横線（1rem間隔） */
+    linear-gradient(to right, #cbe9fd 1px, transparent 1px),
+    /* 縦線（1rem間隔） */
+    linear-gradient(to bottom, #cbe9fd 1px, transparent 1px);
+  /* 背景サイズの設定（丸印は2rem間隔、線は1rem間隔） */
+  background-size: 2rem 2rem, 1rem 1rem, 1rem 1rem;
+  /* 背景の位置調整 */
+  background-position: 0 0, 0 0, 0 0;
+  /*padding: 1rem;*/
+}
+
 footer {
-  margin: 100px 0 0 0;
+  /*margin: 100px 0 0 0;*/
   padding: 2em 0;
 }
 
