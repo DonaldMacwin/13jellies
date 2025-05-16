@@ -1,12 +1,35 @@
 @charset "UTF-8";
 
-/*body {
-  background-color: rgba(0, 0, 0, 0.9);
-}*/
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden; /* ブラウザのデフォルトスクロールを無効化 */
+}
 
+.component_container {
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+.position_relative{
+  position: relative;
+}
 img {
   max-width: 100%;
   opacity: 0.8;
+}
+
+.scroller_decoration::-webkit-scrollbar {
+  width: 6px;
+}
+
+.scroller_decoration::-webkit-scrollbar-thumb {
+  background: rgba(100, 100, 100, 0.5);
+  border-radius: 3px;
+}
+
+.scroller_decoration::-webkit-scrollbar-track {
+  background: rgba(200, 200, 200, 0.2);
 }
 
 .first_view {
@@ -16,19 +39,42 @@ img {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  margin: 0 0 100px 0;
+  /*margin: 0 0 100px 0;*/
 
   h1 {}
 
-  figure{
-    max-width: 60%;
-    margin:0 20% 0 0;
+  figure {
+    margin: 0 20% 0 0;
+
+    img{
+      width: 80%;
+      height: auto;
+      object-fit: unset;
+
+    }
   }
+
   img {
     height: 100vh;
     width: auto;
     display: block;
     object-fit: contain;
+  }
+
+  .page_anchor_list{
+    /*position: relative;*/
+    z-index: +1;
+    /*li{
+      positipn:absolute;
+    }*/
+    .history a{
+      position: absolute;
+            top: 12%;
+            left: 29%;
+            width: 15%;
+            height: 12%;
+    }
+    .social_geography a{}
   }
 }
 
@@ -38,15 +84,17 @@ img {
   right: 0;
   width: 40%;
   height: 100vh;
-  overflow: scroll;
+  overflow-y: auto;
+  overflow-x: hidden;
   font-size: 0.80em;
   background-color: rgba(255, 255, 255, 0.5);
 }
 
 
-.block_text_right, .block_text_left {
+.block_text_right,
+.block_text_left {
   position: relative;
-  height: 100vh;
+  /*height: 100vh;*/
   margin: 0 0 100px 0;
 
   .flex_setting {
@@ -59,6 +107,7 @@ img {
   .figure_block {
     position: relative;
     width: 50%;
+    height: 100vh;
     margin: 0 auto;
 
     .position_absolute {
@@ -113,7 +162,7 @@ img {
       z-index: +6;
     }
 
-        .block_figure_right_01 {
+    .block_figure_right_01 {
       top: 0;
       left: 0;
       width: 50%;
@@ -165,15 +214,18 @@ img {
 
   .text_scroll_block {
     width: 50%;
-    margin: 0 auto;
+    margin: 1rem auto;
     padding: 0 1em;
     overflow-y: scroll;
-    height: 96vh;
-    background-color: rgba(255, 255, 255, 0.85);
+    /*height: calc(100% - 4rem);*/
+    overflow-y: auto;
+    overflow-x: hidden;
+    /*max-height: 100vh;*/
+    background-color: rgba(255, 255, 255, 0.5);
     font-size: 1.0em;
     line-height: 2.0em;
 
-    p{
+    p {
       line-height: unset;
     }
   }
