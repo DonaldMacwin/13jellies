@@ -1,6 +1,5 @@
-//import { useState } from 'react'
-//import reactLogo from '../assets/react.svg'
-//import viteLogo from '/vite.svg'
+import { useEffect, useState, useRef } from 'react';
+import type { CSSProperties } from 'react';
 import SpaceTime_1stView from '../assets/SpaceTime_1stView01.png';
 import SpaceTime_dummy01 from '../assets/SpaceTime_dummy01.jpg';
 import SpaceTime_dummy02 from '../assets/SpaceTime_dummy02.jpg';
@@ -12,15 +11,160 @@ import SpaceTime_dummy06 from '../assets/SpaceTime_dummy02.jpg';
 import './component_common.css';
 
 function SpaceTime() {
+  // セクションの参照を保持
+  const firstViewRef = useRef<HTMLElement>(null);
+  const historyRef = useRef<HTMLElement>(null);
+  const historyScrollRef = useRef<HTMLDivElement>(null);
+  const socialGeographyRef = useRef<HTMLElement>(null);
+  const socialGeographyScrollRef = useRef<HTMLDivElement>(null);
+
+  // 現在のセクションとスクロール状態
+  const [currentSection, setCurrentSection] = useState<number>(0);
+  const [scrolling, setScrolling] = useState<boolean>(false);
+  const [scrollLocked, setScrollLocked] = useState<boolean>(false);
+
+  // セクションの定義 - 配列の順序と実際のセクション数を合わせる
+  const sections = [
+    { ref: firstViewRef, scrollRef: null },
+    { ref: historyRef, scrollRef: historyScrollRef },
+    { ref: socialGeographyRef, scrollRef: socialGeographyScrollRef },
+  ];
+
+  // 標準スクロールを完全に無効化
+  useEffect(() => {
+    const preventDefaultScroll = (e: Event) => {
+      e.preventDefault();
+    };
+
+    window.addEventListener('wheel', preventDefaultScroll, { passive: false });
+    window.addEventListener('touchmove', preventDefaultScroll, { passive: false });
+
+    return () => {
+      window.removeEventListener('wheel', preventDefaultScroll);
+      window.removeEventListener('touchmove', preventDefaultScroll);
+    };
+  }, []);
+
+  // カスタムスクロール処理
+  useEffect(() => {
+    const handleWheel = (e: WheelEvent) => {
+      if (scrollLocked || scrolling) return;
+
+      const direction = e.deltaY > 0 ? 1 : -1;
+      const currentScrollRef = sections[currentSection].scrollRef?.current;
+
+      setScrolling(true);
+
+      // スクロール可能要素の処理
+      if (currentScrollRef) {
+        const { scrollTop, scrollHeight, clientHeight } = currentScrollRef;
+
+        // テキストスクロールブロック用の倍率を設定（スクロール量を増やす）
+        const textScrollMultiplier = 3.0; // テキストブロックのスクロール倍率を増やす
+
+        // 基本スクロール量を計算
+        const baseScrollAmount = Math.min(Math.max(Math.abs(e.deltaY), 100), 600);
+
+        // テキストブロック用に増量したスクロール量
+        const textScrollAmount = baseScrollAmount * textScrollMultiplier * (direction > 0 ? 1 : -1);
+
+        // 下へのスクロール
+        if (direction > 0) {
+          const isAtBottom = Math.abs(scrollTop + clientHeight - scrollHeight) < 2;
+
+          if (!isAtBottom) {
+            // 内部スクロールを優先（スクロール量を増加）
+            currentScrollRef.scrollBy({
+              top: Math.abs(textScrollAmount),
+              behavior: 'smooth'
+            });
+            setTimeout(() => setScrolling(false), 150); // ロック時間も短縮
+            return;
+          }
+        }
+        // 上へのスクロール
+        else {
+          const isAtTop = scrollTop === 0;
+
+          if (!isAtTop) {
+            currentScrollRef.scrollBy({
+              top: textScrollAmount, // 負の値になるため、そのまま使用
+              behavior: 'smooth'
+            });
+            setTimeout(() => setScrolling(false), 150); // ロック時間も短縮
+            return;
+          }
+        }
+      }
+
+      // セクション間の移動
+      const nextSection = currentSection + direction;
+      if (nextSection >= 0 && nextSection < sections.length) {
+        setScrollLocked(true);
+        setCurrentSection(nextSection);
+
+        // 上方向の移動時、スクロール位置を調整
+        if (direction < 0 && sections[nextSection].scrollRef?.current) {
+          const nextScrollRef = sections[nextSection].scrollRef?.current;
+          setTimeout(() => {
+            nextScrollRef.scrollTop = nextScrollRef.scrollHeight - nextScrollRef.clientHeight;
+          }, 100);
+        }
+
+        // 移動完了後にロックを解除（トランジション時間も短縮）
+        setTimeout(() => {
+          setScrollLocked(false);
+          setScrolling(false);
+        }, 600);
+      } else {
+        setScrolling(false);
+      }
+    };
+
+    window.addEventListener('wheel', handleWheel, { passive: false });
+
+    return () => {
+      window.removeEventListener('wheel', handleWheel);
+    };
+  }, [currentSection, scrolling, scrollLocked]);
+
+  // 各セクションにスタイルを適用
+  const sectionStyle = (index: number): CSSProperties => ({
+    position: 'fixed',
+    top: currentSection === index ? '0' : (index < currentSection ? '-100vh' : '100vh'),
+    left: '50%',
+    transform: 'translateX(-50%)',
+    width: '96%',
+    height: '100vh',
+    overflow: 'hidden',
+    transition: 'top 0.6s cubic-bezier(0.65, 0, 0.35, 1)',
+    zIndex: currentSection === index ? 2 : 1,
+    visibility: Math.abs(currentSection - index) <= 1 ? 'visible' : 'hidden'
+  });
+
+  // スクロール可能な要素のスタイル関数を追加
+  const scrollableStyle = (isActive: boolean): CSSProperties => ({
+    overflowY: isActive ? 'auto' : 'hidden',
+    maxHeight: '96vh',
+    transition: 'all 0.3s ease'
+  });
 
   return (
-    <div className="component_container">
-      <section className='first_view'>
+    <div className="component_container" style={{ height: '100vh', overflow: 'hidden' }}>
+      <section className='first_view' ref={firstViewRef} style={sectionStyle(0)}>
         <h1>時空</h1>
-        <figure><img src={SpaceTime_1stView} alt="" /></figure>
-      </section>
-
-      <div className='merit_and_demerit_block'>
+        <div className='position_relative'>
+          <figure><img src={SpaceTime_1stView} alt="" /></figure>
+          <ul className='page_anchor_list'>
+    <li className='history'><a href="#history" onClick={(e) => { e.preventDefault(); setCurrentSection(1); }}>歴史</a></li>
+    <li className='social_geography'><a href="#social_geography" onClick={(e) => { e.preventDefault(); setCurrentSection(2); }}>社会地理</a></li>
+  </ul>
+        </div>
+              <div
+        className='merit_and_demerit_block scroller_decoration'
+        //ref={meritDemeritRef}
+        //style={sectionStyle(1)}
+        >
         <h2>特長</h2>
         <h3>時間の尺度の幅の広さ</h3><p>地史は非常に広範であり、過去10年から数100億年にわたるさまざまな出来事を扱います。地球の形成から現代までの進化や変遷を理解することができます。</p>
         <h3>異なる学問の融合</h3><p>地史は地質学、古生物学、気象学、天文学など複数の学問を結びつける分野であるため、多様な視点から地球の歴史を理解することが求められます。これにより、総合的な知識の構築が可能となります</p>
@@ -33,8 +177,30 @@ function SpaceTime() {
         <h3>未解明の謎がまだ多い</h3><p>地史には未だ解明されていない謎や疑問が多く存在します。過去の地球の出来事や進化の過程に関して、研究が進んでいるものの完全な解明には至っていない点があります。</p>
       </div>
 
+      </section>
 
-      <section className='block_text_right' id='history'>
+      {/*<div
+        className=''
+        //ref={meritDemeritRef}
+        //style={sectionStyle(1)}
+        >
+        <h2>特長</h2>
+        <h3>時間の尺度の幅の広さ</h3><p>地史は非常に広範であり、過去10年から数100億年にわたるさまざまな出来事を扱います。地球の形成から現代までの進化や変遷を理解することができます。</p>
+        <h3>異なる学問の融合</h3><p>地史は地質学、古生物学、気象学、天文学など複数の学問を結びつける分野であるため、多様な視点から地球の歴史を理解することが求められます。これにより、総合的な知識の構築が可能となります</p>
+        <h3>化石の証拠/文献の証拠</h3><p>地史は化石などの堆積物を通じて地球の進化を探るため、生命の進化や絶滅事象に関する貴重な情報が得られます。化石は過去の生態系や気候、地形の変遷を解明する手がかりとなります。</p>
+        <h3>気候変動の理解</h3><p>地史の研究によって、地球の気候変動に関する理解が進みつつあります。氷期と間氷期のサイクルや、温暖期における生態系の変遷や人類の生活様式の変化など、現代の気候変動に関する洞察が得られます。</p>
+        <h2>難点</h2>
+        <h3>情報の不完全性</h3><p>地史の研究においては、過去の出来事を正確に把握するための情報が限られています。化石や岩石や史料の保存状態によっては、完全なデータを得ることが難しい場合があります。</p>
+        <h3>解釈の主観性</h3><p>地史のデータを解釈する際、研究者の主観的な見解や仮説が影響を与えることがあります。異なる研究者や学派によって異なる解釈がなされることがあり、これが正確な理解を妨げる要因となります。</p>
+        <h3>時間スケールの難解さ</h3><p>非常に広範な時間を対象としているため、そのスケールの理解が難しいことがあります。数千年・数百万年・数億年といった単位は、人の日常的な時間感覚とはかけ離れています。</p>
+        <h3>未解明の謎がまだ多い</h3><p>地史には未だ解明されていない謎や疑問が多く存在します。過去の地球の出来事や進化の過程に関して、研究が進んでいるものの完全な解明には至っていない点があります。</p>
+      </div>*/}
+
+      <section
+        className='block_text_right'
+        id='history'
+        ref={historyRef}
+        style={sectionStyle(1)}>
         <div className='flex_setting'>
           <div className='figure_block'>
             <figure className='block_figure_left_01 position_absolute'><img src={SpaceTime_dummy01} alt="" /></figure>
@@ -44,7 +210,10 @@ function SpaceTime() {
             <figure className='block_figure_left_05 position_absolute'><img src={SpaceTime_dummy05} alt="" /></figure>
             <figure className='block_figure_left_06 position_absolute'><img src={SpaceTime_dummy06} alt="" /></figure>
           </div>
-          <div className='text_scroll_block'>
+          <div
+            className='text_scroll_block scroller_decoration'
+            ref={historyScrollRef}
+            style={scrollableStyle(currentSection === 2)}>
             <h2>歴史（人類史・史学）</h2>
             <p>
               人類が歩んだ道のりを記録したものを「歴史」という命名で特別視し大きな学問ジャンルを築いています。<br />
@@ -68,17 +237,23 @@ function SpaceTime() {
               <span className="big_font">民俗学</span>は、一般の人々の生活様式や習慣、信仰、言語などを通じて文化を理解しようとする学問です。このアプローチは、歴史の中で人々がどのように生活し、相互に影響を与え合ってきたかを探求します。中世ヨーロッパにおける騎士道精神や村の祭り、それに伴う伝説や言い伝えは、民俗学の手法を通じて歴史の中で生きた人々の日常や信念を垣間見ることができます。民俗学の手法を用いることで、歴史のなかで重要な役割を果たした一般の人々の視点や生活の様相が浮かび上がります。<br /><br />
 
               <span className="big_font">考古学</span>は物質的な証拠を通じて過去の文明や文化を解明します。埋もれた遺跡や遺物から得られる情報は、文字に記されていない時代の事実を紐解く手がかりとなります。考古学は地球史のパズルの一部を担い、時には失われた文明の発見や理解をもたらします。
-              考古学は地域史や民俗学の調査を支える重要な手段であり、発掘された遺物や遺跡が提供する情報は、地域史の中で起きた事象や文化の変遷を裏付けるものとなります。時には、古代の都市の遺跡や埋蔵された宝物が、失われた文明の復元に寄与することがあります。エジプトのピラミッドやメソポタミアの遺跡は、考古学の手法を駆使して、古代文明がいかにして発展し、滅びたのかを解き明かっています。これにより、文字に記されていない時代の事実や文化の変遷を復元することが可能となります。<br />
+              考古学は地域史や民俗学の調査を支える重要な手段であり、発掘された遺物や遺跡が提供する情報は、地域史の中で起きた事象や文化の変遷を裏付けるものとなります。時には、古代の都市の遺跡や埋蔵された宝物が、失われた文明の復元に寄与することがあります。エジプトのピラミッドやメソポタミアの遺跡は、考古学の手法を駆使して、古代文明がいかにして発展し、滅びたのかを解き明かしています。これにより、文字に記されていない時代の事実や文化の変遷を復元することが可能となります。<br />
               地域史が異なる地域を取り上げつつその交わり合いを探求し、民俗学が人々の営みの詳細を再現し、考古学が物的な証拠を提供することで史実が明らかになるケースがあります。
             </p>
           </div>
         </div>
       </section>
 
-
-      <section className='block_text_left' id='social_geography'>
+      <section
+        className='block_text_left'
+        id='social_geography'
+        ref={socialGeographyRef}
+        style={sectionStyle(2)}>
         <div className='flex_setting'>
-          <div className='text_scroll_block'>
+          <div
+            className='text_scroll_block scroller_decoration'
+            ref={socialGeographyScrollRef}
+            style={scrollableStyle(currentSection === 3)}>
             <h2>社会地理</h2>
             <p>
               社会地理は、地表空間上の人類の棲息パターンや相互作用を研究精緻化する学問です。<br />
@@ -128,8 +303,31 @@ function SpaceTime() {
         </div>
       </section>
 
-
-
+      {/* ページナビゲーション */}
+      <div className="page-navigation" style={{ position: 'fixed', right: '20px', top: '50%', transform: 'translateY(-50%)', zIndex: 10 }}>
+        {sections.map((_, index) => (
+          <button
+            key={index}
+            onClick={() => {
+              if (!scrollLocked) {
+                setScrollLocked(true);
+                setCurrentSection(index);
+                setTimeout(() => setScrollLocked(false), 800);
+              }
+            }}
+            style={{
+              display: 'block',
+              width: '12px',
+              height: '12px',
+              margin: '10px 0',
+              borderRadius: '50%',
+              backgroundColor: currentSection === index ? '#333' : '#ccc',
+              border: 'none',
+              cursor: 'pointer'
+            }}
+          />
+        ))}
+      </div>
     </div>
   )
 }
