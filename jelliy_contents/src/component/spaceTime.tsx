@@ -3,32 +3,90 @@ import type { CSSProperties } from 'react';
 import SpaceTime_1stView from '../assets/SpaceTime_1stView01.png';
 import SpaceTime_dummy01 from '../assets/SpaceTime_dummy01.jpg';
 import SpaceTime_dummy02 from '../assets/SpaceTime_dummy02.jpg';
-import SpaceTime_dummy03 from '../assets/SpaceTime_dummy01.jpg';
+import SpaceTime_dummy03 from '../assets/SpaceTime_dummy03.png';
 import SpaceTime_dummy04 from '../assets/SpaceTime_dummy02.jpg';
 import SpaceTime_dummy05 from '../assets/SpaceTime_dummy01.jpg';
 import SpaceTime_dummy06 from '../assets/SpaceTime_dummy02.jpg';
 
 import './component_common.css';
+import './spaceTime.css';
 
 function SpaceTime() {
-  // セクションの参照を保持
+  // セクションの参照
   const firstViewRef = useRef<HTMLElement>(null);
   const historyRef = useRef<HTMLElement>(null);
   const historyScrollRef = useRef<HTMLDivElement>(null);
   const socialGeographyRef = useRef<HTMLElement>(null);
   const socialGeographyScrollRef = useRef<HTMLDivElement>(null);
+  const earthHistoryRef = useRef<HTMLElement>(null);
+  const earthHistoryScrollRef = useRef<HTMLDivElement>(null);
+  const naturalGeographyRef = useRef<HTMLElement>(null);
+  const naturalGeographyScrollRef = useRef<HTMLDivElement>(null);
+  const geologyRef = useRef<HTMLElement>(null);
+  const geologyScrollRef = useRef<HTMLDivElement>(null);
+  const atmosphereRef = useRef<HTMLElement>(null);
+  const atmosphereScrollRef = useRef<HTMLDivElement>(null);
+  const oceanographyRef = useRef<HTMLElement>(null);
+  const oceanographyScrollRef = useRef<HTMLDivElement>(null);
+  const astronomyRef = useRef<HTMLElement>(null);
+  const astronomyScrollRef = useRef<HTMLDivElement>(null);
 
   // 現在のセクションとスクロール状態
   const [currentSection, setCurrentSection] = useState<number>(0);
   const [scrolling, setScrolling] = useState<boolean>(false);
   const [scrollLocked, setScrollLocked] = useState<boolean>(false);
 
+  // アニメーション用の状態
+  const [animateMerit, setAnimateMerit] = useState<boolean>(false);
+  const [animateDemerit, setAnimateDemerit] = useState<boolean>(false);
+
+  // 画像アニメーション用ステート
+  const [imageAnimationClass, setImageAnimationClass] = useState<string>('');
+
   // セクションの定義 - 配列の順序と実際のセクション数を合わせる
   const sections = [
     { ref: firstViewRef, scrollRef: null },
     { ref: historyRef, scrollRef: historyScrollRef },
     { ref: socialGeographyRef, scrollRef: socialGeographyScrollRef },
+    { ref: earthHistoryRef, scrollRef: earthHistoryScrollRef },
+    { ref: naturalGeographyRef, scrollRef: naturalGeographyScrollRef },
+    { ref: geologyRef, scrollRef: geologyScrollRef },
+    { ref: atmosphereRef, scrollRef: atmosphereScrollRef },
+    { ref: oceanographyRef, scrollRef: oceanographyScrollRef },
+    { ref: astronomyRef, scrollRef: astronomyScrollRef },
   ];
+
+  // first_viewが表示されるたびにアニメーションを開始
+  useEffect(() => {
+    if (currentSection === 0) {
+      // アニメーションをリセット
+      setAnimateMerit(false);
+      setAnimateDemerit(false);
+
+      // 少し遅延させてからアニメーションを開始
+      const timer = setTimeout(() => {
+        setAnimateMerit(true);
+        setAnimateDemerit(true);
+      }, 100);
+
+      return () => clearTimeout(timer);
+    }
+  }, [currentSection]);
+
+  // 画像アニメーションの制御
+  useEffect(() => {
+    if (currentSection === 0) {
+      // アニメーションをリセット
+      setImageAnimationClass('');
+
+      // 少し遅延させてからアニメーションを開始
+      const timer = setTimeout(() => {
+        setImageAnimationClass('pixelated-image refining-image');
+      }, 200);
+
+      return () => clearTimeout(timer);
+    }
+  }, [currentSection]);
 
   // 標準スクロールを完全に無効化
   useEffect(() => {
@@ -149,52 +207,76 @@ function SpaceTime() {
     transition: 'all 0.3s ease'
   });
 
+  // トップへ戻るボタンのスタイル
+  const topButtonStyle: CSSProperties = {
+    position: 'fixed',
+    bottom: '0',
+    right: '0',
+    padding: '10px 15px',
+    backgroundColor: 'rgba(0, 0, 0, 0.6)',
+    color: 'white',
+    border: 'none',
+    borderRadius: '5px',
+    cursor: 'pointer',
+    zIndex: 100,
+    fontSize: '14px',
+    transition: 'all 0.3s ease'
+  };
+
+  // ページトップに戻る関数
+  const scrollToTop = () => {
+    if (!scrollLocked) {
+      setScrollLocked(true);
+      setCurrentSection(0);
+      setTimeout(() => setScrollLocked(false), 600);
+    }
+  };
+
   return (
-    <div className="component_container" style={{ height: '100vh', overflow: 'hidden' }}>
+    <div className="component_container">
       <section className='first_view' ref={firstViewRef} style={sectionStyle(0)}>
-        <h1>時空</h1>
+        <h1 className='space_time_h1'>時空</h1>
         <div className='position_relative'>
-          <figure><img src={SpaceTime_1stView} alt="" /></figure>
+          <figure className='jelly_map'>
+            <img
+              src={SpaceTime_1stView}
+              alt=""
+              className={imageAnimationClass}
+            />
+          </figure>
           <ul className='page_anchor_list'>
-    <li className='history'><a href="#history" onClick={(e) => { e.preventDefault(); setCurrentSection(1); }}>歴史</a></li>
-    <li className='social_geography'><a href="#social_geography" onClick={(e) => { e.preventDefault(); setCurrentSection(2); }}>社会地理</a></li>
-  </ul>
+            <li className='history' title='歴史'><a href="#history" onClick={(e) => { e.preventDefault(); setCurrentSection(1); }}></a></li>
+            <li className='social_geography' title='社会地理'><a href="#social_geography" onClick={(e) => { e.preventDefault(); setCurrentSection(2); }}></a></li>
+            <li className='earth_history' title='地球史'><a href="#earth_history" onClick={(e) => { e.preventDefault(); setCurrentSection(3); }}></a></li>
+            <li className='natural_geography' title='自然地理'><a href="#natural_geography" onClick={(e) => { e.preventDefault(); setCurrentSection(4); }}></a></li>
+            <li className='geology' title='地質研究'><a href="#geology" onClick={(e) => { e.preventDefault(); setCurrentSection(5); }}></a></li>
+            <li className='atmosphere' title='大気研究'><a href="#atmosphere" onClick={(e) => { e.preventDefault(); setCurrentSection(6); }}></a></li>
+            <li className='oceanography' title='海洋研究'><a href="#oceanography" onClick={(e) => { e.preventDefault(); setCurrentSection(7); }}></a></li>
+            <li className='astronomy' title='天文'><a href="#astronomy" onClick={(e) => { e.preventDefault(); setCurrentSection(8); }}></a></li>
+          </ul>
         </div>
-              <div
-        className='merit_and_demerit_block scroller_decoration'
-        //ref={meritDemeritRef}
-        //style={sectionStyle(1)}
-        >
-        <h2>特長</h2>
-        <h3>時間の尺度の幅の広さ</h3><p>地史は非常に広範であり、過去10年から数100億年にわたるさまざまな出来事を扱います。地球の形成から現代までの進化や変遷を理解することができます。</p>
-        <h3>異なる学問の融合</h3><p>地史は地質学、古生物学、気象学、天文学など複数の学問を結びつける分野であるため、多様な視点から地球の歴史を理解することが求められます。これにより、総合的な知識の構築が可能となります</p>
-        <h3>化石の証拠/文献の証拠</h3><p>地史は化石などの堆積物を通じて地球の進化を探るため、生命の進化や絶滅事象に関する貴重な情報が得られます。化石は過去の生態系や気候、地形の変遷を解明する手がかりとなります。</p>
-        <h3>気候変動の理解</h3><p>地史の研究によって、地球の気候変動に関する理解が進みつつあります。氷期と間氷期のサイクルや、温暖期における生態系の変遷や人類の生活様式の変化など、現代の気候変動に関する洞察が得られます。</p>
-        <h2>難点</h2>
-        <h3>情報の不完全性</h3><p>地史の研究においては、過去の出来事を正確に把握するための情報が限られています。化石や岩石や史料の保存状態によっては、完全なデータを得ることが難しい場合があります。</p>
-        <h3>解釈の主観性</h3><p>地史のデータを解釈する際、研究者の主観的な見解や仮説が影響を与えることがあります。異なる研究者や学派によって異なる解釈がなされることがあり、これが正確な理解を妨げる要因となります。</p>
-        <h3>時間スケールの難解さ</h3><p>非常に広範な時間を対象としているため、そのスケールの理解が難しいことがあります。数千年・数百万年・数億年といった単位は、人の日常的な時間感覚とはかけ離れています。</p>
-        <h3>未解明の謎がまだ多い</h3><p>地史には未だ解明されていない謎や疑問が多く存在します。過去の地球の出来事や進化の過程に関して、研究が進んでいるものの完全な解明には至っていない点があります。</p>
-      </div>
-
+        <div className='merit_and_demerit_block scroller_decoration'>
+          <article className={`merit ${animateMerit ? 'animate' : ''}`}>
+            <h2>特長</h2>
+            <h3>時間の尺度の幅の広さ</h3><p>地史は非常に広範であり、過去10年から数100億年にわたるさまざまな出来事を扱います。地球の形成から現代までの進化や変遷を理解することができます。</p>
+            <h3>異なる学問の融合</h3><p>地史は地質学、古生物学、気象学、天文学など複数の学問を結びつける分野であるため、多様な視点から地球の歴史を理解することが求められます。これにより、総合的な知識の構築が可能となります</p>
+            <h3>化石の証拠/文献の証拠</h3><p>地史は化石などの堆積物を通じて地球の進化を探るため、生命の進化や絶滅事象に関する貴重な情報が得られます。化石は過去の生態系や気候、地形の変遷を解明する手がかりとなります。</p>
+            <h3>気候変動の理解</h3><p>地史の研究によって、地球の気候変動に関する理解が進みつつあります。氷期と間氷期のサイクルや、温暖期における生態系の変遷や人類の生活様式の変化など、現代の気候変動に関する洞察が得られます。</p>
+          </article>
+          <article className={`demerit ${animateDemerit ? 'animate' : ''}`}>
+            <h2>難点</h2>
+            <h3>情報の不完全性</h3><p>地史の研究においては、過去の出来事を正確に把握するための情報が限られています。化石や岩石や史料の保存状態によっては、完全なデータを得ることが難しい場合があります。</p>
+            <h3>解釈の主観性</h3><p>地史のデータを解釈する際、研究者の主観的な見解や仮説が影響を与えることがあります。異なる研究者や学派によって異なる解釈がなされることがあり、これが正確な理解を妨げる要因となります。</p>
+            <h3>時間スケールの難解さ</h3><p>非常に広範な時間を対象としているため、そのスケールの理解が難しいことがあります。数千年・数百万年・数億年といった単位は、人の日常的な時間感覚とはかけ離れています。</p>
+            <h3>未解明の謎がまだ多い</h3><p>地史には未だ解明されていない謎や疑問が多く存在します。過去の地球の出来事や進化の過程に関して、研究が進んでいるものの完全な解明には至っていない点があります。</p>
+          </article>
+        </div>
+        <div className='back_to_map'>
+          <a href="https://cf268321.cloudfree.jp/13jellies/#jellies_map">
+            <figure className='back_to_map_figure'><img src='https://cf268321.cloudfree.jp/13jellies/asset/img/13jellies_A.png' /></figure>
+            <p className='back_to_map_text'>13個のゼリー</p></a>
+        </div>
       </section>
-
-      {/*<div
-        className=''
-        //ref={meritDemeritRef}
-        //style={sectionStyle(1)}
-        >
-        <h2>特長</h2>
-        <h3>時間の尺度の幅の広さ</h3><p>地史は非常に広範であり、過去10年から数100億年にわたるさまざまな出来事を扱います。地球の形成から現代までの進化や変遷を理解することができます。</p>
-        <h3>異なる学問の融合</h3><p>地史は地質学、古生物学、気象学、天文学など複数の学問を結びつける分野であるため、多様な視点から地球の歴史を理解することが求められます。これにより、総合的な知識の構築が可能となります</p>
-        <h3>化石の証拠/文献の証拠</h3><p>地史は化石などの堆積物を通じて地球の進化を探るため、生命の進化や絶滅事象に関する貴重な情報が得られます。化石は過去の生態系や気候、地形の変遷を解明する手がかりとなります。</p>
-        <h3>気候変動の理解</h3><p>地史の研究によって、地球の気候変動に関する理解が進みつつあります。氷期と間氷期のサイクルや、温暖期における生態系の変遷や人類の生活様式の変化など、現代の気候変動に関する洞察が得られます。</p>
-        <h2>難点</h2>
-        <h3>情報の不完全性</h3><p>地史の研究においては、過去の出来事を正確に把握するための情報が限られています。化石や岩石や史料の保存状態によっては、完全なデータを得ることが難しい場合があります。</p>
-        <h3>解釈の主観性</h3><p>地史のデータを解釈する際、研究者の主観的な見解や仮説が影響を与えることがあります。異なる研究者や学派によって異なる解釈がなされることがあり、これが正確な理解を妨げる要因となります。</p>
-        <h3>時間スケールの難解さ</h3><p>非常に広範な時間を対象としているため、そのスケールの理解が難しいことがあります。数千年・数百万年・数億年といった単位は、人の日常的な時間感覚とはかけ離れています。</p>
-        <h3>未解明の謎がまだ多い</h3><p>地史には未だ解明されていない謎や疑問が多く存在します。過去の地球の出来事や進化の過程に関して、研究が進んでいるものの完全な解明には至っていない点があります。</p>
-      </div>*/}
 
       <section
         className='block_text_right'
@@ -213,7 +295,7 @@ function SpaceTime() {
           <div
             className='text_scroll_block scroller_decoration'
             ref={historyScrollRef}
-            style={scrollableStyle(currentSection === 2)}>
+            style={scrollableStyle(currentSection === 1)}>
             <h2>歴史（人類史・史学）</h2>
             <p>
               人類が歩んだ道のりを記録したものを「歴史」という命名で特別視し大きな学問ジャンルを築いています。<br />
@@ -253,7 +335,7 @@ function SpaceTime() {
           <div
             className='text_scroll_block scroller_decoration'
             ref={socialGeographyScrollRef}
-            style={scrollableStyle(currentSection === 3)}>
+            style={scrollableStyle(currentSection === 2)}>
             <h2>社会地理</h2>
             <p>
               社会地理は、地表空間上の人類の棲息パターンや相互作用を研究精緻化する学問です。<br />
@@ -303,8 +385,211 @@ function SpaceTime() {
         </div>
       </section>
 
+      {/* 地球史セクション */}
+      <section
+        className='block_text_right'
+        id='earth_history'
+        ref={earthHistoryRef}
+        style={sectionStyle(3)}>
+        <div className='flex_setting'>
+          <div className='figure_block'>
+            <figure className='block_figure_left_01 position_absolute'><img src={SpaceTime_dummy01} alt="" /></figure>
+            <figure className='block_figure_left_02 position_absolute'><img src={SpaceTime_dummy02} alt="" /></figure>
+            <figure className='block_figure_left_03 position_absolute'><img src={SpaceTime_dummy03} alt="" /></figure>
+            <figure className='block_figure_left_04 position_absolute'><img src={SpaceTime_dummy04} alt="" /></figure>
+            <figure className='block_figure_left_05 position_absolute'><img src={SpaceTime_dummy05} alt="" /></figure>
+            <figure className='block_figure_left_06 position_absolute'><img src={SpaceTime_dummy06} alt="" /></figure>
+          </div>
+          <div
+            className='text_scroll_block scroller_decoration'
+            ref={earthHistoryScrollRef}
+            style={scrollableStyle(currentSection === 3)}>
+            <h2>地球史</h2>
+            <p>
+              地球史の内容がここに入ります。地球の誕生から現在に至るまでの壮大な歴史について説明します。
+              先カンブリア時代、古生代、中生代、新生代など、地球の各時代について詳細な情報が記載されます。
+              生命の誕生や進化、大量絶滅や気候変動など、地球の歴史における重要なイベントについても触れます。
+
+              ここにはダミーテキストが入ります。後で実際のコンテンツに置き換えられます。
+              地球史に関する詳細な内容がここに記載されます。地質学的な時間スケールや、生命の発展過程、
+              大陸の移動や気候変動など、地球の歴史に関わる様々なトピックが含まれます。
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* 自然地理セクション */}
+      <section
+        className='block_text_left'
+        id='natural_geography'
+        ref={naturalGeographyRef}
+        style={sectionStyle(4)}>
+        <div className='flex_setting'>
+          <div
+            className='text_scroll_block scroller_decoration'
+            ref={naturalGeographyScrollRef}
+            style={scrollableStyle(currentSection === 4)}>
+            <h2>自然地理</h2>
+            <p>
+              自然地理の内容がここに入ります。地球の自然環境や地形、気候などについて説明します。
+              山岳、平原、海洋、河川など、様々な地形の形成過程や特徴について詳しく記述されます。
+              気候帯や生態系など、自然地理学の重要なトピックについても触れます。
+
+              ここにはダミーテキストが入ります。後で実際のコンテンツに置き換えられます。
+              自然地理に関する詳細な内容がここに記載されます。地形学、気候学、水文学など
+              自然地理学の様々な側面について説明されます。生物地理学的な内容や、
+              人間活動が自然環境に与える影響についても触れられるでしょう。
+            </p>
+          </div>
+          <div className='figure_block'>
+            <figure className='block_figure_right_01 position_absolute'><img src={SpaceTime_dummy01} alt="" /></figure>
+            <figure className='block_figure_right_02 position_absolute'><img src={SpaceTime_dummy02} alt="" /></figure>
+            <figure className='block_figure_right_03 position_absolute'><img src={SpaceTime_dummy03} alt="" /></figure>
+            <figure className='block_figure_right_04 position_absolute'><img src={SpaceTime_dummy04} alt="" /></figure>
+            <figure className='block_figure_right_05 position_absolute'><img src={SpaceTime_dummy05} alt="" /></figure>
+            <figure className='block_figure_right_06 position_absolute'><img src={SpaceTime_dummy06} alt="" /></figure>
+          </div>
+        </div>
+      </section>
+
+      {/* 地質研究セクション */}
+      <section
+        className='block_text_right'
+        id='geology'
+        ref={geologyRef}
+        style={sectionStyle(5)}>
+        <div className='flex_setting'>
+          <div className='figure_block'>
+            <figure className='block_figure_left_01 position_absolute'><img src={SpaceTime_dummy01} alt="" /></figure>
+            <figure className='block_figure_left_02 position_absolute'><img src={SpaceTime_dummy02} alt="" /></figure>
+            <figure className='block_figure_left_03 position_absolute'><img src={SpaceTime_dummy03} alt="" /></figure>
+            <figure className='block_figure_left_04 position_absolute'><img src={SpaceTime_dummy04} alt="" /></figure>
+            <figure className='block_figure_left_05 position_absolute'><img src={SpaceTime_dummy05} alt="" /></figure>
+            <figure className='block_figure_left_06 position_absolute'><img src={SpaceTime_dummy06} alt="" /></figure>
+          </div>
+          <div
+            className='text_scroll_block scroller_decoration'
+            ref={geologyScrollRef}
+            style={scrollableStyle(currentSection === 5)}>
+            <h2>地質研究</h2>
+            <p>
+              地質研究の内容がここに入ります。地球の構造や岩石、鉱物、地殻変動などについて説明します。
+              プレートテクトニクス理論や火山活動、地震のメカニズムなど、地質学の重要なトピックについても触れます。
+              地質年代や地層の形成過程、化石の研究などについても詳しく記述されます。
+
+              ここにはダミーテキストが入ります。後で実際のコンテンツに置き換えられます。
+              地質学に関する詳細な内容がここに記載されます。岩石学、鉱物学、構造地質学など、
+              地質学の様々な分野についての説明が含まれます。また、地質調査の方法や技術、
+              最新の研究成果についても触れられるでしょう。
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* 大気研究セクション */}
+      <section
+        className='block_text_left'
+        id='atmosphere'
+        ref={atmosphereRef}
+        style={sectionStyle(6)}>
+        <div className='flex_setting'>
+          <div
+            className='text_scroll_block scroller_decoration'
+            ref={atmosphereScrollRef}
+            style={scrollableStyle(currentSection === 6)}>
+            <h2>大気研究</h2>
+            <p>
+              大気研究の内容がここに入ります。地球の大気の構造や成分、気象現象などについて説明します。
+              気圧配置や前線の動き、気象予報の方法など、気象学の重要なトピックについても触れます。
+              気候変動や大気汚染など、現代の大気に関する課題についても詳しく記述されます。
+
+              ここにはダミーテキストが入ります。後で実際のコンテンツに置き換えられます。
+              気象学や大気科学に関する詳細な内容がここに記載されます。大気の層構造や循環システム、
+              様々な気象現象のメカニズムについての説明が含まれます。また、気象観測の歴史や方法、
+              最新の研究課題についても触れられるでしょう。
+            </p>
+          </div>
+          <div className='figure_block'>
+            <figure className='block_figure_right_01 position_absolute'><img src={SpaceTime_dummy01} alt="" /></figure>
+            <figure className='block_figure_right_02 position_absolute'><img src={SpaceTime_dummy02} alt="" /></figure>
+            <figure className='block_figure_right_03 position_absolute'><img src={SpaceTime_dummy03} alt="" /></figure>
+            <figure className='block_figure_right_04 position_absolute'><img src={SpaceTime_dummy04} alt="" /></figure>
+            <figure className='block_figure_right_05 position_absolute'><img src={SpaceTime_dummy05} alt="" /></figure>
+            <figure className='block_figure_right_06 position_absolute'><img src={SpaceTime_dummy06} alt="" /></figure>
+          </div>
+        </div>
+      </section>
+
+      {/* 海洋研究セクション */}
+      <section
+        className='block_text_right'
+        id='oceanography'
+        ref={oceanographyRef}
+        style={sectionStyle(7)}>
+        <div className='flex_setting'>
+          <div className='figure_block'>
+            <figure className='block_figure_left_01 position_absolute'><img src={SpaceTime_dummy01} alt="" /></figure>
+            <figure className='block_figure_left_02 position_absolute'><img src={SpaceTime_dummy02} alt="" /></figure>
+            <figure className='block_figure_left_03 position_absolute'><img src={SpaceTime_dummy03} alt="" /></figure>
+            <figure className='block_figure_left_04 position_absolute'><img src={SpaceTime_dummy04} alt="" /></figure>
+            <figure className='block_figure_left_05 position_absolute'><img src={SpaceTime_dummy05} alt="" /></figure>
+            <figure className='block_figure_left_06 position_absolute'><img src={SpaceTime_dummy06} alt="" /></figure>
+          </div>
+          <div
+            className='text_scroll_block scroller_decoration'
+            ref={oceanographyScrollRef}
+            style={scrollableStyle(currentSection === 7)}>
+            <h2>海洋研究</h2>
+            <p>
+              海洋研究の内容がここに入ります。地球の海洋の構造や海流、海底地形などについて説明します。
+              潮汐や波浪のメカニズム、海洋生態系など、海洋学の重要なトピックについても触れます。
+              深海探査や海洋資源、海洋汚染など、海洋に関する現代的な課題についても詳しく記述されます。
+
+              ここにはダミーテキストが入ります。後で実際のコンテンツに置き換えられます。
+              海洋学に関する詳細な内容がここに記載されます。海洋の物理的特性、化学的組成、
+              海洋循環システムについての説明が含まれます。また、海洋生物学や海洋地質学、
+              海洋探査の歴史と最新技術についても触れられるでしょう。
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* 天文セクション */}
+      <section
+        className='block_text_left'
+        id='astronomy'
+        ref={astronomyRef}
+        style={sectionStyle(8)}>
+        <div className='flex_setting'>
+          <div
+            className='text_scroll_block scroller_decoration'
+            ref={astronomyScrollRef}
+            style={scrollableStyle(currentSection === 8)}>
+            <h2>天文</h2>
+            <p>
+              天文の内容がここに入ります。宇宙の構造や天体、宇宙の歴史などについて説明します。
+              太陽系の惑星や恒星、銀河系など、天文学の重要なトピックについても触れます。
+              宇宙探査や天体観測の方法、最新の天文学的発見についても詳しく記述されます。
+
+              ここにはダミーテキストが入ります。後で実際のコンテンツに置き換えられます。
+              天文学に関する詳細な内容がここに記載されます。宇宙の起源と進化、星の一生、
+              銀河の構造と種類についての説明が含まれます。また、天文観測の歴史と方法、
+              最新の宇宙論や天体物理学の課題についても触れられるでしょう。
+            </p>
+          </div>
+          <div className='figure_block'>
+            <figure className='block_figure_right_01 position_absolute'><img src={SpaceTime_dummy01} alt="" /></figure>
+            <figure className='block_figure_right_02 position_absolute'><img src={SpaceTime_dummy02} alt="" /></figure>
+            <figure className='block_figure_right_03 position_absolute'><img src={SpaceTime_dummy03} alt="" /></figure>
+            <figure className='block_figure_right_04 position_absolute'><img src={SpaceTime_dummy04} alt="" /></figure>
+            <figure className='block_figure_right_05 position_absolute'><img src={SpaceTime_dummy05} alt="" /></figure>
+            <figure className='block_figure_right_06 position_absolute'><img src={SpaceTime_dummy06} alt="" /></figure>
+          </div>
+        </div>
+      </section>
+
       {/* ページナビゲーション */}
-      <div className="page-navigation" style={{ position: 'fixed', right: '20px', top: '50%', transform: 'translateY(-50%)', zIndex: 10 }}>
+      {/* <div className="page-navigation" style={{ position: 'fixed', right: '20px', top: '50%', transform: 'translateY(-50%)', zIndex: 10 }}>
         {sections.map((_, index) => (
           <button
             key={index}
@@ -327,7 +612,24 @@ function SpaceTime() {
             }}
           />
         ))}
-      </div>
+      </div> */}
+
+      {/* トップへ戻るボタン */}
+      {currentSection > 0 && (
+        <button
+          onClick={scrollToTop}
+          style={topButtonStyle}
+          className='topButtonStyle'
+          onMouseOver={(e) => {
+            e.currentTarget.style.backgroundColor = 'rgba(0, 0, 0, 0.8)';
+          }}
+          onMouseOut={(e) => {
+            e.currentTarget.style.backgroundColor = 'rgba(0, 0, 0, 0.6)';
+          }}
+        >
+          このページのTopへ戻る
+        </button>
+      )}
     </div>
   )
 }

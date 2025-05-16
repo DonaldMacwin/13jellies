@@ -1,0 +1,71 @@
+@charset "UTF-8";
+
+h1.space_time_h1 {
+    left: 10%;
+}
+
+.page_anchor_list {
+    z-index: +1;
+
+    a {
+        position: absolute;
+        background-color: rgba(0, 0, 0, 0.2);
+    }
+
+    .history a {
+        top: 4%;
+        left: 13%;
+        width: 17%;
+        height: 14%;
+    }
+
+    .social_geography a {
+        top: 4%;
+        left: 32%;
+        width: 22%;
+        height: 15%;
+    }
+
+    .earth_history a {
+        top: 29%;
+        left: 24%;
+        width: 9%;
+        height: 13%;
+    }
+
+    .natural_geography a {
+        top: 27%;
+        left: 38%;
+        width: 15%;
+        height: 13%;
+    }
+
+    .geology a {
+        top: 44%;
+        left: 25%;
+        width: 15%;
+        height: 19%;
+    }
+
+    .atmosphere a {
+        bottom: 33%;
+        left: 41%;
+        width: 13%;
+        height: 15%;
+    }
+
+    .oceanography a {
+        bottom: 20%;
+        left: 42%;
+        width: 11%;
+        height: 12%;
+    }
+
+    .astronomy a {
+        bottom: 16%;
+        left: 32%;
+        width: 7%;
+        height: 13%;
+    }
+
+}
