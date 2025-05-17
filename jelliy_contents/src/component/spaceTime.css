@@ -5,13 +5,6 @@ h1.space_time_h1 {
 }
 
 .page_anchor_list {
-    z-index: +1;
-
-    a {
-        position: absolute;
-        background-color: rgba(0, 0, 0, 0.2);
-    }
-
     .history a {
         top: 4%;
         left: 13%;
@@ -67,5 +60,4 @@ h1.space_time_h1 {
         width: 7%;
         height: 13%;
     }
-
 }

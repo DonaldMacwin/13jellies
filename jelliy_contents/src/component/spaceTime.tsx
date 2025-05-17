@@ -211,7 +211,7 @@ function SpaceTime() {
   const topButtonStyle: CSSProperties = {
     position: 'fixed',
     bottom: '0',
-    right: '0',
+    left: '0',
     padding: '10px 15px',
     backgroundColor: 'rgba(0, 0, 0, 0.6)',
     color: 'white',
@@ -245,14 +245,14 @@ function SpaceTime() {
             />
           </figure>
           <ul className='page_anchor_list'>
-            <li className='history' title='歴史'><a href="#history" onClick={(e) => { e.preventDefault(); setCurrentSection(1); }}></a></li>
-            <li className='social_geography' title='社会地理'><a href="#social_geography" onClick={(e) => { e.preventDefault(); setCurrentSection(2); }}></a></li>
-            <li className='earth_history' title='地球史'><a href="#earth_history" onClick={(e) => { e.preventDefault(); setCurrentSection(3); }}></a></li>
-            <li className='natural_geography' title='自然地理'><a href="#natural_geography" onClick={(e) => { e.preventDefault(); setCurrentSection(4); }}></a></li>
-            <li className='geology' title='地質研究'><a href="#geology" onClick={(e) => { e.preventDefault(); setCurrentSection(5); }}></a></li>
-            <li className='atmosphere' title='大気研究'><a href="#atmosphere" onClick={(e) => { e.preventDefault(); setCurrentSection(6); }}></a></li>
-            <li className='oceanography' title='海洋研究'><a href="#oceanography" onClick={(e) => { e.preventDefault(); setCurrentSection(7); }}></a></li>
-            <li className='astronomy' title='天文'><a href="#astronomy" onClick={(e) => { e.preventDefault(); setCurrentSection(8); }}></a></li>
+            <li className='history'><a href="#history" onClick={(e) => { e.preventDefault(); setCurrentSection(1); }}></a></li>{/* 歴史 */}
+            <li className='social_geography'><a href="#social_geography" onClick={(e) => { e.preventDefault(); setCurrentSection(2); }}></a></li>{/* 社会地理 */}
+            <li className='earth_history'><a href="#earth_history" onClick={(e) => { e.preventDefault(); setCurrentSection(3); }}></a></li>{/* 地球史 */}
+            <li className='natural_geography'><a href="#natural_geography" onClick={(e) => { e.preventDefault(); setCurrentSection(4); }}></a></li>{/* 自然地理 */}
+            <li className='geology'><a href="#geology" onClick={(e) => { e.preventDefault(); setCurrentSection(5); }}></a></li>{/* 地質研究 */}
+            <li className='atmosphere'><a href="#atmosphere" onClick={(e) => { e.preventDefault(); setCurrentSection(6); }}></a></li>{/* 大気研究 */}
+            <li className='oceanography'><a href="#oceanography" onClick={(e) => { e.preventDefault(); setCurrentSection(7); }}></a></li>{/* 海洋研究 */}
+            <li className='astronomy'><a href="#astronomy" onClick={(e) => { e.preventDefault(); setCurrentSection(8); }}></a></li>{/* 天文 */}
           </ul>
         </div>
         <div className='merit_and_demerit_block scroller_decoration'>
