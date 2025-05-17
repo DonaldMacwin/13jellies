@@ -8,6 +8,7 @@ body {
 }
 
 .component_container {
+  max-width: 1440px;
   height: 100vh;
   overflow: hidden;
   position: relative;
@@ -57,6 +58,7 @@ img {
     font-size: 5rem;
     font-family: 'Noto Serif JP', serif;
     letter-spacing: 0.25rem;
+    z-index: +2;
   }
 
   .jelly_map {
@@ -66,7 +68,15 @@ img {
       width: 80%;
       height: auto;
       object-fit: unset;
+    }
+  }
 
+  .page_anchor_list {
+    z-index: +1;
+
+    a {
+      position: absolute;
+      /*background-color: rgba(0, 0, 0, 0.2);*/
     }
   }
 
@@ -274,23 +284,86 @@ img {
     overflow-x: hidden;
     /*max-height: 100vh;*/
     background-color: rgba(255, 255, 255, 0.5);
-    font-size: 0.9em;
+    font-size: 1.0em;
     line-height: 2.0em;
 
     p {
       line-height: unset;
     }
+
+    h2 {
+      margin: 0 0 1.0rem 0;
+      font-size: 36px;
+      font-family: 'Noto Serif JP', serif;
+      letter-spacing: 0.2em;
+    }
+
+    .big_font {
+      font-size: 2.0rem;
+      font-weight: 100;
+      font-family: 'Noto Serif JP', serif;
+    }
   }
 }
 
-/* ピクセル化アニメーション用のスタイル */
+/* 既存のピクセル化アニメーション関連のスタイル */
+
+/* ピクセル化効果を強化したスタイル */
 .pixelated-image {
   image-rendering: pixelated;
   image-rendering: -moz-crisp-edges;
   image-rendering: crisp-edges;
 }
 
-/* アニメーション用のクラス */
+/* 標準からドット絵へのアニメーション */
+@keyframes to-pixelated {
+  0% {
+    filter: blur(0) contrast(1);
+    transform: scale(1);
+  }
+  50% {
+    /* 一時的に縮小して低解像度にする */
+    transform: scale(0.2);
+  }
+  100% {
+    filter: blur(0) contrast(1.3);
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: crisp-edges;
+    transform: scale(0.95);
+  }
+}
+
+/* ドット絵から標準へのアニメーション */
+@keyframes from-pixelated {
+  0% {
+    filter: blur(0) contrast(1.3);
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: crisp-edges;
+    transform: scale(0.95);
+  }
+  50% {
+    /* 一時的に縮小してからスムーズに戻す */
+    transform: scale(0.2);
+    image-rendering: auto;
+  }
+  100% {
+    filter: blur(0) contrast(1);
+    image-rendering: auto;
+    transform: scale(1);
+  }
+}
+
+.to-pixelated {
+  animation: to-pixelated 1s ease-in-out forwards;
+}
+
+.from-pixelated {
+  animation: from-pixelated 1s ease-in-out forwards;
+}
+
+/* 既存のアニメーションは残しておきます */
 @keyframes refine-image {
   0% {
     filter: blur(8px) contrast(1.2);
