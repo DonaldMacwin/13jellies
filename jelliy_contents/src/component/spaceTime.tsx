@@ -1,5 +1,12 @@
-import { useEffect, useState, useRef } from 'react';
-import type { CSSProperties } from 'react';
+import { useRef } from 'react';
+import {
+  useSectionScroll,
+  useSectionImageAnimations,
+  useFirstViewMeritDemeritAnimation,
+  useFirstViewImageAnimation,
+  AnimatedFigureBlock,
+  topButtonStyle
+} from './_common_component';
 import SpaceTime_1stView from '../assets/SpaceTime_1stView01.png';
 import SpaceTime_dummy01 from '../assets/SpaceTime_dummy01.jpg';
 import SpaceTime_dummy02 from '../assets/SpaceTime_dummy02.jpg';
@@ -8,7 +15,7 @@ import SpaceTime_dummy04 from '../assets/SpaceTime_dummy02.jpg';
 import SpaceTime_dummy05 from '../assets/SpaceTime_dummy01.jpg';
 import SpaceTime_dummy06 from '../assets/SpaceTime_dummy02.jpg';
 
-import './component_common.css';
+import './_common_css.css';
 import './spaceTime.css';
 
 function SpaceTime() {
@@ -31,11 +38,6 @@ function SpaceTime() {
   const astronomyRef = useRef<HTMLElement>(null);
   const astronomyScrollRef = useRef<HTMLDivElement>(null);
 
-  // 現在のセクションとスクロール状態
-  const [currentSection, setCurrentSection] = useState<number>(0);
-  const [scrolling, setScrolling] = useState<boolean>(false);
-  const [scrollLocked, setScrollLocked] = useState<boolean>(false);
-
   // セクションの定義 - 配列の順序と実際のセクション数を合わせる
   const sections = [
     { ref: firstViewRef, scrollRef: null },
@@ -48,587 +50,33 @@ function SpaceTime() {
     { ref: oceanographyRef, scrollRef: oceanographyScrollRef },
     { ref: astronomyRef, scrollRef: astronomyScrollRef },
   ];
-
-  // 各セクションにスタイルを適用
-  const sectionStyle = (index: number): CSSProperties => ({
-    position: 'fixed',
-    top: currentSection === index ? '0' : (index < currentSection ? '-100vh' : '100vh'),
-    left: '50%',
-    transform: 'translateX(-50%)',
-    width: '96%',
-    height: '100vh',
-    overflow: 'hidden',
-    transition: 'top 0.6s cubic-bezier(0.65, 0, 0.35, 1)',
-    zIndex: currentSection === index ? 2 : 1,
-    visibility: Math.abs(currentSection - index) <= 1 ? 'visible' : 'hidden'
-  });
-
-  // -------------- スクロール挙動の設定
-  // 標準スクロールを完全に無効化
-  useEffect(() => {
-    const preventDefaultScroll = (e: Event) => {
-      e.preventDefault();
-    };
-
-    window.addEventListener('wheel', preventDefaultScroll, { passive: false });
-    window.addEventListener('touchmove', preventDefaultScroll, { passive: false });
-
-    return () => {
-      window.removeEventListener('wheel', preventDefaultScroll);
-      window.removeEventListener('touchmove', preventDefaultScroll);
-    };
-  }, []);
-
-  // カスタムスクロール処理
-  useEffect(() => {
-    const handleWheel = (e: WheelEvent) => {
-      if (scrollLocked || scrolling) return;
-
-      const direction = e.deltaY > 0 ? 1 : -1;
-      const currentScrollRef = sections[currentSection].scrollRef?.current;
-
-      setScrolling(true);
-
-      // スクロール可能要素の処理
-      if (currentScrollRef) {
-        const { scrollTop, scrollHeight, clientHeight } = currentScrollRef;
-
-        // テキストスクロールブロック用の倍率を設定（スクロール量を増やす）
-        const textScrollMultiplier = 3.0; // テキストブロックのスクロール倍率を増やす
-
-        // 基本スクロール量を計算
-        const baseScrollAmount = Math.min(Math.max(Math.abs(e.deltaY), 100), 600);
-
-        // テキストブロック用に増量したスクロール量
-        const textScrollAmount = baseScrollAmount * textScrollMultiplier * (direction > 0 ? 1 : -1);
-
-        // 下へのスクロール
-        if (direction > 0) {
-          const isAtBottom = Math.abs(scrollTop + clientHeight - scrollHeight) < 2;
-
-          if (!isAtBottom) {
-            // 内部スクロールを優先（スクロール量を増加）
-            currentScrollRef.scrollBy({
-              top: Math.abs(textScrollAmount),
-              behavior: 'smooth'
-            });
-            setTimeout(() => setScrolling(false), 150); // ロック時間も短縮
-            return;
-          }
-        }
-        // 上へのスクロール
-        else {
-          const isAtTop = scrollTop === 0;
-
-          if (!isAtTop) {
-            currentScrollRef.scrollBy({
-              top: textScrollAmount, // 負の値になるため、そのまま使用
-              behavior: 'smooth'
-            });
-            setTimeout(() => setScrolling(false), 150); // ロック時間も短縮
-            return;
-          }
-        }
-      }
-
-      // セクション間の移動
-      const nextSection = currentSection + direction;
-      if (nextSection >= 0 && nextSection < sections.length) {
-        setScrollLocked(true);
-        setCurrentSection(nextSection);
-
-        // 上方向の移動時、スクロール位置を調整
-        if (direction < 0 && sections[nextSection].scrollRef?.current) {
-          const nextScrollRef = sections[nextSection].scrollRef?.current;
-          setTimeout(() => {
-            nextScrollRef.scrollTop = nextScrollRef.scrollHeight - nextScrollRef.clientHeight;
-          }, 100);
-        }
-
-        // 移動完了後にロックを解除（トランジション時間も短縮）
-        setTimeout(() => {
-          setScrollLocked(false);
-          setScrolling(false);
-        }, 600);
-      } else {
-        setScrolling(false);
-      }
-    };
-
-    window.addEventListener('wheel', handleWheel, { passive: false });
-
-    return () => {
-      window.removeEventListener('wheel', handleWheel);
-    };
-  }, [currentSection, scrolling, scrollLocked]);
-
-  // スクロール可能な要素のスタイル関数を追加
-  const scrollableStyle = (isActive: boolean): CSSProperties => ({
-    overflowY: isActive ? 'auto' : 'hidden',
-    maxHeight: '96vh',
-    transition: 'all 0.3s ease'
-  });
+  const dummyRef = useRef<HTMLDivElement>(null);
+  const {
+    currentSection,
+    setCurrentSection,
+    scrollLocked,
+    setScrollLocked,
+    sectionStyle,
+    scrollableStyle
+  } = useSectionScroll(
+    sections.length,
+    sections.map(s => s.scrollRef ?? dummyRef)
+  );
 
   // -------------- 画像アニメーションの設定
-  // アニメーション用の状態
-  const [animateMerit, setAnimateMerit] = useState<boolean>(false);
-  const [animateDemerit, setAnimateDemerit] = useState<boolean>(false);
-
-  // 画像アニメーション用ステート
-  const [imageAnimationClass, setImageAnimationClass] = useState<string>('');
-  const [animationTimerId, setAnimationTimerId] = useState<number | null>(null);
-
-  // セクションの画像アニメーション用個別ステート
-  const [sectionImage1Class, setSectionImage1Class] = useState<string>('');
-  const [sectionImage2Class, setSectionImage2Class] = useState<string>('');
-  const [sectionImage3Class, setSectionImage3Class] = useState<string>('');
-  const [sectionImage4Class, setSectionImage4Class] = useState<string>('');
-  const [sectionImage5Class, setSectionImage5Class] = useState<string>('');
-  const [sectionImage6Class, setSectionImage6Class] = useState<string>('');
-
-  // アニメーションタイマー管理用
-  const [sectionAnimationTimers, setSectionAnimationTimers] = useState<number[]>([]);
-
-  // 移動アニメーションと特殊効果を分離管理
-  const [sectionImagesState, setSectionImagesState] = useState<string[]>(Array(6).fill('image-hidden'));
-  const [sectionImagesStyles, setSectionImagesStyles] = useState<CSSProperties[]>(Array(6).fill({}));
-  const [sectionImageEffects, setSectionImageEffects] = useState<string[]>(Array(6).fill(''));
-
-  // 各アニメーション要素の不透明度制御
-  const [imageVisibility, setImageVisibility] = useState<boolean[]>(Array(6).fill(false));
-
-  // タイマー管理
-  const animationTimerRefs = useRef<(number | null)[]>([]);
-  const effectTimerRefs = useRef<(number | null)[]>([]);
-
-  // 画像が表示されるたびにアニメーションを開始
-  useEffect(() => {
-    if (currentSection === 0) {
-      // アニメーションをリセット
-      setAnimateMerit(false);
-      setAnimateDemerit(false);
-
-      // 少し遅延させてからアニメーションを開始
-      const timer = setTimeout(() => {
-        setAnimateMerit(true);
-        setAnimateDemerit(true);
-      }, 100);
-
-      return () => clearTimeout(timer);
-    }
-  }, [currentSection]);
-
-  // セクション用のランダムアニメーション制御
-  useEffect(() => {
-    // 現在のセクションが表示されたとき
-    if (currentSection === 1) {  // 引き続き1を使用するが、将来的に変数化も可能
-      // 既存のタイマーをクリア
-      sectionAnimationTimers.forEach(timerId => clearTimeout(timerId));
-      setSectionAnimationTimers([]);
-
-      // すべての画像のアニメーションクラスをリセット
-      setSectionImage1Class('');
-      setSectionImage2Class('');
-      setSectionImage3Class('');
-      setSectionImage4Class('');
-      setSectionImage5Class('');
-      setSectionImage6Class('');
-
-      // 画像ごとのアニメーション設定を保持するオブジェクト
-      const imageSetters = [
-        setSectionImage1Class,
-        setSectionImage2Class,
-        setSectionImage3Class,
-        setSectionImage4Class,
-        setSectionImage5Class,
-        setSectionImage6Class
-      ];
-
-      // 各画像のアニメーション処理を開始する関数
-      const startRandomAnimations = () => {
-        const newTimers: number[] = [];
-
-        // 各画像に対してランダムなタイミングでアニメーションを設定
-        imageSetters.forEach((setter, index) => {
-          // 初回アニメーション開始までの遅延時間（1〜8秒のランダム）
-          const initialDelay = Math.floor(Math.random() * 7000) + 1000;
-
-          const timerId = setTimeout(() => {
-            // アニメーション開始
-            setter('shibuya-effect');
-
-            // アニメーション終了処理（1秒後）
-            const resetTimerId = setTimeout(() => {
-              setter('');
-
-              // 次回のアニメーション用再帰関数
-              const setupNextAnimation = () => {
-                // 次のアニメーションまでの間隔（5〜15秒）
-                const nextDelay = Math.floor(Math.random() * 10000) + 5000;
-
-                const nextTimerId = setTimeout(() => {
-                  // 次のアニメーション開始
-                  setter('shibuya-effect');
-
-                  // アニメーション終了処理
-                  setTimeout(() => {
-                    setter('');
-                    // 次のアニメーションをセットアップ
-                    setupNextAnimation();
-                  }, 1000);
-
-                }, nextDelay);
-
-                // 新しいタイマーIDを記録
-                setSectionAnimationTimers(prev => [...prev, nextTimerId]);
-              };
-
-              // 次のアニメーションサイクルを開始
-              setupNextAnimation();
-
-            }, 1000); // アニメーション持続時間
-
-            // リセットタイマーを記録
-            newTimers.push(resetTimerId);
-
-          }, initialDelay);
-
-          // 初期タイマーを記録
-          newTimers.push(timerId);
-        });
-
-        // すべてのタイマーを保存
-        setSectionAnimationTimers(prev => [...prev, ...newTimers]);
-      };
-
-      // アニメーション処理を開始
-      startRandomAnimations();
-
-      // クリーンアップ関数
-      return () => {
-        sectionAnimationTimers.forEach(timerId => clearTimeout(timerId));
-      };
-    } else {
-      // History セクション以外に移動したら、アニメーションをクリア
-      sectionAnimationTimers.forEach(timerId => clearTimeout(timerId));
-      setSectionAnimationTimers([]);
-      setSectionImage1Class('');
-      setSectionImage2Class('');
-      setSectionImage3Class('');
-      setSectionImage4Class('');
-      setSectionImage5Class('');
-      setSectionImage6Class('');
-    }
-  }, [currentSection]);
-
-  // 画像アニメーションの制御（ファーストビュー用）
-  useEffect(() => {
-    if (currentSection === 0) {
-      // アニメーションをリセット
-      setImageAnimationClass('');
-
-      // 既存のタイマーをクリア
-      if (animationTimerId) {
-        clearTimeout(animationTimerId);
-      }
-
-      // 初回表示は通常画像で開始
-
-      // 2秒後に最初のエフェクト
-      const initialTimer = setTimeout(() => {
-        setImageAnimationClass('shibuya-effect');
-
-        setTimeout(() => {
-          setImageAnimationClass('');
-
-          // ランダム間隔でエフェクト繰り返し
-          const startRandomAnimation = () => {
-            // 5〜15秒のランダムな間隔を生成（間隔を長くする）
-            const randomInterval = Math.floor(Math.random() * 10000) + 5000;
-
-            const timerId = setTimeout(() => {
-              // ランダムでエフェクトを切り替える
-              const effects = ['shibuya-effect'/*, 'random-glitch'*/];
-              const randomEffect = effects[Math.floor(Math.random() * effects.length)];
-
-              setImageAnimationClass(randomEffect);
-
-              // アニメーション終了を待つタイマーを延長（3.5秒に調整）
-              const effectDuration = randomEffect === 'shibuya-effect' ? 3500 : 3000;
-
-              setTimeout(() => {
-                setImageAnimationClass('');
-
-                // 次のアニメーション
-                startRandomAnimation();
-              }, effectDuration); // エフェクト終了後にリセット
-
-            }, randomInterval);
-
-            setAnimationTimerId(timerId);
-          };
-
-          // ランダムアニメーションを開始
-          startRandomAnimation();
-        }, 3500); // 最初のエフェクト終了まで待機時間を延長
-
-      }, 2000);
-
-      return () => {
-        clearTimeout(initialTimer);
-        if (animationTimerId) {
-          clearTimeout(animationTimerId);
-        }
-      };
-    } else {
-      // 他のセクションに移動したらアニメーション停止
-      if (animationTimerId) {
-        clearTimeout(animationTimerId);
-        setAnimationTimerId(null);
-      }
-    }
-  }, [currentSection]);
-
-  // 範囲外の位置を生成する関数
-  const generateOutsidePosition = () => {
-    const directions = ['top', 'right', 'bottom', 'left'];
-    const direction = directions[Math.floor(Math.random() * directions.length)];
-
-    // 範囲外の距離（ピクセル）
-    const distance = Math.floor(Math.random() * 500) + 300; // 300px〜800px
-
-    switch (direction) {
-      case 'top':
-        return { x: Math.floor(Math.random() * 400) - 200, y: -distance };
-      case 'right':
-        return { x: distance, y: Math.floor(Math.random() * 400) - 200 };
-      case 'bottom':
-        return { x: Math.floor(Math.random() * 400) - 200, y: distance };
-      case 'left':
-        return { x: -distance, y: Math.floor(Math.random() * 400) - 200 };
-      default:
-        return { x: 0, y: 0 };
-    }
-  };
-
-  // 歴史セクションのアニメーションを制御
-  useEffect(() => {
-    // セクション1（history）が表示されたとき
-    if (currentSection === 1) {
-      // タイマーをクリア
-      animationTimerRefs.current.forEach(timer => {
-        if (timer) clearTimeout(timer);
-      });
-      animationTimerRefs.current = [];
-
-      effectTimerRefs.current.forEach(timer => {
-        if (timer) clearTimeout(timer);
-      });
-      effectTimerRefs.current = [];
-
-      // 表示状態の初期化 - 初回表示時の問題を解決するために最初にすべてfalseに設定
-      setImageVisibility(Array(6).fill(false));
-
-      // 各画像ごとに独立してアニメーションを制御
-      for (let i = 0; i < 6; i++) {
-        // 画像の初期状態を非表示に
-        setSectionImagesState(prev => {
-          const newState = [...prev];
-          newState[i] = 'image-hidden';
-          return newState;
-        });
-
-        setSectionImageEffects(prev => {
-          const newEffects = [...prev];
-          newEffects[i] = '';
-          return newEffects;
-        });
-
-        // 各画像の表示開始をランダムに遅延（0〜5秒）
-        const startDisplayDelay = Math.random() * 5000;
-
-        // 画像のアニメーション処理を関数に分離
-        const startImageCycle = () => {
-          // 1. 入場アニメーションの準備
-          const startPos = generateOutsidePosition();
-          const endPos = generateOutsidePosition();
-
-          // スタイル設定
-          setSectionImagesStyles(prev => {
-            const updatedStyles = [...prev];
-            updatedStyles[i] = {
-              '--start-x': `${startPos.x}px`,
-              '--start-y': `${startPos.y}px`,
-              '--end-x': `${endPos.x}px`,
-              '--end-y': `${endPos.y}px`,
-            } as CSSProperties;
-            return updatedStyles;
-          });
-
-          // 2. 入場アニメーション開始
-          setSectionImagesState(prev => {
-            const newState = [...prev];
-            newState[i] = 'image-entering';
-            return newState;
-          });
-
-          // 3. 入場アニメーション完了後の処理
-          const visibleTimer = setTimeout(() => {
-            // 画像を表示状態に
-            setSectionImagesState(prev => {
-              const newState = [...prev];
-              newState[i] = 'image-visible';
-              return newState;
-            });
-
-            // エフェクト用の表示フラグをON
-            setImageVisibility(prev => {
-              const newVisibility = [...prev];
-              newVisibility[i] = true;
-              return newVisibility;
-            });
-
-            // 4. 特殊効果のアニメーション処理を別の関数として実装
-            const startRandomEffects = () => {
-              // 修正：初回表示時の問題解決のため条件をなくす
-              // if (!imageVisibility[i]) return;
-
-              // エフェクト開始までのランダム遅延時間を短縮（0.5〜2秒）
-              const effectDelay = Math.random() * 1500 + 500;
-
-              const effectTimer = setTimeout(() => {
-                // 特殊効果適用
-                setSectionImageEffects(prev => {
-                  const newEffects = [...prev];
-                  newEffects[i] = 'shibuya-effect';
-                  return newEffects;
-                });
-
-                // 効果終了処理（1秒のままで変更なし）
-                const effectEndTimer = setTimeout(() => {
-                  setSectionImageEffects(prev => {
-                    const newEffects = [...prev];
-                    newEffects[i] = '';
-                    return newEffects;
-                  });
-
-                  // 次のエフェクトまでの間隔を短縮（0.5〜1.5秒）
-                  const nextEffectDelay = Math.random() * 1000 + 500;
-
-                  // 次のエフェクトをスケジュール（より短い間隔で）
-                  const nextEffectTimer = setTimeout(() => {
-                    // まだ表示中なら次の効果を適用（ここでは条件を保持）
-                    if (imageVisibility[i]) {
-                      startRandomEffects();
-                    }
-                  }, nextEffectDelay);
-
-                  effectTimerRefs.current.push(nextEffectTimer);
-                }, 1000);
-
-                effectTimerRefs.current.push(effectEndTimer);
-              }, effectDelay);
-
-              effectTimerRefs.current.push(effectTimer);
-            };
-
-            // 特殊効果開始 - すぐに開始するためのタイマーを追加
-            setTimeout(() => {
-              startRandomEffects();
-            }, 100);
-
-            // 5. 表示時間をランダムに設定（5〜15秒）
-            const displayDuration = Math.random() * 10000 + 5000;
-
-            // 6. 表示終了後の処理
-            const exitTimer = setTimeout(() => {
-              // 特殊効果を表示しないようフラグをOFF
-              setImageVisibility(prev => {
-                const newVisibility = [...prev];
-                newVisibility[i] = false;
-                return newVisibility;
-              });
-
-              // 退場アニメーション開始
-              setSectionImagesState(prev => {
-                const newState = [...prev];
-                newState[i] = 'image-leaving';
-                return newState;
-              });
-
-              // 7. 退場アニメーション完了後の処理
-              const hideTimer = setTimeout(() => {
-                setSectionImagesState(prev => {
-                  const newState = [...prev];
-                  newState[i] = 'image-hidden';
-                  return newState;
-                });
-
-                // 次の表示サイクルまでのランダム遅延（2〜8秒）
-                const nextCycleDelay = Math.random() * 6000 + 2000;
-
-                const nextCycleTimer = setTimeout(() => {
-                  startImageCycle();
-                }, nextCycleDelay);
-
-                animationTimerRefs.current.push(nextCycleTimer);
-              }, 2000);
-
-              animationTimerRefs.current.push(hideTimer);
-            }, displayDuration);
-
-            animationTimerRefs.current.push(exitTimer);
-          }, 2000);
-
-          animationTimerRefs.current.push(visibleTimer);
-        };
-
-        // 初回の表示サイクルをスタート（ランダム遅延後）
-        const initialTimer = setTimeout(() => {
-          startImageCycle();
-        }, startDisplayDelay);
-
-        animationTimerRefs.current.push(initialTimer);
-      }
-
-      // クリーンアップ関数
-      return () => {
-        animationTimerRefs.current.forEach(timer => {
-          if (timer) clearTimeout(timer);
-        });
-        effectTimerRefs.current.forEach(timer => {
-          if (timer) clearTimeout(timer);
-        });
-      };
-    } else {
-      // History セクション以外に移動したら、アニメーションをクリア
-      animationTimerRefs.current.forEach(timer => {
-        if (timer) clearTimeout(timer);
-      });
-      effectTimerRefs.current.forEach(timer => {
-        if (timer) clearTimeout(timer);
-      });
-      setSectionImagesState(Array(6).fill('image-hidden'));
-      setSectionImageEffects(Array(6).fill(''));
-    }
-  }, [currentSection]);
-
-
-  // トップへ戻るボタンのスタイル
-  const topButtonStyle: CSSProperties = {
-    position: 'fixed',
-    bottom: '0',
-    left: '0',
-    padding: '10px 15px',
-    backgroundColor: 'rgba(0, 0, 0, 0.6)',
-    color: 'white',
-    border: 'none',
-    borderRadius: '5px',
-    cursor: 'pointer',
-    zIndex: 100,
-    fontSize: '14px',
-    transition: 'all 0.3s ease'
-  };
+  // FirstViewアニメーション用の状態（長所短所アニメ/セリーマップアニメ）
+  const { animateMerit, animateDemerit } = useFirstViewMeritDemeritAnimation(currentSection === 0);
+  const { imageAnimationClass } = useFirstViewImageAnimation(currentSection === 0);
+
+  // セクションの画像アニメーションを管理するカスタムフック
+  const historyImages = useSectionImageAnimations(currentSection === 1);
+  const socialGeographyImages = useSectionImageAnimations(currentSection === 2);
+  const earthHistoryImages = useSectionImageAnimations(currentSection === 3);
+  const naturalGeographyImages = useSectionImageAnimations(currentSection === 4);
+  const geologyImages = useSectionImageAnimations(currentSection === 5);
+  const atmosphereImages = useSectionImageAnimations(currentSection === 6);
+  const oceanographyImages = useSectionImageAnimations(currentSection === 7);
+  const astronomyImages = useSectionImageAnimations(currentSection === 8);
 
   // ページトップに戻る関数
   const scrollToTop = () => {
@@ -721,57 +169,59 @@ function SpaceTime() {
         ref={historyRef}
         style={sectionStyle(1)}>
         <div className='flex_setting'>
-          <div className='figure_block'>
+          {/*<div className='figure_block'>
             <figure className='block_figure_left_01 position_absolute'>
-              <img
-                src={SpaceTime_dummy01}
-                alt=""
-                className={`${sectionImagesState[0]} ${sectionImageEffects[0]}`}
-                style={sectionImagesStyles[0]}
+              <img src={SpaceTime_dummy01} alt=""
+                className={`${historyImages.imagesState[0]} ${historyImages.imageEffects[0]}`}
+                style={historyImages.imagesStyles[0]}
               />
             </figure>
             <figure className='block_figure_left_02 position_absolute'>
-              <img
-                src={SpaceTime_dummy02}
-                alt=""
-                className={`${sectionImagesState[1]} ${sectionImageEffects[1]}`}
-                style={sectionImagesStyles[1]}
+              <img src={SpaceTime_dummy02} alt=""
+                className={`${historyImages.imagesState[1]} ${historyImages.imageEffects[1]}`}
+                style={historyImages.imagesStyles[1]}
               />
             </figure>
             <figure className='block_figure_left_03 position_absolute'>
-              <img
-                src={SpaceTime_dummy03}
-                alt=""
-                className={`${sectionImagesState[2]} ${sectionImageEffects[2]}`}
-                style={sectionImagesStyles[2]}
+              <img src={SpaceTime_dummy03} alt=""
+                className={`${historyImages.imagesState[2]} ${historyImages.imageEffects[2]}`}
+                style={historyImages.imagesStyles[2]}
               />
             </figure>
             <figure className='block_figure_left_04 position_absolute'>
-              <img
-                src={SpaceTime_dummy04}
-                alt=""
-                className={`${sectionImagesState[3]} ${sectionImageEffects[3]}`}
-                style={sectionImagesStyles[3]}
+              <img src={SpaceTime_dummy04} alt=""
+                className={`${historyImages.imagesState[3]} ${historyImages.imageEffects[3]}`}
+                style={historyImages.imagesStyles[3]}
               />
             </figure>
             <figure className='block_figure_left_05 position_absolute'>
-              <img
-                src={SpaceTime_dummy05}
-                alt=""
-                className={`${sectionImagesState[4]} ${sectionImageEffects[4]}`}
-                style={sectionImagesStyles[4]}
+              <img src={SpaceTime_dummy05} alt=""
+                className={`${historyImages.imagesState[4]} ${historyImages.imageEffects[4]}`}
+                style={historyImages.imagesStyles[4]}
               />
             </figure>
             <figure className='block_figure_left_06 position_absolute'>
-              <img
-                src={SpaceTime_dummy06}
-                alt=""
-                className={`${sectionImagesState[5]} ${sectionImageEffects[5]}`}
-                style={sectionImagesStyles[5]}
+              <img src={SpaceTime_dummy06} alt=""
+                className={`${historyImages.imagesState[5]} ${historyImages.imageEffects[5]}`}
+                style={historyImages.imagesStyles[5]}
               />
             </figure>
-          </div>
-
+            
+          </div>*/}
+          <AnimatedFigureBlock
+            images={[
+              { src: SpaceTime_dummy01 },
+              { src: SpaceTime_dummy02 },
+              { src: SpaceTime_dummy03 },
+              { src: SpaceTime_dummy04 },
+              { src: SpaceTime_dummy05 },
+              { src: SpaceTime_dummy06 }
+            ]}
+            imagesState={historyImages.imagesState}
+            imagesStyles={historyImages.imagesStyles}
+            imageEffects={historyImages.imageEffects}
+            blockClass="left" // または "right"
+          />
           <div
             className='text_scroll_block scroller_decoration'
             ref={historyScrollRef}
@@ -854,14 +304,20 @@ function SpaceTime() {
               開発地理と災害地理を統合的に考えることで、地上の社会的な不平等や災害リスクを最小限に抑えるための知識を提供します。
             </p>
           </div>
-          <div className='figure_block'>
-            <figure className='block_figure_right_01 position_absolute'><img src={SpaceTime_dummy01} alt="" /></figure>
-            <figure className='block_figure_right_02 position_absolute'><img src={SpaceTime_dummy02} alt="" /></figure>
-            <figure className='block_figure_right_03 position_absolute'><img src={SpaceTime_dummy03} alt="" /></figure>
-            <figure className='block_figure_right_04 position_absolute'><img src={SpaceTime_dummy04} alt="" /></figure>
-            <figure className='block_figure_right_05 position_absolute'><img src={SpaceTime_dummy05} alt="" /></figure>
-            <figure className='block_figure_right_06 position_absolute'><img src={SpaceTime_dummy06} alt="" /></figure>
-          </div>
+          <AnimatedFigureBlock
+            images={[
+              { src: SpaceTime_dummy01 },
+              { src: SpaceTime_dummy02 },
+              { src: SpaceTime_dummy03 },
+              { src: SpaceTime_dummy04 },
+              { src: SpaceTime_dummy05 },
+              { src: SpaceTime_dummy06 }
+            ]}
+            imagesState={socialGeographyImages.imagesState}
+            imagesStyles={socialGeographyImages.imagesStyles}
+            imageEffects={socialGeographyImages.imageEffects}
+            blockClass="right"
+          />
         </div>
       </section>
 
@@ -872,14 +328,20 @@ function SpaceTime() {
         ref={earthHistoryRef}
         style={sectionStyle(3)}>
         <div className='flex_setting'>
-          <div className='figure_block'>
-            <figure className='block_figure_left_01 position_absolute'><img src={SpaceTime_dummy01} alt="" /></figure>
-            <figure className='block_figure_left_02 position_absolute'><img src={SpaceTime_dummy02} alt="" /></figure>
-            <figure className='block_figure_left_03 position_absolute'><img src={SpaceTime_dummy03} alt="" /></figure>
-            <figure className='block_figure_left_04 position_absolute'><img src={SpaceTime_dummy04} alt="" /></figure>
-            <figure className='block_figure_left_05 position_absolute'><img src={SpaceTime_dummy05} alt="" /></figure>
-            <figure className='block_figure_left_06 position_absolute'><img src={SpaceTime_dummy06} alt="" /></figure>
-          </div>
+          <AnimatedFigureBlock
+            images={[
+              { src: SpaceTime_dummy01 },
+              { src: SpaceTime_dummy02 },
+              { src: SpaceTime_dummy03 },
+              { src: SpaceTime_dummy04 },
+              { src: SpaceTime_dummy05 },
+              { src: SpaceTime_dummy06 }
+            ]}
+            imagesState={earthHistoryImages.imagesState}
+            imagesStyles={earthHistoryImages.imagesStyles}
+            imageEffects={earthHistoryImages.imageEffects}
+            blockClass="left"
+          />
           <div
             className='text_scroll_block scroller_decoration'
             ref={earthHistoryScrollRef}
@@ -921,14 +383,20 @@ function SpaceTime() {
               人間活動が自然環境に与える影響についても触れられるでしょう。
             </p>
           </div>
-          <div className='figure_block'>
-            <figure className='block_figure_right_01 position_absolute'><img src={SpaceTime_dummy01} alt="" /></figure>
-            <figure className='block_figure_right_02 position_absolute'><img src={SpaceTime_dummy02} alt="" /></figure>
-            <figure className='block_figure_right_03 position_absolute'><img src={SpaceTime_dummy03} alt="" /></figure>
-            <figure className='block_figure_right_04 position_absolute'><img src={SpaceTime_dummy04} alt="" /></figure>
-            <figure className='block_figure_right_05 position_absolute'><img src={SpaceTime_dummy05} alt="" /></figure>
-            <figure className='block_figure_right_06 position_absolute'><img src={SpaceTime_dummy06} alt="" /></figure>
-          </div>
+          <AnimatedFigureBlock
+            images={[
+              { src: SpaceTime_dummy01 },
+              { src: SpaceTime_dummy02 },
+              { src: SpaceTime_dummy03 },
+              { src: SpaceTime_dummy04 },
+              { src: SpaceTime_dummy05 },
+              { src: SpaceTime_dummy06 }
+            ]}
+            imagesState={naturalGeographyImages.imagesState}
+            imagesStyles={naturalGeographyImages.imagesStyles}
+            imageEffects={naturalGeographyImages.imageEffects}
+            blockClass="right"
+          />
         </div>
       </section>
 
@@ -939,14 +407,20 @@ function SpaceTime() {
         ref={geologyRef}
         style={sectionStyle(5)}>
         <div className='flex_setting'>
-          <div className='figure_block'>
-            <figure className='block_figure_left_01 position_absolute'><img src={SpaceTime_dummy01} alt="" /></figure>
-            <figure className='block_figure_left_02 position_absolute'><img src={SpaceTime_dummy02} alt="" /></figure>
-            <figure className='block_figure_left_03 position_absolute'><img src={SpaceTime_dummy03} alt="" /></figure>
-            <figure className='block_figure_left_04 position_absolute'><img src={SpaceTime_dummy04} alt="" /></figure>
-            <figure className='block_figure_left_05 position_absolute'><img src={SpaceTime_dummy05} alt="" /></figure>
-            <figure className='block_figure_left_06 position_absolute'><img src={SpaceTime_dummy06} alt="" /></figure>
-          </div>
+          <AnimatedFigureBlock
+            images={[
+              { src: SpaceTime_dummy01 },
+              { src: SpaceTime_dummy02 },
+              { src: SpaceTime_dummy03 },
+              { src: SpaceTime_dummy04 },
+              { src: SpaceTime_dummy05 },
+              { src: SpaceTime_dummy06 }
+            ]}
+            imagesState={geologyImages.imagesState}
+            imagesStyles={geologyImages.imagesStyles}
+            imageEffects={geologyImages.imageEffects}
+            blockClass="left"
+          />
           <div
             className='text_scroll_block scroller_decoration'
             ref={geologyScrollRef}
@@ -989,14 +463,20 @@ function SpaceTime() {
               最新の研究課題についても触れられるでしょう。
             </p>
           </div>
-          <div className='figure_block'>
-            <figure className='block_figure_right_01 position_absolute'><img src={SpaceTime_dummy01} alt="" /></figure>
-            <figure className='block_figure_right_02 position_absolute'><img src={SpaceTime_dummy02} alt="" /></figure>
-            <figure className='block_figure_right_03 position_absolute'><img src={SpaceTime_dummy03} alt="" /></figure>
-            <figure className='block_figure_right_04 position_absolute'><img src={SpaceTime_dummy04} alt="" /></figure>
-            <figure className='block_figure_right_05 position_absolute'><img src={SpaceTime_dummy05} alt="" /></figure>
-            <figure className='block_figure_right_06 position_absolute'><img src={SpaceTime_dummy06} alt="" /></figure>
-          </div>
+          <AnimatedFigureBlock
+            images={[
+              { src: SpaceTime_dummy01 },
+              { src: SpaceTime_dummy02 },
+              { src: SpaceTime_dummy03 },
+              { src: SpaceTime_dummy04 },
+              { src: SpaceTime_dummy05 },
+              { src: SpaceTime_dummy06 }
+            ]}
+            imagesState={atmosphereImages.imagesState}
+            imagesStyles={atmosphereImages.imagesStyles}
+            imageEffects={atmosphereImages.imageEffects}
+            blockClass="right"
+          />
         </div>
       </section>
 
@@ -1004,18 +484,23 @@ function SpaceTime() {
       <section
         className='block_text_right'
         id='oceanography'
-
         ref={oceanographyRef}
         style={sectionStyle(7)}>
         <div className='flex_setting'>
-          <div className='figure_block'>
-            <figure className='block_figure_left_01 position_absolute'><img src={SpaceTime_dummy01} alt="" /></figure>
-            <figure className='block_figure_left_02 position_absolute'><img src={SpaceTime_dummy02} alt="" /></figure>
-            <figure className='block_figure_left_03 position_absolute'><img src={SpaceTime_dummy03} alt="" /></figure>
-            <figure className='block_figure_left_04 position_absolute'><img src={SpaceTime_dummy04} alt="" /></figure>
-            <figure className='block_figure_left_05 position_absolute'><img src={SpaceTime_dummy05} alt="" /></figure>
-            <figure className='block_figure_left_06 position_absolute'><img src={SpaceTime_dummy06} alt="" /></figure>
-          </div>
+          <AnimatedFigureBlock
+            images={[
+              { src: SpaceTime_dummy01 },
+              { src: SpaceTime_dummy02 },
+              { src: SpaceTime_dummy03 },
+              { src: SpaceTime_dummy04 },
+              { src: SpaceTime_dummy05 },
+              { src: SpaceTime_dummy06 }
+            ]}
+            imagesState={oceanographyImages.imagesState}
+            imagesStyles={oceanographyImages.imagesStyles}
+            imageEffects={oceanographyImages.imageEffects}
+            blockClass="left"
+          />
           <div
             className='text_scroll_block scroller_decoration'
             ref={oceanographyScrollRef}
@@ -1059,42 +544,22 @@ function SpaceTime() {
               最新の宇宙論や天体物理学の課題についても触れられるでしょう。
             </p>
           </div>
-          <div className='figure_block'>
-            <figure className='block_figure_right_01 position_absolute'><img src={SpaceTime_dummy01} alt="" /></figure>
-            <figure className='block_figure_right_02 position_absolute'><img src={SpaceTime_dummy02} alt="" /></figure>
-            <figure className='block_figure_right_03 position_absolute'><img src={SpaceTime_dummy03} alt="" /></figure>
-            <figure className='block_figure_right_04 position_absolute'><img src={SpaceTime_dummy04} alt="" /></figure>
-            <figure className='block_figure_right_05 position_absolute'><img src={SpaceTime_dummy05} alt="" /></figure>
-            <figure className='block_figure_right_06 position_absolute'><img src={SpaceTime_dummy06} alt="" /></figure>
-          </div>
+          <AnimatedFigureBlock
+            images={[
+              { src: SpaceTime_dummy01 },
+              { src: SpaceTime_dummy02 },
+              { src: SpaceTime_dummy03 },
+              { src: SpaceTime_dummy04 },
+              { src: SpaceTime_dummy05 },
+              { src: SpaceTime_dummy06 }
+            ]}
+            imagesState={astronomyImages.imagesState}
+            imagesStyles={astronomyImages.imagesStyles}
+            imageEffects={astronomyImages.imageEffects}
+            blockClass="right"
+          />
         </div>
       </section>
-
-      {/* ページナビゲーション */}
-      {/* <div className="page-navigation" style={{ position: 'fixed', right: '20px', top: '50%', transform: 'translateY(-50%)', zIndex: 10 }}>
-        {sections.map((_, index) => (
-          <button
-            key={index}
-            onClick={() => {
-              if (!scrollLocked) {
-                setScrollLocked(true);
-                setCurrentSection(index);
-                setTimeout(() => setScrollLocked(false), 800);
-              }
-            }}
-            style={{
-              display: 'block',
-              width: '12px',
-              height: '12px',
-              margin: '10px 0',
-              borderRadius: '50%',
-              backgroundColor: currentSection === index ? '#333' : '#ccc',
-              border: 'none',
-              cursor: 'pointer'
-            }}
-          />
-        ))}
-      </div> */}
 
       {/* トップへ戻るボタン */}
       {currentSection > 0 && (
