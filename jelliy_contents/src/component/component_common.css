@@ -309,20 +309,19 @@ img {
 /* 既存のピクセル化アニメーション関連のスタイル */
 
 /* ピクセル化効果を強化したスタイル */
-.pixelated-image {
+/*.pixelated-image {
   image-rendering: pixelated;
   image-rendering: -moz-crisp-edges;
   image-rendering: crisp-edges;
-}
+}*/
 
 /* 標準からドット絵へのアニメーション */
-@keyframes to-pixelated {
+/*@keyframes to-pixelated {
   0% {
     filter: blur(0) contrast(1);
     transform: scale(1);
   }
   50% {
-    /* 一時的に縮小して低解像度にする */
     transform: scale(0.2);
   }
   100% {
@@ -332,10 +331,10 @@ img {
     image-rendering: crisp-edges;
     transform: scale(0.95);
   }
-}
+}*/
 
 /* ドット絵から標準へのアニメーション */
-@keyframes from-pixelated {
+/*/*@keyframes from-pixelated {
   0% {
     filter: blur(0) contrast(1.3);
     image-rendering: pixelated;
@@ -344,7 +343,6 @@ img {
     transform: scale(0.95);
   }
   50% {
-    /* 一時的に縮小してからスムーズに戻す */
     transform: scale(0.2);
     image-rendering: auto;
   }
@@ -361,10 +359,10 @@ img {
 
 .from-pixelated {
   animation: from-pixelated 1s ease-in-out forwards;
-}
+}*/
 
 /* 既存のアニメーションは残しておきます */
-@keyframes refine-image {
+/*@keyframes refine-image {
   0% {
     filter: blur(8px) contrast(1.2);
     transform: scale(1.01);
@@ -390,4 +388,142 @@ img {
 
 .refining-image {
   animation: refine-image 1.5s ease-out forwards;
+}*/
+
+/* ドット絵アニメーション */
+@keyframes shibuya-effect {
+  0% {
+    filter: none;
+  }
+
+  10% {
+    filter: url('#pixelate_x4')
+      /*contrast(1.3) brightness(1.1) saturate(1.2)*/
+    ;
+  }
+
+  40% {
+    filter: url('#noise') url('#pixelate_x2')
+    ;
+  }
+
+  75% {
+    filter: url('#pixelate_x4')
+      /*contrast(1.3) brightness(1.1) saturate(1.2);*/
+  }
+
+  100% {
+    filter: none;
+  }
+}
+
+.shibuya-effect {
+  animation: shibuya-effect 1.0s ease-in-out;
+}
+
+/* ランダム間隔でのグリッチ効果 */
+/*@keyframes random-glitch {
+  0% {
+    filter: none;
+  }
+  10% {
+    filter: url('#pixelate') contrast(1.1);
+  }
+  30% {
+    filter: url('#pixelate') contrast(1.2);
+  }
+  50% {
+    filter: url('#glitch') contrast(1.3);
+    filter: url('#pixelate2') contrast(1.2);
+  }
+  70% {
+    filter: url('#pixelate') contrast(1.2);
+  }
+  90% {
+    filter: blur(0.5px);
+  }
+  100% {
+    filter: none;
+  }
+}
+
+.random-glitch {
+  animation: random-glitch 3s ease-in-out;
+}*/
+
+/* 既存のスタイルに追加 */
+
+/* 画像移動アニメーション用のキーフレーム */
+@keyframes moveFromOutsideToPosition {
+  0% {
+    opacity: 0;
+    transform: translate(var(--start-x), var(--start-y));
+  }
+
+  70% {
+    opacity: 0.7;
+  }
+
+  100% {
+    opacity: 0.8;
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes moveFromPositionToOutside {
+  0% {
+    opacity: 0.8;
+    transform: translate(0, 0);
+  }
+
+  30% {
+    opacity: 0.7;
+  }
+
+  100% {
+    opacity: 0;
+    transform: translate(var(--end-x), var(--end-y));
+  }
+}
+
+.image-entering {
+  animation: moveFromOutsideToPosition 2s forwards;
+}
+
+.image-leaving {
+  animation: moveFromPositionToOutside 2s forwards;
+}
+
+.image-visible {
+  opacity: 0.8;
+}
+
+.image-hidden {
+  opacity: 0;
+}
+
+/* 画像コンテナとオーバーレイの配置 */
+.image-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.effect-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
+  /* オーバーレイを通過してクリックできるように */
+}
+
+/* オーバーレイに用いる画像の基本スタイル */
+.effect-overlay img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.8;
 }
