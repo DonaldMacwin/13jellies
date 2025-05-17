@@ -178,21 +178,21 @@ function SpaceTime() {
   const [imageAnimationClass, setImageAnimationClass] = useState<string>('');
   const [animationTimerId, setAnimationTimerId] = useState<number | null>(null);
 
-  // History セクションの画像アニメーション用個別ステート
-  const [historyImage1Class, setHistoryImage1Class] = useState<string>('');
-  const [historyImage2Class, setHistoryImage2Class] = useState<string>('');
-  const [historyImage3Class, setHistoryImage3Class] = useState<string>('');
-  const [historyImage4Class, setHistoryImage4Class] = useState<string>('');
-  const [historyImage5Class, setHistoryImage5Class] = useState<string>('');
-  const [historyImage6Class, setHistoryImage6Class] = useState<string>('');
+  // セクションの画像アニメーション用個別ステート
+  const [sectionImage1Class, setSectionImage1Class] = useState<string>('');
+  const [sectionImage2Class, setSectionImage2Class] = useState<string>('');
+  const [sectionImage3Class, setSectionImage3Class] = useState<string>('');
+  const [sectionImage4Class, setSectionImage4Class] = useState<string>('');
+  const [sectionImage5Class, setSectionImage5Class] = useState<string>('');
+  const [sectionImage6Class, setSectionImage6Class] = useState<string>('');
 
   // アニメーションタイマー管理用
-  const [historyAnimationTimers, setHistoryAnimationTimers] = useState<number[]>([]);
+  const [sectionAnimationTimers, setSectionAnimationTimers] = useState<number[]>([]);
 
   // 移動アニメーションと特殊効果を分離管理
-  const [historyImagesState, setHistoryImagesState] = useState<string[]>(Array(6).fill('image-hidden'));
-  const [historyImagesStyles, setHistoryImagesStyles] = useState<CSSProperties[]>(Array(6).fill({}));
-  const [historyImageEffects, setHistoryImageEffects] = useState<string[]>(Array(6).fill(''));
+  const [sectionImagesState, setSectionImagesState] = useState<string[]>(Array(6).fill('image-hidden'));
+  const [sectionImagesStyles, setSectionImagesStyles] = useState<CSSProperties[]>(Array(6).fill({}));
+  const [sectionImageEffects, setSectionImageEffects] = useState<string[]>(Array(6).fill(''));
 
   // 各アニメーション要素の不透明度制御
   const [imageVisibility, setImageVisibility] = useState<boolean[]>(Array(6).fill(false));
@@ -218,30 +218,30 @@ function SpaceTime() {
     }
   }, [currentSection]);
 
-  // History セクション用のランダムアニメーション制御
+  // セクション用のランダムアニメーション制御
   useEffect(() => {
-    // セクション1（history）が表示されたとき
-    if (currentSection === 1) {
+    // 現在のセクションが表示されたとき
+    if (currentSection === 1) {  // 引き続き1を使用するが、将来的に変数化も可能
       // 既存のタイマーをクリア
-      historyAnimationTimers.forEach(timerId => clearTimeout(timerId));
-      setHistoryAnimationTimers([]);
+      sectionAnimationTimers.forEach(timerId => clearTimeout(timerId));
+      setSectionAnimationTimers([]);
 
       // すべての画像のアニメーションクラスをリセット
-      setHistoryImage1Class('');
-      setHistoryImage2Class('');
-      setHistoryImage3Class('');
-      setHistoryImage4Class('');
-      setHistoryImage5Class('');
-      setHistoryImage6Class('');
+      setSectionImage1Class('');
+      setSectionImage2Class('');
+      setSectionImage3Class('');
+      setSectionImage4Class('');
+      setSectionImage5Class('');
+      setSectionImage6Class('');
 
       // 画像ごとのアニメーション設定を保持するオブジェクト
       const imageSetters = [
-        setHistoryImage1Class,
-        setHistoryImage2Class,
-        setHistoryImage3Class,
-        setHistoryImage4Class,
-        setHistoryImage5Class,
-        setHistoryImage6Class
+        setSectionImage1Class,
+        setSectionImage2Class,
+        setSectionImage3Class,
+        setSectionImage4Class,
+        setSectionImage5Class,
+        setSectionImage6Class
       ];
 
       // 各画像のアニメーション処理を開始する関数
@@ -280,7 +280,7 @@ function SpaceTime() {
                 }, nextDelay);
 
                 // 新しいタイマーIDを記録
-                setHistoryAnimationTimers(prev => [...prev, nextTimerId]);
+                setSectionAnimationTimers(prev => [...prev, nextTimerId]);
               };
 
               // 次のアニメーションサイクルを開始
@@ -298,7 +298,7 @@ function SpaceTime() {
         });
 
         // すべてのタイマーを保存
-        setHistoryAnimationTimers(prev => [...prev, ...newTimers]);
+        setSectionAnimationTimers(prev => [...prev, ...newTimers]);
       };
 
       // アニメーション処理を開始
@@ -306,18 +306,18 @@ function SpaceTime() {
 
       // クリーンアップ関数
       return () => {
-        historyAnimationTimers.forEach(timerId => clearTimeout(timerId));
+        sectionAnimationTimers.forEach(timerId => clearTimeout(timerId));
       };
     } else {
       // History セクション以外に移動したら、アニメーションをクリア
-      historyAnimationTimers.forEach(timerId => clearTimeout(timerId));
-      setHistoryAnimationTimers([]);
-      setHistoryImage1Class('');
-      setHistoryImage2Class('');
-      setHistoryImage3Class('');
-      setHistoryImage4Class('');
-      setHistoryImage5Class('');
-      setHistoryImage6Class('');
+      sectionAnimationTimers.forEach(timerId => clearTimeout(timerId));
+      setSectionAnimationTimers([]);
+      setSectionImage1Class('');
+      setSectionImage2Class('');
+      setSectionImage3Class('');
+      setSectionImage4Class('');
+      setSectionImage5Class('');
+      setSectionImage6Class('');
     }
   }, [currentSection]);
 
@@ -426,22 +426,19 @@ function SpaceTime() {
       });
       effectTimerRefs.current = [];
 
+      // 表示状態の初期化 - 初回表示時の問題を解決するために最初にすべてfalseに設定
+      setImageVisibility(Array(6).fill(false));
+
       // 各画像ごとに独立してアニメーションを制御
       for (let i = 0; i < 6; i++) {
         // 画像の初期状態を非表示に
-        setHistoryImagesState(prev => {
+        setSectionImagesState(prev => {
           const newState = [...prev];
           newState[i] = 'image-hidden';
           return newState;
         });
 
-        setImageVisibility(prev => {
-          const newVisibility = [...prev];
-          newVisibility[i] = false;
-          return newVisibility;
-        });
-
-        setHistoryImageEffects(prev => {
+        setSectionImageEffects(prev => {
           const newEffects = [...prev];
           newEffects[i] = '';
           return newEffects;
@@ -457,7 +454,7 @@ function SpaceTime() {
           const endPos = generateOutsidePosition();
 
           // スタイル設定
-          setHistoryImagesStyles(prev => {
+          setSectionImagesStyles(prev => {
             const updatedStyles = [...prev];
             updatedStyles[i] = {
               '--start-x': `${startPos.x}px`,
@@ -469,7 +466,7 @@ function SpaceTime() {
           });
 
           // 2. 入場アニメーション開始
-          setHistoryImagesState(prev => {
+          setSectionImagesState(prev => {
             const newState = [...prev];
             newState[i] = 'image-entering';
             return newState;
@@ -478,7 +475,7 @@ function SpaceTime() {
           // 3. 入場アニメーション完了後の処理
           const visibleTimer = setTimeout(() => {
             // 画像を表示状態に
-            setHistoryImagesState(prev => {
+            setSectionImagesState(prev => {
               const newState = [...prev];
               newState[i] = 'image-visible';
               return newState;
@@ -493,15 +490,15 @@ function SpaceTime() {
 
             // 4. 特殊効果のアニメーション処理を別の関数として実装
             const startRandomEffects = () => {
-              // 表示されていない場合は効果を適用しない
-              if (!imageVisibility[i]) return;
+              // 修正：初回表示時の問題解決のため条件をなくす
+              // if (!imageVisibility[i]) return;
 
               // エフェクト開始までのランダム遅延時間を短縮（0.5〜2秒）
               const effectDelay = Math.random() * 1500 + 500;
 
               const effectTimer = setTimeout(() => {
                 // 特殊効果適用
-                setHistoryImageEffects(prev => {
+                setSectionImageEffects(prev => {
                   const newEffects = [...prev];
                   newEffects[i] = 'shibuya-effect';
                   return newEffects;
@@ -509,7 +506,7 @@ function SpaceTime() {
 
                 // 効果終了処理（1秒のままで変更なし）
                 const effectEndTimer = setTimeout(() => {
-                  setHistoryImageEffects(prev => {
+                  setSectionImageEffects(prev => {
                     const newEffects = [...prev];
                     newEffects[i] = '';
                     return newEffects;
@@ -520,7 +517,7 @@ function SpaceTime() {
 
                   // 次のエフェクトをスケジュール（より短い間隔で）
                   const nextEffectTimer = setTimeout(() => {
-                    // まだ表示中なら次の効果を適用
+                    // まだ表示中なら次の効果を適用（ここでは条件を保持）
                     if (imageVisibility[i]) {
                       startRandomEffects();
                     }
@@ -535,8 +532,10 @@ function SpaceTime() {
               effectTimerRefs.current.push(effectTimer);
             };
 
-            // 特殊効果開始
-            startRandomEffects();
+            // 特殊効果開始 - すぐに開始するためのタイマーを追加
+            setTimeout(() => {
+              startRandomEffects();
+            }, 100);
 
             // 5. 表示時間をランダムに設定（5〜15秒）
             const displayDuration = Math.random() * 10000 + 5000;
@@ -551,7 +550,7 @@ function SpaceTime() {
               });
 
               // 退場アニメーション開始
-              setHistoryImagesState(prev => {
+              setSectionImagesState(prev => {
                 const newState = [...prev];
                 newState[i] = 'image-leaving';
                 return newState;
@@ -559,7 +558,7 @@ function SpaceTime() {
 
               // 7. 退場アニメーション完了後の処理
               const hideTimer = setTimeout(() => {
-                setHistoryImagesState(prev => {
+                setSectionImagesState(prev => {
                   const newState = [...prev];
                   newState[i] = 'image-hidden';
                   return newState;
@@ -609,8 +608,8 @@ function SpaceTime() {
       effectTimerRefs.current.forEach(timer => {
         if (timer) clearTimeout(timer);
       });
-      setHistoryImagesState(Array(6).fill('image-hidden'));
-      setHistoryImageEffects(Array(6).fill(''));
+      setSectionImagesState(Array(6).fill('image-hidden'));
+      setSectionImageEffects(Array(6).fill(''));
     }
   }, [currentSection]);
 
@@ -727,48 +726,48 @@ function SpaceTime() {
               <img
                 src={SpaceTime_dummy01}
                 alt=""
-                className={`${historyImagesState[0]} ${historyImageEffects[0]}`}
-                style={historyImagesStyles[0]}
+                className={`${sectionImagesState[0]} ${sectionImageEffects[0]}`}
+                style={sectionImagesStyles[0]}
               />
             </figure>
             <figure className='block_figure_left_02 position_absolute'>
               <img
                 src={SpaceTime_dummy02}
                 alt=""
-                className={`${historyImagesState[1]} ${historyImageEffects[1]}`}
-                style={historyImagesStyles[1]}
+                className={`${sectionImagesState[1]} ${sectionImageEffects[1]}`}
+                style={sectionImagesStyles[1]}
               />
             </figure>
             <figure className='block_figure_left_03 position_absolute'>
               <img
                 src={SpaceTime_dummy03}
                 alt=""
-                className={`${historyImagesState[2]} ${historyImageEffects[2]}`}
-                style={historyImagesStyles[2]}
+                className={`${sectionImagesState[2]} ${sectionImageEffects[2]}`}
+                style={sectionImagesStyles[2]}
               />
             </figure>
             <figure className='block_figure_left_04 position_absolute'>
               <img
                 src={SpaceTime_dummy04}
                 alt=""
-                className={`${historyImagesState[3]} ${historyImageEffects[3]}`}
-                style={historyImagesStyles[3]}
+                className={`${sectionImagesState[3]} ${sectionImageEffects[3]}`}
+                style={sectionImagesStyles[3]}
               />
             </figure>
             <figure className='block_figure_left_05 position_absolute'>
               <img
                 src={SpaceTime_dummy05}
                 alt=""
-                className={`${historyImagesState[4]} ${historyImageEffects[4]}`}
-                style={historyImagesStyles[4]}
+                className={`${sectionImagesState[4]} ${sectionImageEffects[4]}`}
+                style={sectionImagesStyles[4]}
               />
             </figure>
             <figure className='block_figure_left_06 position_absolute'>
               <img
                 src={SpaceTime_dummy06}
                 alt=""
-                className={`${historyImagesState[5]} ${historyImageEffects[5]}`}
-                style={historyImagesStyles[5]}
+                className={`${sectionImagesState[5]} ${sectionImageEffects[5]}`}
+                style={sectionImagesStyles[5]}
               />
             </figure>
           </div>
@@ -1028,6 +1027,7 @@ function SpaceTime() {
               深海探査や海洋資源、海洋汚染など、海洋に関する現代的な課題についても詳しく記述されます。
 
               ここにはダミーテキストが入ります。後で実際のコンテンツに置き換えられます。
+
               海洋学に関する詳細な内容がここに記載されます。海洋の物理的特性、化学的組成、
               海洋循環システムについての説明が含まれます。また、海洋生物学や海洋地質学、
               海洋探査の歴史と最新技術についても触れられるでしょう。
