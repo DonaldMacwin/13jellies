@@ -177,27 +177,26 @@ export function useSectionImageAnimations(active: boolean, imageCount: number) {
                 setImagesState(prev => { const n = [...prev]; n[i] = 'image-entering'; return n; });
                 // 3. 入場アニメーション完了後の処理
                 const visibleTimer = setTimeout(() => {
-                    setImagesState(prev => { const n = [...prev]; n[i] = 'image-visible'; return n; }); // 画像を表示
-                    setImageVisibility(prev => { const n = [...prev]; n[i] = true; return n; }); // エフェクト用の表示フラグをON
+                    setImagesState(prev => { const n = [...prev]; n[i] = 'image-visible'; return n; });
+                    setImageVisibility(prev => { const n = [...prev]; n[i] = true; return n; });
                     // 4. ランダムエフェクトの開始
+                    // 各画像ごとに effectTimer を1つだけ持つ
                     const startRandomEffects = () => {
-                        const effectDelay = Math.random() * 1500 + 500; //エフェクト開始までのランダム遅延時間を短縮（0.5〜2秒）
-                        const effectTimer = setTimeout(() => {
-                            // ランダムなエフェクトを適用
+                        // 既存のタイマーをクリア
+                        if (effectTimerRefs.current[i]) clearTimeout(effectTimerRefs.current[i]!);
+                        const effectDelay = Math.random() * 3500 + 500; //エフェクト開始までのランダム遅延時間を短縮（0.5〜4秒）
+                        effectTimerRefs.current[i] = setTimeout(() => {
                             setImageEffects(prev => { const n = [...prev]; n[i] = 'shibuya-effect'; return n; });
-                            const effectEndTimer = setTimeout(() => {
+                            // エフェクト終了後
+                            effectTimerRefs.current[i] = setTimeout(() => {
                                 setImageEffects(prev => { const n = [...prev]; n[i] = ''; return n; });
-                                const nextEffectDelay = Math.random() * 1000 + 500; //次のエフェクトまでのランダム遅延時間を短縮（0.5〜1.5秒）
-                                const nextEffectTimer = setTimeout(() => {
-                                    if (imageVisibility[i]) startRandomEffects();
-                                }, nextEffectDelay);
-                                effectTimerRefs.current.push(nextEffectTimer);
+                                // 次のエフェクト
+                                if (imageVisibility[i]) startRandomEffects();
                             }, 1000);
-                            effectTimerRefs.current.push(effectEndTimer);
                         }, effectDelay);
-                        effectTimerRefs.current.push(effectTimer);
                     };
-                    setTimeout(() => { startRandomEffects(); }, 100); // 初回のエフェクト開始
+                    setTimeout(() => { startRandomEffects(); }, 100);
+
                     // 5. 表示時間をランダムに設定（5〜15秒
                     const displayDuration = Math.random() * 10000 + 5000;
                     // 6. 退場アニメーションの開始
