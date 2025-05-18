@@ -6,7 +6,8 @@ import {
   useFirstViewMeritDemeritAnimation,
   useFirstViewImageAnimation,
   AnimatedFigureBlock,
-  topButtonStyle
+  topButtonStyle,
+  useStepImagePreload
 } from './_common_component';
 import SpaceTime_1stView from '../assets/img/SpaceTime_1stView01.png';
 import SpaceTime_dummy01 from '../assets/img/SpaceTime_dummy01.jpg';
@@ -143,16 +144,7 @@ function SpaceTime() {
   ];
   const astronomyImages = useSectionImageAnimations(currentSection === 8, astronomyImagesArray.length);
 
-  // ページトップに戻る関数
-  const scrollToTop = () => {
-    if (!scrollLocked) {
-      setScrollLocked(true);
-      setCurrentSection(0);
-      setTimeout(() => setScrollLocked(false), 600);
-    }
-  };
-
-  // --- 各セクションの外部HTML取得用stateとfetch処理 ---
+  // --- 各セクションの外部HTMLマークアップ取得用stateとfetch処理 ---
   const [historyHtml, setHistoryHtml] = useState<string>('');
   const [historyLoading, setHistoryLoading] = useState<boolean>(true);
   const [historyError, setHistoryError] = useState<string | null>(null);
@@ -304,33 +296,26 @@ function SpaceTime() {
       });
   }, []);
 
-  // --- 段階的に画像をプリロード ---
-  useEffect(() => {
-    // FirstView画像はimportで即読み込み済み
+  // --- 段階的に画像をプリロードさせ、loading表示の待機時間を減らす ---
+  useStepImagePreload([
+    historyImagesArray,
+    socialGeographyImagesArray,
+    earthHistoryImagesArray,
+    naturalGeographyImagesArray,
+    geologyImagesArray,
+    atmosphereImagesArray,
+    oceanographyImagesArray,
+    astronomyImagesArray
+  ]);
 
-    // 下層セクション画像を段階的にプリロード
-    const imageGroups = [
-      historyImagesArray,
-      socialGeographyImagesArray,
-      earthHistoryImagesArray,
-      naturalGeographyImagesArray,
-      geologyImagesArray,
-      atmosphereImagesArray,
-      oceanographyImagesArray,
-      astronomyImagesArray
-    ];
-    let idx = 0;
-    function preloadNextGroup() {
-      if (idx >= imageGroups.length) return;
-      imageGroups[idx].forEach(imgObj => {
-        const img = new window.Image();
-        img.src = imgObj.src;
-      });
-      idx++;
-      setTimeout(preloadNextGroup, 500); // 0.5秒ごとに次のグループ
+  // ページトップに戻る関数
+  const scrollToTop = () => {
+    if (!scrollLocked) {
+      setScrollLocked(true);
+      setCurrentSection(0);
+      setTimeout(() => setScrollLocked(false), 600);
     }
-    setTimeout(preloadNextGroup, 1000); // FirstView表示後1秒待って開始
-  }, []);
+  };
 
   return (
     <div className="component_container">
@@ -399,7 +384,7 @@ function SpaceTime() {
             ref={historyScrollRef}
             style={scrollableStyle(currentSection === 1)}>
             {historyLoading && <div>読み込み中...</div>}
-            {historyError && <div style={{color: 'red'}}>{historyError}</div>}
+            {historyError && <div style={{ color: 'red' }}>{historyError}</div>}
             {!historyLoading && !historyError && (
               <div dangerouslySetInnerHTML={{ __html: historyHtml }} />
             )}
@@ -419,7 +404,7 @@ function SpaceTime() {
             ref={socialGeographyScrollRef}
             style={scrollableStyle(currentSection === 2)}>
             {socialGeographyLoading && <div>読み込み中...</div>}
-            {socialGeographyError && <div style={{color: 'red'}}>{socialGeographyError}</div>}
+            {socialGeographyError && <div style={{ color: 'red' }}>{socialGeographyError}</div>}
             {!socialGeographyLoading && !socialGeographyError && (
               <div dangerouslySetInnerHTML={{ __html: socialGeographyHtml }} />
             )}
@@ -453,7 +438,7 @@ function SpaceTime() {
             ref={earthHistoryScrollRef}
             style={scrollableStyle(currentSection === 3)}>
             {earthHistoryLoading && <div>読み込み中...</div>}
-            {earthHistoryError && <div style={{color: 'red'}}>{earthHistoryError}</div>}
+            {earthHistoryError && <div style={{ color: 'red' }}>{earthHistoryError}</div>}
             {!earthHistoryLoading && !earthHistoryError && (
               <div dangerouslySetInnerHTML={{ __html: earthHistoryHtml }} />
             )}
@@ -473,7 +458,7 @@ function SpaceTime() {
             ref={naturalGeographyScrollRef}
             style={scrollableStyle(currentSection === 4)}>
             {naturalGeographyLoading && <div>読み込み中...</div>}
-            {naturalGeographyError && <div style={{color: 'red'}}>{naturalGeographyError}</div>}
+            {naturalGeographyError && <div style={{ color: 'red' }}>{naturalGeographyError}</div>}
             {!naturalGeographyLoading && !naturalGeographyError && (
               <div dangerouslySetInnerHTML={{ __html: naturalGeographyHtml }} />
             )}
@@ -507,7 +492,7 @@ function SpaceTime() {
             ref={geologyScrollRef}
             style={scrollableStyle(currentSection === 5)}>
             {geologyLoading && <div>読み込み中...</div>}
-            {geologyError && <div style={{color: 'red'}}>{geologyError}</div>}
+            {geologyError && <div style={{ color: 'red' }}>{geologyError}</div>}
             {!geologyLoading && !geologyError && (
               <div dangerouslySetInnerHTML={{ __html: geologyHtml }} />
             )}
@@ -527,7 +512,7 @@ function SpaceTime() {
             ref={atmosphereScrollRef}
             style={scrollableStyle(currentSection === 6)}>
             {atmosphereLoading && <div>読み込み中...</div>}
-            {atmosphereError && <div style={{color: 'red'}}>{atmosphereError}</div>}
+            {atmosphereError && <div style={{ color: 'red' }}>{atmosphereError}</div>}
             {!atmosphereLoading && !atmosphereError && (
               <div dangerouslySetInnerHTML={{ __html: atmosphereHtml }} />
             )}
@@ -561,7 +546,7 @@ function SpaceTime() {
             ref={oceanographyScrollRef}
             style={scrollableStyle(currentSection === 7)}>
             {oceanographyLoading && <div>読み込み中...</div>}
-            {oceanographyError && <div style={{color: 'red'}}>{oceanographyError}</div>}
+            {oceanographyError && <div style={{ color: 'red' }}>{oceanographyError}</div>}
             {!oceanographyLoading && !oceanographyError && (
               <div dangerouslySetInnerHTML={{ __html: oceanographyHtml }} />
             )}
@@ -581,7 +566,7 @@ function SpaceTime() {
             ref={astronomyScrollRef}
             style={scrollableStyle(currentSection === 8)}>
             {astronomyLoading && <div>読み込み中...</div>}
-            {astronomyError && <div style={{color: 'red'}}>{astronomyError}</div>}
+            {astronomyError && <div style={{ color: 'red' }}>{astronomyError}</div>}
             {!astronomyLoading && !astronomyError && (
               <div dangerouslySetInnerHTML={{ __html: astronomyHtml }} />
             )}

@@ -41,6 +41,33 @@ export const SharedImageFilters: React.FC = () => (
     </svg>
 );
 
+/**
+ * FirstView画像以外を段階的にプリロードする共通フック
+ * @param imageGroups 画像配列の配列（FirstView以外）
+ * @param delay 最初の遅延ms
+ * @param interval 各グループ間の遅延ms
+ */
+export function useStepImagePreload(
+    imageGroups: { src: string }[][],
+    delay: number = 1000, // FirstView表示後1秒待って開始
+    interval: number = 500 // 0.5秒ごとに次のグループ
+) {
+    useEffect(() => {
+        let idx = 0;
+        function preloadNextGroup() {
+            if (idx >= imageGroups.length) return;
+            imageGroups[idx].forEach(imgObj => {
+                const img = new window.Image();
+                img.src = imgObj.src;
+            });
+            idx++;
+            setTimeout(preloadNextGroup, interval);
+        }
+        const timer = setTimeout(preloadNextGroup, delay);
+        return () => clearTimeout(timer);
+    }, [imageGroups, delay, interval]);
+}
+
 export function useFirstViewMeritDemeritAnimation(active: boolean) {
     // FirstView長所短所アニメーション用の状態
     const [animateMerit, setAnimateMerit] = useState(false);
@@ -416,4 +443,3 @@ export const topButtonStyle: CSSProperties = {
     fontSize: '14px',
     transition: 'all 0.3s ease'
 };
-
