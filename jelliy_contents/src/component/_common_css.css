@@ -309,32 +309,31 @@ img {
 /* ドット絵アニメーション効果 */
 @keyframes shibuya-effect {
   0% {
-    filter: none;
+    filter: url('#noise');
   }
-
   10% {
-    filter: url('#pixelate_x4')
-      /*contrast(1.3) brightness(1.1) saturate(1.2)*/
-    ;
+    filter: url('#noise') url('#pixelate_x16');
+    /*contrast(1.3) brightness(1.1) saturate(1.2)*/
   }
-
-  40% {
+  30% {
+    filter: url('#noise') url('#pixelate_x4');
+  }
+  50% {
     filter: url('#noise') url('#pixelate_x2');
   }
-
-  75% {
-    filter: url('#pixelate_x4')
-      /*contrast(1.3) brightness(1.1) saturate(1.2)*/
-    ;
+  70% {
+    filter: url('#noise') url('#pixelate_x4');
   }
-
+  90% {
+    filter: url('#noise') url('#pixelate_x16');
+  }
   100% {
     filter: none;
   }
 }
 
 .shibuya-effect {
-  animation: shibuya-effect 1.0s ease-in-out !important;
+  animation: shibuya-effect 0.75s ease-in-out !important;
   will-change: filter;
 }
 

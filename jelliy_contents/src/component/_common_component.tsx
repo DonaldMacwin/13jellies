@@ -2,6 +2,45 @@ import React from 'react';
 import { useState, useEffect, useRef } from 'react';
 import type { CSSProperties, RefObject } from 'react';
 
+// -----------------アニメーション制御
+// 画像アニメエフェクト用SVGフィルター定義（全体で一度だけ配置）
+export const SharedImageFilters: React.FC = () => (
+    <svg style={{ position: 'absolute', width: 0, height: 0 }}>
+        <defs>
+            {/* 画像アニメーションのフィルター群 */}
+            {/* ピクセル化フィルター */}
+            <filter id="pixelate_x16">
+                <feFlood x="0" y="0" height="16" width="16" />
+                <feComposite width="32" height="32" />
+                <feTile result="a" />
+                <feComposite in="SourceGraphic" in2="a" operator="in" />
+                <feMorphology operator="dilate" radius="1" />
+            </filter>
+            <filter id="pixelate_x4">
+                <feFlood x="4" y="4" height="8" width="8" />
+                <feComposite width="16" height="16" />
+                <feTile result="a" />
+                <feComposite in="SourceGraphic" in2="a" operator="in" />
+                <feMorphology operator="dilate" radius="1" />
+            </filter>
+            <filter id="pixelate_x2">
+                <feFlood x="4" y="4" height="2" width="2" />
+                <feComposite width="8" height="8" />
+                <feTile result="a" />
+                <feComposite in="SourceGraphic" in2="a" operator="in" />
+                <feMorphology operator="dilate" radius="1" />
+            </filter>
+            {/* ノイズフィルター */}
+            <filter id="noise">
+                <feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch" />
+                <feColorMatrix type="matrix" values="0 0 0 0 0, 0 0 0 0 0, 0 0 0 0 0, 0 0 0 0.5 0" />
+                <feComposite operator="in" in2="SourceGraphic" />
+                <feBlend mode="multiply" in2="SourceGraphic" result="noisy" />
+            </filter>
+        </defs>
+    </svg>
+);
+
 export function useFirstViewMeritDemeritAnimation(active: boolean) {
     // FirstView長所短所アニメーション用の状態
     const [animateMerit, setAnimateMerit] = useState(false);
@@ -72,14 +111,24 @@ export function useFirstViewImageAnimation(active: boolean) {
 }
 
 // セクション内画像アニメーション用カスタムフック
-export function useSectionImageAnimations(active: boolean) {
+export function useSectionImageAnimations(active: boolean, imageCount: number) {
     // 画像アニメーション用の状態（表示、非表示、入場、退場）
-    const [imagesState, setImagesState] = useState<string[]>(Array(6).fill('image-hidden'));
-    const [imagesStyles, setImagesStyles] = useState<CSSProperties[]>(Array(6).fill({}));
-    const [imageEffects, setImageEffects] = useState<string[]>(Array(6).fill(''));
-    const [imageVisibility, setImageVisibility] = useState<boolean[]>(Array(6).fill(false));
+    const [imagesState, setImagesState] = useState<(
+        "image-hidden" | "image-leaving" | "image-visible" | "image-entering"
+    )[]>(Array(imageCount).fill("image-hidden"));
+    const [imagesStyles, setImagesStyles] = useState<CSSProperties[]>(Array(imageCount).fill({}));
+    const [imageEffects, setImageEffects] = useState<string[]>(Array(imageCount).fill(''));
+    const [imageVisibility, setImageVisibility] = useState<boolean[]>(Array(imageCount).fill(false));
     const animationTimerRefs = useRef<(number | null)[]>([]);
     const effectTimerRefs = useRef<(number | null)[]>([]);
+
+    // 状態配列のリサイズ
+    useEffect(() => {
+        setImagesState(prev => prev.length === imageCount ? prev : Array(imageCount).fill("image-hidden"));
+        setImagesStyles(prev => prev.length === imageCount ? prev : Array(imageCount).fill({}));
+        setImageEffects(prev => prev.length === imageCount ? prev : Array(imageCount).fill(''));
+        setImageVisibility(prev => prev.length === imageCount ? prev : Array(imageCount).fill(false));
+    }, [imageCount]);
 
     // 範囲外の位置を生成
     const generateOutsidePosition = () => {
@@ -94,21 +143,22 @@ export function useSectionImageAnimations(active: boolean) {
             default: return { x: 0, y: 0 };
         }
     };
+
     // セクションのアニメーション制御
     useEffect(() => {
         if (!active) {
             animationTimerRefs.current.forEach(timer => { if (timer) clearTimeout(timer); });
             effectTimerRefs.current.forEach(timer => { if (timer) clearTimeout(timer); });
-            setImagesState(Array(6).fill('image-hidden'));
-            setImageEffects(Array(6).fill(''));
+            setImagesState(Array(imageCount).fill('image-hidden'));
+            setImageEffects(Array(imageCount).fill(''));
             return;
         }
-        // 表示状態の初期化 - 初回表示時の問題を解決するために最初にすべてfalseに設定
-        setImageVisibility(Array(6).fill(false));
-        for (let i = 0; i < 6; i++) {
+        // 表示状態の初期化 - 初回表示時にアニメ動作が発火しない問題を解決するために最初にすべてfalseに設定
+        setImageVisibility(Array(imageCount).fill(false));
+        for (let i = 0; i < imageCount; i++) {
             setImagesState(prev => { const n = [...prev]; n[i] = 'image-hidden'; return n; });
             setImageEffects(prev => { const n = [...prev]; n[i] = ''; return n; });
-            const startDisplayDelay = Math.random() * 5000; // 各画像の表示開始をランダムに遅延（0〜5秒）
+            const startDisplayDelay = Math.random() * 5000; // 0〜5秒のランダム遅延時間
             const startImageCycle = () => {
                 // 1. 入場アニメーションの準備とスタイル設定
                 const startPos = generateOutsidePosition();
@@ -123,22 +173,21 @@ export function useSectionImageAnimations(active: boolean) {
                     } as CSSProperties;
                     return updated;
                 });
-                // 2. 入場アニメーション開始
+                // 2. 入場アニメーションの開始
                 setImagesState(prev => { const n = [...prev]; n[i] = 'image-entering'; return n; });
                 // 3. 入場アニメーション完了後の処理
                 const visibleTimer = setTimeout(() => {
-                    setImagesState(prev => { const n = [...prev]; n[i] = 'image-visible'; return n; }); // 画像を表示状態に
+                    setImagesState(prev => { const n = [...prev]; n[i] = 'image-visible'; return n; }); // 画像を表示
                     setImageVisibility(prev => { const n = [...prev]; n[i] = true; return n; }); // エフェクト用の表示フラグをON
-                    // 4. 特殊効果のアニメーション処理を別の関数として実装
+                    // 4. ランダムエフェクトの開始
                     const startRandomEffects = () => {
-                        const effectDelay = Math.random() * 1500 + 500; // エフェクト開始までのランダム遅延時間を短縮（0.5〜2秒）
+                        const effectDelay = Math.random() * 1500 + 500; //エフェクト開始までのランダム遅延時間を短縮（0.5〜2秒）
                         const effectTimer = setTimeout(() => {
-                            // 特殊効果適用
+                            // ランダムなエフェクトを適用
                             setImageEffects(prev => { const n = [...prev]; n[i] = 'shibuya-effect'; return n; });
                             const effectEndTimer = setTimeout(() => {
                                 setImageEffects(prev => { const n = [...prev]; n[i] = ''; return n; });
-                                const nextEffectDelay = Math.random() * 1000 + 500; // 次のエフェクトまでの間隔（0.5〜1.5秒）
-                                // 次のエフェクトをスケジュール
+                                const nextEffectDelay = Math.random() * 1000 + 500; //次のエフェクトまでのランダム遅延時間を短縮（0.5〜1.5秒）
                                 const nextEffectTimer = setTimeout(() => {
                                     if (imageVisibility[i]) startRandomEffects();
                                 }, nextEffectDelay);
@@ -148,18 +197,17 @@ export function useSectionImageAnimations(active: boolean) {
                         }, effectDelay);
                         effectTimerRefs.current.push(effectTimer);
                     };
-                    setTimeout(() => { startRandomEffects(); }, 100); // 特殊効果開始
-                     // 5. 表示時間をランダムに設定（5〜15秒）
+                    setTimeout(() => { startRandomEffects(); }, 100); // 初回のエフェクト開始
+                    // 5. 表示時間をランダムに設定（5〜15秒
                     const displayDuration = Math.random() * 10000 + 5000;
-                    // 6. 表示終了後の処理
+                    // 6. 退場アニメーションの開始
                     const exitTimer = setTimeout(() => {
                         setImageVisibility(prev => { const n = [...prev]; n[i] = false; return n; });
-                        // 退場アニメーション開始
                         setImagesState(prev => { const n = [...prev]; n[i] = 'image-leaving'; return n; });
                         // 7. 退場アニメーション完了後の処理
                         const hideTimer = setTimeout(() => {
                             setImagesState(prev => { const n = [...prev]; n[i] = 'image-hidden'; return n; });
-                            const nextCycleDelay = Math.random() * 6000 + 2000;// 次の表示サイクルまでのランダム遅延（2〜8秒）
+                            const nextCycleDelay = Math.random() * 6000 + 2000;
                             const nextCycleTimer = setTimeout(() => { startImageCycle(); }, nextCycleDelay);
                             animationTimerRefs.current.push(nextCycleTimer);
                         }, 2000);
@@ -177,49 +225,76 @@ export function useSectionImageAnimations(active: boolean) {
             effectTimerRefs.current.forEach(timer => { if (timer) clearTimeout(timer); });
         };
         // eslint-disable-next-line
-    }, [active]);
+    }, [active, imageCount]);
+
+    // 長時間表示のときのちらつき防止のために、最低1枚は常時表示
+    useEffect(() => {
+        if (!active) return;
+        const checkAndForceVisible = () => {
+            setImagesState(prev => {
+                const allHiddenOrLeaving = prev.every(s => s === 'image-hidden' || s === 'image-leaving');
+                if (allHiddenOrLeaving && prev.length > 0) {
+                    const idx = Math.floor(Math.random() * prev.length);
+                    const newStates = [...prev] as (
+                        "image-hidden" | "image-leaving" | "image-visible" | "image-entering"
+                    )[];
+                    newStates[idx] = 'image-visible';
+                    setImageVisibility(v => {
+                        const nv = [...v];
+                        nv[idx] = true;
+                        return nv;
+                    });
+                    return newStates;
+                }
+                return prev;
+            });
+        };
+        const id = setInterval(checkAndForceVisible, 500);
+        return () => clearInterval(id);
+    }, [active, imageCount]);
+
     return { imagesState, imagesStyles, imageEffects };
 }
 
-// -----------------各セクションの画像アニメーション設定
+// -----------------各セクションの画像配置の設定
 type AnimatedFigureBlockProps = {
-  images: { src: string; alt?: string }[];
-  imagesState: string[];
-  imagesStyles: React.CSSProperties[];
-  imageEffects: string[];
-  blockClass?: string; // 'left' or 'right' など
+    images: { src: string; alt?: string }[];
+    imagesState: string[];
+    imagesStyles: React.CSSProperties[];
+    imageEffects: string[];
+    blockClass?: string; // 'left' or 'right' など
 };
 
 export const AnimatedFigureBlock: React.FC<AnimatedFigureBlockProps> = ({
-  images,
-  imagesState,
-  imagesStyles,
-  imageEffects,
-  blockClass = 'left'
+    images,
+    imagesState,
+    imagesStyles,
+    imageEffects,
+    blockClass = 'left'
 }) => {
-  // クラス名のprefixを切り替え
-  const prefix = blockClass === 'right' ? 'block_figure_right_' : 'block_figure_left_';
+    // クラス名のprefixを切り替え
+    const prefix = blockClass === 'right' ? 'block_figure_right_' : 'block_figure_left_';
 
-  return (
-    <div className="figure_block">
-      {images.map((img, i) => (
-        <figure
-          key={i}
-          className={`${prefix}${String(i + 1).padStart(2, '0')} position_absolute`}
-        >
-          <img
-            src={img.src}
-            alt={img.alt ?? ''}
-            className={`${imagesState[i]} ${imageEffects[i]}`}
-            style={imagesStyles[i]}
-          />
-        </figure>
-      ))}
-    </div>
-  );
+    return (
+        <div className="figure_block">
+            {images.map((img, i) => (
+                <figure
+                    key={i}
+                    className={`${prefix}${String(i + 1).padStart(2, '0')} position_absolute`}
+                >
+                    <img
+                        src={img.src}
+                        alt={img.alt ?? ''}
+                        className={`${imagesState[i]} ${imageEffects[i]}`}
+                        style={imagesStyles[i]}
+                    />
+                </figure>
+            ))}
+        </div>
+    );
 };
 
-// 画面セクション移動・スクロール制御用カスタムフック
+// -----------------画面セクション移動・スクロール制御用カスタムフック
 export function useSectionScroll(
     sectionCount: number,
     scrollRefs: Array<RefObject<HTMLDivElement | null>>
