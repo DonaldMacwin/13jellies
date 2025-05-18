@@ -185,8 +185,13 @@ function SpaceTime() {
   const [astronomyLoading, setAstronomyLoading] = useState<boolean>(true);
   const [astronomyError, setAstronomyError] = useState<string | null>(null);
 
+  const basePath =
+    window.location.hostname === 'localhost'
+      ? '/texts/'
+      : `${import.meta.env.VITE_TEXTS_BASE_URL}/13jellies/jelliy_contents/dist/texts/`;
+
   useEffect(() => {
-    fetch('/texts/spaceTime_history.html')
+    fetch(`${basePath}spaceTime_history.html`)
       .then((res) => {
         if (!res.ok) throw new Error('ファイル取得エラー');
         return res.text();
@@ -200,7 +205,7 @@ function SpaceTime() {
         setHistoryLoading(false);
       });
 
-    fetch('/texts/spaceTime_social_geography.html')
+    fetch(`${basePath}spaceTime_social_geography.html`)
       .then((res) => {
         if (!res.ok) throw new Error('ファイル取得エラー');
         return res.text();
@@ -214,7 +219,7 @@ function SpaceTime() {
         setSocialGeographyLoading(false);
       });
 
-    fetch('/texts/spaceTime_earth_history.html')
+    fetch(`${basePath}spaceTime_earth_history.html`)
       .then((res) => {
         if (!res.ok) throw new Error('ファイル取得エラー');
         return res.text();
@@ -228,7 +233,7 @@ function SpaceTime() {
         setEarthHistoryLoading(false);
       });
 
-    fetch('/texts/spaceTime_natural_geography.html')
+    fetch(`${basePath}spaceTime_natural_geography.html`)
       .then((res) => {
         if (!res.ok) throw new Error('ファイル取得エラー');
         return res.text();
@@ -242,7 +247,7 @@ function SpaceTime() {
         setNaturalGeographyLoading(false);
       });
 
-    fetch('/texts/spaceTime_geology.html')
+    fetch(`${basePath}spaceTime_geology.html`)
       .then((res) => {
         if (!res.ok) throw new Error('ファイル取得エラー');
         return res.text();
@@ -256,7 +261,7 @@ function SpaceTime() {
         setGeologyLoading(false);
       });
 
-    fetch('/texts/spaceTime_atmosphere.html')
+    fetch(`${basePath}spaceTime_atmosphere.html`)
       .then((res) => {
         if (!res.ok) throw new Error('ファイル取得エラー');
         return res.text();
@@ -270,7 +275,7 @@ function SpaceTime() {
         setAtmosphereLoading(false);
       });
 
-    fetch('/texts/spaceTime_oceanography.html')
+    fetch(`${basePath}spaceTime_oceanography.html`)
       .then((res) => {
         if (!res.ok) throw new Error('ファイル取得エラー');
         return res.text();
@@ -284,7 +289,7 @@ function SpaceTime() {
         setOceanographyLoading(false);
       });
 
-    fetch('/texts/spaceTime_astronomy.html')
+    fetch(`${basePath}spaceTime_astronomy.html`)
       .then((res) => {
         if (!res.ok) throw new Error('ファイル取得エラー');
         return res.text();
@@ -297,6 +302,34 @@ function SpaceTime() {
         setAstronomyError('読み込みにエラーが発生しました。再読込してみてください。');
         setAstronomyLoading(false);
       });
+  }, []);
+
+  // --- 段階的に画像をプリロード ---
+  useEffect(() => {
+    // FirstView画像はimportで即読み込み済み
+
+    // 下層セクション画像を段階的にプリロード
+    const imageGroups = [
+      historyImagesArray,
+      socialGeographyImagesArray,
+      earthHistoryImagesArray,
+      naturalGeographyImagesArray,
+      geologyImagesArray,
+      atmosphereImagesArray,
+      oceanographyImagesArray,
+      astronomyImagesArray
+    ];
+    let idx = 0;
+    function preloadNextGroup() {
+      if (idx >= imageGroups.length) return;
+      imageGroups[idx].forEach(imgObj => {
+        const img = new window.Image();
+        img.src = imgObj.src;
+      });
+      idx++;
+      setTimeout(preloadNextGroup, 500); // 0.5秒ごとに次のグループ
+    }
+    setTimeout(preloadNextGroup, 1000); // FirstView表示後1秒待って開始
   }, []);
 
   return (
@@ -347,6 +380,7 @@ function SpaceTime() {
         </div>
       </section>
 
+      {/* 歴史セクション */}
       <section
         className='block_text_right'
         id='history'
@@ -373,6 +407,7 @@ function SpaceTime() {
         </div>
       </section>
 
+      {/* 社会地理セクション */}
       <section
         className='block_text_left'
         id='social_geography'

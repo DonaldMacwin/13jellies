@@ -11,7 +11,7 @@
     <main class="inner">
         <div id="root"></div>
         <script type="module" crossorigin src="./jelliy_contents/dist/jelliy_contents.js"></script>
-        <link rel="stylesheet" crossorigin href="./jelliy_contents/dist/assets/index-D8b4DHJx.css">
+        <link rel="stylesheet" crossorigin href="./jelliy_contents/dist/assets/index.css">
     </main>
 
     <?php 
