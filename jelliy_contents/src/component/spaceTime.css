@@ -61,3 +61,12 @@ h1.space_time_h1 {
         height: 13%;
     }
 }
+
+#history {
+    .block_figure_left_01 {
+      top: 20%;
+      left: 30%;
+      width: 70%;
+      z-index: +1;
+    }
+}
