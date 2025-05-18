@@ -1,6 +1,7 @@
 import { useRef } from 'react';
 import {
   useSectionScroll,
+  SharedImageFilters,
   useSectionImageAnimations,
   useFirstViewMeritDemeritAnimation,
   useFirstViewImageAnimation,
@@ -69,14 +70,78 @@ function SpaceTime() {
   const { imageAnimationClass } = useFirstViewImageAnimation(currentSection === 0);
 
   // セクションの画像アニメーションを管理するカスタムフック
-  const historyImages = useSectionImageAnimations(currentSection === 1);
-  const socialGeographyImages = useSectionImageAnimations(currentSection === 2);
-  const earthHistoryImages = useSectionImageAnimations(currentSection === 3);
-  const naturalGeographyImages = useSectionImageAnimations(currentSection === 4);
-  const geologyImages = useSectionImageAnimations(currentSection === 5);
-  const atmosphereImages = useSectionImageAnimations(currentSection === 6);
-  const oceanographyImages = useSectionImageAnimations(currentSection === 7);
-  const astronomyImages = useSectionImageAnimations(currentSection === 8);
+  const historyImagesArray = [
+    { src: SpaceTime_dummy01 },
+    { src: SpaceTime_dummy02 },
+    { src: SpaceTime_dummy03 },
+    { src: SpaceTime_dummy04 },
+    { src: SpaceTime_dummy05 },
+    { src: SpaceTime_dummy06 }
+  ];
+  const historyImages = useSectionImageAnimations(currentSection === 1, historyImagesArray.length);
+  const socialGeographyImagesArray = [
+    { src: SpaceTime_dummy01 },
+    { src: SpaceTime_dummy02 },
+    { src: SpaceTime_dummy03 },
+    { src: SpaceTime_dummy04 },
+    { src: SpaceTime_dummy05 },
+    { src: SpaceTime_dummy06 }
+  ];
+  const socialGeographyImages = useSectionImageAnimations(currentSection === 2, socialGeographyImagesArray.length);
+  const earthHistoryImagesArray = [
+    { src: SpaceTime_dummy01 },
+    { src: SpaceTime_dummy02 },
+    { src: SpaceTime_dummy03 },
+    { src: SpaceTime_dummy04 },
+    { src: SpaceTime_dummy05 },
+    { src: SpaceTime_dummy06 }
+  ];
+  const earthHistoryImages = useSectionImageAnimations(currentSection === 3, earthHistoryImagesArray.length);
+  const naturalGeographyImagesArray = [
+    { src: SpaceTime_dummy01 },
+    { src: SpaceTime_dummy02 },
+    { src: SpaceTime_dummy03 },
+    { src: SpaceTime_dummy04 },
+    { src: SpaceTime_dummy05 },
+    { src: SpaceTime_dummy06 }
+  ];
+  const naturalGeographyImages = useSectionImageAnimations(currentSection === 4, naturalGeographyImagesArray.length);
+  const geologyImagesArray = [
+    { src: SpaceTime_dummy01 },
+    { src: SpaceTime_dummy02 },
+    { src: SpaceTime_dummy03 },
+    { src: SpaceTime_dummy04 },
+    { src: SpaceTime_dummy05 },
+    { src: SpaceTime_dummy06 }
+  ];
+  const geologyImages = useSectionImageAnimations(currentSection === 5, geologyImagesArray.length);
+  const atmosphereImagesArray = [
+    { src: SpaceTime_dummy01 },
+    { src: SpaceTime_dummy02 },
+    { src: SpaceTime_dummy03 },
+    { src: SpaceTime_dummy04 },
+    { src: SpaceTime_dummy05 },
+    { src: SpaceTime_dummy06 }
+  ];
+  const atmosphereImages = useSectionImageAnimations(currentSection === 6, atmosphereImagesArray.length);
+  const oceanographyImagesArray = [
+    { src: SpaceTime_dummy01 },
+    { src: SpaceTime_dummy02 },
+    { src: SpaceTime_dummy03 },
+    { src: SpaceTime_dummy04 },
+    { src: SpaceTime_dummy05 },
+    { src: SpaceTime_dummy06 }
+  ];
+  const oceanographyImages = useSectionImageAnimations(currentSection === 7, oceanographyImagesArray.length);
+  const astronomyImagesArray = [
+    { src: SpaceTime_dummy01 },
+    { src: SpaceTime_dummy02 },
+    { src: SpaceTime_dummy03 },
+    { src: SpaceTime_dummy04 },
+    { src: SpaceTime_dummy05 },
+    { src: SpaceTime_dummy06 }
+  ];
+  const astronomyImages = useSectionImageAnimations(currentSection === 8, astronomyImagesArray.length);
 
   // ページトップに戻る関数
   const scrollToTop = () => {
@@ -89,38 +154,10 @@ function SpaceTime() {
 
   return (
     <div className="component_container">
-      <svg style={{ position: 'absolute', width: 0, height: 0 }}>
-        <defs>
-          {/* 画像アニメーションのフィルター群 */}
-          {/* ピクセル化フィルター */}
-          <filter id="pixelate_x4">
-            <feFlood x="4" y="4" height="8" width="8" />
-            <feComposite width="8" height="8" />
-            <feTile result="a" />
-            <feComposite in="SourceGraphic" in2="a" operator="in" />
-            <feMorphology operator="dilate" radius="1" />
-          </filter>
-
-          <filter id="pixelate_x2">
-            <feFlood x="4" y="4" height="2" width="2" />
-            <feComposite width="8" height="8" />
-            <feTile result="a" />
-            <feComposite in="SourceGraphic" in2="a" operator="in" />
-            <feMorphology operator="dilate" radius="1" />
-          </filter>
-
-          {/* ノイズフィルター */}
-          <filter id="noise">
-            <feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch" />
-            <feColorMatrix type="matrix" values="0 0 0 0 0, 0 0 0 0 0, 0 0 0 0 0, 0 0 0 0.5 0" />
-            <feComposite operator="in" in2="SourceGraphic" />
-            <feBlend mode="multiply" in2="SourceGraphic" result="noisy" />
-          </filter>
-        </defs>
-      </svg>
+      <SharedImageFilters />
 
       <section className='first_view' ref={firstViewRef} style={sectionStyle(0)}>
-        <h1 className='space_time_h1'>時空</h1>
+        <h1 className='space_time_h1'>時空間</h1>
         <div className='position_relative'>
           <figure className='jelly_map'>
             <img
@@ -169,58 +206,12 @@ function SpaceTime() {
         ref={historyRef}
         style={sectionStyle(1)}>
         <div className='flex_setting'>
-          {/*<div className='figure_block'>
-            <figure className='block_figure_left_01 position_absolute'>
-              <img src={SpaceTime_dummy01} alt=""
-                className={`${historyImages.imagesState[0]} ${historyImages.imageEffects[0]}`}
-                style={historyImages.imagesStyles[0]}
-              />
-            </figure>
-            <figure className='block_figure_left_02 position_absolute'>
-              <img src={SpaceTime_dummy02} alt=""
-                className={`${historyImages.imagesState[1]} ${historyImages.imageEffects[1]}`}
-                style={historyImages.imagesStyles[1]}
-              />
-            </figure>
-            <figure className='block_figure_left_03 position_absolute'>
-              <img src={SpaceTime_dummy03} alt=""
-                className={`${historyImages.imagesState[2]} ${historyImages.imageEffects[2]}`}
-                style={historyImages.imagesStyles[2]}
-              />
-            </figure>
-            <figure className='block_figure_left_04 position_absolute'>
-              <img src={SpaceTime_dummy04} alt=""
-                className={`${historyImages.imagesState[3]} ${historyImages.imageEffects[3]}`}
-                style={historyImages.imagesStyles[3]}
-              />
-            </figure>
-            <figure className='block_figure_left_05 position_absolute'>
-              <img src={SpaceTime_dummy05} alt=""
-                className={`${historyImages.imagesState[4]} ${historyImages.imageEffects[4]}`}
-                style={historyImages.imagesStyles[4]}
-              />
-            </figure>
-            <figure className='block_figure_left_06 position_absolute'>
-              <img src={SpaceTime_dummy06} alt=""
-                className={`${historyImages.imagesState[5]} ${historyImages.imageEffects[5]}`}
-                style={historyImages.imagesStyles[5]}
-              />
-            </figure>
-            
-          </div>*/}
           <AnimatedFigureBlock
-            images={[
-              { src: SpaceTime_dummy01 },
-              { src: SpaceTime_dummy02 },
-              { src: SpaceTime_dummy03 },
-              { src: SpaceTime_dummy04 },
-              { src: SpaceTime_dummy05 },
-              { src: SpaceTime_dummy06 }
-            ]}
+            images={historyImagesArray}
             imagesState={historyImages.imagesState}
             imagesStyles={historyImages.imagesStyles}
             imageEffects={historyImages.imageEffects}
-            blockClass="left" // または "right"
+            blockClass="left"
           />
           <div
             className='text_scroll_block scroller_decoration'
@@ -305,14 +296,7 @@ function SpaceTime() {
             </p>
           </div>
           <AnimatedFigureBlock
-            images={[
-              { src: SpaceTime_dummy01 },
-              { src: SpaceTime_dummy02 },
-              { src: SpaceTime_dummy03 },
-              { src: SpaceTime_dummy04 },
-              { src: SpaceTime_dummy05 },
-              { src: SpaceTime_dummy06 }
-            ]}
+            images={socialGeographyImagesArray}
             imagesState={socialGeographyImages.imagesState}
             imagesStyles={socialGeographyImages.imagesStyles}
             imageEffects={socialGeographyImages.imageEffects}
@@ -329,14 +313,7 @@ function SpaceTime() {
         style={sectionStyle(3)}>
         <div className='flex_setting'>
           <AnimatedFigureBlock
-            images={[
-              { src: SpaceTime_dummy01 },
-              { src: SpaceTime_dummy02 },
-              { src: SpaceTime_dummy03 },
-              { src: SpaceTime_dummy04 },
-              { src: SpaceTime_dummy05 },
-              { src: SpaceTime_dummy06 }
-            ]}
+            images={earthHistoryImagesArray}
             imagesState={earthHistoryImages.imagesState}
             imagesStyles={earthHistoryImages.imagesStyles}
             imageEffects={earthHistoryImages.imageEffects}
@@ -384,14 +361,7 @@ function SpaceTime() {
             </p>
           </div>
           <AnimatedFigureBlock
-            images={[
-              { src: SpaceTime_dummy01 },
-              { src: SpaceTime_dummy02 },
-              { src: SpaceTime_dummy03 },
-              { src: SpaceTime_dummy04 },
-              { src: SpaceTime_dummy05 },
-              { src: SpaceTime_dummy06 }
-            ]}
+            images={naturalGeographyImagesArray}
             imagesState={naturalGeographyImages.imagesState}
             imagesStyles={naturalGeographyImages.imagesStyles}
             imageEffects={naturalGeographyImages.imageEffects}
@@ -408,14 +378,7 @@ function SpaceTime() {
         style={sectionStyle(5)}>
         <div className='flex_setting'>
           <AnimatedFigureBlock
-            images={[
-              { src: SpaceTime_dummy01 },
-              { src: SpaceTime_dummy02 },
-              { src: SpaceTime_dummy03 },
-              { src: SpaceTime_dummy04 },
-              { src: SpaceTime_dummy05 },
-              { src: SpaceTime_dummy06 }
-            ]}
+            images={geologyImagesArray}
             imagesState={geologyImages.imagesState}
             imagesStyles={geologyImages.imagesStyles}
             imageEffects={geologyImages.imageEffects}
@@ -464,14 +427,7 @@ function SpaceTime() {
             </p>
           </div>
           <AnimatedFigureBlock
-            images={[
-              { src: SpaceTime_dummy01 },
-              { src: SpaceTime_dummy02 },
-              { src: SpaceTime_dummy03 },
-              { src: SpaceTime_dummy04 },
-              { src: SpaceTime_dummy05 },
-              { src: SpaceTime_dummy06 }
-            ]}
+            images={atmosphereImagesArray}
             imagesState={atmosphereImages.imagesState}
             imagesStyles={atmosphereImages.imagesStyles}
             imageEffects={atmosphereImages.imageEffects}
@@ -488,14 +444,7 @@ function SpaceTime() {
         style={sectionStyle(7)}>
         <div className='flex_setting'>
           <AnimatedFigureBlock
-            images={[
-              { src: SpaceTime_dummy01 },
-              { src: SpaceTime_dummy02 },
-              { src: SpaceTime_dummy03 },
-              { src: SpaceTime_dummy04 },
-              { src: SpaceTime_dummy05 },
-              { src: SpaceTime_dummy06 }
-            ]}
+            images={oceanographyImagesArray}
             imagesState={oceanographyImages.imagesState}
             imagesStyles={oceanographyImages.imagesStyles}
             imageEffects={oceanographyImages.imageEffects}
@@ -545,14 +494,7 @@ function SpaceTime() {
             </p>
           </div>
           <AnimatedFigureBlock
-            images={[
-              { src: SpaceTime_dummy01 },
-              { src: SpaceTime_dummy02 },
-              { src: SpaceTime_dummy03 },
-              { src: SpaceTime_dummy04 },
-              { src: SpaceTime_dummy05 },
-              { src: SpaceTime_dummy06 }
-            ]}
+            images={astronomyImagesArray}
             imagesState={astronomyImages.imagesState}
             imagesStyles={astronomyImages.imagesStyles}
             imageEffects={astronomyImages.imageEffects}
