@@ -10,12 +10,76 @@ import {
   useStepImagePreload
 } from './_common_component';
 import SpaceTime_1stView from '../assets/img/SpaceTime_1stView01.png';
-import SpaceTime_dummy01 from '../assets/img/SpaceTime_dummy01.jpg';
+/*import SpaceTime_dummy01 from '../assets/img/SpaceTime_dummy01.jpg';
 import SpaceTime_dummy02 from '../assets/img/SpaceTime_dummy02.jpg';
 import SpaceTime_dummy03 from '../assets/img/SpaceTime_dummy03.png';
 import SpaceTime_dummy04 from '../assets/img/SpaceTime_dummy02.jpg';
 import SpaceTime_dummy05 from '../assets/img/SpaceTime_dummy01.jpg';
-import SpaceTime_dummy06 from '../assets/img/SpaceTime_dummy02.jpg';
+import SpaceTime_dummy06 from '../assets/img/SpaceTime_dummy02.jpg';*/
+
+// history
+import SpaceTime_history01 from '../assets/img/SpaceTime_history01.jpg';
+import SpaceTime_history02 from '../assets/img/SpaceTime_history02.jpg';
+import SpaceTime_history03 from '../assets/img/SpaceTime_history03.png';
+import SpaceTime_history04 from '../assets/img/SpaceTime_history01.jpg';
+import SpaceTime_history05 from '../assets/img/SpaceTime_history02.jpg';
+import SpaceTime_history06 from '../assets/img/SpaceTime_history03.png';
+
+// socialGeography
+import SpaceTime_social01 from '../assets/img/SpaceTime_social01.jpg';
+import SpaceTime_social02 from '../assets/img/SpaceTime_social02.jpg';
+import SpaceTime_social03 from '../assets/img/SpaceTime_social03.png';
+import SpaceTime_social04 from '../assets/img/SpaceTime_social01.jpg';
+import SpaceTime_social05 from '../assets/img/SpaceTime_social02.jpg';
+import SpaceTime_social06 from '../assets/img/SpaceTime_social03.png';
+
+// earthHistory
+import SpaceTime_earth01 from '../assets/img/SpaceTime_earth01.jpg';
+import SpaceTime_earth02 from '../assets/img/SpaceTime_earth02.jpg';
+import SpaceTime_earth03 from '../assets/img/SpaceTime_earth03.png';
+import SpaceTime_earth04 from '../assets/img/SpaceTime_earth01.jpg';
+import SpaceTime_earth05 from '../assets/img/SpaceTime_earth02.jpg';
+import SpaceTime_earth06 from '../assets/img/SpaceTime_earth03.png';
+
+// naturalGeography
+import SpaceTime_natural01 from '../assets/img/SpaceTime_natural01.jpg';
+import SpaceTime_natural02 from '../assets/img/SpaceTime_natural02.jpg';
+import SpaceTime_natural03 from '../assets/img/SpaceTime_natural03.png';
+import SpaceTime_natural04 from '../assets/img/SpaceTime_natural01.jpg';
+import SpaceTime_natural05 from '../assets/img/SpaceTime_natural02.jpg';
+import SpaceTime_natural06 from '../assets/img/SpaceTime_natural03.png';
+
+// geology
+import SpaceTime_geology01 from '../assets/img/SpaceTime_geology01.jpg';
+import SpaceTime_geology02 from '../assets/img/SpaceTime_geology02.jpg';
+import SpaceTime_geology03 from '../assets/img/SpaceTime_geology03.png';
+import SpaceTime_geology04 from '../assets/img/SpaceTime_geology01.jpg';
+import SpaceTime_geology05 from '../assets/img/SpaceTime_geology02.jpg';
+import SpaceTime_geology06 from '../assets/img/SpaceTime_geology03.png';
+
+// atmosphere
+import SpaceTime_atmosphere01 from '../assets/img/SpaceTime_atmosphere01.jpg';
+import SpaceTime_atmosphere02 from '../assets/img/SpaceTime_atmosphere02.jpg';
+import SpaceTime_atmosphere03 from '../assets/img/SpaceTime_atmosphere03.png';
+import SpaceTime_atmosphere04 from '../assets/img/SpaceTime_atmosphere01.jpg';
+import SpaceTime_atmosphere05 from '../assets/img/SpaceTime_atmosphere02.jpg';
+import SpaceTime_atmosphere06 from '../assets/img/SpaceTime_atmosphere03.png';
+
+// oceanography
+import SpaceTime_ocean01 from '../assets/img/SpaceTime_ocean01.jpg';
+import SpaceTime_ocean02 from '../assets/img/SpaceTime_ocean02.jpg';
+import SpaceTime_ocean03 from '../assets/img/SpaceTime_ocean03.png';
+import SpaceTime_ocean04 from '../assets/img/SpaceTime_ocean01.jpg';
+import SpaceTime_ocean05 from '../assets/img/SpaceTime_ocean02.jpg';
+import SpaceTime_ocean06 from '../assets/img/SpaceTime_ocean03.png';
+
+// astronomy
+import SpaceTime_astronomy01 from '../assets/img/SpaceTime_astronomy01.jpg';
+import SpaceTime_astronomy02 from '../assets/img/SpaceTime_astronomy02.jpg';
+import SpaceTime_astronomy03 from '../assets/img/SpaceTime_astronomy03.png';
+import SpaceTime_astronomy04 from '../assets/img/SpaceTime_astronomy01.jpg';
+import SpaceTime_astronomy05 from '../assets/img/SpaceTime_astronomy02.jpg';
+import SpaceTime_astronomy06 from '../assets/img/SpaceTime_astronomy03.png';
 
 import './_common_css.css';
 import './spaceTime.css';
@@ -72,75 +136,75 @@ function SpaceTime() {
 
   // 各セクションの画像アニメーションを管理するカスタムフック
   const historyImagesArray = [
-    { src: SpaceTime_dummy01 },
-    { src: SpaceTime_dummy02 },
-    { src: SpaceTime_dummy03 },
-    { src: SpaceTime_dummy04 },
-    { src: SpaceTime_dummy05 },
-    { src: SpaceTime_dummy06 }
+    { src: SpaceTime_history01 },
+    { src: SpaceTime_history02 },
+    { src: SpaceTime_history03 },
+    { src: SpaceTime_history04 },
+    { src: SpaceTime_history05 },
+    { src: SpaceTime_history06 }
   ];
   const historyImages = useSectionImageAnimations(currentSection === 1, historyImagesArray.length);
   const socialGeographyImagesArray = [
-    { src: SpaceTime_dummy01 },
-    { src: SpaceTime_dummy02 },
-    { src: SpaceTime_dummy03 },
-    { src: SpaceTime_dummy04 },
-    { src: SpaceTime_dummy05 },
-    { src: SpaceTime_dummy06 }
+    { src: SpaceTime_social01 },
+    { src: SpaceTime_social02 },
+    { src: SpaceTime_social03 },
+    { src: SpaceTime_social04 },
+    { src: SpaceTime_social05 },
+    { src: SpaceTime_social06 }
   ];
   const socialGeographyImages = useSectionImageAnimations(currentSection === 2, socialGeographyImagesArray.length);
   const earthHistoryImagesArray = [
-    { src: SpaceTime_dummy01 },
-    { src: SpaceTime_dummy02 },
-    { src: SpaceTime_dummy03 },
-    { src: SpaceTime_dummy04 },
-    { src: SpaceTime_dummy05 },
-    { src: SpaceTime_dummy06 }
+    { src: SpaceTime_earth01 },
+    { src: SpaceTime_earth02 },
+    { src: SpaceTime_earth03 },
+    { src: SpaceTime_earth04 },
+    { src: SpaceTime_earth05 },
+    { src: SpaceTime_earth06 }
   ];
   const earthHistoryImages = useSectionImageAnimations(currentSection === 3, earthHistoryImagesArray.length);
   const naturalGeographyImagesArray = [
-    { src: SpaceTime_dummy01 },
-    { src: SpaceTime_dummy02 },
-    { src: SpaceTime_dummy03 },
-    { src: SpaceTime_dummy04 },
-    { src: SpaceTime_dummy05 },
-    { src: SpaceTime_dummy06 }
+    { src: SpaceTime_natural01 },
+    { src: SpaceTime_natural02 },
+    { src: SpaceTime_natural03 },
+    { src: SpaceTime_natural04 },
+    { src: SpaceTime_natural05 },
+    { src: SpaceTime_natural06 }
   ];
   const naturalGeographyImages = useSectionImageAnimations(currentSection === 4, naturalGeographyImagesArray.length);
   const geologyImagesArray = [
-    { src: SpaceTime_dummy01 },
-    { src: SpaceTime_dummy02 },
-    { src: SpaceTime_dummy03 },
-    { src: SpaceTime_dummy04 },
-    { src: SpaceTime_dummy05 },
-    { src: SpaceTime_dummy06 }
+    { src: SpaceTime_geology01 },
+    { src: SpaceTime_geology02 },
+    { src: SpaceTime_geology03 },
+    { src: SpaceTime_geology04 },
+    { src: SpaceTime_geology05 },
+    { src: SpaceTime_geology06 }
   ];
   const geologyImages = useSectionImageAnimations(currentSection === 5, geologyImagesArray.length);
   const atmosphereImagesArray = [
-    { src: SpaceTime_dummy01 },
-    { src: SpaceTime_dummy02 },
-    { src: SpaceTime_dummy03 },
-    { src: SpaceTime_dummy04 },
-    { src: SpaceTime_dummy05 },
-    { src: SpaceTime_dummy06 }
+    { src: SpaceTime_atmosphere01 },
+    { src: SpaceTime_atmosphere02 },
+    { src: SpaceTime_atmosphere03 },
+    { src: SpaceTime_atmosphere04 },
+    { src: SpaceTime_atmosphere05 },
+    { src: SpaceTime_atmosphere06 }
   ];
   const atmosphereImages = useSectionImageAnimations(currentSection === 6, atmosphereImagesArray.length);
   const oceanographyImagesArray = [
-    { src: SpaceTime_dummy01 },
-    { src: SpaceTime_dummy02 },
-    { src: SpaceTime_dummy03 },
-    { src: SpaceTime_dummy04 },
-    { src: SpaceTime_dummy05 },
-    { src: SpaceTime_dummy06 }
+    { src: SpaceTime_ocean01 },
+    { src: SpaceTime_ocean02 },
+    { src: SpaceTime_ocean03 },
+    { src: SpaceTime_ocean04 },
+    { src: SpaceTime_ocean05 },
+    { src: SpaceTime_ocean06 }
   ];
   const oceanographyImages = useSectionImageAnimations(currentSection === 7, oceanographyImagesArray.length);
   const astronomyImagesArray = [
-    { src: SpaceTime_dummy01 },
-    { src: SpaceTime_dummy02 },
-    { src: SpaceTime_dummy03 },
-    { src: SpaceTime_dummy04 },
-    { src: SpaceTime_dummy05 },
-    { src: SpaceTime_dummy06 }
+    { src: SpaceTime_astronomy01 },
+    { src: SpaceTime_astronomy02 },
+    { src: SpaceTime_astronomy03 },
+    { src: SpaceTime_astronomy04 },
+    { src: SpaceTime_astronomy05 },
+    { src: SpaceTime_astronomy06 }
   ];
   const astronomyImages = useSectionImageAnimations(currentSection === 8, astronomyImagesArray.length);
 
