@@ -223,7 +223,7 @@ function Art() {
       : `${import.meta.env.VITE_TEXTS_BASE_URL}/13jellies/jelliy_contents/dist/texts/`;
 
   useEffect(() => {
-    fetch(`${basePath}spaceTime_history.html`)
+    fetch(`${basePath}art_planar_modeling.html`)
       .then((res) => {
         if (!res.ok) throw new Error('ファイル取得エラー');
         return res.text();
@@ -237,7 +237,7 @@ function Art() {
         setPlanarModelingLoading(false);
       });
 
-    fetch(`${basePath}spaceTime_social_geography.html`)
+    fetch(`${basePath}art_three_D_modeling.html`)
       .then((res) => {
         if (!res.ok) throw new Error('ファイル取得エラー');
         return res.text();
@@ -251,7 +251,7 @@ function Art() {
         setThreeDModelingLoading(false);
       });
 
-    fetch(`${basePath}spaceTime_earth_history.html`)
+    fetch(`${basePath}art_literature.html`)
       .then((res) => {
         if (!res.ok) throw new Error('ファイル取得エラー');
         return res.text();
@@ -265,7 +265,7 @@ function Art() {
         setLiteratureLoading(false);
       });
 
-    fetch(`${basePath}spaceTime_natural_geography.html`)
+    fetch(`${basePath}art_communication_technique.html`)
       .then((res) => {
         if (!res.ok) throw new Error('ファイル取得エラー');
         return res.text();
@@ -279,7 +279,7 @@ function Art() {
         setCommunicationTechniqueLoading(false);
       });
 
-    fetch(`${basePath}spaceTime_geology.html`)
+    fetch(`${basePath}art_music.html`)
       .then((res) => {
         if (!res.ok) throw new Error('ファイル取得エラー');
         return res.text();
@@ -293,7 +293,7 @@ function Art() {
         setMusicLoading(false);
       });
 
-    fetch(`${basePath}spaceTime_atmosphere.html`)
+    fetch(`${basePath}art_cooking.html`)
       .then((res) => {
         if (!res.ok) throw new Error('ファイル取得エラー');
         return res.text();
@@ -307,7 +307,7 @@ function Art() {
         setCookingLoading(false);
       });
 
-    fetch(`${basePath}spaceTime_oceanography.html`)
+    fetch(`${basePath}art_performing.html`)
       .then((res) => {
         if (!res.ok) throw new Error('ファイル取得エラー');
         return res.text();
