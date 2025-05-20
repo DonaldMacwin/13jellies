@@ -338,6 +338,7 @@ export function useSectionScroll(
         transform: 'translateX(-50%)',
         width: '96%',
         height: '100vh',
+        maxWidth: '1440px',
         overflow: 'hidden',
         transition: 'top 0.6s cubic-bezier(0.65, 0, 0.35, 1)',
         zIndex: currentSection === index ? 2 : 1,
