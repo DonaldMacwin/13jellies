@@ -5,6 +5,7 @@ import './App.css'
 import { useState, useEffect } from 'react';
 //import ReactDOM from 'react-dom';
 import SpaceTime from './component/spaceTime';
+import Art from './component/art';
 
 function App() {
   const [currentHash, setCurrentHash] = useState(window.location.hash);
@@ -31,7 +32,7 @@ function App() {
   } else if (currentHash === '#industry') {
     return <div>industry</div>;
   } else if (currentHash === '#art') {
-    return <div>art</div>;
+    return <Art />;
   } else if (currentHash === '#society') {
     return <div>society</div>;
   } else if (currentHash === '#medicine') {
