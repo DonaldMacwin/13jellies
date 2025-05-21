@@ -10,68 +10,62 @@ import {
   useStepImagePreload
 } from './_common_component';
 import Art_1stView from '../assets/img/Art_1stView01.png';
-/*import SpaceTime_dummy01 from '../assets/img/SpaceTime_dummy01.jpg';
-import SpaceTime_dummy02 from '../assets/img/SpaceTime_dummy02.jpg';
-import SpaceTime_dummy03 from '../assets/img/SpaceTime_dummy03.png';
-import SpaceTime_dummy04 from '../assets/img/SpaceTime_dummy02.jpg';
-import SpaceTime_dummy05 from '../assets/img/SpaceTime_dummy01.jpg';
-import SpaceTime_dummy06 from '../assets/img/SpaceTime_dummy02.jpg';*/
 
-// history
-import SpaceTime_history01 from '../assets/img/SpaceTime_history01.jpg';
-import SpaceTime_history02 from '../assets/img/SpaceTime_history02.jpg';
-import SpaceTime_history03 from '../assets/img/SpaceTime_history03.png';
-import SpaceTime_history04 from '../assets/img/SpaceTime_history01.jpg';
-import SpaceTime_history05 from '../assets/img/SpaceTime_history02.jpg';
-import SpaceTime_history06 from '../assets/img/SpaceTime_history03.png';
+// 平面造形
+import Art_planar_modeling01 from '../assets/img/Art_planar_modeling01.jpg';
+import Art_planar_modeling02 from '../assets/img/Art_planar_modeling02.jpg';
+import Art_planar_modeling03 from '../assets/img/Art_planar_modeling03.png';
+import Art_planar_modeling04 from '../assets/img/Art_planar_modeling01.jpg'; // ダミー
+import Art_planar_modeling05 from '../assets/img/Art_planar_modeling02.jpg'; // ダミー
+import Art_planar_modeling06 from '../assets/img/Art_planar_modeling03.png'; // ダミー
 
-// socialGeography
-import SpaceTime_social01 from '../assets/img/SpaceTime_social01.jpg';
-import SpaceTime_social02 from '../assets/img/SpaceTime_social02.jpg';
-import SpaceTime_social03 from '../assets/img/SpaceTime_social03.png';
-import SpaceTime_social04 from '../assets/img/SpaceTime_social01.jpg';
-import SpaceTime_social05 from '../assets/img/SpaceTime_social02.jpg';
-import SpaceTime_social06 from '../assets/img/SpaceTime_social03.png';
+// 立体造形
+import Art_three_D_modeling01 from '../assets/img/Art_three_D_modeling01.jpg';
+import Art_three_D_modeling02 from '../assets/img/Art_three_D_modeling02.jpg';
+import Art_three_D_modeling03 from '../assets/img/Art_three_D_modeling03.png';
+import Art_three_D_modeling04 from '../assets/img/Art_three_D_modeling01.jpg'; // ダミー
+import Art_three_D_modeling05 from '../assets/img/Art_three_D_modeling02.jpg'; // ダミー
+import Art_three_D_modeling06 from '../assets/img/Art_three_D_modeling03.png'; // ダミー
 
-// earthHistory
-import SpaceTime_earth01 from '../assets/img/SpaceTime_earth01.jpg';
-import SpaceTime_earth02 from '../assets/img/SpaceTime_earth02.jpg';
-import SpaceTime_earth03 from '../assets/img/SpaceTime_earth03.png';
-import SpaceTime_earth04 from '../assets/img/SpaceTime_earth01.jpg';
-import SpaceTime_earth05 from '../assets/img/SpaceTime_earth02.jpg';
-import SpaceTime_earth06 from '../assets/img/SpaceTime_earth03.png';
+// 文学
+import Art_literature01 from '../assets/img/Art_literature01.jpg';
+import Art_literature02 from '../assets/img/Art_literature02.jpg';
+import Art_literature03 from '../assets/img/Art_literature03.png';
+import Art_literature04 from '../assets/img/Art_literature01.jpg'; // ダミー
+import Art_literature05 from '../assets/img/Art_literature02.jpg'; // ダミー
+import Art_literature06 from '../assets/img/Art_literature03.png'; // ダミー
 
-// naturalGeography
-import SpaceTime_natural01 from '../assets/img/SpaceTime_natural01.jpg';
-import SpaceTime_natural02 from '../assets/img/SpaceTime_natural02.jpg';
-import SpaceTime_natural03 from '../assets/img/SpaceTime_natural03.png';
-import SpaceTime_natural04 from '../assets/img/SpaceTime_natural01.jpg';
-import SpaceTime_natural05 from '../assets/img/SpaceTime_natural02.jpg';
-import SpaceTime_natural06 from '../assets/img/SpaceTime_natural03.png';
+// 伝達技法研究
+import Art_communication_technique01 from '../assets/img/Art_communication_technique01.jpg';
+import Art_communication_technique02 from '../assets/img/Art_communication_technique02.jpg';
+import Art_communication_technique03 from '../assets/img/Art_communication_technique03.png';
+import Art_communication_technique04 from '../assets/img/Art_communication_technique01.jpg'; // ダミー
+import Art_communication_technique05 from '../assets/img/Art_communication_technique02.jpg'; // ダミー
+import Art_communication_technique06 from '../assets/img/Art_communication_technique03.png'; // ダミー
 
-// geology
-import SpaceTime_geology01 from '../assets/img/SpaceTime_geology01.jpg';
-import SpaceTime_geology02 from '../assets/img/SpaceTime_geology02.jpg';
-import SpaceTime_geology03 from '../assets/img/SpaceTime_geology03.png';
-import SpaceTime_geology04 from '../assets/img/SpaceTime_geology01.jpg';
-import SpaceTime_geology05 from '../assets/img/SpaceTime_geology02.jpg';
-import SpaceTime_geology06 from '../assets/img/SpaceTime_geology03.png';
+// 音楽
+import Art_music01 from '../assets/img/Art_music01.jpg';
+import Art_music02 from '../assets/img/Art_music02.jpg';
+import Art_music03 from '../assets/img/Art_music03.png';
+import Art_music04 from '../assets/img/Art_music01.jpg'; // ダミー
+import Art_music05 from '../assets/img/Art_music02.jpg'; // ダミー
+import Art_music06 from '../assets/img/Art_music03.png'; // ダミー
 
-// atmosphere
-import SpaceTime_atmosphere01 from '../assets/img/SpaceTime_atmosphere01.jpg';
-import SpaceTime_atmosphere02 from '../assets/img/SpaceTime_atmosphere02.jpg';
-import SpaceTime_atmosphere03 from '../assets/img/SpaceTime_atmosphere03.png';
-import SpaceTime_atmosphere04 from '../assets/img/SpaceTime_atmosphere01.jpg';
-import SpaceTime_atmosphere05 from '../assets/img/SpaceTime_atmosphere02.jpg';
-import SpaceTime_atmosphere06 from '../assets/img/SpaceTime_atmosphere03.png';
+// 料理
+import Art_cooking01 from '../assets/img/Art_cooking01.jpg';
+import Art_cooking02 from '../assets/img/Art_cooking02.jpg';
+import Art_cooking03 from '../assets/img/Art_cooking03.png';
+import Art_cooking04 from '../assets/img/Art_cooking01.jpg'; // ダミー
+import Art_cooking05 from '../assets/img/Art_cooking02.jpg'; // ダミー
+import Art_cooking06 from '../assets/img/Art_cooking03.png'; // ダミー
 
-// oceanography
-import SpaceTime_ocean01 from '../assets/img/SpaceTime_ocean01.jpg';
-import SpaceTime_ocean02 from '../assets/img/SpaceTime_ocean02.jpg';
-import SpaceTime_ocean03 from '../assets/img/SpaceTime_ocean03.png';
-import SpaceTime_ocean04 from '../assets/img/SpaceTime_ocean01.jpg';
-import SpaceTime_ocean05 from '../assets/img/SpaceTime_ocean02.jpg';
-import SpaceTime_ocean06 from '../assets/img/SpaceTime_ocean03.png';
+// 舞台芸術
+import Art_performing01 from '../assets/img/Art_performing01.jpg';
+import Art_performing02 from '../assets/img/Art_performing02.jpg';
+import Art_performing03 from '../assets/img/Art_performing03.png';
+import Art_performing04 from '../assets/img/Art_performing01.jpg'; // ダミー
+import Art_performing05 from '../assets/img/Art_performing02.jpg'; // ダミー
+import Art_performing06 from '../assets/img/Art_performing03.png'; // ダミー
 
 import './_common_css.css';
 import './art.css';
@@ -125,66 +119,66 @@ function Art() {
 
   // 各セクションの画像アニメーションを管理するカスタムフック
   const planarModelingImagesArray = [
-    { src: SpaceTime_history01 },
-    { src: SpaceTime_history02 },
-    { src: SpaceTime_history03 },
-    { src: SpaceTime_history04 },
-    { src: SpaceTime_history05 },
-    { src: SpaceTime_history06 }
+    { src: Art_planar_modeling01 },
+    { src: Art_planar_modeling02 },
+    { src: Art_planar_modeling03 },
+    { src: Art_planar_modeling04 },
+    { src: Art_planar_modeling05 },
+    { src: Art_planar_modeling06 }
   ];
   const planarModelingImages = useSectionImageAnimations(currentSection === 1, planarModelingImagesArray.length);
   const threeDModelingImagesArray = [
-    { src: SpaceTime_social01 },
-    { src: SpaceTime_social02 },
-    { src: SpaceTime_social03 },
-    { src: SpaceTime_social04 },
-    { src: SpaceTime_social05 },
-    { src: SpaceTime_social06 }
+    { src: Art_three_D_modeling01 },
+    { src: Art_three_D_modeling02 },
+    { src: Art_three_D_modeling03 },
+    { src: Art_three_D_modeling04 },
+    { src: Art_three_D_modeling05 },
+    { src: Art_three_D_modeling06 }
   ];
   const threeDModelingImages = useSectionImageAnimations(currentSection === 2, threeDModelingImagesArray.length);
   const literatureImagesArray = [
-    { src: SpaceTime_earth01 },
-    { src: SpaceTime_earth02 },
-    { src: SpaceTime_earth03 },
-    { src: SpaceTime_earth04 },
-    { src: SpaceTime_earth05 },
-    { src: SpaceTime_earth06 }
+    { src: Art_literature01 },
+    { src: Art_literature02 },
+    { src: Art_literature03 },
+    { src: Art_literature04 },
+    { src: Art_literature05 },
+    { src: Art_literature06 }
   ];
   const literatureImages = useSectionImageAnimations(currentSection === 3, literatureImagesArray.length);
   const communicationTechniqueImagesArray = [
-    { src: SpaceTime_natural01 },
-    { src: SpaceTime_natural02 },
-    { src: SpaceTime_natural03 },
-    { src: SpaceTime_natural04 },
-    { src: SpaceTime_natural05 },
-    { src: SpaceTime_natural06 }
+    { src: Art_communication_technique01 },
+    { src: Art_communication_technique02 },
+    { src: Art_communication_technique03 },
+    { src: Art_communication_technique04 },
+    { src: Art_communication_technique05 },
+    { src: Art_communication_technique06 }
   ];
   const communicationTechniqueImages = useSectionImageAnimations(currentSection === 4, communicationTechniqueImagesArray.length);
   const musicImagesArray = [
-    { src: SpaceTime_geology01 },
-    { src: SpaceTime_geology02 },
-    { src: SpaceTime_geology03 },
-    { src: SpaceTime_geology04 },
-    { src: SpaceTime_geology05 },
-    { src: SpaceTime_geology06 }
+    { src: Art_music01 },
+    { src: Art_music02 },
+    { src: Art_music03 },
+    { src: Art_music04 },
+    { src: Art_music05 },
+    { src: Art_music06 }
   ];
   const musicImages = useSectionImageAnimations(currentSection === 5, musicImagesArray.length);
   const cookingImagesArray = [
-    { src: SpaceTime_atmosphere01 },
-    { src: SpaceTime_atmosphere02 },
-    { src: SpaceTime_atmosphere03 },
-    { src: SpaceTime_atmosphere04 },
-    { src: SpaceTime_atmosphere05 },
-    { src: SpaceTime_atmosphere06 }
+    { src: Art_cooking01 },
+    { src: Art_cooking02 },
+    { src: Art_cooking03 },
+    { src: Art_cooking04 },
+    { src: Art_cooking05 },
+    { src: Art_cooking06 }
   ];
   const cookingImages = useSectionImageAnimations(currentSection === 6, cookingImagesArray.length);
   const performingImagesArray = [
-    { src: SpaceTime_ocean01 },
-    { src: SpaceTime_ocean02 },
-    { src: SpaceTime_ocean03 },
-    { src: SpaceTime_ocean04 },
-    { src: SpaceTime_ocean05 },
-    { src: SpaceTime_ocean06 }
+    { src: Art_performing01 },
+    { src: Art_performing02 },
+    { src: Art_performing03 },
+    { src: Art_performing04 },
+    { src: Art_performing05 },
+    { src: Art_performing06 }
   ];
   const performingImages = useSectionImageAnimations(currentSection === 7, performingImagesArray.length);
 
