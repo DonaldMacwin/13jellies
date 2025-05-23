@@ -1,12 +1,9 @@
-//import { useState } from 'react'
-//import reactLogo from './assets/react.svg'
-//import viteLogo from '/vite.svg'
 import './App.css'
 import { useState, useEffect } from 'react';
-//import ReactDOM from 'react-dom';
 import SpaceTime from './component/spaceTime';
 import Art from './component/art';
 import Society from './component/society';
+import Medicine from './component/medicine';
 
 function App() {
   const [currentHash, setCurrentHash] = useState(window.location.hash);
@@ -37,7 +34,7 @@ function App() {
   } else if (currentHash === '#society') {
     return <Society />;
   } else if (currentHash === '#medicine') {
-    return <div>medicine</div>;
+    return <Medicine />;
   } else if (currentHash === '#biology') {
     return <div>biology</div>;
   } else if (currentHash === '#philosophy') {
