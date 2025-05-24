@@ -76,12 +76,12 @@ import Biology_human_studies05 from '../assets/img/Biology_human_studies02.jpg';
 import Biology_human_studies06 from '../assets/img/Biology_human_studies03.png';
 
 // 生物形態研究
-import Biology_biomorphology01 from '../assets/img/Biology_biomorphology01.jpg';
+{/*import Biology_biomorphology01 from '../assets/img/Biology_biomorphology01.jpg';
 import Biology_biomorphology02 from '../assets/img/Biology_biomorphology02.jpg';
 import Biology_biomorphology03 from '../assets/img/Biology_biomorphology03.png';
 import Biology_biomorphology04 from '../assets/img/Biology_biomorphology01.jpg';
 import Biology_biomorphology05 from '../assets/img/Biology_biomorphology02.jpg';
-import Biology_biomorphology06 from '../assets/img/Biology_biomorphology03.png';
+import Biology_biomorphology06 from '../assets/img/Biology_biomorphology03.png';*/}
 
 // 脳神経科学
 import Biology_neuroscience01 from '../assets/img/Biology_neuroscience01.jpg';
@@ -161,8 +161,6 @@ function Biology() {
   const extraterrestrialLifeScrollRef = useRef<HTMLDivElement>(null);
   const humanStudiesRef = useRef<HTMLElement>(null);
   const humanStudiesScrollRef = useRef<HTMLDivElement>(null);
-  const biomorphologyRef = useRef<HTMLElement>(null);
-  const biomorphologyScrollRef = useRef<HTMLDivElement>(null);
   const neuroscienceRef = useRef<HTMLElement>(null);
   const neuroscienceScrollRef = useRef<HTMLDivElement>(null);
   const bioengineeringRef = useRef<HTMLElement>(null);
@@ -189,7 +187,6 @@ function Biology() {
     { ref: evolutionaryResearchRef, scrollRef: evolutionaryResearchScrollRef },
     { ref: extraterrestrialLifeRef, scrollRef: extraterrestrialLifeScrollRef },
     { ref: humanStudiesRef, scrollRef: humanStudiesScrollRef },
-    { ref: biomorphologyRef, scrollRef: biomorphologyScrollRef },
     { ref: neuroscienceRef, scrollRef: neuroscienceScrollRef },
     { ref: bioengineeringRef, scrollRef: bioengineeringScrollRef },
     { ref: bioinformaticsRef, scrollRef: bioinformaticsScrollRef },
@@ -296,16 +293,6 @@ function Biology() {
   ];
   const humanStudiesImages = useSectionImageAnimations(currentSection === 8, humanStudiesImagesArray.length);
 
-  const biomorphologyImagesArray = [
-    { src: Biology_biomorphology01 },
-    { src: Biology_biomorphology02 },
-    { src: Biology_biomorphology03 },
-    { src: Biology_biomorphology04 },
-    { src: Biology_biomorphology05 },
-    { src: Biology_biomorphology06 }
-  ];
-  const biomorphologyImages = useSectionImageAnimations(currentSection === 9, biomorphologyImagesArray.length);
-
   const neuroscienceImagesArray = [
     { src: Biology_neuroscience01 },
     { src: Biology_neuroscience02 },
@@ -314,7 +301,7 @@ function Biology() {
     { src: Biology_neuroscience05 },
     { src: Biology_neuroscience06 }
   ];
-  const neuroscienceImages = useSectionImageAnimations(currentSection === 10, neuroscienceImagesArray.length);
+  const neuroscienceImages = useSectionImageAnimations(currentSection === 9, neuroscienceImagesArray.length);
 
   const bioengineeringImagesArray = [
     { src: Biology_bioengineering01 },
@@ -324,7 +311,7 @@ function Biology() {
     { src: Biology_bioengineering05 },
     { src: Biology_bioengineering06 }
   ];
-  const bioengineeringImages = useSectionImageAnimations(currentSection === 11, bioengineeringImagesArray.length);
+  const bioengineeringImages = useSectionImageAnimations(currentSection === 10, bioengineeringImagesArray.length);
 
   const bioinformaticsImagesArray = [
     { src: Biology_bioinformatics01 },
@@ -334,7 +321,7 @@ function Biology() {
     { src: Biology_bioinformatics05 },
     { src: Biology_bioinformatics06 }
   ];
-  const bioinformaticsImages = useSectionImageAnimations(currentSection === 12, bioinformaticsImagesArray.length);
+  const bioinformaticsImages = useSectionImageAnimations(currentSection === 11, bioinformaticsImagesArray.length);
 
   const geneticDevelopmentImagesArray = [
     { src: Biology_genetic_development01 },
@@ -344,7 +331,7 @@ function Biology() {
     { src: Biology_genetic_development05 },
     { src: Biology_genetic_development06 }
   ];
-  const geneticDevelopmentImages = useSectionImageAnimations(currentSection === 13, geneticDevelopmentImagesArray.length);
+  const geneticDevelopmentImages = useSectionImageAnimations(currentSection === 12, geneticDevelopmentImagesArray.length);
 
   const cellImagesArray = [
     { src: Biology_cell01 },
@@ -354,7 +341,7 @@ function Biology() {
     { src: Biology_cell05 },
     { src: Biology_cell06 }
   ];
-  const cellImages = useSectionImageAnimations(currentSection === 14, cellImagesArray.length);
+  const cellImages = useSectionImageAnimations(currentSection === 13, cellImagesArray.length);
 
   const biophysicsImagesArray = [
     { src: Biology_biophysics01 },
@@ -364,7 +351,7 @@ function Biology() {
     { src: Biology_biophysics05 },
     { src: Biology_biophysics06 }
   ];
-  const biophysicsImages = useSectionImageAnimations(currentSection === 15, biophysicsImagesArray.length);
+  const biophysicsImages = useSectionImageAnimations(currentSection === 14, biophysicsImagesArray.length);
 
   const biochemistryImagesArray = [
     { src: Biology_biochemistry01 },
@@ -374,7 +361,7 @@ function Biology() {
     { src: Biology_biochemistry05 },
     { src: Biology_biochemistry06 }
   ];
-  const biochemistryImages = useSectionImageAnimations(currentSection === 16, biochemistryImagesArray.length);
+  const biochemistryImages = useSectionImageAnimations(currentSection === 15, biochemistryImagesArray.length);
 
   // --- 各セクションの外部HTMLマークアップ取得用stateとfetch処理 ---
   const [agriculturalResearchHtml, setAgriculturalResearchHtml] = useState<string>('');
@@ -408,10 +395,6 @@ function Biology() {
   const [humanStudiesHtml, setHumanStudiesHtml] = useState<string>('');
   const [humanStudiesLoading, setHumanStudiesLoading] = useState<boolean>(true);
   const [humanStudiesError, setHumanStudiesError] = useState<string | null>(null);
-
-  const [biomorphologyHtml, setBiomorphologyHtml] = useState<string>('');
-  const [biomorphologyLoading, setBiomorphologyLoading] = useState<boolean>(true);
-  const [biomorphologyError, setBiomorphologyError] = useState<string | null>(null);
 
   const [neuroscienceHtml, setNeuroscienceHtml] = useState<string>('');
   const [neuroscienceLoading, setNeuroscienceLoading] = useState<boolean>(true);
@@ -567,21 +550,6 @@ function Biology() {
         setHumanStudiesLoading(false);
       });
 
-    // 生物形態研究
-    fetch(`${basePath}biology_biomorphology.html`)
-      .then((res) => {
-        if (!res.ok) throw new Error('ファイル取得エラー');
-        return res.text();
-      })
-      .then((html) => {
-        setBiomorphologyHtml(html);
-        setBiomorphologyLoading(false);
-      })
-      .catch((_err) => {
-        setBiomorphologyError('読み込みにエラーが発生しました。再読込してみてください。');
-        setBiomorphologyLoading(false);
-      });
-
     // 脳神経科学
     fetch(`${basePath}biology_neuroscience.html`)
       .then((res) => {
@@ -698,7 +666,6 @@ function Biology() {
     evolutionaryResearchImagesArray,
     extraterrestrialLifeImagesArray,
     humanStudiesImagesArray,
-    biomorphologyImagesArray,
     neuroscienceImagesArray,
     bioengineeringImagesArray,
     bioinformaticsImagesArray,
@@ -740,30 +707,27 @@ function Biology() {
             <li className='evolutionary_research'><a href="#evolutionary_research" onClick={(e) => { e.preventDefault(); setCurrentSection(6); }}></a></li>{/* 進化研究 */}
             <li className='extraterrestrial_life'><a href="#extraterrestrial_life" onClick={(e) => { e.preventDefault(); setCurrentSection(7); }}></a></li>{/* 地球外生物研究 */}
             <li className='human_studies'><a href="#human_studies" onClick={(e) => { e.preventDefault(); setCurrentSection(8); }}></a></li>{/* 人類研究 */}
-            <li className='biomorphology'><a href="#biomorphology" onClick={(e) => { e.preventDefault(); setCurrentSection(9); }}></a></li>{/* 生物形態研究 */}
-            <li className='neuroscience'><a href="#neuroscience" onClick={(e) => { e.preventDefault(); setCurrentSection(10); }}></a></li>{/* 脳神経科学 */}
-            <li className='bioengineering'><a href="#bioengineering" onClick={(e) => { e.preventDefault(); setCurrentSection(11); }}></a></li>{/* 生物工学 */}
-            <li className='bioinformatics'><a href="#bioinformatics" onClick={(e) => { e.preventDefault(); setCurrentSection(12); }}></a></li>{/* 生物情報研究 */}
-            <li className='genetic_development'><a href="#genetic_development" onClick={(e) => { e.preventDefault(); setCurrentSection(13); }}></a></li>{/* 遺伝発生研究 */}
-            <li className='cell'><a href="#cell" onClick={(e) => { e.preventDefault(); setCurrentSection(14); }}></a></li>{/* 細胞研究 */}
-            <li className='biophysics'><a href="#biophysics" onClick={(e) => { e.preventDefault(); setCurrentSection(15); }}></a></li>{/* 生物物理 */}
-            <li className='biochemistry'><a href="#biochemistry" onClick={(e) => { e.preventDefault(); setCurrentSection(16); }}></a></li>{/* 生化学研究 */}
+            <li className='neuroscience'><a href="#neuroscience" onClick={(e) => { e.preventDefault(); setCurrentSection(9); }}></a></li>{/* 脳神経科学 */}
+            <li className='bioengineering'><a href="#bioengineering" onClick={(e) => { e.preventDefault(); setCurrentSection(10); }}></a></li>{/* 生物工学 */}
+            <li className='bioinformatics'><a href="#bioinformatics" onClick={(e) => { e.preventDefault(); setCurrentSection(11); }}></a></li>{/* 生物情報研究 */}
+            <li className='genetic_development'><a href="#genetic_development" onClick={(e) => { e.preventDefault(); setCurrentSection(12); }}></a></li>{/* 遺伝発生研究 */}
+            <li className='cell'><a href="#cell" onClick={(e) => { e.preventDefault(); setCurrentSection(13); }}></a></li>{/* 細胞研究 */}
+            <li className='biophysics'><a href="#biophysics" onClick={(e) => { e.preventDefault(); setCurrentSection(14); }}></a></li>{/* 生物物理 */}
+            <li className='biochemistry'><a href="#biochemistry" onClick={(e) => { e.preventDefault(); setCurrentSection(15); }}></a></li>{/* 生化学研究 */}
           </ul>
         </div>
         <div className='merit_and_demerit_block scroller_decoration'>
           <article className={`merit ${animateMerit ? 'animate' : ''}`}>
             <h2>特長</h2>
-            <h3>見出し</h3><p>ガイダンスのテキスト</p>
-            <h3>見出し</h3><p>ガイダンスのテキスト</p>
-            <h3>見出し</h3><p>ガイダンスのテキスト</p>
-            <h3>見出し</h3><p>ガイダンスのテキスト</p>
+            <h3>多岐にわたる研究対象</h3><p>生物学は生物の多様性に焦点を当てており、微生物から巨大な動植物まで、広範で多様な生命体にわたる研究が行われています。これにより、生物学者は様々な生態系や進化のプロセスに関する知識を深めることができます。</p>
+            <h3>実用応用の幅広さ</h3><p>生物学の知識は医学、農学、環境分析、食品工学などの様々な分野に応用されています。例えば、新しい医薬品の開発や疾病の理解、農業の生産性向上など、社会全体に貢献しています。</p>
+            <h3>技術の進化と統合</h3><p>分子生物学や遺伝学の進歩により、生物学は他の科学分野とも密接に結びついています。バイオテクノロジーの発展や遺伝子編集技術など、生物学の発展が医学や産業技術に大きな影響を与えています。</p>
           </article>
           <article className={`demerit ${animateDemerit ? 'animate' : ''}`}>
             <h2>難点</h2>
-            <h3>見出し</h3><p>ガイダンスのテキスト</p>
-            <h3>見出し</h3><p>ガイダンスのテキスト</p>
-            <h3>見出し</h3><p>ガイダンスのテキスト</p>
-            <h3>見出し</h3><p>ガイダンスのテキスト</p>
+            <h3>複雑性と理解の難しさ</h3><p>生物学は非常に広範かつ複雑な分野であり、生命体の相互作用や生態系のダイナミクスを理解することは容易ではありません。そのため、研究には高度な専門知識が求められ、初心者にとっては理解が難しいことがあります</p>
+            <h3>倫理的な課題</h3><p>生物学の進歩には倫理的な問題も伴います。例えば、遺伝子編集技術が進む中、個体の遺伝子を改変することが可能になり、その倫理的な側面が複雑になっています。人間の倫理観と科学の進歩のバランスを取ることが重要です。</p>
+            <h3>実験の複雑性</h3><p>生物学の研究はしばしば生きた組織や生命体を対象とするため、実験の複雑性が高いです。これには適切な倫理規定や安全対策が必要であり、研究者にとっては技術的な挑戦も伴います。</p>
           </article>
         </div>
         <div className='back_to_map'>
@@ -989,213 +953,186 @@ function Biology() {
         </div>
       </section>
 
-      {/* 生物形態研究セクション */}
+      {/* 脳神経科学セクション */}
       <section
         className='block_text_right'
-        id='biomorphology'
-        ref={biomorphologyRef}
+        id='neuroscience'
+        ref={neuroscienceRef}
         style={sectionStyle(9)}>
         <div className='flex_setting'>
           <AnimatedFigureBlock
-            images={biomorphologyImagesArray}
-            imagesState={biomorphologyImages.imagesState}
-            imagesStyles={biomorphologyImages.imagesStyles}
-            imageEffects={biomorphologyImages.imageEffects}
+            images={neuroscienceImagesArray}
+            imagesState={neuroscienceImages.imagesState}
+            imagesStyles={neuroscienceImages.imagesStyles}
+            imageEffects={neuroscienceImages.imageEffects}
             blockClass="left"
           />
           <div
             className='text_scroll_block scroller_decoration'
-            ref={biomorphologyScrollRef}
-            style={scrollableStyle(currentSection === 9)}>
-            {biomorphologyLoading && <div>読み込み中...</div>}
-            {biomorphologyError && <div style={{ color: 'red' }}>{biomorphologyError}</div>}
-            {!biomorphologyLoading && !biomorphologyError && (
-              <div dangerouslySetInnerHTML={{ __html: biomorphologyHtml }} />
-            )}
-          </div>
-        </div>
-      </section>
-
-      {/* 脳神経科学セクション */}
-      <section
-        className='block_text_left'
-        id='neuroscience'
-        ref={neuroscienceRef}
-        style={sectionStyle(10)}>
-        <div className='flex_setting'>
-          <div
-            className='text_scroll_block scroller_decoration'
             ref={neuroscienceScrollRef}
-            style={scrollableStyle(currentSection === 10)}>
+            style={scrollableStyle(currentSection === 9)}>
             {neuroscienceLoading && <div>読み込み中...</div>}
             {neuroscienceError && <div style={{ color: 'red' }}>{neuroscienceError}</div>}
             {!neuroscienceLoading && !neuroscienceError && (
               <div dangerouslySetInnerHTML={{ __html: neuroscienceHtml }} />
             )}
           </div>
-          <AnimatedFigureBlock
-            images={neuroscienceImagesArray}
-            imagesState={neuroscienceImages.imagesState}
-            imagesStyles={neuroscienceImages.imagesStyles}
-            imageEffects={neuroscienceImages.imageEffects}
-            blockClass="right"
-          />
         </div>
       </section>
 
       {/* 生物工学セクション */}
       <section
-        className='block_text_right'
+        className='block_text_left'
         id='bioengineering'
         ref={bioengineeringRef}
-        style={sectionStyle(11)}>
+        style={sectionStyle(10)}>
         <div className='flex_setting'>
-          <AnimatedFigureBlock
-            images={bioengineeringImagesArray}
-            imagesState={bioengineeringImages.imagesState}
-            imagesStyles={bioengineeringImages.imagesStyles}
-            imageEffects={bioengineeringImages.imageEffects}
-            blockClass="left"
-          />
           <div
             className='text_scroll_block scroller_decoration'
             ref={bioengineeringScrollRef}
-            style={scrollableStyle(currentSection === 11)}>
+            style={scrollableStyle(currentSection === 10)}>
             {bioengineeringLoading && <div>読み込み中...</div>}
             {bioengineeringError && <div style={{ color: 'red' }}>{bioengineeringError}</div>}
             {!bioengineeringLoading && !bioengineeringError && (
               <div dangerouslySetInnerHTML={{ __html: bioengineeringHtml }} />
             )}
           </div>
+          <AnimatedFigureBlock
+            images={bioengineeringImagesArray}
+            imagesState={bioengineeringImages.imagesState}
+            imagesStyles={bioengineeringImages.imagesStyles}
+            imageEffects={bioengineeringImages.imageEffects}
+            blockClass="right"
+          />
         </div>
       </section>
 
       {/* 生物情報研究セクション */}
       <section
-        className='block_text_left'
+        className='block_text_right'
         id='bioinformatics'
         ref={bioinformaticsRef}
-        style={sectionStyle(12)}>
+        style={sectionStyle(11)}>
         <div className='flex_setting'>
+          <AnimatedFigureBlock
+            images={bioinformaticsImagesArray}
+            imagesState={bioinformaticsImages.imagesState}
+            imagesStyles={bioinformaticsImages.imagesStyles}
+            imageEffects={bioinformaticsImages.imageEffects}
+            blockClass="left"
+          />
           <div
             className='text_scroll_block scroller_decoration'
             ref={bioinformaticsScrollRef}
-            style={scrollableStyle(currentSection === 12)}>
+            style={scrollableStyle(currentSection === 11)}>
             {bioinformaticsLoading && <div>読み込み中...</div>}
             {bioinformaticsError && <div style={{ color: 'red' }}>{bioinformaticsError}</div>}
             {!bioinformaticsLoading && !bioinformaticsError && (
               <div dangerouslySetInnerHTML={{ __html: bioinformaticsHtml }} />
             )}
           </div>
-          <AnimatedFigureBlock
-            images={bioinformaticsImagesArray}
-            imagesState={bioinformaticsImages.imagesState}
-            imagesStyles={bioinformaticsImages.imagesStyles}
-            imageEffects={bioinformaticsImages.imageEffects}
-            blockClass="right"
-          />
         </div>
       </section>
 
       {/* 遺伝発生研究セクション */}
       <section
-        className='block_text_right'
+        className='block_text_left'
         id='genetic_development'
         ref={geneticDevelopmentRef}
-        style={sectionStyle(13)}>
+        style={sectionStyle(12)}>
         <div className='flex_setting'>
-          <AnimatedFigureBlock
-            images={geneticDevelopmentImagesArray}
-            imagesState={geneticDevelopmentImages.imagesState}
-            imagesStyles={geneticDevelopmentImages.imagesStyles}
-            imageEffects={geneticDevelopmentImages.imageEffects}
-            blockClass="left"
-          />
           <div
             className='text_scroll_block scroller_decoration'
             ref={geneticDevelopmentScrollRef}
-            style={scrollableStyle(currentSection === 13)}>
+            style={scrollableStyle(currentSection === 12)}>
             {geneticDevelopmentLoading && <div>読み込み中...</div>}
             {geneticDevelopmentError && <div style={{ color: 'red' }}>{geneticDevelopmentError}</div>}
             {!geneticDevelopmentLoading && !geneticDevelopmentError && (
               <div dangerouslySetInnerHTML={{ __html: geneticDevelopmentHtml }} />
             )}
           </div>
+          <AnimatedFigureBlock
+            images={geneticDevelopmentImagesArray}
+            imagesState={geneticDevelopmentImages.imagesState}
+            imagesStyles={geneticDevelopmentImages.imagesStyles}
+            imageEffects={geneticDevelopmentImages.imageEffects}
+            blockClass="right"
+          />
         </div>
       </section>
 
       {/* 細胞研究セクション */}
       <section
-        className='block_text_left'
+        className='block_text_right'
         id='cell'
         ref={cellRef}
-        style={sectionStyle(14)}>
+        style={sectionStyle(13)}>
         <div className='flex_setting'>
+          <AnimatedFigureBlock
+            images={cellImagesArray}
+            imagesState={cellImages.imagesState}
+            imagesStyles={cellImages.imagesStyles}
+            imageEffects={cellImages.imageEffects}
+            blockClass="left"
+          />
           <div
             className='text_scroll_block scroller_decoration'
             ref={cellScrollRef}
-            style={scrollableStyle(currentSection === 14)}>
+            style={scrollableStyle(currentSection === 13)}>
             {cellLoading && <div>読み込み中...</div>}
             {cellError && <div style={{ color: 'red' }}>{cellError}</div>}
             {!cellLoading && !cellError && (
               <div dangerouslySetInnerHTML={{ __html: cellHtml }} />
             )}
           </div>
-          <AnimatedFigureBlock
-            images={cellImagesArray}
-            imagesState={cellImages.imagesState}
-            imagesStyles={cellImages.imagesStyles}
-            imageEffects={cellImages.imageEffects}
-            blockClass="right"
-          />
         </div>
       </section>
 
       {/* 生物物理セクション */}
       <section
-        className='block_text_right'
+        className='block_text_left'
         id='biophysics'
         ref={biophysicsRef}
-        style={sectionStyle(15)}>
+        style={sectionStyle(14)}>
         <div className='flex_setting'>
-          <AnimatedFigureBlock
-            images={biophysicsImagesArray}
-            imagesState={biophysicsImages.imagesState}
-            imagesStyles={biophysicsImages.imagesStyles}
-            imageEffects={biophysicsImages.imageEffects}
-            blockClass="left"
-          />
           <div
             className='text_scroll_block scroller_decoration'
             ref={biophysicsScrollRef}
-            style={scrollableStyle(currentSection === 15)}>
+            style={scrollableStyle(currentSection === 14)}>
             {biophysicsLoading && <div>読み込み中...</div>}
             {biophysicsError && <div style={{ color: 'red' }}>{biophysicsError}</div>}
             {!biophysicsLoading && !biophysicsError && (
               <div dangerouslySetInnerHTML={{ __html: biophysicsHtml }} />
             )}
           </div>
+          <AnimatedFigureBlock
+            images={biophysicsImagesArray}
+            imagesState={biophysicsImages.imagesState}
+            imagesStyles={biophysicsImages.imagesStyles}
+            imageEffects={biophysicsImages.imageEffects}
+            blockClass="right"
+          />
         </div>
       </section>
 
       {/* 生化学研究セクション */}
       <section
-        className='block_text_left'
+        className='block_text_right'
         id='biochemistry'
         ref={biochemistryRef}
-        style={sectionStyle(16)}>
+        style={sectionStyle(15)}>
         <div className='flex_setting'>
           <AnimatedFigureBlock
             images={biochemistryImagesArray}
             imagesState={biochemistryImages.imagesState}
             imagesStyles={biochemistryImages.imagesStyles}
             imageEffects={biochemistryImages.imageEffects}
-            blockClass="right"
+            blockClass="left"
           />
           <div
             className='text_scroll_block scroller_decoration'
             ref={biochemistryScrollRef}
-            style={scrollableStyle(currentSection === 16)}>
+            style={scrollableStyle(currentSection === 15)}>
             {biochemistryLoading && <div>読み込み中...</div>}
             {biochemistryError && <div style={{ color: 'red' }}>{biochemistryError}</div>}
             {!biochemistryLoading && !biochemistryError && (
