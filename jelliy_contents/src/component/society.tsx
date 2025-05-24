@@ -73,48 +73,43 @@ function Society() {
   const { animateMerit, animateDemerit } = useFirstViewMeritDemeritAnimation(currentSection === 0);
   const { imageAnimationClass } = useFirstViewImageAnimation(currentSection === 0);
 
-  const compositionImagesArray = [
-    { src: Society_composition01 },
-    { src: Society_composition02 },
-    { src: Society_composition03 },
-    { src: Society_composition04 },
-    { src: Society_composition05 },
-    { src: Society_composition06 }
-  ];
-  const compositionImages = useSectionImageAnimations(currentSection === 1, compositionImagesArray.length);
-
-  const positioningImagesArray = [
-    { src: Society_positioning01 },
-    { src: Society_positioning02 },
-    { src: Society_positioning03 },
-    { src: Society_positioning04 },
-    { src: Society_positioning05 },
-    { src: Society_positioning06 }
-  ];
-  const positioningImages = useSectionImageAnimations(currentSection === 2, positioningImagesArray.length);
-
-  const institutionImagesArray = [
-    { src: Society_institution01 },
-    { src: Society_institution02 },
-    { src: Society_institution03 },
-    { src: Society_institution04 },
-    { src: Society_institution05 },
-    { src: Society_institution06 }
-  ];
-  const institutionImages = useSectionImageAnimations(currentSection === 3, institutionImagesArray.length);
+  // 各セクションの画像を配列で定義
+  const sectionImageData = {
+    composition: [
+      Society_composition01, Society_composition02, Society_composition03,
+      Society_composition04, Society_composition05, Society_composition06
+    ],
+    positioning: [
+      Society_positioning01, Society_positioning02, Society_positioning03,
+      Society_positioning04, Society_positioning05, Society_positioning06
+    ],
+    institution: [
+      Society_institution01, Society_institution02, Society_institution03,
+      Society_institution04, Society_institution05, Society_institution06
+    ]
+  };
+  // 画像配列生成（枚数に関係なく動作）
+  const imageArrays = Object.fromEntries(
+    Object.entries(sectionImageData).map(([key, images]) => [
+      key,
+      images.map(src => ({ src }))
+    ])
+  );
+  // セクション名の配列
+  const sectionKeys = Object.keys(sectionImageData);
+  // 各セクションのアニメーション（画像枚数は自動で取得）
+  const sectionAnimations = sectionKeys.map((key, index) => 
+    useSectionImageAnimations(
+      currentSection === index + 1, 
+      sectionImageData[key as keyof typeof sectionImageData].length
+    )
+  );
 
   // --- 各セクションの外部HTMLマークアップ取得用stateとfetch処理 ---
-  const [compositionHtml, setCompositionHtml] = useState<string>('');
-  const [compositionLoading, setCompositionLoading] = useState<boolean>(true);
-  const [compositionError, setCompositionError] = useState<string | null>(null);
-
-  const [positioningHtml, setPositioningHtml] = useState<string>('');
-  const [positioningLoading, setPositioningLoading] = useState<boolean>(true);
-  const [positioningError, setPositioningError] = useState<string | null>(null);
-
-  const [institutionHtml, setInstitutionHtml] = useState<string>('');
-  const [institutionLoading, setInstitutionLoading] = useState<boolean>(true);
-  const [institutionError, setInstitutionError] = useState<string | null>(null);
+  // HTMLコンテンツ状態の共通化
+  const [htmlContents, setHtmlContents] = useState<Record<string, string>>({});
+  const [loadingStates, setLoadingStates] = useState<Record<string, boolean>>({});
+  const [errorStates, setErrorStates] = useState<Record<string, string | null>>({});
 
   const basePath =
     window.location.hostname === 'localhost'
@@ -122,55 +117,41 @@ function Society() {
       : `${import.meta.env.VITE_TEXTS_BASE_URL}/13jellies/jelliy_contents/dist/texts/`;
 
   useEffect(() => {
-    fetch(`${basePath}society_composition.html`)
-      .then((res) => {
-        if (!res.ok) throw new Error('ファイル取得エラー');
-        return res.text();
-      })
-      .then((html) => {
-        setCompositionHtml(html);
-        setCompositionLoading(false);
-      })
-      .catch((_err) => {
-        setCompositionError('読み込みにエラーが発生しました。再読込してみてください。');
-        setCompositionLoading(false);
-      });
+    // セクション情報の配列
+    const sectionNames = [
+      'composition', 'positioning', 'institution'
+    ];
 
-    fetch(`${basePath}society_positioning.html`)
-      .then((res) => {
-        if (!res.ok) throw new Error('ファイル取得エラー');
-        return res.text();
-      })
-      .then((html) => {
-        setPositioningHtml(html);
-        setPositioningLoading(false);
-      })
-      .catch((_err) => {
-        setPositioningError('読み込みにエラーが発生しました。再読込してみてください。');
-        setPositioningLoading(false);
-      });
+    // 初期状態を設定
+    const initialLoading = Object.fromEntries(sectionNames.map(name => [name, true]));
+    const initialError = Object.fromEntries(sectionNames.map(name => [name, null]));
+    setLoadingStates(initialLoading);
+    setErrorStates(initialError);
 
-    fetch(`${basePath}society_institution.html`)
-      .then((res) => {
+    // 共通のfetch処理関数
+    const fetchSectionContent = async (sectionName: string) => {
+      try {
+        const res = await fetch(`${basePath}society_${sectionName}.html`);
         if (!res.ok) throw new Error('ファイル取得エラー');
-        return res.text();
-      })
-      .then((html) => {
-        setInstitutionHtml(html);
-        setInstitutionLoading(false);
-      })
-      .catch((_err) => {
-        setInstitutionError('読み込みにエラーが発生しました。再読込してみてください。');
-        setInstitutionLoading(false);
-      });
-  }, []);
+        const html = await res.text();
+        
+        setHtmlContents(prev => ({ ...prev, [sectionName]: html }));
+        setLoadingStates(prev => ({ ...prev, [sectionName]: false }));
+      } catch (_err) {
+        setErrorStates(prev => ({ ...prev, [sectionName]: '読み込みにエラーが発生しました。再読込してみてください。' }));
+        setLoadingStates(prev => ({ ...prev, [sectionName]: false }));
+      }
+    };
+    // 全セクションのコンテンツを並行して取得
+    sectionNames.forEach(sectionName => {
+      fetchSectionContent(sectionName);
+    });
+  }, [basePath]);
 
   // --- 段階的に画像をプリロードさせ、loading表示の待機時間を減らす ---
-  useStepImagePreload([
-    compositionImagesArray,
-    positioningImagesArray,
-    institutionImagesArray
-  ]);
+  useStepImagePreload(
+    Object.values(imageArrays)
+  );
 
   // ページトップに戻る関数
   const scrollToTop = () => {
@@ -180,6 +161,50 @@ function Society() {
       setTimeout(() => setScrollLocked(false), 600);
     }
   };
+
+  // レンダリング用の設定
+  // セクションkey設定
+  const sectionConfigs = [
+    { key: 'composition', name: 'composition', className: 'block_text_right', textPosition: 'right' },
+    { key: 'positioning', name: 'positioning', className: 'block_text_left', textPosition: 'left' },
+    { key: 'institution', name: 'institution', className: 'block_text_right', textPosition: 'right' }
+  ];
+  // テキストブロックレンダリング用関数
+  const renderTextBlock = (sectionName: string, sectionIndex: number) => (
+    <div
+      className='text_scroll_block scroller_decoration'
+      ref={sections[sectionIndex].scrollRef}
+      style={scrollableStyle(currentSection === sectionIndex)}
+    >
+      {loadingStates[sectionName] && <div>読み込み中...</div>}
+      {errorStates[sectionName] && <div style={{ color: 'red' }}>{errorStates[sectionName]}</div>}
+      {!loadingStates[sectionName] && !errorStates[sectionName] && (
+        <div dangerouslySetInnerHTML={{ __html: htmlContents[sectionName] || '' }} />
+      )}
+    </div>
+  );
+  // セクションレンダリング用関数
+  const renderSection = (config: typeof sectionConfigs[0], index: number) => (
+    <section
+      className={config.className}
+      id={config.name}
+      ref={sections[index + 1].ref}
+      style={sectionStyle(index + 1)}
+      key={config.name}
+    >
+      <div className='flex_setting'>
+        {config.textPosition === 'left' && renderTextBlock(config.name, index + 1)}
+        <AnimatedFigureBlock
+          images={imageArrays[config.key]}
+          imagesState={sectionAnimations[index].imagesState}
+          imagesStyles={sectionAnimations[index].imagesStyles}
+          imageEffects={sectionAnimations[index].imageEffects}
+          blockClass={config.textPosition === 'left' ? 'right' : 'left'}
+        />
+        {config.textPosition === 'right' && renderTextBlock(config.name, index + 1)}
+      </div>
+    </section>
+  );
 
   return (
     <div className="component_container">
@@ -224,86 +249,8 @@ function Society() {
         </div>
       </section>
 
-      {/* 構成系セクション */}
-      <section
-        className='block_text_right'
-        id='composition'
-        ref={compositionRef}
-        style={sectionStyle(1)}>
-        <div className='flex_setting'>
-          <AnimatedFigureBlock
-            images={compositionImagesArray}
-            imagesState={compositionImages.imagesState}
-            imagesStyles={compositionImages.imagesStyles}
-            imageEffects={compositionImages.imageEffects}
-            blockClass="left"
-          />
-          <div
-            className='text_scroll_block scroller_decoration'
-            ref={compositionScrollRef}
-            style={scrollableStyle(currentSection === 1)}>
-            {compositionLoading && <div>読み込み中...</div>}
-            {compositionError && <div style={{ color: 'red' }}>{compositionError}</div>}
-            {!compositionLoading && !compositionError && (
-              <div dangerouslySetInnerHTML={{ __html: compositionHtml }} />
-            )}
-          </div>
-        </div>
-      </section>
-
-      {/* 位置決め系セクション */}
-      <section
-        className='block_text_left'
-        id='positioning'
-        ref={positioningRef}
-        style={sectionStyle(2)}>
-        <div className='flex_setting'>
-          <div
-            className='text_scroll_block scroller_decoration'
-            ref={positioningScrollRef}
-            style={scrollableStyle(currentSection === 2)}>
-            {positioningLoading && <div>読み込み中...</div>}
-            {positioningError && <div style={{ color: 'red' }}>{positioningError}</div>}
-            {!positioningLoading && !positioningError && (
-              <div dangerouslySetInnerHTML={{ __html: positioningHtml }} />
-            )}
-          </div>
-          <AnimatedFigureBlock
-            images={positioningImagesArray}
-            imagesState={positioningImages.imagesState}
-            imagesStyles={positioningImages.imagesStyles}
-            imageEffects={positioningImages.imageEffects}
-            blockClass="right"
-          />
-        </div>
-      </section>
-
-      {/* 制度系セクション */}
-      <section
-        className='block_text_right'
-        id='institution'
-        ref={institutionRef}
-        style={sectionStyle(3)}>
-        <div className='flex_setting'>
-          <AnimatedFigureBlock
-            images={institutionImagesArray}
-            imagesState={institutionImages.imagesState}
-            imagesStyles={institutionImages.imagesStyles}
-            imageEffects={institutionImages.imageEffects}
-            blockClass="left"
-          />
-          <div
-            className='text_scroll_block scroller_decoration'
-            ref={institutionScrollRef}
-            style={scrollableStyle(currentSection === 3)}>
-            {institutionLoading && <div>読み込み中...</div>}
-            {institutionError && <div style={{ color: 'red' }}>{institutionError}</div>}
-            {!institutionLoading && !institutionError && (
-              <div dangerouslySetInnerHTML={{ __html: institutionHtml }} />
-            )}
-          </div>
-        </div>
-      </section>
+      {/* 共通化したセクションをレンダリング */}
+      {sectionConfigs.map((config, index) => renderSection(config, index))}
 
       {/* トップへ戻るボタン */}
       {currentSection > 0 && (

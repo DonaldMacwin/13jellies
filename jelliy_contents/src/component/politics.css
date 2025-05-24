@@ -1,17 +1,18 @@
 .first_view {
     .jelly_map {
-    margin: 0 0 0 -6%;
+    margin: 0 0 0 -5%;
 
     img {
-      width: 62%;
+      width: 65%;
       height: auto;
       object-fit: unset;
     }
   }
 }
 
-h1.medicine_h1 {
+h1.art_h1 {
     left: 0;
+    font-size: 4.2rem;
 }
 
 .page_anchor_list {
