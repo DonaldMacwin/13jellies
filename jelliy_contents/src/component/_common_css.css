@@ -61,7 +61,7 @@ img {
     z-index: +2;
   }
 
-  .jelly_map {
+  /*.jelly_map {
     margin: 0 20% 0 0;
 
     img {
@@ -69,7 +69,7 @@ img {
       height: auto;
       object-fit: unset;
     }
-  }
+  }*/
 
   .page_anchor_list {
     z-index: +1;

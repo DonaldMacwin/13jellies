@@ -5,6 +5,7 @@ import Art from './component/art';
 import Society from './component/society';
 import Medicine from './component/medicine';
 import Biology from './component/biology';
+import Politics from './component/politics';
 
 
 function App() {
@@ -28,7 +29,7 @@ function App() {
   if (currentHash === '#SpaceTime') {
     return <SpaceTime />;
   } else if (currentHash === '#politics') {
-    return <div>politics</div>;
+    return <Politics />;
   } else if (currentHash === '#industry') {
     return <div>industry</div>;
   } else if (currentHash === '#art') {
