@@ -4,6 +4,8 @@ import SpaceTime from './component/spaceTime';
 import Art from './component/art';
 import Society from './component/society';
 import Medicine from './component/medicine';
+import Biology from './component/biology';
+
 
 function App() {
   const [currentHash, setCurrentHash] = useState(window.location.hash);
@@ -36,7 +38,7 @@ function App() {
   } else if (currentHash === '#medicine') {
     return <Medicine />;
   } else if (currentHash === '#biology') {
-    return <div>biology</div>;
+    return <Biology />;
   } else if (currentHash === '#philosophy') {
     return <div>philosophy</div>;
   } else if (currentHash === '#chemistry') {

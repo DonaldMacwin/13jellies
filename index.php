@@ -17,7 +17,7 @@
     <main class="inner top_page">
         <section class="top_1st_view">
             <div class="relative_position">
-            <h1>ここに13個のゼリーがある</h1>
+            <h1 class="mincho">ここに13個のゼリーがある</h1>
             <figure><img src="./asset/img/13jellies_A.png"></figure>
             </div>
             <p class="text">ゼリーと呼ぶには柔らかすぎるかもしれない。<br />
@@ -29,8 +29,8 @@
         <section class="top_2nd_view">
             <figure><img src="./asset/img/13jellies_B.png"></figure>
             <p class="text">じつは。<br />
-                この13個のゼリーの中身を知ると、世の学術の80～90%を系統網羅できる。<br />
-                より詳細な成分を記載してみよう。<br />
+                この13個のゼリーの中身を知ると、世の叡智系統の大半を網羅できる。<br />
+                より詳細な成分を表記しよう。<br />
             </p>
         </section>
         <section class="jellies_map" id="jellies_map">

@@ -9,9 +9,14 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            font-size: 2rem;
+            width: 100%;
+            font-size: 3.0rem;
             font-weight: 700;
+            letter-spacing: 0.25em;
             color: #fff;
+                        text-align: center;
+                        opacity: 0;
+            animation: fadeIn 1.5s ease-in-out forwards;
         }
     }
 
@@ -28,5 +33,15 @@
             border: none;
             overflow: hidden;
         }
+    }
+}
+
+/* フェードインアニメーションの定義 */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
     }
 }
