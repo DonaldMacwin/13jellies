@@ -14,7 +14,7 @@
 
   .tap_item_industry {
     position: absolute;
-    bottom: 16%;
+    bottom: 13%;
     left: 13%;
   }
 
@@ -38,8 +38,8 @@
 
   .tap_item_biology {
     position: absolute;
-    bottom: -2%;
-    left: 34%;
+    bottom: -1%;
+    left: 33%;
   }
 
   .tap_item_SpaceTime1 {
@@ -50,7 +50,7 @@
 
   .tap_item_SpaceTime2 {
     position: absolute;
-    bottom: 25%;
+    bottom: 22%;
     left: 54%;
   }
 
@@ -68,7 +68,7 @@
 
   .tap_item_physics {
     position: absolute;
-    bottom: 6%;
+    bottom: 3%;
     right: 28.5%;
   }
 
@@ -80,7 +80,7 @@
 
   .tap_item_mathematics {
     position: absolute;
-    bottom: 20%;
+    bottom: 17%;
     right: 11%;
   }
 }
