@@ -1,0 +1,99 @@
+.first_view.industry {
+    .jelly_map {
+    margin: 0 0 0 -18%;
+
+    img {
+      width: 60%;
+      height: auto;
+      object-fit: unset;
+    }
+  }
+}
+
+h1.art_h1 {
+    left: 0;
+    font-size: 3.8rem;
+    letter-spacing: 0;
+}
+
+.page_anchor_list {
+    .economics a {
+        top: 1%;
+        left: 13%;
+        width: 32%;
+        height: 10%;
+    }
+    .political_leadership a {
+        top: 11%;
+        left: 3%;
+        width: 16%;
+        height: 17%;
+    }
+    .decision_process a{
+        top: 32%;
+        left: 3%;
+        width: 19%;
+        height: 10%;
+    }
+    .political_groups a{
+        top: 46%;
+        left: 3%;
+        width: 13%;
+        height: 15%;
+    }
+    .institutional a{
+        bottom: 19%;
+        left: 8%;
+        width: 9%;
+        height: 12%;
+    }
+    .political_system a{
+        bottom: 18%;
+        left: 20%;
+        width: 17%;
+        height: 13%;
+    }
+    .ideology a{
+        bottom: 17%;
+        left: 39%;
+        width: 13%;
+        height: 13%;
+    }
+    .international a{
+        bottom: 3%;
+        left: 23%;
+        width: 11%;
+        height: 14%;
+    }
+    .policy_content a{
+        top: 12%;
+        left: 35%;
+        width: 17%;
+        height: 18%;
+    }
+    .political_implementation a{
+        top: 33%;
+        left: 35%;
+        width: 18%;
+        height: 14%;
+    }
+    .public_studies a{
+        top: 49%;
+        left: 35%;
+        width: 16%;
+        height: 15%;
+    }
+}
+
+.industry .merit_and_demerit_block {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translate(0, -50%);
+    width: 55%;
+    height: fit-content;
+    overflow-y: auto;
+    overflow-x: hidden;
+    font-size: 0.80em;
+    background-color: rgba(255, 255, 255, 0.5);
+}
