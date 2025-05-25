@@ -1,4 +1,4 @@
-.first_view {
+.first_view.politics {
     .jelly_map {
     margin: 0 0 0 -5%;
 
@@ -16,46 +16,70 @@ h1.art_h1 {
 }
 
 .page_anchor_list {
-    .planar_modeling a {
-        top: 13%;
-        left: -2%;
-        width: 27%;
-        height: 25%;
+    .economics a {
+        top: 1%;
+        left: 13%;
+        width: 32%;
+        height: 10%;
     }
-    .three_D_modeling a {
-        bottom: 28%;
-        left: -3%;
-        width: 23%;
-        height: 27%;
-    }
-    .literature a{
-        top: 13%;
-        left: 27%;
+    .political_leadership a {
+        top: 11%;
+        left: 3%;
         width: 16%;
-        height: 20%;
-    }
-    .communication_technique a{
-        top: 39%;
-        left: 22%;
-        width: 23%;
         height: 17%;
     }
-    .music a{
-        top: 15%;
-        left: 50%;
-        width: 10%;
-        height: 20%;
+    .decision_process a{
+        top: 32%;
+        left: 3%;
+        width: 19%;
+        height: 10%;
     }
-    .cooking a{
-        top: 39%;
-        left: 50%;
+    .political_groups a{
+        top: 46%;
+        left: 3%;
+        width: 13%;
+        height: 15%;
+    }
+    .institutional a{
+        bottom: 19%;
+        left: 8%;
         width: 9%;
-        height: 21%;
+        height: 12%;
     }
-    .performing a{
-        bottom: 14%;
-        left: 46%;
+    .political_system a{
+        bottom: 18%;
+        left: 20%;
+        width: 17%;
+        height: 13%;
+    }
+    .ideology a{
+        bottom: 17%;
+        left: 39%;
+        width: 13%;
+        height: 13%;
+    }
+    .international a{
+        bottom: 3%;
+        left: 23%;
+        width: 11%;
+        height: 14%;
+    }
+    .policy_content a{
+        top: 12%;
+        left: 35%;
+        width: 17%;
+        height: 18%;
+    }
+    .political_implementation a{
+        top: 33%;
+        left: 35%;
+        width: 18%;
+        height: 14%;
+    }
+    .public_studies a{
+        top: 49%;
+        left: 35%;
         width: 16%;
-        height: 24%;
+        height: 15%;
     }
 }
