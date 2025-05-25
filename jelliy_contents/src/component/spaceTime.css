@@ -1,4 +1,15 @@
 @charset "UTF-8";
+.first_view.spaceTime {
+    .jelly_map {
+    margin: 0 20% 0 0;
+
+    img {
+      width: 80%;
+      height: auto;
+      object-fit: unset;
+    }
+  }
+}
 
 h1.space_time_h1 {
     left: 10%;

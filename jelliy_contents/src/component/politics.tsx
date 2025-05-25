@@ -295,7 +295,7 @@ function Politics() {
     <div className="component_container">
       <SharedImageFilters />
 
-      <section className='first_view' ref={firstViewRef} style={sectionStyle(0)}>
+      <section className='first_view politics' ref={firstViewRef} style={sectionStyle(0)}>
         <h1 className='art_h1'>政治経済</h1>
         <div className='position_relative'>
           <figure className='jelly_map'>

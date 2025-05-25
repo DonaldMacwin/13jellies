@@ -262,7 +262,7 @@ function Medicine() {
     <div className="component_container">
       <SharedImageFilters />
 
-      <section className='first_view' ref={firstViewRef} style={sectionStyle(0)}>
+      <section className='first_view medicine' ref={firstViewRef} style={sectionStyle(0)}>
         <h1 className='medicine_h1'>医学</h1>
         <div className='position_relative'>
           <figure className='jelly_map'>
