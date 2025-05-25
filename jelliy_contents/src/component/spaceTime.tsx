@@ -1,4 +1,4 @@
-import { useRef, useState, useEffect } from 'react';
+import { useRef } from 'react';
 import {
   useSectionScroll,
   SharedImageFilters,
@@ -6,16 +6,13 @@ import {
   useFirstViewMeritDemeritAnimation,
   useFirstViewImageAnimation,
   AnimatedFigureBlock,
-  topButtonStyle,
-  useStepImagePreload
+  useStepImagePreload,
+  createImageArrays,
+  useSectionHtmlLoader,
+  useTopScroll,
+  TopButton
 } from './_common_component';
 import SpaceTime_1stView from '../assets/img/SpaceTime_1stView01.png';
-/*import SpaceTime_dummy01 from '../assets/img/SpaceTime_dummy01.jpg';
-import SpaceTime_dummy02 from '../assets/img/SpaceTime_dummy02.jpg';
-import SpaceTime_dummy03 from '../assets/img/SpaceTime_dummy03.png';
-import SpaceTime_dummy04 from '../assets/img/SpaceTime_dummy02.jpg';
-import SpaceTime_dummy05 from '../assets/img/SpaceTime_dummy01.jpg';
-import SpaceTime_dummy06 from '../assets/img/SpaceTime_dummy02.jpg';*/
 
 // history
 import SpaceTime_history01 from '../assets/img/SpaceTime_history01.jpg';
@@ -134,252 +131,116 @@ function SpaceTime() {
   const { animateMerit, animateDemerit } = useFirstViewMeritDemeritAnimation(currentSection === 0);
   const { imageAnimationClass } = useFirstViewImageAnimation(currentSection === 0);
 
-  // 各セクションの画像アニメーションを管理するカスタムフック
-  const historyImagesArray = [
-    { src: SpaceTime_history01 },
-    { src: SpaceTime_history02 },
-    { src: SpaceTime_history03 },
-    { src: SpaceTime_history04 },
-    { src: SpaceTime_history05 },
-    { src: SpaceTime_history06 }
+  // 画像配列生成（共通関数で）
+  const sectionImageData = {
+    history: [
+      SpaceTime_history01, SpaceTime_history02, SpaceTime_history03,
+      SpaceTime_history04, SpaceTime_history05, SpaceTime_history06
+    ],
+    socialGeography: [
+      SpaceTime_social01, SpaceTime_social02, SpaceTime_social03,
+      SpaceTime_social04, SpaceTime_social05, SpaceTime_social06
+    ],
+    earthHistory: [
+      SpaceTime_earth01, SpaceTime_earth02, SpaceTime_earth03,
+      SpaceTime_earth04, SpaceTime_earth05, SpaceTime_earth06
+    ],
+    naturalGeography: [
+      SpaceTime_natural01, SpaceTime_natural02, SpaceTime_natural03,
+      SpaceTime_natural04, SpaceTime_natural05, SpaceTime_natural06
+    ],
+    geology: [
+      SpaceTime_geology01, SpaceTime_geology02, SpaceTime_geology03,
+      SpaceTime_geology04, SpaceTime_geology05, SpaceTime_geology06
+    ],
+    atmosphere: [
+      SpaceTime_atmosphere01, SpaceTime_atmosphere02, SpaceTime_atmosphere03,
+      SpaceTime_atmosphere04, SpaceTime_atmosphere05, SpaceTime_atmosphere06
+    ],
+    oceanography: [
+      SpaceTime_ocean01, SpaceTime_ocean02, SpaceTime_ocean03,
+      SpaceTime_ocean04, SpaceTime_ocean05, SpaceTime_ocean06
+    ],
+    astronomy: [
+      SpaceTime_astronomy01, SpaceTime_astronomy02, SpaceTime_astronomy03,
+      SpaceTime_astronomy04, SpaceTime_astronomy05, SpaceTime_astronomy06
+    ]
+  };
+  const imageArrays = createImageArrays(sectionImageData);
+
+  // 各セクションの画像アニメーションを管理するカスタムフック（共通化）
+  const sectionKeys = Object.keys(sectionImageData);
+  const sectionAnimations = sectionKeys.map((key, index) =>
+    useSectionImageAnimations(
+      currentSection === index + 1,
+      sectionImageData[key as keyof typeof sectionImageData].length
+    )
+  );
+
+  // --- 外部HTMLロードを共通フックで ---
+  const sectionNames = [
+    'history', 'social_geography', 'earth_history', 'natural_geography',
+    'geology', 'atmosphere', 'oceanography', 'astronomy'
   ];
-  const historyImages = useSectionImageAnimations(currentSection === 1, historyImagesArray.length);
-  const socialGeographyImagesArray = [
-    { src: SpaceTime_social01 },
-    { src: SpaceTime_social02 },
-    { src: SpaceTime_social03 },
-    { src: SpaceTime_social04 },
-    { src: SpaceTime_social05 },
-    { src: SpaceTime_social06 }
-  ];
-  const socialGeographyImages = useSectionImageAnimations(currentSection === 2, socialGeographyImagesArray.length);
-  const earthHistoryImagesArray = [
-    { src: SpaceTime_earth01 },
-    { src: SpaceTime_earth02 },
-    { src: SpaceTime_earth03 },
-    { src: SpaceTime_earth04 },
-    { src: SpaceTime_earth05 },
-    { src: SpaceTime_earth06 }
-  ];
-  const earthHistoryImages = useSectionImageAnimations(currentSection === 3, earthHistoryImagesArray.length);
-  const naturalGeographyImagesArray = [
-    { src: SpaceTime_natural01 },
-    { src: SpaceTime_natural02 },
-    { src: SpaceTime_natural03 },
-    { src: SpaceTime_natural04 },
-    { src: SpaceTime_natural05 },
-    { src: SpaceTime_natural06 }
-  ];
-  const naturalGeographyImages = useSectionImageAnimations(currentSection === 4, naturalGeographyImagesArray.length);
-  const geologyImagesArray = [
-    { src: SpaceTime_geology01 },
-    { src: SpaceTime_geology02 },
-    { src: SpaceTime_geology03 },
-    { src: SpaceTime_geology04 },
-    { src: SpaceTime_geology05 },
-    { src: SpaceTime_geology06 }
-  ];
-  const geologyImages = useSectionImageAnimations(currentSection === 5, geologyImagesArray.length);
-  const atmosphereImagesArray = [
-    { src: SpaceTime_atmosphere01 },
-    { src: SpaceTime_atmosphere02 },
-    { src: SpaceTime_atmosphere03 },
-    { src: SpaceTime_atmosphere04 },
-    { src: SpaceTime_atmosphere05 },
-    { src: SpaceTime_atmosphere06 }
-  ];
-  const atmosphereImages = useSectionImageAnimations(currentSection === 6, atmosphereImagesArray.length);
-  const oceanographyImagesArray = [
-    { src: SpaceTime_ocean01 },
-    { src: SpaceTime_ocean02 },
-    { src: SpaceTime_ocean03 },
-    { src: SpaceTime_ocean04 },
-    { src: SpaceTime_ocean05 },
-    { src: SpaceTime_ocean06 }
-  ];
-  const oceanographyImages = useSectionImageAnimations(currentSection === 7, oceanographyImagesArray.length);
-  const astronomyImagesArray = [
-    { src: SpaceTime_astronomy01 },
-    { src: SpaceTime_astronomy02 },
-    { src: SpaceTime_astronomy03 },
-    { src: SpaceTime_astronomy04 },
-    { src: SpaceTime_astronomy05 },
-    { src: SpaceTime_astronomy06 }
-  ];
-  const astronomyImages = useSectionImageAnimations(currentSection === 8, astronomyImagesArray.length);
-
-  // --- 各セクションの外部HTMLマークアップ取得用stateとfetch処理 ---
-  const [historyHtml, setHistoryHtml] = useState<string>('');
-  const [historyLoading, setHistoryLoading] = useState<boolean>(true);
-  const [historyError, setHistoryError] = useState<string | null>(null);
-
-  const [socialGeographyHtml, setSocialGeographyHtml] = useState<string>('');
-  const [socialGeographyLoading, setSocialGeographyLoading] = useState<boolean>(true);
-  const [socialGeographyError, setSocialGeographyError] = useState<string | null>(null);
-
-  const [earthHistoryHtml, setEarthHistoryHtml] = useState<string>('');
-  const [earthHistoryLoading, setEarthHistoryLoading] = useState<boolean>(true);
-  const [earthHistoryError, setEarthHistoryError] = useState<string | null>(null);
-
-  const [naturalGeographyHtml, setNaturalGeographyHtml] = useState<string>('');
-  const [naturalGeographyLoading, setNaturalGeographyLoading] = useState<boolean>(true);
-  const [naturalGeographyError, setNaturalGeographyError] = useState<string | null>(null);
-
-  const [geologyHtml, setGeologyHtml] = useState<string>('');
-  const [geologyLoading, setGeologyLoading] = useState<boolean>(true);
-  const [geologyError, setGeologyError] = useState<string | null>(null);
-
-  const [atmosphereHtml, setAtmosphereHtml] = useState<string>('');
-  const [atmosphereLoading, setAtmosphereLoading] = useState<boolean>(true);
-  const [atmosphereError, setAtmosphereError] = useState<string | null>(null);
-
-  const [oceanographyHtml, setOceanographyHtml] = useState<string>('');
-  const [oceanographyLoading, setOceanographyLoading] = useState<boolean>(true);
-  const [oceanographyError, setOceanographyError] = useState<string | null>(null);
-
-  const [astronomyHtml, setAstronomyHtml] = useState<string>('');
-  const [astronomyLoading, setAstronomyLoading] = useState<boolean>(true);
-  const [astronomyError, setAstronomyError] = useState<string | null>(null);
-
-  const basePath =
-    window.location.hostname === 'localhost'
-      ? '/texts/'
-      : `${import.meta.env.VITE_TEXTS_BASE_URL}/13jellies/jelliy_contents/dist/texts/`;
-
-  useEffect(() => {
-    fetch(`${basePath}spaceTime_history.html`)
-      .then((res) => {
-        if (!res.ok) throw new Error('ファイル取得エラー');
-        return res.text();
-      })
-      .then((html) => {
-        setHistoryHtml(html);
-        setHistoryLoading(false);
-      })
-      .catch((_err) => {
-        setHistoryError('読み込みにエラーが発生しました。再読込してみてください。');
-        setHistoryLoading(false);
-      });
-
-    fetch(`${basePath}spaceTime_social_geography.html`)
-      .then((res) => {
-        if (!res.ok) throw new Error('ファイル取得エラー');
-        return res.text();
-      })
-      .then((html) => {
-        setSocialGeographyHtml(html);
-        setSocialGeographyLoading(false);
-      })
-      .catch((_err) => {
-        setSocialGeographyError('読み込みにエラーが発生しました。再読込してみてください。');
-        setSocialGeographyLoading(false);
-      });
-
-    fetch(`${basePath}spaceTime_earth_history.html`)
-      .then((res) => {
-        if (!res.ok) throw new Error('ファイル取得エラー');
-        return res.text();
-      })
-      .then((html) => {
-        setEarthHistoryHtml(html);
-        setEarthHistoryLoading(false);
-      })
-      .catch((_err) => {
-        setEarthHistoryError('読み込みにエラーが発生しました。再読込してみてください。');
-        setEarthHistoryLoading(false);
-      });
-
-    fetch(`${basePath}spaceTime_natural_geography.html`)
-      .then((res) => {
-        if (!res.ok) throw new Error('ファイル取得エラー');
-        return res.text();
-      })
-      .then((html) => {
-        setNaturalGeographyHtml(html);
-        setNaturalGeographyLoading(false);
-      })
-      .catch((_err) => {
-        setNaturalGeographyError('読み込みにエラーが発生しました。再読込してみてください。');
-        setNaturalGeographyLoading(false);
-      });
-
-    fetch(`${basePath}spaceTime_geology.html`)
-      .then((res) => {
-        if (!res.ok) throw new Error('ファイル取得エラー');
-        return res.text();
-      })
-      .then((html) => {
-        setGeologyHtml(html);
-        setGeologyLoading(false);
-      })
-      .catch((_err) => {
-        setGeologyError('読み込みにエラーが発生しました。再読込してみてください。');
-        setGeologyLoading(false);
-      });
-
-    fetch(`${basePath}spaceTime_atmosphere.html`)
-      .then((res) => {
-        if (!res.ok) throw new Error('ファイル取得エラー');
-        return res.text();
-      })
-      .then((html) => {
-        setAtmosphereHtml(html);
-        setAtmosphereLoading(false);
-      })
-      .catch((_err) => {
-        setAtmosphereError('読み込みにエラーが発生しました。再読込してみてください。');
-        setAtmosphereLoading(false);
-      });
-
-    fetch(`${basePath}spaceTime_oceanography.html`)
-      .then((res) => {
-        if (!res.ok) throw new Error('ファイル取得エラー');
-        return res.text();
-      })
-      .then((html) => {
-        setOceanographyHtml(html);
-        setOceanographyLoading(false);
-      })
-      .catch((_err) => {
-        setOceanographyError('読み込みにエラーが発生しました。再読込してみてください。');
-        setOceanographyLoading(false);
-      });
-
-    fetch(`${basePath}spaceTime_astronomy.html`)
-      .then((res) => {
-        if (!res.ok) throw new Error('ファイル取得エラー');
-        return res.text();
-      })
-      .then((html) => {
-        setAstronomyHtml(html);
-        setAstronomyLoading(false);
-      })
-      .catch((_err) => {
-        setAstronomyError('読み込みにエラーが発生しました。再読込してみてください。');
-        setAstronomyLoading(false);
-      });
-  }, []);
+  const { htmlContents, loadingStates, errorStates } = useSectionHtmlLoader('spaceTime', sectionNames);
 
   // --- 段階的に画像をプリロードさせ、loading表示の待機時間を減らす ---
-  useStepImagePreload([
-    historyImagesArray,
-    socialGeographyImagesArray,
-    earthHistoryImagesArray,
-    naturalGeographyImagesArray,
-    geologyImagesArray,
-    atmosphereImagesArray,
-    oceanographyImagesArray,
-    astronomyImagesArray
-  ]);
+  useStepImagePreload(
+    Object.values(imageArrays)
+  );
 
-  // ページトップに戻る関数
-  const scrollToTop = () => {
-    if (!scrollLocked) {
-      setScrollLocked(true);
-      setCurrentSection(0);
-      setTimeout(() => setScrollLocked(false), 600);
-    }
-  };
+  // ページトップに戻る関数（共通フック利用）
+  const scrollToTop = useTopScroll(setCurrentSection, setScrollLocked, scrollLocked);
+
+  // --- レンダリング用の設定（共通化） ---
+  const sectionConfigs = [
+    { key: 'history', name: 'history', className: 'block_text_right', textPosition: 'right' },
+    { key: 'socialGeography', name: 'social_geography', className: 'block_text_left', textPosition: 'left' },
+    { key: 'earthHistory', name: 'earth_history', className: 'block_text_right', textPosition: 'right' },
+    { key: 'naturalGeography', name: 'natural_geography', className: 'block_text_left', textPosition: 'left' },
+    { key: 'geology', name: 'geology', className: 'block_text_right', textPosition: 'right' },
+    { key: 'atmosphere', name: 'atmosphere', className: 'block_text_left', textPosition: 'left' },
+    { key: 'oceanography', name: 'oceanography', className: 'block_text_right', textPosition: 'right' },
+    { key: 'astronomy', name: 'astronomy', className: 'block_text_left', textPosition: 'left' }
+  ];
+
+  // テキストブロックレンダリング用関数（共通化）
+  const renderTextBlock = (sectionName: string, sectionIndex: number) => (
+    <div
+      className='text_scroll_block scroller_decoration'
+      ref={sections[sectionIndex].scrollRef}
+      style={scrollableStyle(currentSection === sectionIndex)}
+    >
+      {loadingStates[sectionName] && <div>読み込み中...</div>}
+      {errorStates[sectionName] && <div style={{ color: 'red' }}>{errorStates[sectionName]}</div>}
+      {!loadingStates[sectionName] && !errorStates[sectionName] && (
+        <div dangerouslySetInnerHTML={{ __html: htmlContents[sectionName] || '' }} />
+      )}
+    </div>
+  );
+
+  // セクションレンダリング用関数（共通化）
+  const renderSection = (config: typeof sectionConfigs[0], index: number) => (
+    <section
+      className={config.className}
+      id={config.name}
+      ref={sections[index + 1].ref}
+      style={sectionStyle(index + 1)}
+      key={config.name}
+    >
+      <div className='flex_setting'>
+        {config.textPosition === 'left' && renderTextBlock(config.name, index + 1)}
+        <AnimatedFigureBlock
+          images={imageArrays[config.key]}
+          imagesState={sectionAnimations[index].imagesState}
+          imagesStyles={sectionAnimations[index].imagesStyles}
+          imageEffects={sectionAnimations[index].imageEffects}
+          blockClass={config.textPosition === 'left' ? 'right' : 'left'}
+        />
+        {config.textPosition === 'right' && renderTextBlock(config.name, index + 1)}
+      </div>
+    </section>
+  );
 
   return (
     <div className="component_container">
@@ -429,238 +290,11 @@ function SpaceTime() {
         </div>
       </section>
 
-      {/* 歴史セクション */}
-      <section
-        className='block_text_right'
-        id='history'
-        ref={historyRef}
-        style={sectionStyle(1)}>
-        <div className='flex_setting'>
-          <AnimatedFigureBlock
-            images={historyImagesArray}
-            imagesState={historyImages.imagesState}
-            imagesStyles={historyImages.imagesStyles}
-            imageEffects={historyImages.imageEffects}
-            blockClass="left"
-          />
-          <div
-            className='text_scroll_block scroller_decoration'
-            ref={historyScrollRef}
-            style={scrollableStyle(currentSection === 1)}>
-            {historyLoading && <div>読み込み中...</div>}
-            {historyError && <div style={{ color: 'red' }}>{historyError}</div>}
-            {!historyLoading && !historyError && (
-              <div dangerouslySetInnerHTML={{ __html: historyHtml }} />
-            )}
-          </div>
-        </div>
-      </section>
-
-      {/* 社会地理セクション */}
-      <section
-        className='block_text_left'
-        id='social_geography'
-        ref={socialGeographyRef}
-        style={sectionStyle(2)}>
-        <div className='flex_setting'>
-          <div
-            className='text_scroll_block scroller_decoration'
-            ref={socialGeographyScrollRef}
-            style={scrollableStyle(currentSection === 2)}>
-            {socialGeographyLoading && <div>読み込み中...</div>}
-            {socialGeographyError && <div style={{ color: 'red' }}>{socialGeographyError}</div>}
-            {!socialGeographyLoading && !socialGeographyError && (
-              <div dangerouslySetInnerHTML={{ __html: socialGeographyHtml }} />
-            )}
-          </div>
-          <AnimatedFigureBlock
-            images={socialGeographyImagesArray}
-            imagesState={socialGeographyImages.imagesState}
-            imagesStyles={socialGeographyImages.imagesStyles}
-            imageEffects={socialGeographyImages.imageEffects}
-            blockClass="right"
-          />
-        </div>
-      </section>
-
-      {/* 地球史セクション */}
-      <section
-        className='block_text_right'
-        id='earth_history'
-        ref={earthHistoryRef}
-        style={sectionStyle(3)}>
-        <div className='flex_setting'>
-          <AnimatedFigureBlock
-            images={earthHistoryImagesArray}
-            imagesState={earthHistoryImages.imagesState}
-            imagesStyles={earthHistoryImages.imagesStyles}
-            imageEffects={earthHistoryImages.imageEffects}
-            blockClass="left"
-          />
-          <div
-            className='text_scroll_block scroller_decoration'
-            ref={earthHistoryScrollRef}
-            style={scrollableStyle(currentSection === 3)}>
-            {earthHistoryLoading && <div>読み込み中...</div>}
-            {earthHistoryError && <div style={{ color: 'red' }}>{earthHistoryError}</div>}
-            {!earthHistoryLoading && !earthHistoryError && (
-              <div dangerouslySetInnerHTML={{ __html: earthHistoryHtml }} />
-            )}
-          </div>
-        </div>
-      </section>
-
-      {/* 自然地理セクション */}
-      <section
-        className='block_text_left'
-        id='natural_geography'
-        ref={naturalGeographyRef}
-        style={sectionStyle(4)}>
-        <div className='flex_setting'>
-          <div
-            className='text_scroll_block scroller_decoration'
-            ref={naturalGeographyScrollRef}
-            style={scrollableStyle(currentSection === 4)}>
-            {naturalGeographyLoading && <div>読み込み中...</div>}
-            {naturalGeographyError && <div style={{ color: 'red' }}>{naturalGeographyError}</div>}
-            {!naturalGeographyLoading && !naturalGeographyError && (
-              <div dangerouslySetInnerHTML={{ __html: naturalGeographyHtml }} />
-            )}
-          </div>
-          <AnimatedFigureBlock
-            images={naturalGeographyImagesArray}
-            imagesState={naturalGeographyImages.imagesState}
-            imagesStyles={naturalGeographyImages.imagesStyles}
-            imageEffects={naturalGeographyImages.imageEffects}
-            blockClass="right"
-          />
-        </div>
-      </section>
-
-      {/* 地質研究セクション */}
-      <section
-        className='block_text_right'
-        id='geology'
-        ref={geologyRef}
-        style={sectionStyle(5)}>
-        <div className='flex_setting'>
-          <AnimatedFigureBlock
-            images={geologyImagesArray}
-            imagesState={geologyImages.imagesState}
-            imagesStyles={geologyImages.imagesStyles}
-            imageEffects={geologyImages.imageEffects}
-            blockClass="left"
-          />
-          <div
-            className='text_scroll_block scroller_decoration'
-            ref={geologyScrollRef}
-            style={scrollableStyle(currentSection === 5)}>
-            {geologyLoading && <div>読み込み中...</div>}
-            {geologyError && <div style={{ color: 'red' }}>{geologyError}</div>}
-            {!geologyLoading && !geologyError && (
-              <div dangerouslySetInnerHTML={{ __html: geologyHtml }} />
-            )}
-          </div>
-        </div>
-      </section>
-
-      {/* 大気研究セクション */}
-      <section
-        className='block_text_left'
-        id='atmosphere'
-        ref={atmosphereRef}
-        style={sectionStyle(6)}>
-        <div className='flex_setting'>
-          <div
-            className='text_scroll_block scroller_decoration'
-            ref={atmosphereScrollRef}
-            style={scrollableStyle(currentSection === 6)}>
-            {atmosphereLoading && <div>読み込み中...</div>}
-            {atmosphereError && <div style={{ color: 'red' }}>{atmosphereError}</div>}
-            {!atmosphereLoading && !atmosphereError && (
-              <div dangerouslySetInnerHTML={{ __html: atmosphereHtml }} />
-            )}
-          </div>
-          <AnimatedFigureBlock
-            images={atmosphereImagesArray}
-            imagesState={atmosphereImages.imagesState}
-            imagesStyles={atmosphereImages.imagesStyles}
-            imageEffects={atmosphereImages.imageEffects}
-            blockClass="right"
-          />
-        </div>
-      </section>
-
-      {/* 海洋研究セクション */}
-      <section
-        className='block_text_right'
-        id='oceanography'
-        ref={oceanographyRef}
-        style={sectionStyle(7)}>
-        <div className='flex_setting'>
-          <AnimatedFigureBlock
-            images={oceanographyImagesArray}
-            imagesState={oceanographyImages.imagesState}
-            imagesStyles={oceanographyImages.imagesStyles}
-            imageEffects={oceanographyImages.imageEffects}
-            blockClass="left"
-          />
-          <div
-            className='text_scroll_block scroller_decoration'
-            ref={oceanographyScrollRef}
-            style={scrollableStyle(currentSection === 7)}>
-            {oceanographyLoading && <div>読み込み中...</div>}
-            {oceanographyError && <div style={{ color: 'red' }}>{oceanographyError}</div>}
-            {!oceanographyLoading && !oceanographyError && (
-              <div dangerouslySetInnerHTML={{ __html: oceanographyHtml }} />
-            )}
-          </div>
-        </div>
-      </section>
-
-      {/* 天文セクション */}
-      <section
-        className='block_text_left'
-        id='astronomy'
-        ref={astronomyRef}
-        style={sectionStyle(8)}>
-        <div className='flex_setting'>
-          <div
-            className='text_scroll_block scroller_decoration'
-            ref={astronomyScrollRef}
-            style={scrollableStyle(currentSection === 8)}>
-            {astronomyLoading && <div>読み込み中...</div>}
-            {astronomyError && <div style={{ color: 'red' }}>{astronomyError}</div>}
-            {!astronomyLoading && !astronomyError && (
-              <div dangerouslySetInnerHTML={{ __html: astronomyHtml }} />
-            )}
-          </div>
-          <AnimatedFigureBlock
-            images={astronomyImagesArray}
-            imagesState={astronomyImages.imagesState}
-            imagesStyles={astronomyImages.imagesStyles}
-            imageEffects={astronomyImages.imageEffects}
-            blockClass="right"
-          />
-        </div>
-      </section>
+      {/* 各セクションをレンダリング */}
+      {sectionConfigs.map((config, index) => renderSection(config, index))}
 
       {/* トップへ戻るボタン */}
-      {currentSection > 0 && (
-        <button
-          onClick={scrollToTop}
-          style={topButtonStyle}
-          className='topButtonStyle'
-          onMouseOver={(e) => {
-            e.currentTarget.style.backgroundColor = 'rgba(0, 0, 0, 0.8)';
-          }}
-          onMouseOut={(e) => {
-            e.currentTarget.style.backgroundColor = 'rgba(0, 0, 0, 0.6)';
-          }}
-        >
-          このページのTopへ戻る
-        </button>
-      )}
+      <TopButton show={currentSection > 0} onClick={scrollToTop} />
     </div>
   )
 }
