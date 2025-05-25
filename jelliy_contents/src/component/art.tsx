@@ -7,7 +7,11 @@ import {
   useFirstViewImageAnimation,
   AnimatedFigureBlock,
   topButtonStyle,
-  useStepImagePreload
+  useStepImagePreload,
+  createImageArrays,
+  useSectionHtmlLoader,
+  TopButton,
+  useTopScroll // ← 追加
 } from './_common_component';
 import Art_1stView from '../assets/img/Art_1stView01.png';
 
@@ -15,57 +19,57 @@ import Art_1stView from '../assets/img/Art_1stView01.png';
 import Art_planar_modeling01 from '../assets/img/Art_planar_modeling01.jpg';
 import Art_planar_modeling02 from '../assets/img/Art_planar_modeling02.jpg';
 import Art_planar_modeling03 from '../assets/img/Art_planar_modeling03.png';
-import Art_planar_modeling04 from '../assets/img/Art_planar_modeling01.jpg'; // ダミー
-import Art_planar_modeling05 from '../assets/img/Art_planar_modeling02.jpg'; // ダミー
-import Art_planar_modeling06 from '../assets/img/Art_planar_modeling03.png'; // ダミー
+import Art_planar_modeling04 from '../assets/img/Art_planar_modeling01.jpg';
+import Art_planar_modeling05 from '../assets/img/Art_planar_modeling02.jpg';
+import Art_planar_modeling06 from '../assets/img/Art_planar_modeling03.png';
 
 // 立体造形
 import Art_three_D_modeling01 from '../assets/img/Art_three_D_modeling01.jpg';
 import Art_three_D_modeling02 from '../assets/img/Art_three_D_modeling02.jpg';
 import Art_three_D_modeling03 from '../assets/img/Art_three_D_modeling03.png';
-import Art_three_D_modeling04 from '../assets/img/Art_three_D_modeling01.jpg'; // ダミー
-import Art_three_D_modeling05 from '../assets/img/Art_three_D_modeling02.jpg'; // ダミー
-import Art_three_D_modeling06 from '../assets/img/Art_three_D_modeling03.png'; // ダミー
+import Art_three_D_modeling04 from '../assets/img/Art_three_D_modeling01.jpg';
+import Art_three_D_modeling05 from '../assets/img/Art_three_D_modeling02.jpg';
+import Art_three_D_modeling06 from '../assets/img/Art_three_D_modeling03.png';
 
 // 文学
 import Art_literature01 from '../assets/img/Art_literature01.jpg';
 import Art_literature02 from '../assets/img/Art_literature02.jpg';
 import Art_literature03 from '../assets/img/Art_literature03.png';
-import Art_literature04 from '../assets/img/Art_literature01.jpg'; // ダミー
-import Art_literature05 from '../assets/img/Art_literature02.jpg'; // ダミー
-import Art_literature06 from '../assets/img/Art_literature03.png'; // ダミー
+import Art_literature04 from '../assets/img/Art_literature01.jpg';
+import Art_literature05 from '../assets/img/Art_literature02.jpg';
+import Art_literature06 from '../assets/img/Art_literature03.png';
 
 // 伝達技法研究
 import Art_communication_technique01 from '../assets/img/Art_communication_technique01.jpg';
 import Art_communication_technique02 from '../assets/img/Art_communication_technique02.jpg';
 import Art_communication_technique03 from '../assets/img/Art_communication_technique03.png';
-import Art_communication_technique04 from '../assets/img/Art_communication_technique01.jpg'; // ダミー
-import Art_communication_technique05 from '../assets/img/Art_communication_technique02.jpg'; // ダミー
-import Art_communication_technique06 from '../assets/img/Art_communication_technique03.png'; // ダミー
+import Art_communication_technique04 from '../assets/img/Art_communication_technique01.jpg';
+import Art_communication_technique05 from '../assets/img/Art_communication_technique02.jpg';
+import Art_communication_technique06 from '../assets/img/Art_communication_technique03.png';
 
 // 音楽
 import Art_music01 from '../assets/img/Art_music01.jpg';
 import Art_music02 from '../assets/img/Art_music02.jpg';
 import Art_music03 from '../assets/img/Art_music03.png';
-import Art_music04 from '../assets/img/Art_music01.jpg'; // ダミー
-import Art_music05 from '../assets/img/Art_music02.jpg'; // ダミー
-import Art_music06 from '../assets/img/Art_music03.png'; // ダミー
+import Art_music04 from '../assets/img/Art_music01.jpg';
+import Art_music05 from '../assets/img/Art_music02.jpg';
+import Art_music06 from '../assets/img/Art_music03.png';
 
 // 料理
 import Art_cooking01 from '../assets/img/Art_cooking01.jpg';
 import Art_cooking02 from '../assets/img/Art_cooking02.jpg';
 import Art_cooking03 from '../assets/img/Art_cooking03.png';
-import Art_cooking04 from '../assets/img/Art_cooking01.jpg'; // ダミー
-import Art_cooking05 from '../assets/img/Art_cooking02.jpg'; // ダミー
-import Art_cooking06 from '../assets/img/Art_cooking03.png'; // ダミー
+import Art_cooking04 from '../assets/img/Art_cooking01.jpg';
+import Art_cooking05 from '../assets/img/Art_cooking02.jpg';
+import Art_cooking06 from '../assets/img/Art_cooking03.png';
 
 // 舞台芸術
 import Art_performing01 from '../assets/img/Art_performing01.jpg';
 import Art_performing02 from '../assets/img/Art_performing02.jpg';
 import Art_performing03 from '../assets/img/Art_performing03.png';
-import Art_performing04 from '../assets/img/Art_performing01.jpg'; // ダミー
-import Art_performing05 from '../assets/img/Art_performing02.jpg'; // ダミー
-import Art_performing06 from '../assets/img/Art_performing03.png'; // ダミー
+import Art_performing04 from '../assets/img/Art_performing01.jpg';
+import Art_performing05 from '../assets/img/Art_performing02.jpg';
+import Art_performing06 from '../assets/img/Art_performing03.png';
 
 import './_common_css.css';
 import './art.css';
@@ -117,224 +121,116 @@ function Art() {
   const { animateMerit, animateDemerit } = useFirstViewMeritDemeritAnimation(currentSection === 0);
   const { imageAnimationClass } = useFirstViewImageAnimation(currentSection === 0);
 
-  // 各セクションの画像アニメーションを管理するカスタムフック
-  const planarModelingImagesArray = [
-    { src: Art_planar_modeling01 },
-    { src: Art_planar_modeling02 },
-    { src: Art_planar_modeling03 },
-    { src: Art_planar_modeling04 },
-    { src: Art_planar_modeling05 },
-    { src: Art_planar_modeling06 }
+  // --- 画像配列生成（共通関数で） ---
+  const sectionImageData = {
+    planarModeling: [
+      Art_planar_modeling01, Art_planar_modeling02, Art_planar_modeling03,
+      Art_planar_modeling04, Art_planar_modeling05, Art_planar_modeling06
+    ],
+    threeDModeling: [
+      Art_three_D_modeling01, Art_three_D_modeling02, Art_three_D_modeling03,
+      Art_three_D_modeling04, Art_three_D_modeling05, Art_three_D_modeling06
+    ],
+    literature: [
+      Art_literature01, Art_literature02, Art_literature03,
+      Art_literature04, Art_literature05, Art_literature06
+    ],
+    communicationTechnique: [
+      Art_communication_technique01, Art_communication_technique02, Art_communication_technique03,
+      Art_communication_technique04, Art_communication_technique05, Art_communication_technique06
+    ],
+    music: [
+      Art_music01, Art_music02, Art_music03,
+      Art_music04, Art_music05, Art_music06
+    ],
+    cooking: [
+      Art_cooking01, Art_cooking02, Art_cooking03,
+      Art_cooking04, Art_cooking05, Art_cooking06
+    ],
+    performing: [
+      Art_performing01, Art_performing02, Art_performing03,
+      Art_performing04, Art_performing05, Art_performing06
+    ]
+  };
+  const imageArrays = createImageArrays(sectionImageData);
+
+  // 各セクションのアニメーション
+  const sectionKeys = Object.keys(sectionImageData);
+  const sectionAnimations = sectionKeys.map((key, index) =>
+    useSectionImageAnimations(
+      currentSection === index + 1,
+      sectionImageData[key as keyof typeof sectionImageData].length
+    )
+  );
+
+  // --- 外部HTMLロードを共通フックで ---
+  const sectionNames = [
+    'planar_modeling',
+    'three_D_modeling',
+    'literature',
+    'communication_technique',
+    'music',
+    'cooking',
+    'performing'
   ];
-  const planarModelingImages = useSectionImageAnimations(currentSection === 1, planarModelingImagesArray.length);
-  const threeDModelingImagesArray = [
-    { src: Art_three_D_modeling01 },
-    { src: Art_three_D_modeling02 },
-    { src: Art_three_D_modeling03 },
-    { src: Art_three_D_modeling04 },
-    { src: Art_three_D_modeling05 },
-    { src: Art_three_D_modeling06 }
-  ];
-  const threeDModelingImages = useSectionImageAnimations(currentSection === 2, threeDModelingImagesArray.length);
-  const literatureImagesArray = [
-    { src: Art_literature01 },
-    { src: Art_literature02 },
-    { src: Art_literature03 },
-    { src: Art_literature04 },
-    { src: Art_literature05 },
-    { src: Art_literature06 }
-  ];
-  const literatureImages = useSectionImageAnimations(currentSection === 3, literatureImagesArray.length);
-  const communicationTechniqueImagesArray = [
-    { src: Art_communication_technique01 },
-    { src: Art_communication_technique02 },
-    { src: Art_communication_technique03 },
-    { src: Art_communication_technique04 },
-    { src: Art_communication_technique05 },
-    { src: Art_communication_technique06 }
-  ];
-  const communicationTechniqueImages = useSectionImageAnimations(currentSection === 4, communicationTechniqueImagesArray.length);
-  const musicImagesArray = [
-    { src: Art_music01 },
-    { src: Art_music02 },
-    { src: Art_music03 },
-    { src: Art_music04 },
-    { src: Art_music05 },
-    { src: Art_music06 }
-  ];
-  const musicImages = useSectionImageAnimations(currentSection === 5, musicImagesArray.length);
-  const cookingImagesArray = [
-    { src: Art_cooking01 },
-    { src: Art_cooking02 },
-    { src: Art_cooking03 },
-    { src: Art_cooking04 },
-    { src: Art_cooking05 },
-    { src: Art_cooking06 }
-  ];
-  const cookingImages = useSectionImageAnimations(currentSection === 6, cookingImagesArray.length);
-  const performingImagesArray = [
-    { src: Art_performing01 },
-    { src: Art_performing02 },
-    { src: Art_performing03 },
-    { src: Art_performing04 },
-    { src: Art_performing05 },
-    { src: Art_performing06 }
-  ];
-  const performingImages = useSectionImageAnimations(currentSection === 7, performingImagesArray.length);
-
-  // --- 各セクションの外部HTMLマークアップ取得用stateとfetch処理 ---
-  const [planarModelingHtml, setPlanarModelingHtml] = useState<string>('');
-  const [planarModelingLoading, setPlanarModelingLoading] = useState<boolean>(true);
-  const [planarModelingError, setPlanarModelingError] = useState<string | null>(null);
-
-  const [threeDModelingHtml, setThreeDModelingHtml] = useState<string>('');
-  const [threeDModelingLoading, setThreeDModelingLoading] = useState<boolean>(true);
-  const [threeDModelingError, setThreeDModelingError] = useState<string | null>(null);
-
-  const [literatureHtml, setLiteratureHtml] = useState<string>('');
-  const [literatureLoading, setLiteratureLoading] = useState<boolean>(true);
-  const [literatureError, setLiteratureError] = useState<string | null>(null);
-
-  const [communicationTechniqueHtml, setCommunicationTechniqueHtml] = useState<string>('');
-  const [communicationTechniqueLoading, setCommunicationTechniqueLoading] = useState<boolean>(true);
-  const [communicationTechniqueError, setCommunicationTechniqueError] = useState<string | null>(null);
-
-  const [musicHtml, setMusicHtml] = useState<string>('');
-  const [musicLoading, setMusicLoading] = useState<boolean>(true);
-  const [musicError, setMusicError] = useState<string | null>(null);
-
-  const [cookingHtml, setCookingHtml] = useState<string>('');
-  const [cookingLoading, setCookingLoading] = useState<boolean>(true);
-  const [cookingError, setCookingError] = useState<string | null>(null);
-
-  const [performingHtml, setPerformingHtml] = useState<string>('');
-  const [performingLoading, setPerformingLoading] = useState<boolean>(true);
-  const [performingError, setPerformingError] = useState<string | null>(null);
-
-  const basePath =
-    window.location.hostname === 'localhost'
-      ? '/texts/'
-      : `${import.meta.env.VITE_TEXTS_BASE_URL}/13jellies/jelliy_contents/dist/texts/`;
-
-  useEffect(() => {
-    fetch(`${basePath}art_planar_modeling.html`)
-      .then((res) => {
-        if (!res.ok) throw new Error('ファイル取得エラー');
-        return res.text();
-      })
-      .then((html) => {
-        setPlanarModelingHtml(html);
-        setPlanarModelingLoading(false);
-      })
-      .catch((_err) => {
-        setPlanarModelingError('読み込みにエラーが発生しました。再読込してみてください。');
-        setPlanarModelingLoading(false);
-      });
-
-    fetch(`${basePath}art_three_D_modeling.html`)
-      .then((res) => {
-        if (!res.ok) throw new Error('ファイル取得エラー');
-        return res.text();
-      })
-      .then((html) => {
-        setThreeDModelingHtml(html);
-        setThreeDModelingLoading(false);
-      })
-      .catch((_err) => {
-        setThreeDModelingError('読み込みにエラーが発生しました。再読込してみてください。');
-        setThreeDModelingLoading(false);
-      });
-
-    fetch(`${basePath}art_literature.html`)
-      .then((res) => {
-        if (!res.ok) throw new Error('ファイル取得エラー');
-        return res.text();
-      })
-      .then((html) => {
-        setLiteratureHtml(html);
-        setLiteratureLoading(false);
-      })
-      .catch((_err) => {
-        setLiteratureError('読み込みにエラーが発生しました。再読込してみてください。');
-        setLiteratureLoading(false);
-      });
-
-    fetch(`${basePath}art_communication_technique.html`)
-      .then((res) => {
-        if (!res.ok) throw new Error('ファイル取得エラー');
-        return res.text();
-      })
-      .then((html) => {
-        setCommunicationTechniqueHtml(html);
-        setCommunicationTechniqueLoading(false);
-      })
-      .catch((_err) => {
-        setCommunicationTechniqueError('読み込みにエラーが発生しました。再読込してみてください。');
-        setCommunicationTechniqueLoading(false);
-      });
-
-    fetch(`${basePath}art_music.html`)
-      .then((res) => {
-        if (!res.ok) throw new Error('ファイル取得エラー');
-        return res.text();
-      })
-      .then((html) => {
-        setMusicHtml(html);
-        setMusicLoading(false);
-      })
-      .catch((_err) => {
-        setMusicError('読み込みにエラーが発生しました。再読込してみてください。');
-        setMusicLoading(false);
-      });
-
-    fetch(`${basePath}art_cooking.html`)
-      .then((res) => {
-        if (!res.ok) throw new Error('ファイル取得エラー');
-        return res.text();
-      })
-      .then((html) => {
-        setCookingHtml(html);
-        setCookingLoading(false);
-      })
-      .catch((_err) => {
-        setCookingError('読み込みにエラーが発生しました。再読込してみてください。');
-        setCookingLoading(false);
-      });
-
-    fetch(`${basePath}art_performing.html`)
-      .then((res) => {
-        if (!res.ok) throw new Error('ファイル取得エラー');
-        return res.text();
-      })
-      .then((html) => {
-        setPerformingHtml(html);
-        setPerformingLoading(false);
-      })
-      .catch((_err) => {
-        setPerformingError('読み込みにエラーが発生しました。再読込してみてください。');
-        setPerformingLoading(false);
-      });
-  }, []);
+  const { htmlContents, loadingStates, errorStates } = useSectionHtmlLoader('art', sectionNames);
 
   // --- 段階的に画像をプリロードさせ、loading表示の待機時間を減らす ---
-  useStepImagePreload([
-    planarModelingImagesArray,
-    threeDModelingImagesArray,
-    literatureImagesArray,
-    communicationTechniqueImagesArray,
-    musicImagesArray,
-    cookingImagesArray,
-    performingImagesArray
-  ]);
+  useStepImagePreload(
+    Object.values(imageArrays)
+  );
 
-  // ページトップに戻る関数
-  const scrollToTop = () => {
-    if (!scrollLocked) {
-      setScrollLocked(true);
-      setCurrentSection(0);
-      setTimeout(() => setScrollLocked(false), 600);
-    }
-  };
+  // --- ページトップに戻る関数（共通フックで） ---
+  const scrollToTop = useTopScroll(setCurrentSection, setScrollLocked, scrollLocked);
+
+  // --- レンダリング用の設定 ---
+  const sectionConfigs = [
+    { key: 'planarModeling', name: 'planar_modeling', className: 'block_text_right', textPosition: 'right' },
+    { key: 'threeDModeling', name: 'three_D_modeling', className: 'block_text_left', textPosition: 'left' },
+    { key: 'literature', name: 'literature', className: 'block_text_right', textPosition: 'right' },
+    { key: 'communicationTechnique', name: 'communication_technique', className: 'block_text_left', textPosition: 'left' },
+    { key: 'music', name: 'music', className: 'block_text_right', textPosition: 'right' },
+    { key: 'cooking', name: 'cooking', className: 'block_text_left', textPosition: 'left' },
+    { key: 'performing', name: 'performing', className: 'block_text_right', textPosition: 'right' }
+  ];
+
+  // テキストブロックレンダリング用関数
+  const renderTextBlock = (sectionName: string, sectionIndex: number) => (
+    <div
+      className='text_scroll_block scroller_decoration'
+      ref={sections[sectionIndex].scrollRef}
+      style={scrollableStyle(currentSection === sectionIndex)}
+    >
+      {loadingStates[sectionName] && <div>読み込み中...</div>}
+      {errorStates[sectionName] && <div style={{ color: 'red' }}>{errorStates[sectionName]}</div>}
+      {!loadingStates[sectionName] && !errorStates[sectionName] && (
+        <div dangerouslySetInnerHTML={{ __html: htmlContents[sectionName] || '' }} />
+      )}
+    </div>
+  );
+
+  // セクションレンダリング用関数
+  const renderSection = (config: typeof sectionConfigs[0], index: number) => (
+    <section
+      className={config.className}
+      id={config.name}
+      ref={sections[index + 1].ref}
+      style={sectionStyle(index + 1)}
+      key={config.name}
+    >
+      <div className='flex_setting'>
+        {config.textPosition === 'left' && renderTextBlock(config.name, index + 1)}
+        <AnimatedFigureBlock
+          images={imageArrays[config.key]}
+          imagesState={sectionAnimations[index].imagesState}
+          imagesStyles={sectionAnimations[index].imagesStyles}
+          imageEffects={sectionAnimations[index].imageEffects}
+          blockClass={config.textPosition === 'left' ? 'right' : 'left'}
+        />
+        {config.textPosition === 'right' && renderTextBlock(config.name, index + 1)}
+      </div>
+    </section>
+  );
 
   return (
     <div className="component_container">
@@ -383,211 +279,11 @@ function Art() {
         </div>
       </section>
 
-      {/* 平面造形セクション */}
-      <section
-        className='block_text_right'
-        id='planar_modeling'
-        ref={planarModelingRef}
-        style={sectionStyle(1)}>
-        <div className='flex_setting'>
-          <AnimatedFigureBlock
-            images={planarModelingImagesArray}
-            imagesState={planarModelingImages.imagesState}
-            imagesStyles={planarModelingImages.imagesStyles}
-            imageEffects={planarModelingImages.imageEffects}
-            blockClass="left"
-          />
-          <div
-            className='text_scroll_block scroller_decoration'
-            ref={planarModelingScrollRef}
-            style={scrollableStyle(currentSection === 1)}>
-            {planarModelingLoading && <div>読み込み中...</div>}
-            {planarModelingError && <div style={{ color: 'red' }}>{planarModelingError}</div>}
-            {!planarModelingLoading && !planarModelingError && (
-              <div dangerouslySetInnerHTML={{ __html: planarModelingHtml }} />
-            )}
-          </div>
-        </div>
-      </section>
-
-      {/* 立体造形セクション */}
-      <section
-        className='block_text_left'
-        id='three_D_modeling'
-        ref={threeDModelingRef}
-        style={sectionStyle(2)}>
-        <div className='flex_setting'>
-          <div
-            className='text_scroll_block scroller_decoration'
-            ref={threeDModelingScrollRef}
-            style={scrollableStyle(currentSection === 2)}>
-            {threeDModelingLoading && <div>読み込み中...</div>}
-            {threeDModelingError && <div style={{ color: 'red' }}>{threeDModelingError}</div>}
-            {!threeDModelingLoading && !threeDModelingError && (
-              <div dangerouslySetInnerHTML={{ __html: threeDModelingHtml }} />
-            )}
-          </div>
-          <AnimatedFigureBlock
-            images={threeDModelingImagesArray}
-            imagesState={threeDModelingImages.imagesState}
-            imagesStyles={threeDModelingImages.imagesStyles}
-            imageEffects={threeDModelingImages.imageEffects}
-            blockClass="right"
-          />
-        </div>
-      </section>
-
-      {/* 文学セクション */}
-      <section
-        className='block_text_right'
-        id='literature'
-        ref={literatureRef}
-        style={sectionStyle(3)}>
-        <div className='flex_setting'>
-          <AnimatedFigureBlock
-            images={literatureImagesArray}
-            imagesState={literatureImages.imagesState}
-            imagesStyles={literatureImages.imagesStyles}
-            imageEffects={literatureImages.imageEffects}
-            blockClass="left"
-          />
-          <div
-            className='text_scroll_block scroller_decoration'
-            ref={literatureScrollRef}
-            style={scrollableStyle(currentSection === 3)}>
-            {literatureLoading && <div>読み込み中...</div>}
-            {literatureError && <div style={{ color: 'red' }}>{literatureError}</div>}
-            {!literatureLoading && !literatureError && (
-              <div dangerouslySetInnerHTML={{ __html: literatureHtml }} />
-            )}
-          </div>
-        </div>
-      </section>
-
-      {/* 伝達技法研究セクション */}
-      <section
-        className='block_text_left'
-        id='communication_technique'
-        ref={communicationTechniqueRef}
-        style={sectionStyle(4)}>
-        <div className='flex_setting'>
-          <div
-            className='text_scroll_block scroller_decoration'
-            ref={communicationTechniqueScrollRef}
-            style={scrollableStyle(currentSection === 4)}>
-            {communicationTechniqueLoading && <div>読み込み中...</div>}
-            {communicationTechniqueError && <div style={{ color: 'red' }}>{communicationTechniqueError}</div>}
-            {!communicationTechniqueLoading && !communicationTechniqueError && (
-              <div dangerouslySetInnerHTML={{ __html: communicationTechniqueHtml }} />
-            )}
-          </div>
-          <AnimatedFigureBlock
-            images={communicationTechniqueImagesArray}
-            imagesState={communicationTechniqueImages.imagesState}
-            imagesStyles={communicationTechniqueImages.imagesStyles}
-            imageEffects={communicationTechniqueImages.imageEffects}
-            blockClass="right"
-          />
-        </div>
-      </section>
-
-      {/* 音楽セクション */}
-      <section
-        className='block_text_right'
-        id='music'
-        ref={musicRef}
-        style={sectionStyle(5)}>
-        <div className='flex_setting'>
-          <AnimatedFigureBlock
-            images={musicImagesArray}
-            imagesState={musicImages.imagesState}
-            imagesStyles={musicImages.imagesStyles}
-            imageEffects={musicImages.imageEffects}
-            blockClass="left"
-          />
-          <div
-            className='text_scroll_block scroller_decoration'
-            ref={musicScrollRef}
-            style={scrollableStyle(currentSection === 5)}>
-            {musicLoading && <div>読み込み中...</div>}
-            {musicError && <div style={{ color: 'red' }}>{musicError}</div>}
-            {!musicLoading && !musicError && (
-              <div dangerouslySetInnerHTML={{ __html: musicHtml }} />
-            )}
-          </div>
-        </div>
-      </section>
-
-      {/* 料理セクション */}
-      <section
-        className='block_text_left'
-        id='cooking'
-        ref={cookingRef}
-        style={sectionStyle(6)}>
-        <div className='flex_setting'>
-          <div
-            className='text_scroll_block scroller_decoration'
-            ref={cookingScrollRef}
-            style={scrollableStyle(currentSection === 6)}>
-            {cookingLoading && <div>読み込み中...</div>}
-            {cookingError && <div style={{ color: 'red' }}>{cookingError}</div>}
-            {!cookingLoading && !cookingError && (
-              <div dangerouslySetInnerHTML={{ __html: cookingHtml }} />
-            )}
-          </div>
-          <AnimatedFigureBlock
-            images={cookingImagesArray}
-            imagesState={cookingImages.imagesState}
-            imagesStyles={cookingImages.imagesStyles}
-            imageEffects={cookingImages.imageEffects}
-            blockClass="right"
-          />
-        </div>
-      </section>
-
-      {/* 舞台芸術セクション */}
-      <section
-        className='block_text_right'
-        id='performing'
-        ref={performingRef}
-        style={sectionStyle(7)}>
-        <div className='flex_setting'>
-          <AnimatedFigureBlock
-            images={performingImagesArray}
-            imagesState={performingImages.imagesState}
-            imagesStyles={performingImages.imagesStyles}
-            imageEffects={performingImages.imageEffects}
-            blockClass="left"
-          />
-          <div
-            className='text_scroll_block scroller_decoration'
-            ref={performingScrollRef}
-            style={scrollableStyle(currentSection === 7)}>
-            {performingLoading && <div>読み込み中...</div>}
-            {performingError && <div style={{ color: 'red' }}>{performingError}</div>}
-            {!performingLoading && !performingError && (
-              <div dangerouslySetInnerHTML={{ __html: performingHtml }} />
-            )}
-          </div>
-        </div>
-      </section>
+      {/* 各セクションをレンダリング */}
+      {sectionConfigs.map((config, index) => renderSection(config, index))}
 
       {/* トップへ戻るボタン */}
-      {currentSection > 0 && (
-        <button
-          onClick={scrollToTop}
-          style={topButtonStyle}
-          className='topButtonStyle'
-          onMouseOver={(e) => {
-            e.currentTarget.style.backgroundColor = 'rgba(0, 0, 0, 0.8)';
-          }}
-          onMouseOut={(e) => {
-            e.currentTarget.style.backgroundColor = 'rgba(0, 0, 0, 0.6)';
-          }}
-        >
-          このページのTopへ戻る
-        </button>
-      )}
+      <TopButton show={currentSection > 0} onClick={scrollToTop} />
     </div>
   )
 }

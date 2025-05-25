@@ -1,4 +1,4 @@
-import { useRef, useState, useEffect } from 'react';
+import { useRef } from 'react';
 import {
   useSectionScroll,
   SharedImageFilters,
@@ -6,10 +6,13 @@ import {
   useFirstViewMeritDemeritAnimation,
   useFirstViewImageAnimation,
   AnimatedFigureBlock,
-  topButtonStyle,
-  useStepImagePreload
+  useStepImagePreload,
+  useSectionHtmlLoader,
+  createImageArrays,
+  useTopScroll
 } from './_common_component';
 import Society_1stView from '../assets/img/Society_1stView01.png';
+import { TopButton } from './_common_component';
 
 // 構成系
 import Society_composition01 from '../assets/img/Society_composition01.jpg';
@@ -73,7 +76,7 @@ function Society() {
   const { animateMerit, animateDemerit } = useFirstViewMeritDemeritAnimation(currentSection === 0);
   const { imageAnimationClass } = useFirstViewImageAnimation(currentSection === 0);
 
-  // 各セクションの画像を配列で定義
+  // 画像配列生成（共通関数で）
   const sectionImageData = {
     composition: [
       Society_composition01, Society_composition02, Society_composition03,
@@ -88,65 +91,21 @@ function Society() {
       Society_institution04, Society_institution05, Society_institution06
     ]
   };
-  // 画像配列生成（枚数に関係なく動作）
-  const imageArrays = Object.fromEntries(
-    Object.entries(sectionImageData).map(([key, images]) => [
-      key,
-      images.map(src => ({ src }))
-    ])
-  );
+  const imageArrays = createImageArrays(sectionImageData);
+
   // セクション名の配列
   const sectionKeys = Object.keys(sectionImageData);
-  // 各セクションのアニメーション（画像枚数は自動で取得）
-  const sectionAnimations = sectionKeys.map((key, index) => 
+  // 各セクションのアニメーション
+  const sectionAnimations = sectionKeys.map((key, index) =>
     useSectionImageAnimations(
-      currentSection === index + 1, 
+      currentSection === index + 1,
       sectionImageData[key as keyof typeof sectionImageData].length
     )
   );
 
-  // --- 各セクションの外部HTMLマークアップ取得用stateとfetch処理 ---
-  // HTMLコンテンツ状態の共通化
-  const [htmlContents, setHtmlContents] = useState<Record<string, string>>({});
-  const [loadingStates, setLoadingStates] = useState<Record<string, boolean>>({});
-  const [errorStates, setErrorStates] = useState<Record<string, string | null>>({});
-
-  const basePath =
-    window.location.hostname === 'localhost'
-      ? '/texts/'
-      : `${import.meta.env.VITE_TEXTS_BASE_URL}/13jellies/jelliy_contents/dist/texts/`;
-
-  useEffect(() => {
-    // セクション情報の配列
-    const sectionNames = [
-      'composition', 'positioning', 'institution'
-    ];
-
-    // 初期状態を設定
-    const initialLoading = Object.fromEntries(sectionNames.map(name => [name, true]));
-    const initialError = Object.fromEntries(sectionNames.map(name => [name, null]));
-    setLoadingStates(initialLoading);
-    setErrorStates(initialError);
-
-    // 共通のfetch処理関数
-    const fetchSectionContent = async (sectionName: string) => {
-      try {
-        const res = await fetch(`${basePath}society_${sectionName}.html`);
-        if (!res.ok) throw new Error('ファイル取得エラー');
-        const html = await res.text();
-        
-        setHtmlContents(prev => ({ ...prev, [sectionName]: html }));
-        setLoadingStates(prev => ({ ...prev, [sectionName]: false }));
-      } catch (_err) {
-        setErrorStates(prev => ({ ...prev, [sectionName]: '読み込みにエラーが発生しました。再読込してみてください。' }));
-        setLoadingStates(prev => ({ ...prev, [sectionName]: false }));
-      }
-    };
-    // 全セクションのコンテンツを並行して取得
-    sectionNames.forEach(sectionName => {
-      fetchSectionContent(sectionName);
-    });
-  }, [basePath]);
+  // --- 外部HTMLロードを共通フックで ---
+  const sectionNames = ['composition', 'positioning', 'institution'];
+  const { htmlContents, loadingStates, errorStates } = useSectionHtmlLoader('society', sectionNames);
 
   // --- 段階的に画像をプリロードさせ、loading表示の待機時間を減らす ---
   useStepImagePreload(
@@ -154,13 +113,7 @@ function Society() {
   );
 
   // ページトップに戻る関数
-  const scrollToTop = () => {
-    if (!scrollLocked) {
-      setScrollLocked(true);
-      setCurrentSection(0);
-      setTimeout(() => setScrollLocked(false), 600);
-    }
-  };
+  const scrollToTop = useTopScroll(setCurrentSection, setScrollLocked, scrollLocked);
 
   // レンダリング用の設定
   // セクションkey設定
@@ -253,21 +206,7 @@ function Society() {
       {sectionConfigs.map((config, index) => renderSection(config, index))}
 
       {/* トップへ戻るボタン */}
-      {currentSection > 0 && (
-        <button
-          onClick={scrollToTop}
-          style={topButtonStyle}
-          className='topButtonStyle'
-          onMouseOver={(e) => {
-            e.currentTarget.style.backgroundColor = 'rgba(0, 0, 0, 0.8)';
-          }}
-          onMouseOut={(e) => {
-            e.currentTarget.style.backgroundColor = 'rgba(0, 0, 0, 0.6)';
-          }}
-        >
-          このページのTopへ戻る
-        </button>
-      )}
+      <TopButton show={currentSection > 0} onClick={scrollToTop} />
     </div>
   )
 }

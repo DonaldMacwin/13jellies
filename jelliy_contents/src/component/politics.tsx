@@ -1,4 +1,4 @@
-import { useRef, useState, useEffect } from 'react';
+import { useRef } from 'react';
 import {
   useSectionScroll,
   SharedImageFilters,
@@ -6,10 +6,13 @@ import {
   useFirstViewMeritDemeritAnimation,
   useFirstViewImageAnimation,
   AnimatedFigureBlock,
-  topButtonStyle,
-  useStepImagePreload
+  useStepImagePreload,
+  useSectionHtmlLoader,
+  createImageArrays,
+  useTopScroll
 } from './_common_component';
 import Politics_1stView from '../assets/img/Politics_1stView01.png';
+import { TopButton } from './_common_component';
 
 // 経済研究
 import Politics_economics01 from '../assets/img/Society_composition01.jpg';
@@ -161,7 +164,7 @@ function Politics() {
   const { animateMerit, animateDemerit } = useFirstViewMeritDemeritAnimation(currentSection === 0);
   const { imageAnimationClass } = useFirstViewImageAnimation(currentSection === 0);
 
-  // 各セクションの画像を配列で定義
+  // 画像配列生成（共通関数で）
   const sectionImageData = {
     economics: [
       Politics_economics01, Politics_economics02, Politics_economics03,
@@ -208,67 +211,25 @@ function Politics() {
       Politics_public_studies04, Politics_public_studies05, Politics_public_studies06
     ]
   };
-  // 画像配列生成（枚数に関係なく動作）
-  const imageArrays = Object.fromEntries(
-    Object.entries(sectionImageData).map(([key, images]) => [
-      key,
-      images.map(src => ({ src }))
-    ])
-  );
+  const imageArrays = createImageArrays(sectionImageData);
+
   // セクション名の配列
   const sectionKeys = Object.keys(sectionImageData);
-  // 各セクションのアニメーション（画像枚数は自動で取得）
-  const sectionAnimations = sectionKeys.map((key, index) => 
+  // 各セクションのアニメーション
+  const sectionAnimations = sectionKeys.map((key, index) =>
     useSectionImageAnimations(
-      currentSection === index + 1, 
+      currentSection === index + 1,
       sectionImageData[key as keyof typeof sectionImageData].length
     )
   );
 
-  // --- 各セクションの外部HTMLマークアップ取得用stateとfetch処理 ---
-  // HTMLコンテンツ状態の共通化
-  const [htmlContents, setHtmlContents] = useState<Record<string, string>>({});
-  const [loadingStates, setLoadingStates] = useState<Record<string, boolean>>({});
-  const [errorStates, setErrorStates] = useState<Record<string, string | null>>({});
-
-  const basePath =
-    window.location.hostname === 'localhost'
-      ? '/texts/'
-      : `${import.meta.env.VITE_TEXTS_BASE_URL}/13jellies/jelliy_contents/dist/texts/`;
-
-  useEffect(() => {
-    // セクション情報の配列
-    const sectionNames = [
-      'economics', 'political_leadership', 'decision_process', 'political_groups',
-      'institutional', 'political_system', 'ideology', 'international',
-      'policy_content', 'political_implementation', 'public_studies'
-    ];
-
-    // 初期状態を設定
-    const initialLoading = Object.fromEntries(sectionNames.map(name => [name, true]));
-    const initialError = Object.fromEntries(sectionNames.map(name => [name, null]));
-    setLoadingStates(initialLoading);
-    setErrorStates(initialError);
-
-    // 共通のfetch処理関数
-    const fetchSectionContent = async (sectionName: string) => {
-      try {
-        const res = await fetch(`${basePath}politics_${sectionName}.html`);
-        if (!res.ok) throw new Error('ファイル取得エラー');
-        const html = await res.text();
-        
-        setHtmlContents(prev => ({ ...prev, [sectionName]: html }));
-        setLoadingStates(prev => ({ ...prev, [sectionName]: false }));
-      } catch (_err) {
-        setErrorStates(prev => ({ ...prev, [sectionName]: '読み込みにエラーが発生しました。再読込してみてください。' }));
-        setLoadingStates(prev => ({ ...prev, [sectionName]: false }));
-      }
-    };
-    // 全セクションのコンテンツを並行して取得
-    sectionNames.forEach(sectionName => {
-      fetchSectionContent(sectionName);
-    });
-  }, [basePath]);
+  // --- 外部HTMLロードを共通フックで ---
+  const sectionNames = [
+    'economics', 'political_leadership', 'decision_process', 'political_groups',
+    'institutional', 'political_system', 'ideology', 'international',
+    'policy_content', 'political_implementation', 'public_studies'
+  ];
+  const { htmlContents, loadingStates, errorStates } = useSectionHtmlLoader('politics', sectionNames);
 
   // --- 段階的に画像をプリロードさせ、loading表示の待機時間を減らす ---
   useStepImagePreload(
@@ -276,13 +237,7 @@ function Politics() {
   );
 
   // ページトップに戻る関数
-  const scrollToTop = () => {
-    if (!scrollLocked) {
-      setScrollLocked(true);
-      setCurrentSection(0);
-      setTimeout(() => setScrollLocked(false), 600);
-    }
-  };
+  const scrollToTop = useTopScroll(setCurrentSection, setScrollLocked, scrollLocked);
 
   // レンダリング用の設定
   // セクションkey設定
@@ -387,25 +342,11 @@ function Politics() {
         </div>
       </section>
 
-      {/* 共通化したセクションをレンダリング */}
+      {/* 各セクションをレンダリング */}
       {sectionConfigs.map((config, index) => renderSection(config, index))}
 
       {/* トップへ戻るボタン */}
-      {currentSection > 0 && (
-        <button
-          onClick={scrollToTop}
-          style={topButtonStyle}
-          className='topButtonStyle'
-          onMouseOver={(e) => {
-            e.currentTarget.style.backgroundColor = 'rgba(0, 0, 0, 0.8)';
-          }}
-          onMouseOut={(e) => {
-            e.currentTarget.style.backgroundColor = 'rgba(0, 0, 0, 0.6)';
-          }}
-        >
-          このページのTopへ戻る
-        </button>
-      )}
+      <TopButton show={currentSection > 0} onClick={scrollToTop} />
     </div>
   )
 }

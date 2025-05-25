@@ -2,6 +2,161 @@ import React from 'react';
 import { useState, useEffect, useRef } from 'react';
 import type { CSSProperties, RefObject } from 'react';
 
+// 外部HTMLロードの共通フック
+export function useSectionHtmlLoader(
+  prefix: string,
+  sectionNames: string[]
+) {
+  const [htmlContents, setHtmlContents] = useState<Record<string, string>>({});
+  const [loadingStates, setLoadingStates] = useState<Record<string, boolean>>({});
+  const [errorStates, setErrorStates] = useState<Record<string, string | null>>({});
+
+  const basePath =
+    window.location.hostname === 'localhost'
+      ? '/texts/'
+      : `${import.meta.env.VITE_TEXTS_BASE_URL}/13jellies/jelliy_contents/dist/texts/`;
+
+  useEffect(() => {
+    setLoadingStates(Object.fromEntries(sectionNames.map(name => [name, true])));
+    setErrorStates(Object.fromEntries(sectionNames.map(name => [name, null])));
+    sectionNames.forEach(sectionName => {
+      fetch(`${basePath}${prefix}_${sectionName}.html`)
+        .then(res => {
+          if (!res.ok) throw new Error('ファイル取得エラー');
+          return res.text();
+        })
+        .then(html => {
+          setHtmlContents(prev => ({ ...prev, [sectionName]: html }));
+          setLoadingStates(prev => ({ ...prev, [sectionName]: false }));
+        })
+        .catch(() => {
+          setErrorStates(prev => ({ ...prev, [sectionName]: '読み込みにエラーが発生しました。再読込してみてください。' }));
+          setLoadingStates(prev => ({ ...prev, [sectionName]: false }));
+        });
+    });
+  }, [basePath, prefix, sectionNames.join(',')]);
+
+  return { htmlContents, loadingStates, errorStates };
+}
+
+// 画像配列生成共通関数
+export function createImageArrays(sectionImageData: Record<string, string[]>): Record<string, {src: string}[]> {
+  return Object.fromEntries(
+    Object.entries(sectionImageData).map(([key, images]) => [
+      key,
+      images.map(src => ({ src }))
+    ])
+  );
+}
+
+// -----------------画面セクション移動・スクロール制御用カスタムフック
+export function useSectionScroll(
+    sectionCount: number,
+    scrollRefs: Array<RefObject<HTMLDivElement | null>>
+) {
+    // 現在のセクションとスクロール状態
+    const [currentSection, setCurrentSection] = useState<number>(0);
+    const [scrolling, setScrolling] = useState<boolean>(false);
+    const [scrollLocked, setScrollLocked] = useState<boolean>(false);
+
+    // 各セクションにスタイルを適用
+    const sectionStyle = (index: number): CSSProperties => ({
+        position: 'fixed',
+        top: currentSection === index ? '0' : (index < currentSection ? '-100vh' : '100vh'),
+        left: '50%',
+        transform: 'translateX(-50%)',
+        width: '96%',
+        height: '100vh',
+        maxWidth: '1440px',
+        overflow: 'hidden',
+        transition: 'top 0.6s cubic-bezier(0.65, 0, 0.35, 1)',
+        zIndex: currentSection === index ? 2 : 1,
+        visibility: Math.abs(currentSection - index) <= 1 ? 'visible' : 'hidden'
+    });
+
+    // スクロール可能な要素のスタイル関数を追加
+    const scrollableStyle = (isActive: boolean): CSSProperties => ({
+        overflowY: isActive ? 'auto' : 'hidden',
+        maxHeight: '96vh',
+        transition: 'all 0.3s ease'
+    });
+
+    // 標準スクロール無効化
+    useEffect(() => {
+        const preventDefaultScroll = (e: Event) => {
+            e.preventDefault();
+        };
+        window.addEventListener('wheel', preventDefaultScroll, { passive: false });
+        window.addEventListener('touchmove', preventDefaultScroll, { passive: false });
+        return () => {
+            window.removeEventListener('wheel', preventDefaultScroll);
+            window.removeEventListener('touchmove', preventDefaultScroll);
+        };
+    }, []);
+
+    // カスタムスクロール処理
+    useEffect(() => {
+        const handleWheel = (e: WheelEvent) => {
+            if (scrollLocked || scrolling) return;
+
+            const direction = e.deltaY > 0 ? 1 : -1;
+            const currentScrollRef = scrollRefs[currentSection]?.current;
+
+            // テキストスクロール
+            if (currentScrollRef) {
+                const { scrollTop, scrollHeight, clientHeight } = currentScrollRef;
+                const textScrollMultiplier = 3.0;
+                const baseScrollAmount = Math.min(Math.max(Math.abs(e.deltaY), 100), 600);
+                const textScrollAmount = baseScrollAmount * textScrollMultiplier * (direction > 0 ? 1 : -1);
+
+                if (direction > 0) {
+                    const isAtBottom = Math.abs(scrollTop + clientHeight - scrollHeight) < 2;
+                    if (!isAtBottom) {
+                        currentScrollRef.scrollBy({ top: Math.abs(textScrollAmount), behavior: 'smooth' });
+                        setTimeout(() => setScrolling(false), 150);
+                        return;
+                    }
+                } else {
+                    const isAtTop = scrollTop === 0;
+                    if (!isAtTop) {
+                        currentScrollRef.scrollBy({ top: textScrollAmount, behavior: 'smooth' });
+                        setTimeout(() => setScrolling(false), 150);
+                        return;
+                    }
+                }
+            }
+
+            // セクション移動
+            const nextSection = currentSection + direction;
+            if (nextSection >= 0 && nextSection < sectionCount) {
+                setScrollLocked(true);
+                setCurrentSection(nextSection);
+
+                // 上方向の移動時、スクロール位置を調整
+                if (direction < 0 && scrollRefs[nextSection]?.current) {
+                    const nextScrollRef = scrollRefs[nextSection]?.current;
+                    setTimeout(() => {
+                        if (nextScrollRef)
+                            nextScrollRef.scrollTop = nextScrollRef.scrollHeight - nextScrollRef.clientHeight;
+                    }, 100);
+                }
+
+                setTimeout(() => {
+                    setScrollLocked(false);
+                    setScrolling(false);
+                }, 600);
+            } else {
+                setScrolling(false);
+            }
+        };
+        window.addEventListener('wheel', handleWheel, { passive: false });
+        return () => {
+            window.removeEventListener('wheel', handleWheel);
+        };
+    }, [currentSection, scrolling, scrollLocked]);
+    return { currentSection, setCurrentSection, scrollLocked, setScrollLocked, sectionStyle, scrollableStyle };
+}
+
 // -----------------アニメーション制御
 // 画像アニメエフェクト用SVGフィルター定義（全体で一度だけ配置）
 export const SharedImageFilters: React.FC = () => (
@@ -320,114 +475,6 @@ export const AnimatedFigureBlock: React.FC<AnimatedFigureBlockProps> = ({
     );
 };
 
-// -----------------画面セクション移動・スクロール制御用カスタムフック
-export function useSectionScroll(
-    sectionCount: number,
-    scrollRefs: Array<RefObject<HTMLDivElement | null>>
-) {
-    // 現在のセクションとスクロール状態
-    const [currentSection, setCurrentSection] = useState<number>(0);
-    const [scrolling, setScrolling] = useState<boolean>(false);
-    const [scrollLocked, setScrollLocked] = useState<boolean>(false);
-
-    // 各セクションにスタイルを適用
-    const sectionStyle = (index: number): CSSProperties => ({
-        position: 'fixed',
-        top: currentSection === index ? '0' : (index < currentSection ? '-100vh' : '100vh'),
-        left: '50%',
-        transform: 'translateX(-50%)',
-        width: '96%',
-        height: '100vh',
-        maxWidth: '1440px',
-        overflow: 'hidden',
-        transition: 'top 0.6s cubic-bezier(0.65, 0, 0.35, 1)',
-        zIndex: currentSection === index ? 2 : 1,
-        visibility: Math.abs(currentSection - index) <= 1 ? 'visible' : 'hidden'
-    });
-
-    // スクロール可能な要素のスタイル関数を追加
-    const scrollableStyle = (isActive: boolean): CSSProperties => ({
-        overflowY: isActive ? 'auto' : 'hidden',
-        maxHeight: '96vh',
-        transition: 'all 0.3s ease'
-    });
-
-    // 標準スクロール無効化
-    useEffect(() => {
-        const preventDefaultScroll = (e: Event) => {
-            e.preventDefault();
-        };
-        window.addEventListener('wheel', preventDefaultScroll, { passive: false });
-        window.addEventListener('touchmove', preventDefaultScroll, { passive: false });
-        return () => {
-            window.removeEventListener('wheel', preventDefaultScroll);
-            window.removeEventListener('touchmove', preventDefaultScroll);
-        };
-    }, []);
-
-    // カスタムスクロール処理
-    useEffect(() => {
-        const handleWheel = (e: WheelEvent) => {
-            if (scrollLocked || scrolling) return;
-
-            const direction = e.deltaY > 0 ? 1 : -1;
-            const currentScrollRef = scrollRefs[currentSection]?.current;
-
-            // テキストスクロール
-            if (currentScrollRef) {
-                const { scrollTop, scrollHeight, clientHeight } = currentScrollRef;
-                const textScrollMultiplier = 3.0;
-                const baseScrollAmount = Math.min(Math.max(Math.abs(e.deltaY), 100), 600);
-                const textScrollAmount = baseScrollAmount * textScrollMultiplier * (direction > 0 ? 1 : -1);
-
-                if (direction > 0) {
-                    const isAtBottom = Math.abs(scrollTop + clientHeight - scrollHeight) < 2;
-                    if (!isAtBottom) {
-                        currentScrollRef.scrollBy({ top: Math.abs(textScrollAmount), behavior: 'smooth' });
-                        setTimeout(() => setScrolling(false), 150);
-                        return;
-                    }
-                } else {
-                    const isAtTop = scrollTop === 0;
-                    if (!isAtTop) {
-                        currentScrollRef.scrollBy({ top: textScrollAmount, behavior: 'smooth' });
-                        setTimeout(() => setScrolling(false), 150);
-                        return;
-                    }
-                }
-            }
-
-            // セクション移動
-            const nextSection = currentSection + direction;
-            if (nextSection >= 0 && nextSection < sectionCount) {
-                setScrollLocked(true);
-                setCurrentSection(nextSection);
-
-                // 上方向の移動時、スクロール位置を調整
-                if (direction < 0 && scrollRefs[nextSection]?.current) {
-                    const nextScrollRef = scrollRefs[nextSection]?.current;
-                    setTimeout(() => {
-                        if (nextScrollRef)
-                            nextScrollRef.scrollTop = nextScrollRef.scrollHeight - nextScrollRef.clientHeight;
-                    }, 100);
-                }
-
-                setTimeout(() => {
-                    setScrollLocked(false);
-                    setScrolling(false);
-                }, 600);
-            } else {
-                setScrolling(false);
-            }
-        };
-        window.addEventListener('wheel', handleWheel, { passive: false });
-        return () => {
-            window.removeEventListener('wheel', handleWheel);
-        };
-    }, [currentSection, scrolling, scrollLocked]);
-    return { currentSection, setCurrentSection, scrollLocked, setScrollLocked, sectionStyle, scrollableStyle };
-}
-
 // -----------------ページトップへ戻るボタン制御
 // ページトップへ戻るボタンのスタイル
 export const topButtonStyle: CSSProperties = {
@@ -444,3 +491,47 @@ export const topButtonStyle: CSSProperties = {
     fontSize: '14px',
     transition: 'all 0.3s ease'
 };
+
+type TopButtonProps = {
+  show: boolean;
+  onClick: () => void;
+};
+
+export const TopButton: React.FC<TopButtonProps> = ({ show, onClick }) =>
+  show ? (
+    <button
+      onClick={onClick}
+      style={topButtonStyle}
+      className='topButtonStyle'
+      onMouseOver={e => {
+        e.currentTarget.style.backgroundColor = 'rgba(0, 0, 0, 0.8)';
+      }}
+      onMouseOut={e => {
+        e.currentTarget.style.backgroundColor = 'rgba(0, 0, 0, 0.6)';
+      }}
+    >
+      このページのTopへ戻る
+    </button>
+  ) : null;
+
+/**
+ * ページトップへ戻る共通フック
+ * @param setCurrentSection セクション番号をセットする関数
+ * @param setScrollLocked スクロールロックをセットする関数
+ * @param scrollLocked 現在のロック状態
+ * @param duration ロック解除までのミリ秒（デフォルト600ms）
+ */
+export function useTopScroll(
+  setCurrentSection: (n: number) => void,
+  setScrollLocked: (b: boolean) => void,
+  scrollLocked: boolean,
+  duration: number = 600
+) {
+  return () => {
+    if (!scrollLocked) {
+      setScrollLocked(true);
+      setCurrentSection(0);
+      setTimeout(() => setScrollLocked(false), duration);
+    }
+  };
+}
