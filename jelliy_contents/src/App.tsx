@@ -8,7 +8,7 @@ import Biology from './component/biology';
 import Politics from './component/politics';
 import Industry from './component/industry';
 import Philosophy from './component/philosophy';
-
+import Chemistry from './component/chemistry';
 
 function App() {
   const [currentHash, setCurrentHash] = useState(window.location.hash);
@@ -45,7 +45,7 @@ function App() {
   } else if (currentHash === '#philosophy') {
     return <Philosophy />;
   } else if (currentHash === '#chemistry') {
-    return <div>chemistry</div>;
+    return <Chemistry />;
   } else if (currentHash === '#physics') {
     return <div>physics</div>;
   } else if (currentHash === '#linguistics') {
