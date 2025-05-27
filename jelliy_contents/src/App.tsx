@@ -7,6 +7,7 @@ import Medicine from './component/medicine';
 import Biology from './component/biology';
 import Politics from './component/politics';
 import Industry from './component/industry';
+import Philosophy from './component/philosophy';
 
 
 function App() {
@@ -42,7 +43,7 @@ function App() {
   } else if (currentHash === '#biology') {
     return <Biology />;
   } else if (currentHash === '#philosophy') {
-    return <div>philosophy</div>;
+    return <Philosophy />;
   } else if (currentHash === '#chemistry') {
     return <div>chemistry</div>;
   } else if (currentHash === '#physics') {
