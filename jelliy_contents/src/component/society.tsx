@@ -11,7 +11,7 @@ import {
   createImageArrays,
   useTopScroll
 } from './_common_component';
-import Society_1stView from '../assets/img/Society_1stView01.png';
+import Society_1stView from '../assets/img/Physics_1stView01.png';
 import { TopButton } from './_common_component';
 
 // 構成系
@@ -41,7 +41,7 @@ import Society_institution06 from '../assets/img/Society_institution03.png';
 import './_common_css.css';
 import './society.css';
 
-function Society() {
+function Physics() {
   // セクションの参照
   const firstViewRef = useRef<HTMLElement>(null);
   const compositionRef = useRef<HTMLElement>(null);
@@ -211,4 +211,4 @@ function Society() {
   )
 }
 
-export default Society;
+export default Physics;
