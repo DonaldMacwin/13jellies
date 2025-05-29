@@ -10,6 +10,7 @@ import Industry from './component/industry';
 import Philosophy from './component/philosophy';
 import Chemistry from './component/chemistry';
 import Physics from './component/physics';
+import Linguistics from './component/linguistics';
 
 
 function App() {
@@ -51,7 +52,7 @@ function App() {
   } else if (currentHash === '#physics') {
     return <Physics />;
   } else if (currentHash === '#linguistics') {
-    return <div>linguistics</div>;
+    return <Linguistics />;
   } else if (currentHash === '#mathematics') {
     return <div>mathematics</div>;
   } else {
