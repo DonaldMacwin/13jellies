@@ -13,63 +13,62 @@ import {
 } from './_common_component';
 import Society_1stView from '../assets/img/Physics_1stView01.png';
 import { TopButton } from './_common_component';
-
-// --- 物理用セクション画像（ダミー画像名でOK、1セクション6枚ずつ） ---
-import Physics_elementary01 from '../assets/img/Society_composition01.jpg';
-import Physics_elementary02 from '../assets/img/Society_composition02.jpg';
-import Physics_elementary03 from '../assets/img/Society_composition03.png';
-import Physics_elementary04 from '../assets/img/Society_composition01.jpg';
-import Physics_elementary05 from '../assets/img/Society_composition02.jpg';
-import Physics_elementary06 from '../assets/img/Society_composition03.png';
-
-import Physics_condensed01 from '../assets/img/Society_positioning01.jpg';
-import Physics_condensed02 from '../assets/img/Society_positioning02.jpg';
-import Physics_condensed03 from '../assets/img/Society_positioning03.png';
-import Physics_condensed04 from '../assets/img/Society_positioning01.jpg';
-import Physics_condensed05 from '../assets/img/Society_positioning02.jpg';
-import Physics_condensed06 from '../assets/img/Society_positioning03.png';
-
-import Physics_math01 from '../assets/img/Society_institution01.jpg';
-import Physics_math02 from '../assets/img/Society_institution02.jpg';
-import Physics_math03 from '../assets/img/Society_institution03.png';
-import Physics_math04 from '../assets/img/Society_institution01.jpg';
-import Physics_math05 from '../assets/img/Society_institution02.jpg';
-import Physics_math06 from '../assets/img/Society_institution03.png';
-
-import Physics_thermo01 from '../assets/img/Society_composition01.jpg';
-import Physics_thermo02 from '../assets/img/Society_composition02.jpg';
-import Physics_thermo03 from '../assets/img/Society_composition03.png';
-import Physics_thermo04 from '../assets/img/Society_composition01.jpg';
-import Physics_thermo05 from '../assets/img/Society_composition02.jpg';
-import Physics_thermo06 from '../assets/img/Society_composition03.png';
-
-import Physics_fluid01 from '../assets/img/Society_positioning01.jpg';
-import Physics_fluid02 from '../assets/img/Society_positioning02.jpg';
-import Physics_fluid03 from '../assets/img/Society_positioning03.png';
-import Physics_fluid04 from '../assets/img/Society_positioning01.jpg';
-import Physics_fluid05 from '../assets/img/Society_positioning02.jpg';
-import Physics_fluid06 from '../assets/img/Society_positioning03.png';
-
-import Physics_relativity01 from '../assets/img/Society_institution01.jpg';
-import Physics_relativity02 from '../assets/img/Society_institution02.jpg';
-import Physics_relativity03 from '../assets/img/Society_institution03.png';
-import Physics_relativity04 from '../assets/img/Society_institution01.jpg';
-import Physics_relativity05 from '../assets/img/Society_institution02.jpg';
-import Physics_relativity06 from '../assets/img/Society_institution03.png';
-
-import Physics_em01 from '../assets/img/Society_composition01.jpg';
-import Physics_em02 from '../assets/img/Society_composition02.jpg';
-import Physics_em03 from '../assets/img/Society_composition03.png';
-import Physics_em04 from '../assets/img/Society_composition01.jpg';
-import Physics_em05 from '../assets/img/Society_composition02.jpg';
-import Physics_em06 from '../assets/img/Society_composition03.png';
-
-import Physics_classical01 from '../assets/img/Society_positioning01.jpg';
-import Physics_classical02 from '../assets/img/Society_positioning02.jpg';
-import Physics_classical03 from '../assets/img/Society_positioning03.png';
-import Physics_classical04 from '../assets/img/Society_positioning01.jpg';
-import Physics_classical05 from '../assets/img/Society_positioning02.jpg';
-import Physics_classical06 from '../assets/img/Society_positioning03.png';
+// 素粒子・宇宙論
+import Physics_elementary01 from '../assets/img/Physics_elementary01.jpg';
+import Physics_elementary02 from '../assets/img/Physics_elementary02.jpg';
+import Physics_elementary03 from '../assets/img/Physics_elementary03.png';
+import Physics_elementary04 from '../assets/img/Physics_elementary01.jpg';
+import Physics_elementary05 from '../assets/img/Physics_elementary02.jpg';
+import Physics_elementary06 from '../assets/img/Physics_elementary03.png';
+// 物性物理
+import Physics_condensed01 from '../assets/img/Physics_condensed01.jpg';
+import Physics_condensed02 from '../assets/img/Physics_condensed02.jpg';
+import Physics_condensed03 from '../assets/img/Physics_condensed03.png';
+import Physics_condensed04 from '../assets/img/Physics_condensed01.jpg';
+import Physics_condensed05 from '../assets/img/Physics_condensed02.jpg';
+import Physics_condensed06 from '../assets/img/Physics_condensed03.png';
+// 物理数学
+import Physics_math01 from '../assets/img/Physics_math01.jpg';
+import Physics_math02 from '../assets/img/Physics_math02.jpg';
+import Physics_math03 from '../assets/img/Physics_math03.png';
+import Physics_math04 from '../assets/img/Physics_math01.jpg';
+import Physics_math05 from '../assets/img/Physics_math02.jpg';
+import Physics_math06 from '../assets/img/Physics_math03.png';
+// 熱力学
+import Physics_thermo01 from '../assets/img/Physics_thermo01.jpg';
+import Physics_thermo02 from '../assets/img/Physics_thermo02.jpg';
+import Physics_thermo03 from '../assets/img/Physics_thermo03.png';
+import Physics_thermo04 from '../assets/img/Physics_thermo01.jpg';
+import Physics_thermo05 from '../assets/img/Physics_thermo02.jpg';
+import Physics_thermo06 from '../assets/img/Physics_thermo03.png';
+// 連続体力学・流体力学
+import Physics_fluid01 from '../assets/img/Physics_fluid01.jpg';
+import Physics_fluid02 from '../assets/img/Physics_fluid02.jpg';
+import Physics_fluid03 from '../assets/img/Physics_fluid03.png';
+import Physics_fluid04 from '../assets/img/Physics_fluid01.jpg';
+import Physics_fluid05 from '../assets/img/Physics_fluid02.jpg';
+import Physics_fluid06 from '../assets/img/Physics_fluid03.png';
+// 相対性理論・量子力学
+import Physics_relativity01 from '../assets/img/Physics_relativity01.jpg';
+import Physics_relativity02 from '../assets/img/Physics_relativity02.jpg';
+import Physics_relativity03 from '../assets/img/Physics_relativity03.png';
+import Physics_relativity04 from '../assets/img/Physics_relativity01.jpg';
+import Physics_relativity05 from '../assets/img/Physics_relativity02.jpg';
+import Physics_relativity06 from '../assets/img/Physics_relativity03.png';
+// 電磁気学
+import Physics_em01 from '../assets/img/Physics_em01.jpg';
+import Physics_em02 from '../assets/img/Physics_em02.jpg';
+import Physics_em03 from '../assets/img/Physics_em03.png';
+import Physics_em04 from '../assets/img/Physics_em01.jpg';
+import Physics_em05 from '../assets/img/Physics_em02.jpg';
+import Physics_em06 from '../assets/img/Physics_em03.png';
+// 古典力学
+import Physics_classical01 from '../assets/img/Physics_classical01.jpg';
+import Physics_classical02 from '../assets/img/Physics_classical02.jpg';
+import Physics_classical03 from '../assets/img/Physics_classical03.png';
+import Physics_classical04 from '../assets/img/Physics_classical01.jpg';
+import Physics_classical05 from '../assets/img/Physics_classical02.jpg';
+import Physics_classical06 from '../assets/img/Physics_classical03.png';
 
 import './_common_css.css';
 import './physics.css';
