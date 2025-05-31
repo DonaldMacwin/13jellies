@@ -11,6 +11,8 @@ import Philosophy from './component/philosophy';
 import Chemistry from './component/chemistry';
 import Physics from './component/physics';
 import Linguistics from './component/linguistics';
+import Mathematics from './component/mathematics';
+
 
 
 function App() {
@@ -54,9 +56,9 @@ function App() {
   } else if (currentHash === '#linguistics') {
     return <Linguistics />;
   } else if (currentHash === '#mathematics') {
-    return <div>mathematics</div>;
+    return <Mathematics />;
   } else {
-    return <div>デフォルト</div>;
+    return <div></div>;
   }
 }
 
