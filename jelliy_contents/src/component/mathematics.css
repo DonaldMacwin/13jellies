@@ -1,60 +1,109 @@
 .first_view.mathematics {
     .jelly_map {
-    margin: 0 0 0 -5%;
+        margin: 0 0 0 -15%;
 
-    img {
-      width: 65%;
-      height: auto;
-      object-fit: unset;
+        img {
+            width: 60%;
+            height: auto;
+            object-fit: unset;
+        }
     }
-  }
+
+    .merit_and_demerit_block {
+        width: 52%;
+
+        .h3-float-wrap {
+            overflow: hidden;
+            margin: 0 0 1.0em;
+        }
+
+        .h3-float {
+            float: left;
+            width: fit-content;
+            margin: 0 1em -0.25em 0;
+            white-space: nowrap;
+        }
+
+        .h3-float-wrap p {
+            margin: 0;
+        }
+    }
 }
 
-h1.art_h1 {
-    left: 9%;
+h1.mathematics_h1 {
+    left: 0%;
 }
 
 .page_anchor_list {
-    .planar_modeling a {
-        top: 13%;
+    .representation a {
+        top: 18%;
+        left: 0%;
+        width: 7%;
+        height: 15%;
+    }
+
+    .complex-analysis a {
+        bottom: 41%;
         left: -2%;
-        width: 27%;
-        height: 25%;
-    }
-    .three_D_modeling a {
-        bottom: 28%;
-        left: -3%;
-        width: 23%;
-        height: 27%;
-    }
-    .literature a{
-        top: 13%;
-        left: 27%;
-        width: 16%;
-        height: 20%;
-    }
-    .communication_technique a{
-        top: 39%;
-        left: 22%;
-        width: 23%;
-        height: 17%;
-    }
-    .music a{
-        top: 15%;
-        left: 50%;
         width: 10%;
-        height: 20%;
+        height: 18%;
     }
-    .cooking a{
-        top: 39%;
-        left: 50%;
+
+    .algebraic-analysis a {
+        top: 41%;
+        left: 9%;
+        width: 7%;
+        height: 14%;
+    }
+
+    .number-theory a {
+        top: 33%;
+        left: 19%;
         width: 9%;
-        height: 21%;
+        height: 11%;
     }
-    .performing a{
-        bottom: 14%;
-        left: 46%;
-        width: 16%;
-        height: 24%;
+
+    .applied-mathematics a {
+        top: 16%;
+        left: 30%;
+        width: 13%;
+        height: 15%;
+    }
+
+    .algebraic-geometry a {
+        top: 36%;
+        left: 31%;
+        width: 11%;
+        height: 13%;
+    }
+    .differential-geometry a {
+        bottom: 40%;
+        left: 31%;
+        width: 10%;
+        height: 9%;
+    }
+    .algebra a {
+        bottom: 32%;
+        left: 17%;
+        width: 8%;
+        height: 15%;
+    }
+    .analysis a {
+        bottom: 21%;
+        left: 1%;
+        width: 10%;
+        height: 18%;
+    }
+    .geometry a {
+        bottom: 23%;
+        left: 31%;
+        width: 8%;
+        height: 11%;
+    }
+    .foundations a {
+        bottom: 15%;
+        left: 15%;
+        width: 9%;
+        height: 11%;
     }
 }

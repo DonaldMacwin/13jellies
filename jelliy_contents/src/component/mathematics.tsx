@@ -264,7 +264,7 @@ function Mathematics() {
       <SharedImageFilters />
 
       <section className='first_view mathematics' ref={firstViewRef} style={sectionStyle(0)}>
-        <h1 className='art_h1'>数学</h1>
+        <h1 className='mathematics_h1'>数学</h1>
         <div className='position_relative'>
           <figure className='jelly_map'>
             <img
@@ -290,17 +290,49 @@ function Mathematics() {
         <div className='merit_and_demerit_block scroller_decoration'>
           <article className={`merit ${animateMerit ? 'animate' : ''}`}>
             <h2>特長</h2>
-            <h3>見出し</h3><p>ガイダンスのテキスト</p>
-            <h3>見出し</h3><p>ガイダンスのテキスト</p>
-            <h3>見出し</h3><p>ガイダンスのテキスト</p>
-            <h3>見出し</h3><p>ガイダンスのテキスト</p>
+            <div className="h3-float-wrap">
+              <h3 className="h3-float">普遍的な言語としての数学</h3>
+              <p>数学は自然科学から社会科学、工学まで広範な分野で使用される普遍的な言語です。異なる文化や言語圏でも通用し、国際的なコミュニケーションツールの役割があります。</p>
+            </div>
+            <div className="h3-float-wrap">
+              <h3 className="h3-float">論理的思考の鍛練</h3>
+              <p>数学は論理的思考を養うための優れた手段であり、問題解決能力や抽象的思考を発展させます。論理的な展開と厳密な証明が求められるため、思考力や論理的な洞察が向上します。</p>
+            </div>
+            <div className="h3-float-wrap">
+              <h3 className="h3-float">科学との深い結びつき</h3>
+              <p>数学は自然科学と深い関わりがあり、物理学や統計学、工学などで必須のツールです。物理法則やデータ解析など、科学的な研究において不可欠な役割を果たします。</p>
+            </div>
+            <div className="h3-float-wrap">
+              <h3 className="h3-float">予測とモデリングの能力</h3>
+              <p>数学は未来の事象や複雑な現象をモデル化し、予測するための有力な手段です。金融、気象学、経済学などでの予測モデルの構築において、数学は高い精度での予測を可能にします。</p>
+            </div>
+            <div className="h3-float-wrap">
+              <h3 className="h3-float">抽象性と美</h3>
+              <p>数学は抽象的な概念を扱い、その中に美を見出すことができます。数学的な構造やパターンには美学的な要素が含まれ、数学そのものが芸術のような側面を持っています。</p>
+            </div>
           </article>
           <article className={`demerit ${animateDemerit ? 'animate' : ''}`}>
             <h2>難点</h2>
-            <h3>見出し</h3><p>ガイダンスのテキスト</p>
-            <h3>見出し</h3><p>ガイダンスのテキスト</p>
-            <h3>見出し</h3><p>ガイダンスのテキスト</p>
-            <h3>見出し</h3><p>ガイダンスのテキスト</p>
+            <div className="h3-float-wrap">
+              <h3 className="h3-float">難解な表現と理解のハードル</h3>
+              <p>数学は抽象的で複雑な概念を多く含むため、初学者にとっては理解が難しいことがあります。専門用語や数学的な記号体系は敷居を高くし、学習のハードルとなることがあります。</p>
+            </div>
+            <div className="h3-float-wrap">
+              <h3 className="h3-float">計算の煩雑さ</h3>
+              <p>数学には複雑な計算が伴うことがあり、手計算が非常に煩雑になる場合があります。特に高度な数学の分野では計算の複雑性が増すため、計算機やコンピュータの利用が不可欠となります。</p>
+            </div>
+            <div className="h3-float-wrap">
+              <h3 className="h3-float">抽象性による遠さ</h3>
+              <p>数学の抽象性は美しい一方で、一般の人々には遠い存在ともなりえます。実用的な問題との結びつきが不透明で一般の人が数学を身近に感じることが難しいという側面があります。</p>
+            </div>
+            <div className="h3-float-wrap">
+              <h3 className="h3-float">学習の時間と忍耐が必要</h3>
+              <p>数学の学習には時間と忍耐が必要であり、即座に成果を得ることが難しいことがあります。継続的な取り組みが求められ、一度離れると復帰が難しいこともあります。</p>
+            </div>
+            <div className="h3-float-wrap">
+              <h3 className="h3-float">創造性とのバランス</h3>
+              <p>数学は厳密性と論理性が重視される一方で、創造的な側面も求められます。しかしそのバランスが難しく、創造性を発揮するための余地が限られていると感じる人もいます。</p>
+            </div>
           </article>
         </div>
         <div className='back_to_map'>
