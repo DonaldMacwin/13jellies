@@ -1,60 +1,122 @@
 .first_view.linguistics {
     .jelly_map {
-    margin: 0 0 0 -5%;
+        margin: 0 0 0 -15%;
 
-    img {
-      width: 65%;
-      height: auto;
-      object-fit: unset;
+        img {
+            width: 70%;
+            height: auto;
+            object-fit: unset;
+        }
     }
-  }
 }
 
 h1.linguistics_h1 {
-    left: 9%;
+    left: 0%;
 }
 
 .page_anchor_list {
-    .planar_modeling a {
-        top: 13%;
-        left: -2%;
-        width: 27%;
-        height: 25%;
-    }
-    .three_D_modeling a {
-        bottom: 28%;
-        left: -3%;
-        width: 23%;
-        height: 27%;
-    }
-    .literature a{
-        top: 13%;
-        left: 27%;
+    .discourse a {
+        top: 3%;
+        left: -6%;
         width: 16%;
-        height: 20%;
+        height: 15%;
     }
-    .communication_technique a{
-        top: 39%;
-        left: 22%;
-        width: 23%;
-        height: 17%;
+
+    .acquisition a {
+        top: 2%;
+        left: 11%;
+        width: 15%;
+        height: 13%;
     }
-    .music a{
+
+    .grammar a {
+        top: 21%;
+        left: -5%;
+        width: 12%;
+        height: 15%;
+    }
+
+    .corpus a {
         top: 15%;
-        left: 50%;
-        width: 10%;
-        height: 20%;
+        left: 11%;
+        width: 13%;
+        height: 12%;
     }
-    .cooking a{
-        top: 39%;
-        left: 50%;
-        width: 9%;
-        height: 21%;
+
+    .philosophy a {
+        top: 38%;
+        left: -13%;
+        width: 22%;
+        height: 9%;
     }
-    .performing a{
-        bottom: 14%;
+
+    .individual a {
+        top: 4%;
+        left: 32%;
+        width: 31%;
+        height: 16%;
+    }
+
+    .writing a {
+        top: 23%;
+        left: 30%;
+        width: 14%;
+        height: 13%;
+    }
+
+    .sign a {
+        top: 21%;
         left: 46%;
+        width: 14%;
+        height: 12%;
+    }
+
+    .body a {
+        top: 35%;
+        left: 46%;
+        width: 14%;
+        height: 9%;
+    }
+
+    .pragmatics a {
+        bottom: 37%;
+        left: -1%;
         width: 16%;
-        height: 24%;
+        height: 11%;
+    }
+
+    .syntax a {
+        bottom: 41%;
+        left: 17%;
+        width: 15%;
+        height: 12%;
+    }
+
+    .phonetics a {
+        bottom: 37%;
+        left: 39%;
+        width: 20%;
+        height: 11%;
+    }
+
+    .phonology a {
+        bottom: 17%;
+        left: 39%;
+        width: 25%;
+        height: 15%;
+    }
+
+    .lexical a {
+        bottom: 1%;
+        left: 13%;
+        width: 25%;
+        height: 29%;
+    }
+
+    .morphology a {
+        bottom: 16%;
+        left: -15%;
+        width: 25%;
+        height: 14%;
     }
 }
