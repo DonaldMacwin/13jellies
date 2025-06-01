@@ -10,51 +10,57 @@
   }
 }
 
-h1.art_h1 {
-    left: 9%;
+h1.physics_h1 {
+    left: 5%;
 }
 
 .page_anchor_list {
-    .planar_modeling a {
-        top: 13%;
-        left: -2%;
-        width: 27%;
-        height: 25%;
+    .elementary a {
+        top: 16%;
+        left: 7%;
+        width: 17%;
+        height: 12%;
     }
-    .three_D_modeling a {
-        bottom: 28%;
-        left: -3%;
-        width: 23%;
-        height: 27%;
-    }
-    .literature a{
-        top: 13%;
-        left: 27%;
-        width: 16%;
-        height: 20%;
-    }
-    .communication_technique a{
-        top: 39%;
+    .condensed a {
+        top: 28%;
         left: 22%;
-        width: 23%;
+        width: 22%;
         height: 17%;
     }
-    .music a{
-        top: 15%;
-        left: 50%;
-        width: 10%;
-        height: 20%;
+    .math a{
+        top: 18%;
+        left: 41%;
+        width: 12%;
+        height: 10%;
     }
-    .cooking a{
-        top: 39%;
-        left: 50%;
+    .thermo a{
+        top: 50%;
+        left: 17%;
+        width: 11%;
+        height: 11%;
+    }
+    .fluid a{
+        top: 51%;
+        left: 31%;
+        width: 8%;
+        height: 8%;
+    }
+    .relativity a{
+        bottom: 28%;
+        left: 37%;
         width: 9%;
-        height: 21%;
+        height: 9%;
     }
-    .performing a{
-        bottom: 14%;
-        left: 46%;
-        width: 16%;
-        height: 24%;
+    .em a{
+        bottom: 31%;
+        left: 13%;
+        width: 7%;
+        height: 7%;
+    }
+    .classical a{
+        bottom: 21%;
+        left: 25%;
+        width: 8%;
+        height: 5%;
     }
 }
