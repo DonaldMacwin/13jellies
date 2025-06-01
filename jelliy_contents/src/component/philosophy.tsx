@@ -209,7 +209,7 @@ function Philosophy() {
       <SharedImageFilters />
 
       <section className='first_view philosophy' ref={firstViewRef} style={sectionStyle(0)}>
-        <h1 className='art_h1'>哲学宗教</h1>
+        <h1 className='philosophy_h1'>哲学<br />宗教</h1>
         <div className='position_relative'>
           <figure className='jelly_map'>
             <img
@@ -230,17 +230,57 @@ function Philosophy() {
         <div className='merit_and_demerit_block scroller_decoration'>
           <article className={`merit ${animateMerit ? 'animate' : ''}`}>
             <h2>特長</h2>
-            <h3>見出し</h3><p>ガイダンスのテキスト</p>
-            <h3>見出し</h3><p>ガイダンスのテキスト</p>
-            <h3>見出し</h3><p>ガイダンスのテキスト</p>
-            <h3>見出し</h3><p>ガイダンスのテキスト</p>
+            <div className="h3-float-wrap">
+              <h3 className="h3-float">思考の深化と問いの提起</h3>
+              <p>哲学宗教は深い思索を通じて、存在、知識、道徳などに関する根本的な問いを提起します。哲学的なアプローチは問題の本質に迫り、より深い理解をもたらすことがあります。</p>
+            </div>
+            <div className="h3-float-wrap">
+              <h3 className="h3-float">論理的思考と議論の発展</h3>
+              <p>哲学宗教は論理的な思考を養い、複雑なアイディアを論理的に整理し、表現する能力を向上させます。これは他の分野でも通用するスキルであり、問題解決力や批判的思考を発展させます。</p>
+            </div>
+            <div className="h3-float-wrap">
+              <h3 className="h3-float">異なる視点への理解と尊重</h3>
+              <p>哲学宗教は異なる哲学者や学派を通じて、異なる文化や時代の視点を理解し尊重する手段を提供します。これが異なる観点を認識し、対話的で包括的な思考を促進します。</p>
+            </div>
+            <div className="h3-float-wrap">
+              <h3 className="h3-float">霊的な満足感と結びつき</h3>
+              <p>哲学宗教は信仰と結びつき、個人に霊的な満足感を提供します。信仰を通じて、人々は意味や目的を見出し、共同体感を強化することがあります。</p>
+            </div>
+            <div className="h3-float-wrap">
+              <h3 className="h3-float">倫理的な指針と行動規範</h3>
+              <p>哲学宗教はしばしば倫理的な指針や行動規範を提供し、個人や共同体が善と悪、正義と不正義を判断するための基準を提供します。</p>
+            </div>
+            <div className="h3-float-wrap">
+              <h3 className="h3-float">社会的な結束力</h3>
+              <p>哲学宗教は共同体や文化の中で社会的な結束力を生み出すことがあります。共通の信仰体験や儀式は、人々を団結させる効果があります。</p>
+            </div>
           </article>
           <article className={`demerit ${animateDemerit ? 'animate' : ''}`}>
             <h2>難点</h2>
-            <h3>見出し</h3><p>ガイダンスのテキスト</p>
-            <h3>見出し</h3><p>ガイダンスのテキスト</p>
-            <h3>見出し</h3><p>ガイダンスのテキスト</p>
-            <h3>見出し</h3><p>ガイダンスのテキスト</p>
+            <div className="h3-float-wrap">
+              <h3 className="h3-float">実用性の不足</h3>
+              <p>哲学宗教のアプローチはしばしば抽象的であり、実用性が不透明な場合があります。一部の人は、哲学宗教が具体的な問題に対処するのに直接的ではないと感じることがあります。</p>
+            </div>
+            <div className="h3-float-wrap">
+              <h3 className="h3-float">合意の難しさ</h3>
+              <p>哲学宗教は時に異なる識者や学派の間で合意を形成するのが難しい分野です。異なる立場が存在するため、統一的な見解を得ることが挑戦的であることがあります。</p>
+            </div>
+            <div className="h3-float-wrap">
+              <h3 className="h3-float">時間のかかるアプローチ</h3>
+              <p>問題の根本的な理解を求める哲学宗教的なアプローチは時間を要することがあり、現実的な問題に対する即座の解決を難しくすることがあります。</p>
+            </div>
+            <div className="h3-float-wrap">
+              <h3 className="h3-float">対立と偏見</h3>
+              <p>哲学宗教はしばしば異なる信仰や信念の対立を引き起こし、偏見や対立を生む要因となることがあります。これが哲学宗教間の摩擦や対立を引き起こすことがあります。</p>
+            </div>
+            <div className="h3-float-wrap">
+              <h3 className="h3-float">科学的な進歩への制約</h3>
+              <p>一部の哲学宗教信念は、科学的な進歩や発展と対立することがあります。これが教義と現代科学の矛盾を引き起こすことがあります。</p>
+            </div>
+            <div className="h3-float-wrap">
+              <h3 className="h3-float">過度な統制と拘束</h3>
+              <p>一部の哲学宗教体系は、個人の自由や表現の自由を制限し、厳格な規律を要求することがあります。これが個人の発展や多様性を妨げることがあります。</p>
+            </div>
           </article>
         </div>
         <div className='back_to_map'>
