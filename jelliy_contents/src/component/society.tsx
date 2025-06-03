@@ -11,7 +11,7 @@ import {
   createImageArrays,
   useTopScroll
 } from './_common_component';
-import Society_1stView from '../assets/img/Physics_1stView01.png';
+import Society_1stView from '../assets/img/Society_1stView01.png';
 import { TopButton } from './_common_component';
 
 // 構成系
@@ -164,7 +164,7 @@ function Physics() {
       <SharedImageFilters />
 
       <section className='first_view society' ref={firstViewRef} style={sectionStyle(0)}>
-        <h1 className='art_h1'>社会</h1>
+        <h1 className='society_h1'>社会</h1>
         <div className='position_relative'>
           <figure className='jelly_map'>
             <img
@@ -182,17 +182,19 @@ function Physics() {
         <div className='merit_and_demerit_block scroller_decoration'>
           <article className={`merit ${animateMerit ? 'animate' : ''}`}>
             <h2>特長</h2>
-            <h3>見出し</h3><p>ガイダンスのテキスト</p>
-            <h3>見出し</h3><p>ガイダンスのテキスト</p>
-            <h3>見出し</h3><p>ガイダンスのテキスト</p>
-            <h3>見出し</h3><p>ガイダンスのテキスト</p>
+            <h3>社会問題の解明</h3><p>社会研究は貧困や差別、家族、教育など多様な社会問題の構造や原因を明らかにし、解決策を探る研究分野です。</p>
+            <h3>多様な視点の獲得</h3><p>社会研究を学ぶことで、異なる文化や価値観、社会集団の視点を理解し、多角的なものの見方が身につきます。</p>
+            <h3>政策立案への貢献</h3><p>社会調査やデータ分析を通じて、実証的な根拠に基づいた政策提言や社会制度の改善に寄与できます。</p>
+            <h3>コミュニケーション能力の向上</h3><p>社会研究は人間関係や集団行動の理解を深めるため、対人スキルやコミュニケーション能力の向上にも役立ちます。</p>
+            <h3>社会変革への意識</h3><p>社会の仕組みや不平等の現実を知ることで、より良い社会を目指す意識や行動力が養われます。</p>
           </article>
           <article className={`demerit ${animateDemerit ? 'animate' : ''}`}>
             <h2>難点</h2>
-            <h3>見出し</h3><p>ガイダンスのテキスト</p>
-            <h3>見出し</h3><p>ガイダンスのテキスト</p>
-            <h3>見出し</h3><p>ガイダンスのテキスト</p>
-            <h3>見出し</h3><p>ガイダンスのテキスト</p>
+            <h3>客観性の確保が難しい</h3><p>人間や社会を対象とするため、完全な客観性や再現性を保つことが難しい場合があります。</p>
+            <h3>成果の即時性が低い</h3><p>社会研究の研究成果は社会全体への影響が現れるまで時間がかかることが多いです。</p>
+            <h3>理論の多様性による混乱</h3><p>多くの理論やアプローチが存在し、初心者には全体像の把握や整理が難しいことがあります。</p>
+            <h3>数値化しにくい現象の扱い</h3><p>人間の感情や価値観など、数値化や定量化が難しいテーマも多く、分析に限界が生じることがあります。</p>
+            <h3>社会的・政治的影響を受けやすい</h3><p>研究テーマや結果が社会的・政治的な影響を受けやすく、中立性の維持が課題となることがあります。</p>
           </article>
         </div>
         <div className='back_to_map'>

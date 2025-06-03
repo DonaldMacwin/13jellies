@@ -1,60 +1,39 @@
 .first_view.society {
     .jelly_map {
-    margin: 0 0 0 -5%;
+    margin: 0 0 0 -20%;
 
     img {
-      width: 65%;
+      width: 55%;
       height: auto;
       object-fit: unset;
     }
   }
+  .merit_and_demerit_block {
+    width: 50%;
+  }
 }
 
-h1.art_h1 {
-    left: 9%;
+h1.society_h1 {
+    left: 0%;
 }
 
 .page_anchor_list {
-    .planar_modeling a {
-        top: 13%;
-        left: -2%;
-        width: 27%;
-        height: 25%;
-    }
-    .three_D_modeling a {
-        bottom: 28%;
-        left: -3%;
-        width: 23%;
-        height: 27%;
-    }
-    .literature a{
-        top: 13%;
-        left: 27%;
-        width: 16%;
-        height: 20%;
-    }
-    .communication_technique a{
-        top: 39%;
-        left: 22%;
-        width: 23%;
-        height: 17%;
-    }
-    .music a{
-        top: 15%;
-        left: 50%;
+    .composition a {
+        top: 22%;
+        left: -19%;
         width: 10%;
-        height: 20%;
+        height: 43%;
     }
-    .cooking a{
-        top: 39%;
-        left: 50%;
-        width: 9%;
-        height: 21%;
-    }
-    .performing a{
-        bottom: 14%;
-        left: 46%;
+    .positioning a {
+        top: 25%;
+        left: 5%;
         width: 16%;
-        height: 24%;
+        height: 35%;
+    }
+    .institution a{
+        top: 25%;
+        left: 28%;
+        width: 16%;
+        height: 31%;
     }
 }
