@@ -15,46 +15,94 @@ h1.biology_h1 {
 }
 
 .page_anchor_list {
-    .planar_modeling a {
-        top: 13%;
-        left: -2%;
-        width: 27%;
-        height: 25%;
+    .agricultural_research a {
+        top: 29%;
+        left: 14%;
+        width: 8%;
+        height: 14%;
     }
-    .three_D_modeling a {
+    .plant_research a {
+        top: 45%;
+        left: 14%;
+        width: 6%;
+        height: 9%;
+    }
+    .biological_classification a{
         bottom: 28%;
-        left: -3%;
-        width: 23%;
-        height: 27%;
+        left: 9.5%;
+        width: 7%;
+        height: 14%;
     }
-    .literature a{
-        top: 13%;
-        left: 27%;
-        width: 16%;
-        height: 20%;
-    }
-    .communication_technique a{
-        top: 39%;
-        left: 22%;
-        width: 23%;
+    .ecological_research a{
+        bottom: 7%;
+        left: 6%;
+        width: 10%;
         height: 17%;
     }
-    .music a{
-        top: 15%;
-        left: 50%;
-        width: 10%;
-        height: 20%;
-    }
-    .cooking a{
-        top: 39%;
-        left: 50%;
+    .animal_research a{
+        bottom: 25%;
+        left: 17%;
         width: 9%;
-        height: 21%;
+        height: 17%;
     }
-    .performing a{
-        bottom: 14%;
-        left: 46%;
-        width: 16%;
-        height: 24%;
+    .evolutionary_research a{
+        bottom: 7%;
+        left: 17.5%;
+        width: 10%;
+        height: 17%;
+    }
+    .extraterrestrial_life a{
+        top: 36%;
+        left: 22.5%;
+        width: 11%;
+        height: 14%;
+    }
+    .human_studies a{
+        bottom: 23%;
+        left: 27%;
+        width: 7%;
+        height: 19%;
+    }
+    .neuroscience a{
+        top: 25%;
+        left: 34%;
+        width: 8%;
+        height: 14%;
+    }
+    .bioengineering a{
+        top: 41%;
+        left: 36.5%;
+        width: 11%;
+        height: 14%;
+    }
+    .bioinformatics a{
+        top: 25%;
+        left: 42.5%;
+        width: 13%;
+        height: 11%;
+    }
+    .genetic_development a{
+        bottom: 30%;
+        left: 35.5%;
+        width: 10%;
+        height: 13%;
+    }
+    .cell a{
+       bottom: 13%;
+        left: 34%;
+        width: 12%;
+        height: 13%;
+    }
+    .biophysics a{
+        bottom: 35%;
+        left: 46.5%;
+        width: 7%;
+        height: 11%;
+    }
+    .biochemistry a{
+        bottom: 19%;
+        left: 46.5%;
+        width: 13%;
+        height: 13%;
     }
 }
