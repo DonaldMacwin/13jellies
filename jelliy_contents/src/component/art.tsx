@@ -1,4 +1,4 @@
-import { useRef, useState, useEffect } from 'react';
+import { useRef } from 'react';
 import {
   useSectionScroll,
   SharedImageFilters,
@@ -6,7 +6,6 @@ import {
   useFirstViewMeritDemeritAnimation,
   useFirstViewImageAnimation,
   AnimatedFigureBlock,
-  topButtonStyle,
   useStepImagePreload,
   createImageArrays,
   useSectionHtmlLoader,
