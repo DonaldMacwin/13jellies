@@ -73,22 +73,37 @@ import Physics_classical06 from '../assets/img/Physics_classical03.png';
 import './_common_css.css';
 import './physics.css';
 
-function Society() {
+function Physics() {
   // セクションの参照
   const firstViewRef = useRef<HTMLElement>(null);
-  const compositionRef = useRef<HTMLElement>(null);
-  const compositionScrollRef = useRef<HTMLDivElement>(null);
-  const positioningRef = useRef<HTMLElement>(null);
-  const positioningScrollRef = useRef<HTMLDivElement>(null);
-  const institutionRef = useRef<HTMLElement>(null);
-  const institutionScrollRef = useRef<HTMLDivElement>(null);
+  const elementaryRef = useRef<HTMLElement>(null);
+  const elementaryScrollRef = useRef<HTMLDivElement>(null);
+  const condensedRef = useRef<HTMLElement>(null);
+  const condensedScrollRef = useRef<HTMLDivElement>(null);
+  const mathRef = useRef<HTMLElement>(null);
+  const mathScrollRef = useRef<HTMLDivElement>(null);
+  const thermoRef = useRef<HTMLElement>(null);
+  const thermoScrollRef = useRef<HTMLDivElement>(null);
+  const fluidRef = useRef<HTMLElement>(null);
+  const fluidScrollRef = useRef<HTMLDivElement>(null);
+  const relativityRef = useRef<HTMLElement>(null);
+  const relativityScrollRef = useRef<HTMLDivElement>(null);
+  const emRef = useRef<HTMLElement>(null);
+  const emScrollRef = useRef<HTMLDivElement>(null);
+  const classicalRef = useRef<HTMLElement>(null);
+  const classicalScrollRef = useRef<HTMLDivElement>(null);
 
   // セクションの定義 - 配列の順序と実際のセクション数を合わせる
   const sections = [
     { ref: firstViewRef, scrollRef: null },
-    { ref: compositionRef, scrollRef: compositionScrollRef },
-    { ref: positioningRef, scrollRef: positioningScrollRef },
-    { ref: institutionRef, scrollRef: institutionScrollRef },
+    { ref: elementaryRef, scrollRef: elementaryScrollRef },
+    { ref: condensedRef, scrollRef: condensedScrollRef },
+    { ref: mathRef, scrollRef: mathScrollRef },
+    { ref: thermoRef, scrollRef: thermoScrollRef },
+    { ref: fluidRef, scrollRef: fluidScrollRef },
+    { ref: relativityRef, scrollRef: relativityScrollRef },
+    { ref: emRef, scrollRef: emScrollRef },
+    { ref: classicalRef, scrollRef: classicalScrollRef },
   ];
   const dummyRef = useRef<HTMLDivElement>(null);
   const {
@@ -285,4 +300,4 @@ function Society() {
   )
 }
 
-export default Society;
+export default Physics;
