@@ -1,0 +1,27 @@
+name: Deploy to FTP
+
+on:
+  push:
+    branches:
+      - master # メインブランチが 'main' の場合は 'main' に変更してください
+    paths:
+      - 'jelliy_contents/dist/**' # このパスへの変更があった場合にワークフローを実行
+
+jobs:
+  ftp-deploy:
+    name: FTP Deploy
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4 # 最新バージョンを推奨 (v3でも動作します)
+
+    - name: FTP Deploy
+      uses: SamKirkland/FTP-Deploy-Action@v4.3.4 # アクションのバージョンは最新を確認してください
+      with:
+        server: cf268321.cloudfree.jp # FTPサーバーアドレス
+        username: ${{ secrets.FTP_USERNAME }} # GitHub Secretsに登録したFTPユーザー名
+        password: ${{ secrets.FTP_PASSWORD }} # GitHub Secretsに登録したFTPパスワード
+        local-dir: ./jelliy_contents/dist/ # アップロードするローカルディレクトリ
+        remote-dir: /public_html/13jellies/jelliy_contents/dist/ # アップロード先のリモートディレクトリ
+        # オプション: 既存ファイルを上書きし、リモートに存在してローカルにないファイルを削除する場合
+        # dangerous-clean-slate: true
