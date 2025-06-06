@@ -11,50 +11,50 @@
 }
 
 h1.art_h1 {
-    left: 9%;
+    left: 0%;
 }
 
 .page_anchor_list {
     .planar_modeling a {
         top: 13%;
-        left: -2%;
+        left: -16%;
         width: 27%;
         height: 25%;
     }
     .three_D_modeling a {
-        bottom: 28%;
-        left: -3%;
+                bottom: 28%;
+        left: -17%;
         width: 23%;
         height: 27%;
     }
     .literature a{
         top: 13%;
-        left: 27%;
-        width: 16%;
+        left: 17%;
+        width: 17%;
         height: 20%;
     }
     .communication_technique a{
         top: 39%;
-        left: 22%;
-        width: 23%;
+        left: 12%;
+        width: 25%;
         height: 17%;
     }
     .music a{
         top: 15%;
-        left: 50%;
+        left: 44%;
         width: 10%;
         height: 20%;
     }
     .cooking a{
         top: 39%;
-        left: 50%;
+        left: 44%;
         width: 9%;
         height: 21%;
     }
     .performing a{
-        bottom: 14%;
-        left: 46%;
-        width: 16%;
+                bottom: 14%;
+        left: 38%;
+        width: 18%;
         height: 24%;
     }
 }
