@@ -14,82 +14,82 @@ import {
 import Mathematics_1stView from '../assets/img/Mathematics_1stView01.png';
 import { TopButton } from './_common_component';
 // 表現論
-import Mathematics_representation01 from '../assets/img/Mathematics_representation01.jpg';
-import Mathematics_representation02 from '../assets/img/Mathematics_representation02.jpg';
+import Mathematics_representation01 from '../assets/img/Mathematics_representation01.png';
+import Mathematics_representation02 from '../assets/img/Mathematics_representation02.png';
 import Mathematics_representation03 from '../assets/img/Mathematics_representation03.png';
-import Mathematics_representation04 from '../assets/img/Mathematics_representation01.jpg';
-import Mathematics_representation05 from '../assets/img/Mathematics_representation02.jpg';
-import Mathematics_representation06 from '../assets/img/Mathematics_representation03.png';
+import Mathematics_representation04 from '../assets/img/Mathematics_representation04.jpg';
+import Mathematics_representation05 from '../assets/img/Mathematics_representation05.jpg';
+import Mathematics_representation06 from '../assets/img/Mathematics_representation06.jpg';
 // 複素解析
-import Mathematics_complexAnalysis01 from '../assets/img/Mathematics_complexAnalysis01.jpg';
+import Mathematics_complexAnalysis01 from '../assets/img/Mathematics_complexAnalysis01.png';
 import Mathematics_complexAnalysis02 from '../assets/img/Mathematics_complexAnalysis02.png';
-import Mathematics_complexAnalysis03 from '../assets/img/Mathematics_complexAnalysis03.jpg';
-import Mathematics_complexAnalysis04 from '../assets/img/Mathematics_complexAnalysis01.jpg';
-import Mathematics_complexAnalysis05 from '../assets/img/Mathematics_complexAnalysis02.png';
-import Mathematics_complexAnalysis06 from '../assets/img/Mathematics_complexAnalysis03.jpg';
+import Mathematics_complexAnalysis03 from '../assets/img/Mathematics_complexAnalysis03.png';
+import Mathematics_complexAnalysis04 from '../assets/img/Mathematics_complexAnalysis04.jpg';
+import Mathematics_complexAnalysis05 from '../assets/img/Mathematics_complexAnalysis05.jpg';
+import Mathematics_complexAnalysis06 from '../assets/img/Mathematics_complexAnalysis06.jpg';
 // 代数解析
-import Mathematics_algebraicAnalysis01 from '../assets/img/Mathematics_algebraicAnalysis01.jpg';
+import Mathematics_algebraicAnalysis01 from '../assets/img/Mathematics_algebraicAnalysis01.png';
 import Mathematics_algebraicAnalysis02 from '../assets/img/Mathematics_algebraicAnalysis02.png';
 import Mathematics_algebraicAnalysis03 from '../assets/img/Mathematics_algebraicAnalysis03.jpg';
-import Mathematics_algebraicAnalysis04 from '../assets/img/Mathematics_algebraicAnalysis01.jpg';
-import Mathematics_algebraicAnalysis05 from '../assets/img/Mathematics_algebraicAnalysis02.png';
-import Mathematics_algebraicAnalysis06 from '../assets/img/Mathematics_algebraicAnalysis03.jpg';
+import Mathematics_algebraicAnalysis04 from '../assets/img/Mathematics_algebraicAnalysis04.jpg';
+import Mathematics_algebraicAnalysis05 from '../assets/img/Mathematics_algebraicAnalysis05.jpg';
+import Mathematics_algebraicAnalysis06 from '../assets/img/Mathematics_algebraicAnalysis06.jpg';
 // 整数論
-import Mathematics_numberTheory01 from '../assets/img/Mathematics_numberTheory01.jpg';
+import Mathematics_numberTheory01 from '../assets/img/Mathematics_numberTheory01.png';
 import Mathematics_numberTheory02 from '../assets/img/Mathematics_numberTheory02.png';
-import Mathematics_numberTheory03 from '../assets/img/Mathematics_numberTheory03.jpg';
-import Mathematics_numberTheory04 from '../assets/img/Mathematics_numberTheory01.jpg';
-import Mathematics_numberTheory05 from '../assets/img/Mathematics_numberTheory02.png';
-import Mathematics_numberTheory06 from '../assets/img/Mathematics_numberTheory03.jpg';
+import Mathematics_numberTheory03 from '../assets/img/Mathematics_numberTheory03.png';
+import Mathematics_numberTheory04 from '../assets/img/Mathematics_numberTheory04.jpg';
+import Mathematics_numberTheory05 from '../assets/img/Mathematics_numberTheory05.jpg';
+import Mathematics_numberTheory06 from '../assets/img/Mathematics_numberTheory06.png';
 // 実用応用数学
-import Mathematics_appliedMathematics01 from '../assets/img/Mathematics_appliedMathematics01.jpg';
+import Mathematics_appliedMathematics01 from '../assets/img/Mathematics_appliedMathematics01.png';
 import Mathematics_appliedMathematics02 from '../assets/img/Mathematics_appliedMathematics02.png';
-import Mathematics_appliedMathematics03 from '../assets/img/Mathematics_appliedMathematics03.jpg';
-import Mathematics_appliedMathematics04 from '../assets/img/Mathematics_appliedMathematics01.jpg';
-import Mathematics_appliedMathematics05 from '../assets/img/Mathematics_appliedMathematics02.png';
-import Mathematics_appliedMathematics06 from '../assets/img/Mathematics_appliedMathematics03.jpg';
+import Mathematics_appliedMathematics03 from '../assets/img/Mathematics_appliedMathematics03.png';
+import Mathematics_appliedMathematics04 from '../assets/img/Mathematics_appliedMathematics04.jpg';
+import Mathematics_appliedMathematics05 from '../assets/img/Mathematics_appliedMathematics05.jpg';
+import Mathematics_appliedMathematics06 from '../assets/img/Mathematics_appliedMathematics06.jpg';
 // 代数幾何
-import Mathematics_algebraicGeometry01 from '../assets/img/Mathematics_algebraicGeometry01.jpg';
+import Mathematics_algebraicGeometry01 from '../assets/img/Mathematics_algebraicGeometry01.png';
 import Mathematics_algebraicGeometry02 from '../assets/img/Mathematics_algebraicGeometry02.png';
-import Mathematics_algebraicGeometry03 from '../assets/img/Mathematics_algebraicGeometry03.jpg';
-import Mathematics_algebraicGeometry04 from '../assets/img/Mathematics_algebraicGeometry01.jpg';
-import Mathematics_algebraicGeometry05 from '../assets/img/Mathematics_algebraicGeometry02.png';
-import Mathematics_algebraicGeometry06 from '../assets/img/Mathematics_algebraicGeometry03.jpg';
+import Mathematics_algebraicGeometry03 from '../assets/img/Mathematics_algebraicGeometry03.png';
+import Mathematics_algebraicGeometry04 from '../assets/img/Mathematics_algebraicGeometry04.jpg';
+import Mathematics_algebraicGeometry05 from '../assets/img/Mathematics_algebraicGeometry05.png';
+import Mathematics_algebraicGeometry06 from '../assets/img/Mathematics_algebraicGeometry06.png';
 // 微分幾何
-import Mathematics_differentialGeometry01 from '../assets/img/Mathematics_differentialGeometry01.jpg';
+import Mathematics_differentialGeometry01 from '../assets/img/Mathematics_differentialGeometry01.png';
 import Mathematics_differentialGeometry02 from '../assets/img/Mathematics_differentialGeometry02.png';
-import Mathematics_differentialGeometry03 from '../assets/img/Mathematics_differentialGeometry03.jpg';
-import Mathematics_differentialGeometry04 from '../assets/img/Mathematics_differentialGeometry01.jpg';
-import Mathematics_differentialGeometry05 from '../assets/img/Mathematics_differentialGeometry02.png';
-import Mathematics_differentialGeometry06 from '../assets/img/Mathematics_differentialGeometry03.jpg';
+import Mathematics_differentialGeometry03 from '../assets/img/Mathematics_differentialGeometry03.png';
+import Mathematics_differentialGeometry04 from '../assets/img/Mathematics_differentialGeometry04.jpg';
+import Mathematics_differentialGeometry05 from '../assets/img/Mathematics_differentialGeometry05.jpg';
+import Mathematics_differentialGeometry06 from '../assets/img/Mathematics_differentialGeometry06.jpg';
 // 代数
-import Mathematics_algebra01 from '../assets/img/Mathematics_algebra01.jpg';
-import Mathematics_algebra02 from '../assets/img/Mathematics_algebra02.png';
-import Mathematics_algebra03 from '../assets/img/Mathematics_algebra03.jpg';
-import Mathematics_algebra04 from '../assets/img/Mathematics_algebra01.jpg';
-import Mathematics_algebra05 from '../assets/img/Mathematics_algebra02.png';
-import Mathematics_algebra06 from '../assets/img/Mathematics_algebra03.jpg';
+import Mathematics_algebra01 from '../assets/img/Mathematics_algebra01.png';
+import Mathematics_algebra02 from '../assets/img/Mathematics_algebra02.jpg';
+import Mathematics_algebra03 from '../assets/img/Mathematics_algebra03.png';
+import Mathematics_algebra04 from '../assets/img/Mathematics_algebra04.png';
+import Mathematics_algebra05 from '../assets/img/Mathematics_algebra05.png';
+import Mathematics_algebra06 from '../assets/img/Mathematics_algebra06.jpg';
 // 解析
-import Mathematics_analysis01 from '../assets/img/Mathematics_analysis01.jpg';
+import Mathematics_analysis01 from '../assets/img/Mathematics_analysis01.png';
 import Mathematics_analysis02 from '../assets/img/Mathematics_analysis02.png';
 import Mathematics_analysis03 from '../assets/img/Mathematics_analysis03.jpg';
-import Mathematics_analysis04 from '../assets/img/Mathematics_analysis01.jpg';
-import Mathematics_analysis05 from '../assets/img/Mathematics_analysis02.png';
-import Mathematics_analysis06 from '../assets/img/Mathematics_analysis03.jpg';
+import Mathematics_analysis04 from '../assets/img/Mathematics_analysis04.png';
+import Mathematics_analysis05 from '../assets/img/Mathematics_analysis05.png';
+import Mathematics_analysis06 from '../assets/img/Mathematics_analysis06.jpg';
 // 幾何
-import Mathematics_geometry01 from '../assets/img/Mathematics_geometry01.jpg';
+import Mathematics_geometry01 from '../assets/img/Mathematics_geometry01.png';
 import Mathematics_geometry02 from '../assets/img/Mathematics_geometry02.png';
 import Mathematics_geometry03 from '../assets/img/Mathematics_geometry03.jpg';
-import Mathematics_geometry04 from '../assets/img/Mathematics_geometry01.jpg';
-import Mathematics_geometry05 from '../assets/img/Mathematics_geometry02.png';
-import Mathematics_geometry06 from '../assets/img/Mathematics_geometry03.jpg';
+import Mathematics_geometry04 from '../assets/img/Mathematics_geometry04.jpg';
+import Mathematics_geometry05 from '../assets/img/Mathematics_geometry05.jpg';
+import Mathematics_geometry06 from '../assets/img/Mathematics_geometry06.jpg';
 // 基礎論
-import Mathematics_foundations01 from '../assets/img/Mathematics_foundations01.jpg';
+import Mathematics_foundations01 from '../assets/img/Mathematics_foundations01.png';
 import Mathematics_foundations02 from '../assets/img/Mathematics_foundations02.png';
-import Mathematics_foundations03 from '../assets/img/Mathematics_foundations03.jpg';
-import Mathematics_foundations04 from '../assets/img/Mathematics_foundations01.jpg';
-import Mathematics_foundations05 from '../assets/img/Mathematics_foundations02.png';
-import Mathematics_foundations06 from '../assets/img/Mathematics_foundations03.jpg';
+import Mathematics_foundations03 from '../assets/img/Mathematics_foundations03.png';
+import Mathematics_foundations04 from '../assets/img/Mathematics_foundations04.png';
+import Mathematics_foundations05 from '../assets/img/Mathematics_foundations05.jpg';
+import Mathematics_foundations06 from '../assets/img/Mathematics_foundations06.jpg';
 
 import './_common_css.css';
 import './mathematics.css';
