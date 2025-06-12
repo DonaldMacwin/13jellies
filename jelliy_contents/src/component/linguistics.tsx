@@ -15,33 +15,33 @@ import Linguistics_1stView from '../assets/img/Linguistics_1stView01.png';
 import { TopButton } from './_common_component';
 
 // 談話分析
-import Linguistics_discourse01 from '../assets/img/Linguistics_discourse01.jpg';
-import Linguistics_discourse02 from '../assets/img/Linguistics_discourse02.jpg';
+import Linguistics_discourse01 from '../assets/img/Linguistics_discourse01.png';
+import Linguistics_discourse02 from '../assets/img/Linguistics_discourse02.png';
 import Linguistics_discourse03 from '../assets/img/Linguistics_discourse03.png';
-import Linguistics_discourse04 from '../assets/img/Linguistics_discourse01.jpg';
-import Linguistics_discourse05 from '../assets/img/Linguistics_discourse02.jpg';
-import Linguistics_discourse06 from '../assets/img/Linguistics_discourse03.png';
+import Linguistics_discourse04 from '../assets/img/Linguistics_discourse04.png';
+import Linguistics_discourse05 from '../assets/img/Linguistics_discourse05.jpg';
+import Linguistics_discourse06 from '../assets/img/Linguistics_discourse06.jpg';
 // 言語獲得
-import Linguistics_acquisition01 from '../assets/img/Linguistics_acquisition01.jpg';
-import Linguistics_acquisition02 from '../assets/img/Linguistics_acquisition02.jpg';
+import Linguistics_acquisition01 from '../assets/img/Linguistics_acquisition01.png';
+import Linguistics_acquisition02 from '../assets/img/Linguistics_acquisition02.png';
 import Linguistics_acquisition03 from '../assets/img/Linguistics_acquisition03.png';
-import Linguistics_acquisition04 from '../assets/img/Linguistics_acquisition01.jpg';
-import Linguistics_acquisition05 from '../assets/img/Linguistics_acquisition02.jpg';
-import Linguistics_acquisition06 from '../assets/img/Linguistics_acquisition03.png';
+import Linguistics_acquisition04 from '../assets/img/Linguistics_acquisition04.png';
+import Linguistics_acquisition05 from '../assets/img/Linguistics_acquisition05.png';
+import Linguistics_acquisition06 from '../assets/img/Linguistics_acquisition06.png';
 // 文法研究
-import Linguistics_grammar01 from '../assets/img/Linguistics_grammar01.jpg';
-import Linguistics_grammar02 from '../assets/img/Linguistics_grammar02.jpg';
+import Linguistics_grammar01 from '../assets/img/Linguistics_grammar01.png';
+import Linguistics_grammar02 from '../assets/img/Linguistics_grammar02.png';
 import Linguistics_grammar03 from '../assets/img/Linguistics_grammar03.png';
-import Linguistics_grammar04 from '../assets/img/Linguistics_grammar01.jpg';
-import Linguistics_grammar05 from '../assets/img/Linguistics_grammar02.jpg';
-import Linguistics_grammar06 from '../assets/img/Linguistics_grammar03.png';
+import Linguistics_grammar04 from '../assets/img/Linguistics_grammar04.png';
+import Linguistics_grammar05 from '../assets/img/Linguistics_grammar05.png';
+import Linguistics_grammar06 from '../assets/img/Linguistics_grammar06.png';
 // コーパス言語分析
-import Linguistics_corpus01 from '../assets/img/Linguistics_corpus01.jpg';
-import Linguistics_corpus02 from '../assets/img/Linguistics_corpus02.jpg';
+import Linguistics_corpus01 from '../assets/img/Linguistics_corpus01.png';
+import Linguistics_corpus02 from '../assets/img/Linguistics_corpus02.png';
 import Linguistics_corpus03 from '../assets/img/Linguistics_corpus03.png';
-import Linguistics_corpus04 from '../assets/img/Linguistics_corpus01.jpg';
-import Linguistics_corpus05 from '../assets/img/Linguistics_corpus02.jpg';
-import Linguistics_corpus06 from '../assets/img/Linguistics_corpus03.png';
+import Linguistics_corpus04 from '../assets/img/Linguistics_corpus04.png';
+import Linguistics_corpus05 from '../assets/img/Linguistics_corpus05.png';
+import Linguistics_corpus06 from '../assets/img/Linguistics_corpus06.png';
 // 言語哲学
 import Linguistics_philosophy01 from '../assets/img/Linguistics_philosophy01.jpg';
 import Linguistics_philosophy02 from '../assets/img/Linguistics_philosophy02.jpg';
@@ -50,12 +50,12 @@ import Linguistics_philosophy04 from '../assets/img/Linguistics_philosophy01.jpg
 import Linguistics_philosophy05 from '../assets/img/Linguistics_philosophy02.jpg';
 import Linguistics_philosophy06 from '../assets/img/Linguistics_philosophy03.png';
 // 個別の言語研究
-import Linguistics_individual01 from '../assets/img/Linguistics_individual01.jpg';
-import Linguistics_individual02 from '../assets/img/Linguistics_individual02.jpg';
+import Linguistics_individual01 from '../assets/img/Linguistics_individual01.png';
+import Linguistics_individual02 from '../assets/img/Linguistics_individual02.png';
 import Linguistics_individual03 from '../assets/img/Linguistics_individual03.png';
-import Linguistics_individual04 from '../assets/img/Linguistics_individual01.jpg';
-import Linguistics_individual05 from '../assets/img/Linguistics_individual02.jpg';
-import Linguistics_individual06 from '../assets/img/Linguistics_individual03.png';
+import Linguistics_individual04 from '../assets/img/Linguistics_individual04.png';
+import Linguistics_individual05 from '../assets/img/Linguistics_individual05.png';
+import Linguistics_individual06 from '../assets/img/Linguistics_individual06.png';
 // 文字論
 import Linguistics_writing01 from '../assets/img/Linguistics_writing01.jpg';
 import Linguistics_writing02 from '../assets/img/Linguistics_writing02.jpg';
@@ -71,12 +71,12 @@ import Linguistics_sign04 from '../assets/img/Linguistics_sign01.jpg';
 import Linguistics_sign05 from '../assets/img/Linguistics_sign02.jpg';
 import Linguistics_sign06 from '../assets/img/Linguistics_sign03.png';
 // 身体言語論
-import Linguistics_body01 from '../assets/img/Linguistics_body01.jpg';
-import Linguistics_body02 from '../assets/img/Linguistics_body02.jpg';
+import Linguistics_body01 from '../assets/img/Linguistics_body01.png';
+import Linguistics_body02 from '../assets/img/Linguistics_body02.png';
 import Linguistics_body03 from '../assets/img/Linguistics_body03.png';
-import Linguistics_body04 from '../assets/img/Linguistics_body01.jpg';
-import Linguistics_body05 from '../assets/img/Linguistics_body02.jpg';
-import Linguistics_body06 from '../assets/img/Linguistics_body03.png';
+import Linguistics_body04 from '../assets/img/Linguistics_body04.png';
+import Linguistics_body05 from '../assets/img/Linguistics_body05.jpg';
+import Linguistics_body06 from '../assets/img/Linguistics_body06.jpg';
 // 語用論
 import Linguistics_pragmatics01 from '../assets/img/Linguistics_pragmatics01.jpg';
 import Linguistics_pragmatics02 from '../assets/img/Linguistics_pragmatics02.jpg';
