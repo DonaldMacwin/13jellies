@@ -45,10 +45,10 @@ import Linguistics_corpus06 from '../assets/img/Linguistics_corpus06.png';
 // 言語哲学
 import Linguistics_philosophy01 from '../assets/img/Linguistics_philosophy01.jpg';
 import Linguistics_philosophy02 from '../assets/img/Linguistics_philosophy02.jpg';
-import Linguistics_philosophy03 from '../assets/img/Linguistics_philosophy03.png';
-import Linguistics_philosophy04 from '../assets/img/Linguistics_philosophy01.jpg';
-import Linguistics_philosophy05 from '../assets/img/Linguistics_philosophy02.jpg';
-import Linguistics_philosophy06 from '../assets/img/Linguistics_philosophy03.png';
+import Linguistics_philosophy03 from '../assets/img/Linguistics_philosophy03.jpg';
+import Linguistics_philosophy04 from '../assets/img/Linguistics_philosophy04.jpg';
+import Linguistics_philosophy05 from '../assets/img/Linguistics_philosophy05.jpg';
+import Linguistics_philosophy06 from '../assets/img/Linguistics_philosophy06.jpg';
 // 個別の言語研究
 import Linguistics_individual01 from '../assets/img/Linguistics_individual01.png';
 import Linguistics_individual02 from '../assets/img/Linguistics_individual02.png';
@@ -78,12 +78,12 @@ import Linguistics_body04 from '../assets/img/Linguistics_body04.png';
 import Linguistics_body05 from '../assets/img/Linguistics_body05.jpg';
 import Linguistics_body06 from '../assets/img/Linguistics_body06.jpg';
 // 語用論
-import Linguistics_pragmatics01 from '../assets/img/Linguistics_pragmatics01.jpg';
-import Linguistics_pragmatics02 from '../assets/img/Linguistics_pragmatics02.jpg';
+import Linguistics_pragmatics01 from '../assets/img/Linguistics_pragmatics01.png';
+import Linguistics_pragmatics02 from '../assets/img/Linguistics_pragmatics02.png';
 import Linguistics_pragmatics03 from '../assets/img/Linguistics_pragmatics03.png';
-import Linguistics_pragmatics04 from '../assets/img/Linguistics_pragmatics01.jpg';
-import Linguistics_pragmatics05 from '../assets/img/Linguistics_pragmatics02.jpg';
-import Linguistics_pragmatics06 from '../assets/img/Linguistics_pragmatics03.png';
+import Linguistics_pragmatics04 from '../assets/img/Linguistics_pragmatics04.png';
+import Linguistics_pragmatics05 from '../assets/img/Linguistics_pragmatics05.png';
+import Linguistics_pragmatics06 from '../assets/img/Linguistics_pragmatics06.png';
 // 統語論
 import Linguistics_syntax01 from '../assets/img/Linguistics_syntax01.jpg';
 import Linguistics_syntax02 from '../assets/img/Linguistics_syntax02.jpg';
@@ -92,33 +92,33 @@ import Linguistics_syntax04 from '../assets/img/Linguistics_syntax01.jpg';
 import Linguistics_syntax05 from '../assets/img/Linguistics_syntax02.jpg';
 import Linguistics_syntax06 from '../assets/img/Linguistics_syntax03.png';
 // 音声論
-import Linguistics_phonetics01 from '../assets/img/Linguistics_phonetics01.jpg';
-import Linguistics_phonetics02 from '../assets/img/Linguistics_phonetics02.jpg';
+import Linguistics_phonetics01 from '../assets/img/Linguistics_phonetics01.png';
+import Linguistics_phonetics02 from '../assets/img/Linguistics_phonetics02.png';
 import Linguistics_phonetics03 from '../assets/img/Linguistics_phonetics03.png';
-import Linguistics_phonetics04 from '../assets/img/Linguistics_phonetics01.jpg';
-import Linguistics_phonetics05 from '../assets/img/Linguistics_phonetics02.jpg';
-import Linguistics_phonetics06 from '../assets/img/Linguistics_phonetics03.png';
+import Linguistics_phonetics04 from '../assets/img/Linguistics_phonetics04.png';
+import Linguistics_phonetics05 from '../assets/img/Linguistics_phonetics05.png';
+import Linguistics_phonetics06 from '../assets/img/Linguistics_phonetics06.png';
 // 音韻論
-import Linguistics_phonology01 from '../assets/img/Linguistics_phonology01.jpg';
-import Linguistics_phonology02 from '../assets/img/Linguistics_phonology02.jpg';
+import Linguistics_phonology01 from '../assets/img/Linguistics_phonology01.png';
+import Linguistics_phonology02 from '../assets/img/Linguistics_phonology02.png';
 import Linguistics_phonology03 from '../assets/img/Linguistics_phonology03.png';
-import Linguistics_phonology04 from '../assets/img/Linguistics_phonology01.jpg';
-import Linguistics_phonology05 from '../assets/img/Linguistics_phonology02.jpg';
-import Linguistics_phonology06 from '../assets/img/Linguistics_phonology03.png';
+import Linguistics_phonology04 from '../assets/img/Linguistics_phonology04.png';
+import Linguistics_phonology05 from '../assets/img/Linguistics_phonology05.png';
+import Linguistics_phonology06 from '../assets/img/Linguistics_phonology06.png';
 // 語彙意味論
-import Linguistics_lexical01 from '../assets/img/Linguistics_lexical01.jpg';
-import Linguistics_lexical02 from '../assets/img/Linguistics_lexical02.jpg';
+import Linguistics_lexical01 from '../assets/img/Linguistics_lexical01.png';
+import Linguistics_lexical02 from '../assets/img/Linguistics_lexical02.png';
 import Linguistics_lexical03 from '../assets/img/Linguistics_lexical03.png';
-import Linguistics_lexical04 from '../assets/img/Linguistics_lexical01.jpg';
-import Linguistics_lexical05 from '../assets/img/Linguistics_lexical02.jpg';
-import Linguistics_lexical06 from '../assets/img/Linguistics_lexical03.png';
+import Linguistics_lexical04 from '../assets/img/Linguistics_lexical04.png';
+import Linguistics_lexical05 from '../assets/img/Linguistics_lexical05.png';
+import Linguistics_lexical06 from '../assets/img/Linguistics_lexical06.png';
 // 形態論
-import Linguistics_morphology01 from '../assets/img/Linguistics_morphology01.jpg';
-import Linguistics_morphology02 from '../assets/img/Linguistics_morphology02.jpg';
+import Linguistics_morphology01 from '../assets/img/Linguistics_morphology01.png';
+import Linguistics_morphology02 from '../assets/img/Linguistics_morphology02.png';
 import Linguistics_morphology03 from '../assets/img/Linguistics_morphology03.png';
-import Linguistics_morphology04 from '../assets/img/Linguistics_morphology01.jpg';
-import Linguistics_morphology05 from '../assets/img/Linguistics_morphology02.jpg';
-import Linguistics_morphology06 from '../assets/img/Linguistics_morphology03.png';
+import Linguistics_morphology04 from '../assets/img/Linguistics_morphology04.png';
+import Linguistics_morphology05 from '../assets/img/Linguistics_morphology05.png';
+import Linguistics_morphology06 from '../assets/img/Linguistics_morphology06.png';
 
 import './_common_css.css';
 import './linguistics.css';
