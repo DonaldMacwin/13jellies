@@ -17,44 +17,44 @@ import { TopButton } from './_common_component';
 import Philosophy_art_studies01 from '../assets/img/Philosophy_art_studies01.jpg';
 import Philosophy_art_studies02 from '../assets/img/Philosophy_art_studies02.jpg';
 import Philosophy_art_studies03 from '../assets/img/Philosophy_art_studies03.png';
-import Philosophy_art_studies04 from '../assets/img/Philosophy_art_studies01.jpg';
-import Philosophy_art_studies05 from '../assets/img/Philosophy_art_studies02.jpg';
-import Philosophy_art_studies06 from '../assets/img/Philosophy_art_studies03.png';
+import Philosophy_art_studies04 from '../assets/img/Philosophy_art_studies04.jpg';
+import Philosophy_art_studies05 from '../assets/img/Philosophy_art_studies05.jpg';
+import Philosophy_art_studies06 from '../assets/img/Philosophy_art_studies06.png';
 
 import Philosophy_philosophy_history01 from '../assets/img/Philosophy_philosophy_history01.jpg';
 import Philosophy_philosophy_history02 from '../assets/img/Philosophy_philosophy_history02.jpg';
 import Philosophy_philosophy_history03 from '../assets/img/Philosophy_philosophy_history03.png';
-import Philosophy_philosophy_history04 from '../assets/img/Philosophy_philosophy_history01.jpg';
-import Philosophy_philosophy_history05 from '../assets/img/Philosophy_philosophy_history02.jpg';
-import Philosophy_philosophy_history06 from '../assets/img/Philosophy_philosophy_history03.png';
+import Philosophy_philosophy_history04 from '../assets/img/Philosophy_philosophy_history04.jpg';
+import Philosophy_philosophy_history05 from '../assets/img/Philosophy_philosophy_history05.jpg';
+import Philosophy_philosophy_history06 from '../assets/img/Philosophy_philosophy_history06.png';
 
 import Philosophy_religious_studies01 from '../assets/img/Philosophy_religious_studies01.jpg';
-import Philosophy_religious_studies02 from '../assets/img/Philosophy_religious_studies02.jpg';
-import Philosophy_religious_studies03 from '../assets/img/Philosophy_religious_studies03.png';
-import Philosophy_religious_studies04 from '../assets/img/Philosophy_religious_studies01.jpg';
-import Philosophy_religious_studies05 from '../assets/img/Philosophy_religious_studies02.jpg';
-import Philosophy_religious_studies06 from '../assets/img/Philosophy_religious_studies03.png';
+import Philosophy_religious_studies02 from '../assets/img/Philosophy_religious_studies02.png';
+import Philosophy_religious_studies03 from '../assets/img/Philosophy_religious_studies03.jpg';
+import Philosophy_religious_studies04 from '../assets/img/Philosophy_religious_studies04.png';
+import Philosophy_religious_studies05 from '../assets/img/Philosophy_religious_studies05.jpg';
+import Philosophy_religious_studies06 from '../assets/img/Philosophy_religious_studies06.png';
 
 import Philosophy_philosophy_of_science01 from '../assets/img/Philosophy_philosophy_of_science01.jpg';
 import Philosophy_philosophy_of_science02 from '../assets/img/Philosophy_philosophy_of_science02.jpg';
 import Philosophy_philosophy_of_science03 from '../assets/img/Philosophy_philosophy_of_science03.png';
-import Philosophy_philosophy_of_science04 from '../assets/img/Philosophy_philosophy_of_science01.jpg';
-import Philosophy_philosophy_of_science05 from '../assets/img/Philosophy_philosophy_of_science02.jpg';
-import Philosophy_philosophy_of_science06 from '../assets/img/Philosophy_philosophy_of_science03.png';
+import Philosophy_philosophy_of_science04 from '../assets/img/Philosophy_philosophy_of_science04.jpg';
+import Philosophy_philosophy_of_science05 from '../assets/img/Philosophy_philosophy_of_science05.png';
+import Philosophy_philosophy_of_science06 from '../assets/img/Philosophy_philosophy_of_science06.png';
 
-import Philosophy_ethics01 from '../assets/img/Philosophy_ethics01.jpg';
+import Philosophy_ethics01 from '../assets/img/Philosophy_ethics01.png';
 import Philosophy_ethics02 from '../assets/img/Philosophy_ethics02.jpg';
-import Philosophy_ethics03 from '../assets/img/Philosophy_ethics03.png';
-import Philosophy_ethics04 from '../assets/img/Philosophy_ethics01.jpg';
-import Philosophy_ethics05 from '../assets/img/Philosophy_ethics02.jpg';
-import Philosophy_ethics06 from '../assets/img/Philosophy_ethics03.png';
+import Philosophy_ethics03 from '../assets/img/Philosophy_ethics03.jpg';
+import Philosophy_ethics04 from '../assets/img/Philosophy_ethics04.jpg';
+import Philosophy_ethics05 from '../assets/img/Philosophy_ethics05.png';
+import Philosophy_ethics06 from '../assets/img/Philosophy_ethics06.png';
 
 import Philosophy_logic01 from '../assets/img/Philosophy_logic01.jpg';
 import Philosophy_logic02 from '../assets/img/Philosophy_logic02.jpg';
 import Philosophy_logic03 from '../assets/img/Philosophy_logic03.png';
-import Philosophy_logic04 from '../assets/img/Philosophy_logic01.jpg';
-import Philosophy_logic05 from '../assets/img/Philosophy_logic02.jpg';
-import Philosophy_logic06 from '../assets/img/Philosophy_logic03.png';
+import Philosophy_logic04 from '../assets/img/Philosophy_logic04.jpg';
+import Philosophy_logic05 from '../assets/img/Philosophy_logic05.jpg';
+import Philosophy_logic06 from '../assets/img/Philosophy_logic06.png';
 
 import './_common_css.css';
 import './philosophy.css';
