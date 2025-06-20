@@ -17,51 +17,51 @@ import Society_1stView from '../assets/img/Chemistry_1stView01.png';
 import Chemistry_polymer01 from '../assets/img/Chemistry_polymer01.jpg';
 import Chemistry_polymer02 from '../assets/img/Chemistry_polymer02.jpg';
 import Chemistry_polymer03 from '../assets/img/Chemistry_polymer03.png';
-import Chemistry_polymer04 from '../assets/img/Chemistry_polymer01.jpg';
-import Chemistry_polymer05 from '../assets/img/Chemistry_polymer02.jpg';
-import Chemistry_polymer06 from '../assets/img/Chemistry_polymer03.png';
+import Chemistry_polymer04 from '../assets/img/Chemistry_polymer04.jpg';
+import Chemistry_polymer05 from '../assets/img/Chemistry_polymer05.jpg';
+import Chemistry_polymer06 from '../assets/img/Chemistry_polymer06.png';
 // 実用研究
 import Chemistry_applied01 from '../assets/img/Chemistry_applied01.jpg';
 import Chemistry_applied02 from '../assets/img/Chemistry_applied02.jpg';
 import Chemistry_applied03 from '../assets/img/Chemistry_applied03.png';
-import Chemistry_applied04 from '../assets/img/Chemistry_applied01.jpg';
-import Chemistry_applied05 from '../assets/img/Chemistry_applied02.jpg';
-import Chemistry_applied06 from '../assets/img/Chemistry_applied03.png';
+import Chemistry_applied04 from '../assets/img/Chemistry_applied04.jpg';
+import Chemistry_applied05 from '../assets/img/Chemistry_applied05.jpg';
+import Chemistry_applied06 from '../assets/img/Chemistry_applied06.png';
 // 分析化学
 import Chemistry_analytical01 from '../assets/img/Chemistry_analytical01.jpg';
 import Chemistry_analytical02 from '../assets/img/Chemistry_analytical02.jpg';
 import Chemistry_analytical03 from '../assets/img/Chemistry_analytical03.png';
-import Chemistry_analytical04 from '../assets/img/Chemistry_analytical01.jpg';
-import Chemistry_analytical05 from '../assets/img/Chemistry_analytical02.jpg';
-import Chemistry_analytical06 from '../assets/img/Chemistry_analytical03.png';
+import Chemistry_analytical04 from '../assets/img/Chemistry_analytical04.jpg';
+import Chemistry_analytical05 from '../assets/img/Chemistry_analytical05.jpg';
+import Chemistry_analytical06 from '../assets/img/Chemistry_analytical06.png';
 // 化学理論
 import Chemistry_theoretical01 from '../assets/img/Chemistry_theoretical01.jpg';
 import Chemistry_theoretical02 from '../assets/img/Chemistry_theoretical02.jpg';
 import Chemistry_theoretical03 from '../assets/img/Chemistry_theoretical03.png';
-import Chemistry_theoretical04 from '../assets/img/Chemistry_theoretical01.jpg';
-import Chemistry_theoretical05 from '../assets/img/Chemistry_theoretical02.jpg';
-import Chemistry_theoretical06 from '../assets/img/Chemistry_theoretical03.png';
+import Chemistry_theoretical04 from '../assets/img/Chemistry_theoretical04.jpg';
+import Chemistry_theoretical05 from '../assets/img/Chemistry_theoretical05.jpg';
+import Chemistry_theoretical06 from '../assets/img/Chemistry_theoretical06.png';
 // 無機化学
 import Chemistry_inorganic01 from '../assets/img/Chemistry_inorganic01.jpg';
 import Chemistry_inorganic02 from '../assets/img/Chemistry_inorganic02.jpg';
 import Chemistry_inorganic03 from '../assets/img/Chemistry_inorganic03.png';
-import Chemistry_inorganic04 from '../assets/img/Chemistry_inorganic01.jpg';
-import Chemistry_inorganic05 from '../assets/img/Chemistry_inorganic02.jpg';
-import Chemistry_inorganic06 from '../assets/img/Chemistry_inorganic03.png';
+import Chemistry_inorganic04 from '../assets/img/Chemistry_inorganic04.jpg';
+import Chemistry_inorganic05 from '../assets/img/Chemistry_inorganic05.jpg';
+import Chemistry_inorganic06 from '../assets/img/Chemistry_inorganic06.png';
 // 有機化学
 import Chemistry_organic01 from '../assets/img/Chemistry_organic01.jpg';
 import Chemistry_organic02 from '../assets/img/Chemistry_organic02.jpg';
 import Chemistry_organic03 from '../assets/img/Chemistry_organic03.png';
-import Chemistry_organic04 from '../assets/img/Chemistry_organic01.jpg';
-import Chemistry_organic05 from '../assets/img/Chemistry_organic02.jpg';
-import Chemistry_organic06 from '../assets/img/Chemistry_organic03.png';
+import Chemistry_organic04 from '../assets/img/Chemistry_organic04.jpg';
+import Chemistry_organic05 from '../assets/img/Chemistry_organic05.jpg';
+import Chemistry_organic06 from '../assets/img/Chemistry_organic06.png';
 // 生化学
 import Chemistry_biochemistry01 from '../assets/img/Chemistry_biochemistry01.jpg';
 import Chemistry_biochemistry02 from '../assets/img/Chemistry_biochemistry02.jpg';
 import Chemistry_biochemistry03 from '../assets/img/Chemistry_biochemistry03.png';
-import Chemistry_biochemistry04 from '../assets/img/Chemistry_biochemistry01.jpg';
-import Chemistry_biochemistry05 from '../assets/img/Chemistry_biochemistry02.jpg';
-import Chemistry_biochemistry06 from '../assets/img/Chemistry_biochemistry03.png';
+import Chemistry_biochemistry04 from '../assets/img/Chemistry_biochemistry04.jpg';
+import Chemistry_biochemistry05 from '../assets/img/Chemistry_biochemistry05.jpg';
+import Chemistry_biochemistry06 from '../assets/img/Chemistry_biochemistry06.png';
 
 import './_common_css.css';
 import './chemistry.css';
