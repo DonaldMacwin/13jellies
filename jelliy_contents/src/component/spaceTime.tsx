@@ -18,65 +18,65 @@ import SpaceTime_1stView from '../assets/img/SpaceTime_1stView01.png';
 import SpaceTime_history01 from '../assets/img/SpaceTime_history01.jpg';
 import SpaceTime_history02 from '../assets/img/SpaceTime_history02.jpg';
 import SpaceTime_history03 from '../assets/img/SpaceTime_history03.png';
-import SpaceTime_history04 from '../assets/img/SpaceTime_history01.jpg';
-import SpaceTime_history05 from '../assets/img/SpaceTime_history02.jpg';
-import SpaceTime_history06 from '../assets/img/SpaceTime_history03.png';
+import SpaceTime_history04 from '../assets/img/SpaceTime_history04.jpg';
+import SpaceTime_history05 from '../assets/img/SpaceTime_history05.jpg';
+import SpaceTime_history06 from '../assets/img/SpaceTime_history06.png';
 
 // socialGeography
 import SpaceTime_social01 from '../assets/img/SpaceTime_social01.jpg';
 import SpaceTime_social02 from '../assets/img/SpaceTime_social02.jpg';
 import SpaceTime_social03 from '../assets/img/SpaceTime_social03.png';
-import SpaceTime_social04 from '../assets/img/SpaceTime_social01.jpg';
-import SpaceTime_social05 from '../assets/img/SpaceTime_social02.jpg';
-import SpaceTime_social06 from '../assets/img/SpaceTime_social03.png';
+import SpaceTime_social04 from '../assets/img/SpaceTime_social04.jpg';
+import SpaceTime_social05 from '../assets/img/SpaceTime_social05.jpg';
+import SpaceTime_social06 from '../assets/img/SpaceTime_social06.png';
 
 // earthHistory
 import SpaceTime_earth01 from '../assets/img/SpaceTime_earth01.jpg';
 import SpaceTime_earth02 from '../assets/img/SpaceTime_earth02.jpg';
 import SpaceTime_earth03 from '../assets/img/SpaceTime_earth03.png';
-import SpaceTime_earth04 from '../assets/img/SpaceTime_earth01.jpg';
-import SpaceTime_earth05 from '../assets/img/SpaceTime_earth02.jpg';
-import SpaceTime_earth06 from '../assets/img/SpaceTime_earth03.png';
+import SpaceTime_earth04 from '../assets/img/SpaceTime_earth04.jpg';
+import SpaceTime_earth05 from '../assets/img/SpaceTime_earth05.jpg';
+import SpaceTime_earth06 from '../assets/img/SpaceTime_earth06.png';
 
 // naturalGeography
 import SpaceTime_natural01 from '../assets/img/SpaceTime_natural01.jpg';
 import SpaceTime_natural02 from '../assets/img/SpaceTime_natural02.jpg';
 import SpaceTime_natural03 from '../assets/img/SpaceTime_natural03.png';
-import SpaceTime_natural04 from '../assets/img/SpaceTime_natural01.jpg';
-import SpaceTime_natural05 from '../assets/img/SpaceTime_natural02.jpg';
-import SpaceTime_natural06 from '../assets/img/SpaceTime_natural03.png';
+import SpaceTime_natural04 from '../assets/img/SpaceTime_natural04.jpg';
+import SpaceTime_natural05 from '../assets/img/SpaceTime_natural05.jpg';
+import SpaceTime_natural06 from '../assets/img/SpaceTime_natural06.png';
 
 // geology
 import SpaceTime_geology01 from '../assets/img/SpaceTime_geology01.jpg';
 import SpaceTime_geology02 from '../assets/img/SpaceTime_geology02.jpg';
 import SpaceTime_geology03 from '../assets/img/SpaceTime_geology03.png';
-import SpaceTime_geology04 from '../assets/img/SpaceTime_geology01.jpg';
-import SpaceTime_geology05 from '../assets/img/SpaceTime_geology02.jpg';
-import SpaceTime_geology06 from '../assets/img/SpaceTime_geology03.png';
+import SpaceTime_geology04 from '../assets/img/SpaceTime_geology04.jpg';
+import SpaceTime_geology05 from '../assets/img/SpaceTime_geology05.jpg';
+import SpaceTime_geology06 from '../assets/img/SpaceTime_geology06.png';
 
 // atmosphere
 import SpaceTime_atmosphere01 from '../assets/img/SpaceTime_atmosphere01.jpg';
 import SpaceTime_atmosphere02 from '../assets/img/SpaceTime_atmosphere02.jpg';
 import SpaceTime_atmosphere03 from '../assets/img/SpaceTime_atmosphere03.png';
-import SpaceTime_atmosphere04 from '../assets/img/SpaceTime_atmosphere01.jpg';
-import SpaceTime_atmosphere05 from '../assets/img/SpaceTime_atmosphere02.jpg';
-import SpaceTime_atmosphere06 from '../assets/img/SpaceTime_atmosphere03.png';
+import SpaceTime_atmosphere04 from '../assets/img/SpaceTime_atmosphere04.jpg';
+import SpaceTime_atmosphere05 from '../assets/img/SpaceTime_atmosphere05.jpg';
+import SpaceTime_atmosphere06 from '../assets/img/SpaceTime_atmosphere06.png';
 
 // oceanography
 import SpaceTime_ocean01 from '../assets/img/SpaceTime_ocean01.jpg';
 import SpaceTime_ocean02 from '../assets/img/SpaceTime_ocean02.jpg';
 import SpaceTime_ocean03 from '../assets/img/SpaceTime_ocean03.png';
-import SpaceTime_ocean04 from '../assets/img/SpaceTime_ocean01.jpg';
-import SpaceTime_ocean05 from '../assets/img/SpaceTime_ocean02.jpg';
-import SpaceTime_ocean06 from '../assets/img/SpaceTime_ocean03.png';
+import SpaceTime_ocean04 from '../assets/img/SpaceTime_ocean04.jpg';
+import SpaceTime_ocean05 from '../assets/img/SpaceTime_ocean05.jpg';
+import SpaceTime_ocean06 from '../assets/img/SpaceTime_ocean06.png';
 
 // astronomy
 import SpaceTime_astronomy01 from '../assets/img/SpaceTime_astronomy01.jpg';
 import SpaceTime_astronomy02 from '../assets/img/SpaceTime_astronomy02.jpg';
 import SpaceTime_astronomy03 from '../assets/img/SpaceTime_astronomy03.png';
-import SpaceTime_astronomy04 from '../assets/img/SpaceTime_astronomy01.jpg';
-import SpaceTime_astronomy05 from '../assets/img/SpaceTime_astronomy02.jpg';
-import SpaceTime_astronomy06 from '../assets/img/SpaceTime_astronomy03.png';
+import SpaceTime_astronomy04 from '../assets/img/SpaceTime_astronomy04.jpg';
+import SpaceTime_astronomy05 from '../assets/img/SpaceTime_astronomy05.jpg';
+import SpaceTime_astronomy06 from '../assets/img/SpaceTime_astronomy06.png';
 
 import './_common_css.css';
 import './spaceTime.css';
