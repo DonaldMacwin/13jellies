@@ -18,57 +18,57 @@ import Art_1stView from '../assets/img/Art_1stView01.png';
 import Art_planar_modeling01 from '../assets/img/Art_planar_modeling01.jpg';
 import Art_planar_modeling02 from '../assets/img/Art_planar_modeling02.jpg';
 import Art_planar_modeling03 from '../assets/img/Art_planar_modeling03.png';
-import Art_planar_modeling04 from '../assets/img/Art_planar_modeling01.jpg';
-import Art_planar_modeling05 from '../assets/img/Art_planar_modeling02.jpg';
-import Art_planar_modeling06 from '../assets/img/Art_planar_modeling03.png';
+import Art_planar_modeling04 from '../assets/img/Art_planar_modeling04.jpg';
+import Art_planar_modeling05 from '../assets/img/Art_planar_modeling05.jpg';
+import Art_planar_modeling06 from '../assets/img/Art_planar_modeling06.png';
 
 // 立体造形
 import Art_three_D_modeling01 from '../assets/img/Art_three_D_modeling01.jpg';
 import Art_three_D_modeling02 from '../assets/img/Art_three_D_modeling02.jpg';
 import Art_three_D_modeling03 from '../assets/img/Art_three_D_modeling03.png';
-import Art_three_D_modeling04 from '../assets/img/Art_three_D_modeling01.jpg';
-import Art_three_D_modeling05 from '../assets/img/Art_three_D_modeling02.jpg';
-import Art_three_D_modeling06 from '../assets/img/Art_three_D_modeling03.png';
+import Art_three_D_modeling04 from '../assets/img/Art_three_D_modeling04.jpg';
+import Art_three_D_modeling05 from '../assets/img/Art_three_D_modeling05.jpg';
+import Art_three_D_modeling06 from '../assets/img/Art_three_D_modeling06.png';
 
 // 文学
 import Art_literature01 from '../assets/img/Art_literature01.jpg';
 import Art_literature02 from '../assets/img/Art_literature02.jpg';
 import Art_literature03 from '../assets/img/Art_literature03.png';
-import Art_literature04 from '../assets/img/Art_literature01.jpg';
-import Art_literature05 from '../assets/img/Art_literature02.jpg';
-import Art_literature06 from '../assets/img/Art_literature03.png';
+import Art_literature04 from '../assets/img/Art_literature04.jpg';
+import Art_literature05 from '../assets/img/Art_literature05.jpg';
+import Art_literature06 from '../assets/img/Art_literature06.png';
 
 // 伝達技法研究
 import Art_communication_technique01 from '../assets/img/Art_communication_technique01.jpg';
 import Art_communication_technique02 from '../assets/img/Art_communication_technique02.jpg';
 import Art_communication_technique03 from '../assets/img/Art_communication_technique03.png';
-import Art_communication_technique04 from '../assets/img/Art_communication_technique01.jpg';
-import Art_communication_technique05 from '../assets/img/Art_communication_technique02.jpg';
-import Art_communication_technique06 from '../assets/img/Art_communication_technique03.png';
+import Art_communication_technique04 from '../assets/img/Art_communication_technique04.jpg';
+import Art_communication_technique05 from '../assets/img/Art_communication_technique05.jpg';
+import Art_communication_technique06 from '../assets/img/Art_communication_technique06.png';
 
 // 音楽
 import Art_music01 from '../assets/img/Art_music01.jpg';
 import Art_music02 from '../assets/img/Art_music02.jpg';
 import Art_music03 from '../assets/img/Art_music03.png';
-import Art_music04 from '../assets/img/Art_music01.jpg';
-import Art_music05 from '../assets/img/Art_music02.jpg';
-import Art_music06 from '../assets/img/Art_music03.png';
+import Art_music04 from '../assets/img/Art_music04.jpg';
+import Art_music05 from '../assets/img/Art_music05.jpg';
+import Art_music06 from '../assets/img/Art_music06.png';
 
 // 料理
 import Art_cooking01 from '../assets/img/Art_cooking01.jpg';
 import Art_cooking02 from '../assets/img/Art_cooking02.jpg';
 import Art_cooking03 from '../assets/img/Art_cooking03.png';
-import Art_cooking04 from '../assets/img/Art_cooking01.jpg';
-import Art_cooking05 from '../assets/img/Art_cooking02.jpg';
-import Art_cooking06 from '../assets/img/Art_cooking03.png';
+import Art_cooking04 from '../assets/img/Art_cooking04.jpg';
+import Art_cooking05 from '../assets/img/Art_cooking05.jpg';
+import Art_cooking06 from '../assets/img/Art_cooking06.png';
 
 // 舞台芸術
 import Art_performing01 from '../assets/img/Art_performing01.jpg';
 import Art_performing02 from '../assets/img/Art_performing02.jpg';
 import Art_performing03 from '../assets/img/Art_performing03.png';
-import Art_performing04 from '../assets/img/Art_performing01.jpg';
-import Art_performing05 from '../assets/img/Art_performing02.jpg';
-import Art_performing06 from '../assets/img/Art_performing03.png';
+import Art_performing04 from '../assets/img/Art_performing04.jpg';
+import Art_performing05 from '../assets/img/Art_performing05.jpg';
+import Art_performing06 from '../assets/img/Art_performing06.png';
 
 import './_common_css.css';
 import './art.css';
