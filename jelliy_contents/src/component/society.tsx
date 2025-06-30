@@ -17,26 +17,26 @@ import { TopButton } from './_common_component';
 // 構成系
 import Society_composition01 from '../assets/img/Society_composition01.jpg';
 import Society_composition02 from '../assets/img/Society_composition02.jpg';
-import Society_composition03 from '../assets/img/Society_composition03.png';
-import Society_composition04 from '../assets/img/Society_composition01.jpg';
-import Society_composition05 from '../assets/img/Society_composition02.jpg';
-import Society_composition06 from '../assets/img/Society_composition03.png';
+import Society_composition03 from '../assets/img/Society_composition03.jpg';
+import Society_composition04 from '../assets/img/Society_composition04.jpg';
+import Society_composition05 from '../assets/img/Society_composition05.jpg';
+import Society_composition06 from '../assets/img/Society_composition06.jpg';
 
 // 位置決め系
 import Society_positioning01 from '../assets/img/Society_positioning01.jpg';
 import Society_positioning02 from '../assets/img/Society_positioning02.jpg';
 import Society_positioning03 from '../assets/img/Society_positioning03.png';
-import Society_positioning04 from '../assets/img/Society_positioning01.jpg';
-import Society_positioning05 from '../assets/img/Society_positioning02.jpg';
-import Society_positioning06 from '../assets/img/Society_positioning03.png';
+import Society_positioning04 from '../assets/img/Society_positioning04.jpg';
+import Society_positioning05 from '../assets/img/Society_positioning05.jpg';
+import Society_positioning06 from '../assets/img/Society_positioning06.png';
 
 // 制度系
 import Society_institution01 from '../assets/img/Society_institution01.jpg';
 import Society_institution02 from '../assets/img/Society_institution02.jpg';
 import Society_institution03 from '../assets/img/Society_institution03.png';
-import Society_institution04 from '../assets/img/Society_institution01.jpg';
-import Society_institution05 from '../assets/img/Society_institution02.jpg';
-import Society_institution06 from '../assets/img/Society_institution03.png';
+import Society_institution04 from '../assets/img/Society_institution04.jpg';
+import Society_institution05 from '../assets/img/Society_institution05.jpg';
+import Society_institution06 from '../assets/img/Society_institution06.png';
 
 import './_common_css.css';
 import './society.css';
