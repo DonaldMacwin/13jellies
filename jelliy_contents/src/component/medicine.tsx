@@ -18,9 +18,9 @@ import Medicine_1stView from '../assets/img/Medicine_1stView01.png';
 import Medicine_medicalLaw01 from '../assets/img/Medicine_medicalLaw01.jpg';
 import Medicine_medicalLaw02 from '../assets/img/Medicine_medicalLaw02.jpg';
 import Medicine_medicalLaw03 from '../assets/img/Medicine_medicalLaw03.png';
-import Medicine_medicalLaw04 from '../assets/img/Medicine_medicalLaw01.jpg';
-import Medicine_medicalLaw05 from '../assets/img/Medicine_medicalLaw02.jpg';
-import Medicine_medicalLaw06 from '../assets/img/Medicine_medicalLaw03.png';
+import Medicine_medicalLaw04 from '../assets/img/Medicine_medicalLaw04.jpg';
+import Medicine_medicalLaw05 from '../assets/img/Medicine_medicalLaw05.jpg';
+import Medicine_medicalLaw06 from '../assets/img/Medicine_medicalLaw06.png';
 
 // 公衆衛生学
 import Medicine_publicHealth01 from '../assets/img/Medicine_publicHealth01.jpg';
@@ -34,25 +34,25 @@ import Medicine_publicHealth06 from '../assets/img/Medicine_publicHealth03.png';
 import Medicine_anatomy01 from '../assets/img/Medicine_anatomy01.jpg';
 import Medicine_anatomy02 from '../assets/img/Medicine_anatomy02.jpg';
 import Medicine_anatomy03 from '../assets/img/Medicine_anatomy03.png';
-import Medicine_anatomy04 from '../assets/img/Medicine_anatomy01.jpg';
-import Medicine_anatomy05 from '../assets/img/Medicine_anatomy02.jpg';
-import Medicine_anatomy06 from '../assets/img/Medicine_anatomy03.png';
+import Medicine_anatomy04 from '../assets/img/Medicine_anatomy04.jpg';
+import Medicine_anatomy05 from '../assets/img/Medicine_anatomy05.jpg';
+import Medicine_anatomy06 from '../assets/img/Medicine_anatomy06.png';
 
 // 臨床
 import Medicine_clinical01 from '../assets/img/Medicine_clinical01.jpg';
 import Medicine_clinical02 from '../assets/img/Medicine_clinical02.jpg';
 import Medicine_clinical03 from '../assets/img/Medicine_clinical03.png';
-import Medicine_clinical04 from '../assets/img/Medicine_clinical01.jpg';
-import Medicine_clinical05 from '../assets/img/Medicine_clinical02.jpg';
-import Medicine_clinical06 from '../assets/img/Medicine_clinical03.png';
+import Medicine_clinical04 from '../assets/img/Medicine_clinical04.jpg';
+import Medicine_clinical05 from '../assets/img/Medicine_clinical05.jpg';
+import Medicine_clinical06 from '../assets/img/Medicine_clinical06.png';
 
 // 病理学
 import Medicine_pathology01 from '../assets/img/Medicine_pathology01.jpg';
 import Medicine_pathology02 from '../assets/img/Medicine_pathology02.jpg';
 import Medicine_pathology03 from '../assets/img/Medicine_pathology03.png';
-import Medicine_pathology04 from '../assets/img/Medicine_pathology01.jpg';
-import Medicine_pathology05 from '../assets/img/Medicine_pathology02.jpg';
-import Medicine_pathology06 from '../assets/img/Medicine_pathology03.png';
+import Medicine_pathology04 from '../assets/img/Medicine_pathology04.jpg';
+import Medicine_pathology05 from '../assets/img/Medicine_pathology05.jpg';
+import Medicine_pathology06 from '../assets/img/Medicine_pathology06.png';
 
 // 生理学
 import Medicine_physiology01 from '../assets/img/Medicine_physiology01.jpg';
@@ -74,17 +74,17 @@ import Medicine_pharmacology06 from '../assets/img/Medicine_pharmacology03.png';
 import Medicine_microbiology01 from '../assets/img/Medicine_microbiology01.jpg';
 import Medicine_microbiology02 from '../assets/img/Medicine_microbiology02.jpg';
 import Medicine_microbiology03 from '../assets/img/Medicine_microbiology03.png';
-import Medicine_microbiology04 from '../assets/img/Medicine_microbiology01.jpg';
-import Medicine_microbiology05 from '../assets/img/Medicine_microbiology02.jpg';
-import Medicine_microbiology06 from '../assets/img/Medicine_microbiology03.png';
+import Medicine_microbiology04 from '../assets/img/Medicine_microbiology04.jpg';
+import Medicine_microbiology05 from '../assets/img/Medicine_microbiology05.jpg';
+import Medicine_microbiology06 from '../assets/img/Medicine_microbiology06.png';
 
 // 生化学
 import Medicine_biochemistry01 from '../assets/img/Medicine_biochemistry01.jpg';
 import Medicine_biochemistry02 from '../assets/img/Medicine_biochemistry02.jpg';
 import Medicine_biochemistry03 from '../assets/img/Medicine_biochemistry03.png';
-import Medicine_biochemistry04 from '../assets/img/Medicine_biochemistry01.jpg';
-import Medicine_biochemistry05 from '../assets/img/Medicine_biochemistry02.jpg';
-import Medicine_biochemistry06 from '../assets/img/Medicine_biochemistry03.png';
+import Medicine_biochemistry04 from '../assets/img/Medicine_biochemistry04.jpg';
+import Medicine_biochemistry05 from '../assets/img/Medicine_biochemistry05.jpg';
+import Medicine_biochemistry06 from '../assets/img/Medicine_biochemistry06.png';
 
 import './_common_css.css';
 import './medicine.css';
