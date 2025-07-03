@@ -66,9 +66,9 @@ import Medicine_physiology06 from '../assets/img/Medicine_physiology03.png';
 import Medicine_pharmacology01 from '../assets/img/Medicine_pharmacology01.jpg';
 import Medicine_pharmacology02 from '../assets/img/Medicine_pharmacology02.jpg';
 import Medicine_pharmacology03 from '../assets/img/Medicine_pharmacology03.png';
-import Medicine_pharmacology04 from '../assets/img/Medicine_pharmacology01.jpg';
-import Medicine_pharmacology05 from '../assets/img/Medicine_pharmacology02.jpg';
-import Medicine_pharmacology06 from '../assets/img/Medicine_pharmacology03.png';
+import Medicine_pharmacology04 from '../assets/img/Medicine_pharmacology04.jpg';
+import Medicine_pharmacology05 from '../assets/img/Medicine_pharmacology05.jpg';
+import Medicine_pharmacology06 from '../assets/img/Medicine_pharmacology06.png';
 
 // 微生物学
 import Medicine_microbiology01 from '../assets/img/Medicine_microbiology01.jpg';
