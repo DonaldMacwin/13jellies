@@ -18,9 +18,9 @@ import Biology_1stView from '../assets/img/Biology_1stView01.png';
 import Biology_agricultural_research01 from '../assets/img/Biology_agricultural_research01.jpg';
 import Biology_agricultural_research02 from '../assets/img/Biology_agricultural_research02.jpg';
 import Biology_agricultural_research03 from '../assets/img/Biology_agricultural_research03.png';
-import Biology_agricultural_research04 from '../assets/img/Biology_agricultural_research01.jpg';
-import Biology_agricultural_research05 from '../assets/img/Biology_agricultural_research02.jpg';
-import Biology_agricultural_research06 from '../assets/img/Biology_agricultural_research03.png';
+import Biology_agricultural_research04 from '../assets/img/Biology_agricultural_research04.jpg';
+import Biology_agricultural_research05 from '../assets/img/Biology_agricultural_research05.jpg';
+import Biology_agricultural_research06 from '../assets/img/Biology_agricultural_research06.png';
 
 // 植物研究
 import Biology_plant_research01 from '../assets/img/Biology_plant_research01.jpg';
@@ -50,9 +50,9 @@ import Biology_ecological_research06 from '../assets/img/Biology_ecological_rese
 import Biology_animal_research01 from '../assets/img/Biology_animal_research01.jpg';
 import Biology_animal_research02 from '../assets/img/Biology_animal_research02.jpg';
 import Biology_animal_research03 from '../assets/img/Biology_animal_research03.png';
-import Biology_animal_research04 from '../assets/img/Biology_animal_research01.jpg';
-import Biology_animal_research05 from '../assets/img/Biology_animal_research02.jpg';
-import Biology_animal_research06 from '../assets/img/Biology_animal_research03.png';
+import Biology_animal_research04 from '../assets/img/Biology_animal_research04.jpg';
+import Biology_animal_research05 from '../assets/img/Biology_animal_research05.jpg';
+import Biology_animal_research06 from '../assets/img/Biology_animal_research06.png';
 
 // 進化研究
 import Biology_evolutionary_research01 from '../assets/img/Biology_evolutionary_research01.jpg';
@@ -98,17 +98,17 @@ import Biology_neuroscience06 from '../assets/img/Biology_neuroscience03.png';
 import Biology_bioengineering01 from '../assets/img/Biology_bioengineering01.jpg';
 import Biology_bioengineering02 from '../assets/img/Biology_bioengineering02.jpg';
 import Biology_bioengineering03 from '../assets/img/Biology_bioengineering03.png';
-import Biology_bioengineering04 from '../assets/img/Biology_bioengineering01.jpg';
-import Biology_bioengineering05 from '../assets/img/Biology_bioengineering02.jpg';
-import Biology_bioengineering06 from '../assets/img/Biology_bioengineering03.png';
+import Biology_bioengineering04 from '../assets/img/Biology_bioengineering04.jpg';
+import Biology_bioengineering05 from '../assets/img/Biology_bioengineering05.jpg';
+import Biology_bioengineering06 from '../assets/img/Biology_bioengineering06.png';
 
 // 生物情報研究
 import Biology_bioinformatics01 from '../assets/img/Biology_bioinformatics01.jpg';
 import Biology_bioinformatics02 from '../assets/img/Biology_bioinformatics02.jpg';
 import Biology_bioinformatics03 from '../assets/img/Biology_bioinformatics03.png';
-import Biology_bioinformatics04 from '../assets/img/Biology_bioinformatics01.jpg';
-import Biology_bioinformatics05 from '../assets/img/Biology_bioinformatics02.jpg';
-import Biology_bioinformatics06 from '../assets/img/Biology_bioinformatics03.png';
+import Biology_bioinformatics04 from '../assets/img/Biology_bioinformatics04.jpg';
+import Biology_bioinformatics05 from '../assets/img/Biology_bioinformatics05.jpg';
+import Biology_bioinformatics06 from '../assets/img/Biology_bioinformatics06.png';
 
 // 遺伝発生研究
 import Biology_genetic_development01 from '../assets/img/Biology_genetic_development01.jpg';
@@ -138,9 +138,9 @@ import Biology_biophysics06 from '../assets/img/Biology_biophysics03.png';
 import Biology_biochemistry01 from '../assets/img/Biology_biochemistry01.jpg';
 import Biology_biochemistry02 from '../assets/img/Biology_biochemistry02.jpg';
 import Biology_biochemistry03 from '../assets/img/Biology_biochemistry03.png';
-import Biology_biochemistry04 from '../assets/img/Biology_biochemistry01.jpg';
-import Biology_biochemistry05 from '../assets/img/Biology_biochemistry02.jpg';
-import Biology_biochemistry06 from '../assets/img/Biology_biochemistry03.png';
+import Biology_biochemistry04 from '../assets/img/Biology_biochemistry04.jpg';
+import Biology_biochemistry05 from '../assets/img/Biology_biochemistry05.jpg';
+import Biology_biochemistry06 from '../assets/img/Biology_biochemistry06.png';
 
 import './_common_css.css';
 import './biology.css';

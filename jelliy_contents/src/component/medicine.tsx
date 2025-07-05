@@ -26,9 +26,9 @@ import Medicine_medicalLaw06 from '../assets/img/Medicine_medicalLaw06.png';
 import Medicine_publicHealth01 from '../assets/img/Medicine_publicHealth01.jpg';
 import Medicine_publicHealth02 from '../assets/img/Medicine_publicHealth02.jpg';
 import Medicine_publicHealth03 from '../assets/img/Medicine_publicHealth03.png';
-import Medicine_publicHealth04 from '../assets/img/Medicine_publicHealth01.jpg';
-import Medicine_publicHealth05 from '../assets/img/Medicine_publicHealth02.jpg';
-import Medicine_publicHealth06 from '../assets/img/Medicine_publicHealth03.png';
+import Medicine_publicHealth04 from '../assets/img/Medicine_publicHealth04.jpg';
+import Medicine_publicHealth05 from '../assets/img/Medicine_publicHealth05.jpg';
+import Medicine_publicHealth06 from '../assets/img/Medicine_publicHealth06.png';
 
 // 解剖学
 import Medicine_anatomy01 from '../assets/img/Medicine_anatomy01.jpg';
@@ -58,9 +58,9 @@ import Medicine_pathology06 from '../assets/img/Medicine_pathology06.png';
 import Medicine_physiology01 from '../assets/img/Medicine_physiology01.jpg';
 import Medicine_physiology02 from '../assets/img/Medicine_physiology02.jpg';
 import Medicine_physiology03 from '../assets/img/Medicine_physiology03.png';
-import Medicine_physiology04 from '../assets/img/Medicine_physiology01.jpg';
-import Medicine_physiology05 from '../assets/img/Medicine_physiology02.jpg';
-import Medicine_physiology06 from '../assets/img/Medicine_physiology03.png';
+import Medicine_physiology04 from '../assets/img/Medicine_physiology04.jpg';
+import Medicine_physiology05 from '../assets/img/Medicine_physiology05.jpg';
+import Medicine_physiology06 from '../assets/img/Medicine_physiology06.png';
 
 // 薬理学
 import Medicine_pharmacology01 from '../assets/img/Medicine_pharmacology01.jpg';
