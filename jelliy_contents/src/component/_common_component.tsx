@@ -510,7 +510,7 @@ export const TopButton: React.FC<TopButtonProps> = ({ show, onClick }) =>
         e.currentTarget.style.backgroundColor = 'rgba(0, 0, 0, 0.6)';
       }}
     >
-      このページのTopへ戻る
+      ↑ページTopへ戻る
     </button>
   ) : null;
 
