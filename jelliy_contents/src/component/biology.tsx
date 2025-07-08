@@ -26,9 +26,9 @@ import Biology_agricultural_research06 from '../assets/img/Biology_agricultural_
 import Biology_plant_research01 from '../assets/img/Biology_plant_research01.jpg';
 import Biology_plant_research02 from '../assets/img/Biology_plant_research02.jpg';
 import Biology_plant_research03 from '../assets/img/Biology_plant_research03.png';
-import Biology_plant_research04 from '../assets/img/Biology_plant_research01.jpg';
-import Biology_plant_research05 from '../assets/img/Biology_plant_research02.jpg';
-import Biology_plant_research06 from '../assets/img/Biology_plant_research03.png';
+import Biology_plant_research04 from '../assets/img/Biology_plant_research04.jpg';
+import Biology_plant_research05 from '../assets/img/Biology_plant_research05.jpg';
+import Biology_plant_research06 from '../assets/img/Biology_plant_research06.png';
 
 // 生物分類
 import Biology_biological_classification01 from '../assets/img/Biology_biological_classification01.jpg';
@@ -58,25 +58,25 @@ import Biology_animal_research06 from '../assets/img/Biology_animal_research06.p
 import Biology_evolutionary_research01 from '../assets/img/Biology_evolutionary_research01.jpg';
 import Biology_evolutionary_research02 from '../assets/img/Biology_evolutionary_research02.jpg';
 import Biology_evolutionary_research03 from '../assets/img/Biology_evolutionary_research03.png';
-import Biology_evolutionary_research04 from '../assets/img/Biology_evolutionary_research01.jpg';
-import Biology_evolutionary_research05 from '../assets/img/Biology_evolutionary_research02.jpg';
-import Biology_evolutionary_research06 from '../assets/img/Biology_evolutionary_research03.png';
+import Biology_evolutionary_research04 from '../assets/img/Biology_evolutionary_research04.jpg';
+import Biology_evolutionary_research05 from '../assets/img/Biology_evolutionary_research05.jpg';
+import Biology_evolutionary_research06 from '../assets/img/Biology_evolutionary_research06.png';
 
 // 地球外生物研究
 import Biology_extraterrestrial_life01 from '../assets/img/Biology_extraterrestrial_life01.jpg';
 import Biology_extraterrestrial_life02 from '../assets/img/Biology_extraterrestrial_life02.jpg';
 import Biology_extraterrestrial_life03 from '../assets/img/Biology_extraterrestrial_life03.png';
-import Biology_extraterrestrial_life04 from '../assets/img/Biology_extraterrestrial_life01.jpg';
-import Biology_extraterrestrial_life05 from '../assets/img/Biology_extraterrestrial_life02.jpg';
-import Biology_extraterrestrial_life06 from '../assets/img/Biology_extraterrestrial_life03.png';
+import Biology_extraterrestrial_life04 from '../assets/img/Biology_extraterrestrial_life04.jpg';
+import Biology_extraterrestrial_life05 from '../assets/img/Biology_extraterrestrial_life05.jpg';
+import Biology_extraterrestrial_life06 from '../assets/img/Biology_extraterrestrial_life06.png';
 
 // 人類研究
 import Biology_human_studies01 from '../assets/img/Biology_human_studies01.jpg';
 import Biology_human_studies02 from '../assets/img/Biology_human_studies02.jpg';
 import Biology_human_studies03 from '../assets/img/Biology_human_studies03.png';
-import Biology_human_studies04 from '../assets/img/Biology_human_studies01.jpg';
-import Biology_human_studies05 from '../assets/img/Biology_human_studies02.jpg';
-import Biology_human_studies06 from '../assets/img/Biology_human_studies03.png';
+import Biology_human_studies04 from '../assets/img/Biology_human_studies04.jpg';
+import Biology_human_studies05 from '../assets/img/Biology_human_studies05.jpg';
+import Biology_human_studies06 from '../assets/img/Biology_human_studies06.png';
 
 // 生物形態研究
 {/*import Biology_biomorphology01 from '../assets/img/Biology_biomorphology01.jpg';
@@ -90,9 +90,9 @@ import Biology_biomorphology06 from '../assets/img/Biology_biomorphology03.png';
 import Biology_neuroscience01 from '../assets/img/Biology_neuroscience01.jpg';
 import Biology_neuroscience02 from '../assets/img/Biology_neuroscience02.jpg';
 import Biology_neuroscience03 from '../assets/img/Biology_neuroscience03.png';
-import Biology_neuroscience04 from '../assets/img/Biology_neuroscience01.jpg';
-import Biology_neuroscience05 from '../assets/img/Biology_neuroscience02.jpg';
-import Biology_neuroscience06 from '../assets/img/Biology_neuroscience03.png';
+import Biology_neuroscience04 from '../assets/img/Biology_neuroscience04.jpg';
+import Biology_neuroscience05 from '../assets/img/Biology_neuroscience05.jpg';
+import Biology_neuroscience06 from '../assets/img/Biology_neuroscience06.png';
 
 // 生物工学
 import Biology_bioengineering01 from '../assets/img/Biology_bioengineering01.jpg';
@@ -114,9 +114,9 @@ import Biology_bioinformatics06 from '../assets/img/Biology_bioinformatics06.png
 import Biology_genetic_development01 from '../assets/img/Biology_genetic_development01.jpg';
 import Biology_genetic_development02 from '../assets/img/Biology_genetic_development02.jpg';
 import Biology_genetic_development03 from '../assets/img/Biology_genetic_development03.png';
-import Biology_genetic_development04 from '../assets/img/Biology_genetic_development01.jpg';
-import Biology_genetic_development05 from '../assets/img/Biology_genetic_development02.jpg';
-import Biology_genetic_development06 from '../assets/img/Biology_genetic_development03.png';
+import Biology_genetic_development04 from '../assets/img/Biology_genetic_development04.jpg';
+import Biology_genetic_development05 from '../assets/img/Biology_genetic_development05.jpg';
+import Biology_genetic_development06 from '../assets/img/Biology_genetic_development06.png';
 
 // 細胞研究
 import Biology_cell01 from '../assets/img/Biology_cell01.jpg';
