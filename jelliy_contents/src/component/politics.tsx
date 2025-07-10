@@ -18,9 +18,9 @@ import { TopButton } from './_common_component';
 import Politics_economics01 from '../assets/img/Politics_economics01.jpg';
 import Politics_economics02 from '../assets/img/Politics_economics02.jpg';
 import Politics_economics03 from '../assets/img/Politics_economics03.png';
-import Politics_economics04 from '../assets/img/Politics_economics01.jpg';
-import Politics_economics05 from '../assets/img/Politics_economics02.jpg';
-import Politics_economics06 from '../assets/img/Politics_economics03.png';
+import Politics_economics04 from '../assets/img/Politics_economics04.jpg';
+import Politics_economics05 from '../assets/img/Politics_economics05.jpg';
+import Politics_economics06 from '../assets/img/Politics_economics06.png';
 
 // 政治指導研究
 import Politics_political_leadership01 from '../assets/img/Politics_political_leadership01.jpg';
@@ -34,9 +34,9 @@ import Politics_political_leadership06 from '../assets/img/Politics_political_le
 import Politics_decision_process01 from '../assets/img/Politics_decision_process01.jpg';
 import Politics_decision_process02 from '../assets/img/Politics_decision_process02.jpg';
 import Politics_decision_process03 from '../assets/img/Politics_decision_process03.png';
-import Politics_decision_process04 from '../assets/img/Politics_decision_process01.jpg';
-import Politics_decision_process05 from '../assets/img/Politics_decision_process02.jpg';
-import Politics_decision_process06 from '../assets/img/Politics_decision_process03.png';
+import Politics_decision_process04 from '../assets/img/Politics_decision_process04.jpg';
+import Politics_decision_process05 from '../assets/img/Politics_decision_process05.jpg';
+import Politics_decision_process06 from '../assets/img/Politics_decision_process06.png';
 
 // 政治集団研究
 import Politics_political_groups01 from '../assets/img/Politics_political_groups01.jpg';
@@ -50,9 +50,9 @@ import Politics_political_groups06 from '../assets/img/Politics_political_groups
 import Politics_institutional01 from '../assets/img/Politics_institutional01.jpg';
 import Politics_institutional02 from '../assets/img/Politics_institutional02.jpg';
 import Politics_institutional03 from '../assets/img/Politics_institutional03.png';
-import Politics_institutional04 from '../assets/img/Politics_institutional01.jpg';
-import Politics_institutional05 from '../assets/img/Politics_institutional02.jpg';
-import Politics_institutional06 from '../assets/img/Politics_institutional03.png';
+import Politics_institutional04 from '../assets/img/Politics_institutional04.jpg';
+import Politics_institutional05 from '../assets/img/Politics_institutional05.jpg';
+import Politics_institutional06 from '../assets/img/Politics_institutional06.png';
 
 // 政治学体系研究
 import Politics_political_system01 from '../assets/img/Politics_political_system01.jpg';
@@ -66,25 +66,25 @@ import Politics_political_system06 from '../assets/img/Politics_political_system
 import Politics_ideology01 from '../assets/img/Politics_ideology01.jpg';
 import Politics_ideology02 from '../assets/img/Politics_ideology02.jpg';
 import Politics_ideology03 from '../assets/img/Politics_ideology03.png';
-import Politics_ideology04 from '../assets/img/Politics_ideology01.jpg';
-import Politics_ideology05 from '../assets/img/Politics_ideology02.jpg';
-import Politics_ideology06 from '../assets/img/Politics_ideology03.png';
+import Politics_ideology04 from '../assets/img/Politics_ideology04.jpg';
+import Politics_ideology05 from '../assets/img/Politics_ideology05.jpg';
+import Politics_ideology06 from '../assets/img/Politics_ideology06.png';
 
 // 国家間研究
 import Politics_international01 from '../assets/img/Politics_international01.jpg';
 import Politics_international02 from '../assets/img/Politics_international02.jpg';
 import Politics_international03 from '../assets/img/Politics_international03.png';
-import Politics_international04 from '../assets/img/Politics_international01.jpg';
-import Politics_international05 from '../assets/img/Politics_international02.jpg';
-import Politics_international06 from '../assets/img/Politics_international03.png';
+import Politics_international04 from '../assets/img/Politics_international04.jpg';
+import Politics_international05 from '../assets/img/Politics_international05.jpg';
+import Politics_international06 from '../assets/img/Politics_international06.png';
 
 // 施策内容研究
 import Politics_policy_content01 from '../assets/img/Politics_policy_content01.jpg';
 import Politics_policy_content02 from '../assets/img/Politics_policy_content02.jpg';
 import Politics_policy_content03 from '../assets/img/Politics_policy_content03.png';
-import Politics_policy_content04 from '../assets/img/Politics_policy_content01.jpg';
-import Politics_policy_content05 from '../assets/img/Politics_policy_content02.jpg';
-import Politics_policy_content06 from '../assets/img/Politics_policy_content03.png';
+import Politics_policy_content04 from '../assets/img/Politics_policy_content04.jpg';
+import Politics_policy_content05 from '../assets/img/Politics_policy_content05.jpg';
+import Politics_policy_content06 from '../assets/img/Politics_policy_content06.png';
 
 // 政治の実行と伝達の研究
 import Politics_political_implementation01 from '../assets/img/Politics_political_implementation01.jpg';
