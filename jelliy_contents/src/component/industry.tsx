@@ -32,9 +32,9 @@ import Industry_industrial_management06 from '../assets/img/Industry_industrial_
 import Industry_agriculture01 from '../assets/img/Industry_agriculture01.jpg';
 import Industry_agriculture02 from '../assets/img/Industry_agriculture02.jpg';
 import Industry_agriculture03 from '../assets/img/Industry_agriculture03.png';
-import Industry_agriculture04 from '../assets/img/Industry_agriculture01.jpg';
-import Industry_agriculture05 from '../assets/img/Industry_agriculture02.jpg';
-import Industry_agriculture06 from '../assets/img/Industry_agriculture03.png';
+import Industry_agriculture04 from '../assets/img/Industry_agriculture04.jpg';
+import Industry_agriculture05 from '../assets/img/Industry_agriculture05.jpg';
+import Industry_agriculture06 from '../assets/img/Industry_agriculture06.png';
 
 import Industry_forestry01 from '../assets/img/Industry_forestry01.jpg';
 import Industry_forestry02 from '../assets/img/Industry_forestry02.jpg';
@@ -46,9 +46,9 @@ import Industry_forestry06 from '../assets/img/Industry_forestry03.png';
 import Industry_animal_husbandry01 from '../assets/img/Industry_animal_husbandry01.jpg';
 import Industry_animal_husbandry02 from '../assets/img/Industry_animal_husbandry02.jpg';
 import Industry_animal_husbandry03 from '../assets/img/Industry_animal_husbandry03.png';
-import Industry_animal_husbandry04 from '../assets/img/Industry_animal_husbandry01.jpg';
-import Industry_animal_husbandry05 from '../assets/img/Industry_animal_husbandry02.jpg';
-import Industry_animal_husbandry06 from '../assets/img/Industry_animal_husbandry03.png';
+import Industry_animal_husbandry04 from '../assets/img/Industry_animal_husbandry04.jpg';
+import Industry_animal_husbandry05 from '../assets/img/Industry_animal_husbandry05.jpg';
+import Industry_animal_husbandry06 from '../assets/img/Industry_animal_husbandry06.png';
 
 import Industry_fisheries01 from '../assets/img/Industry_fisheries01.jpg';
 import Industry_fisheries02 from '../assets/img/Industry_fisheries02.jpg';
@@ -93,18 +93,18 @@ import Industry_civil_engineering05 from '../assets/img/Industry_civil_engineeri
 import Industry_civil_engineering06 from '../assets/img/Industry_civil_engineering03.png';
 
 import Industry_architecture01 from '../assets/img/Industry_architecture01.jpg';
-import Industry_architecture02 from '../assets/img/Industry_architecture02.jpg';
+import Industry_architecture02 from '../assets/img/Industry_architecture02.png';
 import Industry_architecture03 from '../assets/img/Industry_architecture03.png';
-import Industry_architecture04 from '../assets/img/Industry_architecture01.jpg';
-import Industry_architecture05 from '../assets/img/Industry_architecture02.jpg';
-import Industry_architecture06 from '../assets/img/Industry_architecture03.png';
+import Industry_architecture04 from '../assets/img/Industry_architecture04.jpg';
+import Industry_architecture05 from '../assets/img/Industry_architecture05.jpg';
+import Industry_architecture06 from '../assets/img/Industry_architecture06.png';
 
 import Industry_chemical_industry01 from '../assets/img/Industry_chemical_industry01.jpg';
 import Industry_chemical_industry02 from '../assets/img/Industry_chemical_industry02.jpg';
 import Industry_chemical_industry03 from '../assets/img/Industry_chemical_industry03.png';
-import Industry_chemical_industry04 from '../assets/img/Industry_chemical_industry01.jpg';
-import Industry_chemical_industry05 from '../assets/img/Industry_chemical_industry02.jpg';
-import Industry_chemical_industry06 from '../assets/img/Industry_chemical_industry03.png';
+import Industry_chemical_industry04 from '../assets/img/Industry_chemical_industry04.jpg';
+import Industry_chemical_industry05 from '../assets/img/Industry_chemical_industry05.jpg';
+import Industry_chemical_industry06 from '../assets/img/Industry_chemical_industry06.png';
 
 import Industry_food_industry01 from '../assets/img/Industry_food_industry01.jpg';
 import Industry_food_industry02 from '../assets/img/Industry_food_industry02.jpg';
@@ -130,16 +130,16 @@ import Industry_materials_engineering06 from '../assets/img/Industry_materials_e
 import Industry_applied_physics01 from '../assets/img/Industry_applied_physics01.jpg';
 import Industry_applied_physics02 from '../assets/img/Industry_applied_physics02.jpg';
 import Industry_applied_physics03 from '../assets/img/Industry_applied_physics03.png';
-import Industry_applied_physics04 from '../assets/img/Industry_applied_physics01.jpg';
-import Industry_applied_physics05 from '../assets/img/Industry_applied_physics02.jpg';
-import Industry_applied_physics06 from '../assets/img/Industry_applied_physics03.png';
+import Industry_applied_physics04 from '../assets/img/Industry_applied_physics04.jpg';
+import Industry_applied_physics05 from '../assets/img/Industry_applied_physics05.png';
+import Industry_applied_physics06 from '../assets/img/Industry_applied_physics06.png';
 
 import Industry_applied_chemistry01 from '../assets/img/Industry_applied_chemistry01.jpg';
 import Industry_applied_chemistry02 from '../assets/img/Industry_applied_chemistry02.jpg';
 import Industry_applied_chemistry03 from '../assets/img/Industry_applied_chemistry03.png';
-import Industry_applied_chemistry04 from '../assets/img/Industry_applied_chemistry01.jpg';
-import Industry_applied_chemistry05 from '../assets/img/Industry_applied_chemistry02.jpg';
-import Industry_applied_chemistry06 from '../assets/img/Industry_applied_chemistry03.png';
+import Industry_applied_chemistry04 from '../assets/img/Industry_applied_chemistry04.jpg';
+import Industry_applied_chemistry05 from '../assets/img/Industry_applied_chemistry05.jpg';
+import Industry_applied_chemistry06 from '../assets/img/Industry_applied_chemistry06.png';
 
 import './_common_css.css';
 import './industry.css';
