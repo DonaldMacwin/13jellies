@@ -18,16 +18,16 @@ import { TopButton } from './_common_component';
 import Industry_industrial_control01 from '../assets/img/Industry_industrial_control01.jpg';
 import Industry_industrial_control02 from '../assets/img/Industry_industrial_control02.jpg';
 import Industry_industrial_control03 from '../assets/img/Industry_industrial_control03.png';
-import Industry_industrial_control04 from '../assets/img/Industry_industrial_control01.jpg';
-import Industry_industrial_control05 from '../assets/img/Industry_industrial_control02.jpg';
-import Industry_industrial_control06 from '../assets/img/Industry_industrial_control03.png';
+import Industry_industrial_control04 from '../assets/img/Industry_industrial_control04.jpg';
+import Industry_industrial_control05 from '../assets/img/Industry_industrial_control05.jpg';
+import Industry_industrial_control06 from '../assets/img/Industry_industrial_control06.png';
 
 import Industry_industrial_management01 from '../assets/img/Industry_industrial_management01.jpg';
 import Industry_industrial_management02 from '../assets/img/Industry_industrial_management02.jpg';
 import Industry_industrial_management03 from '../assets/img/Industry_industrial_management03.png';
-import Industry_industrial_management04 from '../assets/img/Industry_industrial_management01.jpg';
-import Industry_industrial_management05 from '../assets/img/Industry_industrial_management02.jpg';
-import Industry_industrial_management06 from '../assets/img/Industry_industrial_management03.png';
+import Industry_industrial_management04 from '../assets/img/Industry_industrial_management04.jpg';
+import Industry_industrial_management05 from '../assets/img/Industry_industrial_management05.jpg';
+import Industry_industrial_management06 from '../assets/img/Industry_industrial_management06.png';
 
 import Industry_agriculture01 from '../assets/img/Industry_agriculture01.jpg';
 import Industry_agriculture02 from '../assets/img/Industry_agriculture02.jpg';
@@ -60,9 +60,9 @@ import Industry_fisheries06 from '../assets/img/Industry_fisheries06.png';
 import Industry_mining01 from '../assets/img/Industry_mining01.jpg';
 import Industry_mining02 from '../assets/img/Industry_mining02.jpg';
 import Industry_mining03 from '../assets/img/Industry_mining03.png';
-import Industry_mining04 from '../assets/img/Industry_mining01.jpg';
-import Industry_mining05 from '../assets/img/Industry_mining02.jpg';
-import Industry_mining06 from '../assets/img/Industry_mining03.png';
+import Industry_mining04 from '../assets/img/Industry_mining04.jpg';
+import Industry_mining05 from '../assets/img/Industry_mining05.jpg';
+import Industry_mining06 from '../assets/img/Industry_mining06.png';
 
 import Industry_energy_industry01 from '../assets/img/Industry_energy_industry01.jpg';
 import Industry_energy_industry02 from '../assets/img/Industry_energy_industry02.jpg';
@@ -74,9 +74,9 @@ import Industry_energy_industry06 from '../assets/img/Industry_energy_industry06
 import Industry_mechanical_engineering01 from '../assets/img/Industry_mechanical_engineering01.jpg';
 import Industry_mechanical_engineering02 from '../assets/img/Industry_mechanical_engineering02.jpg';
 import Industry_mechanical_engineering03 from '../assets/img/Industry_mechanical_engineering03.png';
-import Industry_mechanical_engineering04 from '../assets/img/Industry_mechanical_engineering01.jpg';
-import Industry_mechanical_engineering05 from '../assets/img/Industry_mechanical_engineering02.jpg';
-import Industry_mechanical_engineering06 from '../assets/img/Industry_mechanical_engineering03.png';
+import Industry_mechanical_engineering04 from '../assets/img/Industry_mechanical_engineering04.jpg';
+import Industry_mechanical_engineering05 from '../assets/img/Industry_mechanical_engineering05.jpg';
+import Industry_mechanical_engineering06 from '../assets/img/Industry_mechanical_engineering06.png';
 
 import Industry_electrical_electronic_engineering01 from '../assets/img/Industry_electrical_electronic_engineering01.jpg';
 import Industry_electrical_electronic_engineering02 from '../assets/img/Industry_electrical_electronic_engineering02.jpg';
@@ -123,9 +123,9 @@ import Industry_communication_transport06 from '../assets/img/Industry_communica
 import Industry_materials_engineering01 from '../assets/img/Industry_materials_engineering01.jpg';
 import Industry_materials_engineering02 from '../assets/img/Industry_materials_engineering02.jpg';
 import Industry_materials_engineering03 from '../assets/img/Industry_materials_engineering03.png';
-import Industry_materials_engineering04 from '../assets/img/Industry_materials_engineering01.jpg';
-import Industry_materials_engineering05 from '../assets/img/Industry_materials_engineering02.jpg';
-import Industry_materials_engineering06 from '../assets/img/Industry_materials_engineering03.png';
+import Industry_materials_engineering04 from '../assets/img/Industry_materials_engineering04.jpg';
+import Industry_materials_engineering05 from '../assets/img/Industry_materials_engineering05.jpg';
+import Industry_materials_engineering06 from '../assets/img/Industry_materials_engineering06.png';
 
 import Industry_applied_physics01 from '../assets/img/Industry_applied_physics01.jpg';
 import Industry_applied_physics02 from '../assets/img/Industry_applied_physics02.jpg';
