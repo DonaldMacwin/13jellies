@@ -2,6 +2,12 @@
 <html lang="ja">
 
 <head>
+    <?php
+    // ハッシュがない場合はリダイレクト
+    if (!isset($_SERVER['QUERY_STRING']) || strpos($_SERVER['REQUEST_URI'], '#') === false) {
+        echo '<script>if(location.hash===""){location.replace("https://cf268321.cloudfree.jp/13jellies/");}</script>';
+    }
+    ?>
     <?php include "./asset/html/meta.html"; ?>
     <link rel="stylesheet" href="./assets/css/top.css" />
     <title>13個のゼリー</title>
