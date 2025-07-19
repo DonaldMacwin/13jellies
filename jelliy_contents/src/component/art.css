@@ -1,13 +1,13 @@
 .first_view.art {
     .jelly_map {
-    margin: 0 0 0 -20%;
+        margin: 0 0 0 -20%;
 
-    img {
-      width: 65%;
-      height: auto;
-      object-fit: unset;
+        img {
+            width: 65%;
+            height: auto;
+            object-fit: unset;
+        }
     }
-  }
 }
 
 h1.art_h1 {
@@ -21,40 +21,380 @@ h1.art_h1 {
         width: 27%;
         height: 25%;
     }
+
     .three_D_modeling a {
-                bottom: 28%;
+        bottom: 28%;
         left: -17%;
         width: 23%;
         height: 27%;
     }
-    .literature a{
+
+    .literature a {
         top: 13%;
         left: 17%;
         width: 17%;
         height: 20%;
     }
-    .communication_technique a{
+
+    .communication_technique a {
         top: 39%;
         left: 12%;
         width: 25%;
         height: 17%;
     }
-    .music a{
+
+    .music a {
         top: 15%;
         left: 44%;
         width: 10%;
         height: 20%;
     }
-    .cooking a{
+
+    .cooking a {
         top: 39%;
         left: 44%;
         width: 9%;
         height: 21%;
     }
-    .performing a{
-                bottom: 14%;
+
+    .performing a {
+        bottom: 14%;
         left: 38%;
         width: 18%;
         height: 24%;
+    }
+}
+
+#planar_modeling {
+    .block_figure_left_01 {
+        top: 0;
+        left: 0%;
+        width: 75%;
+        z-index: +1;
+    }
+
+    .block_figure_left_02 {
+        top: 0;
+        left: unset;
+        width: 50%;
+        z-index: +2;
+        right: 0;
+    }
+
+    .block_figure_left_03 {
+        top: 20%;
+        left: 50%;
+        width: 50%;
+        z-index: +3;
+    }
+
+    .block_figure_left_04 {
+        bottom: 0;
+        left: unset;
+        width: 50%;
+        z-index: +4;
+        right: 0;
+    }
+
+    .block_figure_left_05 {
+        bottom: 0;
+        left: 0;
+        width: 65%;
+        z-index: +5;
+    }
+
+    .block_figure_left_06 {
+        bottom: 0;
+        right: 12%;
+        width: 59%;
+        z-index: +6;
+    }
+}
+
+#literature {
+    .block_figure_left_01 {
+        top: 0;
+        left: 0%;
+        width: 75%;
+        z-index: +1;
+    }
+
+    .block_figure_left_02 {
+        top: 0;
+        left: unset;
+        width: 50%;
+        z-index: +2;
+        right: 0;
+    }
+
+    .block_figure_left_03 {
+        top: 20%;
+        left: 50%;
+        width: 50%;
+        z-index: +3;
+    }
+
+    .block_figure_left_04 {
+        bottom: 0;
+        left: unset;
+        width: 50%;
+        z-index: +4;
+        right: 0;
+    }
+
+    .block_figure_left_05 {
+        bottom: 0;
+        left: 0;
+        width: 65%;
+        z-index: +5;
+    }
+
+    .block_figure_left_06 {
+        bottom: 0;
+        right: 12%;
+        width: 59%;
+        z-index: +6;
+    }
+}
+
+#music {
+    .block_figure_left_01 {
+        top: 0;
+        left: 0%;
+        width: 75%;
+        z-index: +1;
+    }
+
+    .block_figure_left_02 {
+        top: 0;
+        left: unset;
+        width: 50%;
+        z-index: +2;
+        right: 0;
+    }
+
+    .block_figure_left_03 {
+        top: 20%;
+        left: 50%;
+        width: 50%;
+        z-index: +3;
+    }
+
+    .block_figure_left_04 {
+        bottom: 0;
+        left: unset;
+        width: 50%;
+        z-index: +4;
+        right: 0;
+    }
+
+    .block_figure_left_05 {
+        bottom: 0;
+        left: 0;
+        width: 65%;
+        z-index: +5;
+    }
+
+    .block_figure_left_06 {
+        bottom: 0;
+        right: 12%;
+        width: 59%;
+        z-index: +6;
+    }
+}
+
+#performing {
+    .block_figure_left_01 {
+        top: 0;
+        left: 0%;
+        width: 75%;
+        z-index: +1;
+    }
+
+    .block_figure_left_02 {
+        top: 0;
+        left: unset;
+        width: 50%;
+        z-index: +2;
+        right: 0;
+    }
+
+    .block_figure_left_03 {
+        top: 20%;
+        left: 50%;
+        width: 50%;
+        z-index: +3;
+    }
+
+    .block_figure_left_04 {
+        bottom: 0;
+        left: unset;
+        width: 50%;
+        z-index: +4;
+        right: 0;
+    }
+
+    .block_figure_left_05 {
+        bottom: 0;
+        left: 0;
+        width: 65%;
+        z-index: +5;
+    }
+
+    .block_figure_left_06 {
+        bottom: 0;
+        right: 12%;
+        width: 59%;
+        z-index: +6;
+    }
+}
+
+#three_D_modeling {
+    .block_figure_right_01 {
+        top: 0;
+        left: unset;
+        width: 35%;
+        z-index: +1;
+        right: 0;
+    }
+
+    .block_figure_right_02 {
+        bottom: 0;
+        left: unset;
+        width: 50%;
+        z-index: +2;
+        right: 0;
+        top: unset;
+    }
+
+    .block_figure_right_03 {
+        top: 0;
+        left: 0;
+        width: 65%;
+        z-index: +3;
+    }
+
+    .block_figure_right_04 {
+        bottom: 0;
+        left: unset;
+        width: 35%;
+        z-index: +4;
+        right: 0;
+    }
+
+    .block_figure_right_05 {
+        bottom: 25%;
+        left: unset;
+        width: 35%;
+        z-index: +5;
+        right: 0;
+    }
+
+    .block_figure_right_06 {
+        bottom: 0;
+        right: unset;
+        width: 65%;
+        z-index: +6;
+        left: 0;
+    }
+}
+
+#communicationTechnique {
+    .block_figure_right_01 {
+        top: 0;
+        left: unset;
+        width: 35%;
+        z-index: +1;
+        right: 0;
+    }
+
+    .block_figure_right_02 {
+        bottom: 0;
+        left: unset;
+        width: 50%;
+        z-index: +2;
+        right: 0;
+        top: unset;
+    }
+
+    .block_figure_right_03 {
+        top: 0;
+        left: 0;
+        width: 65%;
+        z-index: +3;
+    }
+
+    .block_figure_right_04 {
+        bottom: 0;
+        left: unset;
+        width: 35%;
+        z-index: +4;
+        right: 0;
+    }
+
+    .block_figure_right_05 {
+        bottom: 25%;
+        left: unset;
+        width: 35%;
+        z-index: +5;
+        right: 0;
+    }
+
+    .block_figure_right_06 {
+        bottom: 0;
+        right: unset;
+        width: 65%;
+        z-index: +6;
+        left: 0;
+    }
+}
+
+#cooking {
+    .block_figure_right_01 {
+        top: 0;
+        left: unset;
+        width: 35%;
+        z-index: +1;
+        right: 0;
+    }
+
+    .block_figure_right_02 {
+        bottom: 0;
+        left: unset;
+        width: 50%;
+        z-index: +2;
+        right: 0;
+        top: unset;
+    }
+
+    .block_figure_right_03 {
+        top: 0;
+        left: 0;
+        width: 65%;
+        z-index: +3;
+    }
+
+    .block_figure_right_04 {
+        bottom: 0;
+        left: unset;
+        width: 35%;
+        z-index: +4;
+        right: 0;
+    }
+
+    .block_figure_right_05 {
+        bottom: 25%;
+        left: unset;
+        width: 35%;
+        z-index: +5;
+        right: 0;
+    }
+
+    .block_figure_right_06 {
+        bottom: 0;
+        right: unset;
+        width: 65%;
+        z-index: +6;
+        left: 0;
     }
 }
