@@ -10,7 +10,7 @@ import {
   createImageArrays,
   useSectionHtmlLoader,
   TopButton,
-  useTopScroll // ← 追加
+  useTopScroll
 } from './_common_component';
 import Art_1stView from '../assets/img/Art_1stView01.png';
 
