@@ -1,16 +1,17 @@
 .first_view.society {
     .jelly_map {
-    margin: 0 0 0 -20%;
+        margin: 0 0 0 -20%;
 
-    img {
-      width: 55%;
-      height: auto;
-      object-fit: unset;
+        img {
+            width: 55%;
+            height: auto;
+            object-fit: unset;
+        }
     }
-  }
-  .merit_and_demerit_block {
-    width: 50%;
-  }
+
+    .merit_and_demerit_block {
+        width: 50%;
+    }
 }
 
 h1.society_h1 {
@@ -24,16 +25,162 @@ h1.society_h1 {
         width: 10%;
         height: 43%;
     }
+
     .positioning a {
         top: 25%;
         left: 5%;
         width: 16%;
         height: 35%;
     }
-    .institution a{
+
+    .institution a {
         top: 25%;
         left: 28%;
         width: 16%;
         height: 31%;
+    }
+}
+
+#composition {
+    .block_figure_left_01 {
+        top: 0;
+        left: unset;
+        width: 33%;
+        z-index: +1;
+        right: 0;
+    }
+
+    .block_figure_left_02 {
+        top: 27%;
+        left: unset;
+        width: 50%;
+        z-index: +2;
+        right: 0;
+    }
+
+    .block_figure_left_03 {
+        top: 0;
+        left: 0;
+        width: 70%;
+        z-index: +3;
+    }
+
+    .block_figure_left_04 {
+        bottom: 0%;
+        left: unset;
+        width: 47%;
+        z-index: +4;
+        right: 0;
+    }
+
+    .block_figure_left_05 {
+        bottom: 0;
+        left: 0;
+        width: 57%;
+        z-index: +5;
+    }
+
+    .block_figure_left_06 {
+        bottom: 0;
+        right: 0%;
+        width: 39%;
+        z-index: +6;
+    }
+}
+
+#institution {
+    .block_figure_left_01 {
+        top: 0;
+        left: 0%;
+        width: 35%;
+        z-index: +1;
+    }
+
+    .block_figure_left_02 {
+        top: 0;
+        left: unset;
+        width: 50%;
+        z-index: +2;
+        right: 0;
+    }
+
+    .block_figure_left_03 {
+        top: unset;
+        left: 0;
+        width: 27%;
+        z-index: +3;
+        bottom: 0;
+    }
+
+    .block_figure_left_04 {
+        bottom: 0%;
+        left: 20%;
+        width: 47%;
+        z-index: +4;
+        right: unset;
+    }
+
+    .block_figure_left_05 {
+        bottom: 25%;
+        left: 0;
+        width: 100%;
+        z-index: +5;
+    }
+
+    .block_figure_left_06 {
+        bottom: 0;
+        right: 0%;
+        width: 50%;
+        z-index: +6;
+    }
+}
+
+#positioning {
+    .block_figure_right_01 {
+        top: 0;
+        left: unset;
+        width: 48%;
+        z-index: +1;
+        right: 17%;
+    }
+
+    .block_figure_right_02 {
+        bottom: 0;
+        left: unset;
+        width: 54%;
+        z-index: +2;
+        right: 20%;
+        top: unset;
+    }
+
+    .block_figure_right_03 {
+        top: 0;
+        left: 0;
+        width: 33%;
+        z-index: +3;
+    }
+
+    .block_figure_right_04 {
+        bottom: 0;
+        left: unset;
+        width: 35%;
+        z-index: +4;
+        right: 0;
+    }
+
+    .block_figure_right_05 {
+        bottom: 25%;
+        left: unset;
+        width: 100%;
+        z-index: +5;
+        right: 0;
+    }
+
+    .block_figure_right_06 {
+        bottom: 0;
+        right: unset;
+        width: 33%;
+        z-index: +6;
+        left: 0;
     }
 }
