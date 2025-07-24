@@ -1,14 +1,15 @@
 @charset "UTF-8";
+
 .first_view.spaceTime {
     .jelly_map {
-    margin: 0 20% 0 0;
+        margin: 0 20% 0 0;
 
-    img {
-      width: 80%;
-      height: auto;
-      object-fit: unset;
+        img {
+            width: 80%;
+            height: auto;
+            object-fit: unset;
+        }
     }
-  }
 }
 
 h1.space_time_h1 {
@@ -75,9 +76,396 @@ h1.space_time_h1 {
 
 #history {
     .block_figure_left_01 {
-      top: 20%;
-      left: 30%;
-      width: 70%;
-      z-index: +1;
+        top: 0;
+        left: 0%;
+        width: 35%;
+        z-index: +1;
+    }
+
+    .block_figure_left_02 {
+        top: 0;
+        left: unset;
+        width: 68%;
+        z-index: +2;
+        right: 0;
+    }
+
+    .block_figure_left_03 {
+        top: unset;
+        left: 0;
+        width: 50%;
+        z-index: +3;
+        bottom: 0;
+    }
+
+    .block_figure_left_04 {
+        bottom: 0%;
+        left: unset;
+        width: 47%;
+        z-index: +4;
+        right: 0;
+    }
+
+    .block_figure_left_05 {
+        bottom: 53%;
+        left: 0;
+        width: 40%;
+        z-index: +5;
+    }
+
+    .block_figure_left_06 {
+        bottom: 0;
+        right: 0%;
+        width: 75%;
+        z-index: +6;
+    }
+}
+
+#earth_history {
+    .block_figure_left_01 {
+        top: 0;
+        left: 0%;
+        width: 100%;
+        z-index: +1;
+    }
+
+    .block_figure_left_02 {
+        top: unset;
+        left: unset;
+        width: 70%;
+        z-index: +2;
+        right: 0;
+        bottom: 10%;
+    }
+
+    .block_figure_left_03 {
+        top: unset;
+        left: 0;
+        width: 27%;
+        z-index: +3;
+        bottom: 0;
+    }
+
+    .block_figure_left_04 {
+        bottom: 0%;
+        left: 20%;
+        width: 47%;
+        z-index: +4;
+        right: unset;
+    }
+
+    .block_figure_left_05 {
+        bottom: 25%;
+        left: 0;
+        width: 35%;
+        z-index: +5;
+    }
+
+    .block_figure_left_06 {
+        bottom: 0;
+        right: 0%;
+        width: 50%;
+        z-index: +6;
+    }
+}
+
+#geology {
+    .block_figure_left_01 {
+        top: 0;
+        left: 0%;
+        width: 50%;
+        z-index: +1;
+    }
+
+    .block_figure_left_02 {
+        top: 0;
+        left: unset;
+        width: 50%;
+        z-index: +2;
+        right: 0;
+    }
+
+    .block_figure_left_03 {
+        top: unset;
+        left: 0;
+        width: 27%;
+        z-index: +3;
+        bottom: 0;
+    }
+
+    .block_figure_left_04 {
+        bottom: 0%;
+        left: 20%;
+        width: 47%;
+        z-index: +4;
+        right: unset;
+    }
+
+    .block_figure_left_05 {
+        bottom: 42%;
+        left: unset;
+        width: 65%;
+        z-index: +5;
+        right: 0;
+    }
+
+    .block_figure_left_06 {
+        bottom: 0;
+        right: 0%;
+        width: 60%;
+        z-index: +6;
+    }
+}
+
+#oceanography {
+    .block_figure_left_01 {
+        top: 0;
+        left: 0%;
+        width: 50%;
+        z-index: +1;
+    }
+
+    .block_figure_left_02 {
+        top: 0;
+        left: unset;
+        width: 50%;
+        z-index: +2;
+        right: 0;
+    }
+
+    .block_figure_left_03 {
+        top: unset;
+        left: 0;
+        width: 50%;
+        z-index: +3;
+        bottom: 0;
+    }
+
+    .block_figure_left_04 {
+        bottom: 25%;
+        left: 20%;
+        width: 72%;
+        z-index: +4;
+        right: unset;
+    }
+
+    .block_figure_left_05 {
+        bottom: 45%;
+        left: 0;
+        width: 40%;
+        z-index: +5;
+    }
+
+    .block_figure_left_06 {
+        bottom: 0;
+        right: 0%;
+        width: 50%;
+        z-index: +6;
+    }
+}
+
+#social_geography {
+    .block_figure_right_01 {
+        top: 0;
+        left: unset;
+        width: 100%;
+        z-index: +1;
+        right: 0;
+    }
+
+    .block_figure_right_02 {
+        bottom: 0;
+        left: 0;
+        width: 66%;
+        z-index: +2;
+        right: unset;
+        top: unset;
+    }
+
+    .block_figure_right_03 {
+        top: unset;
+        left: 0;
+        width: 33%;
+        z-index: +3;
+        bottom: 40%;
+    }
+
+    .block_figure_right_04 {
+        bottom: 0;
+        left: unset;
+        width: 35%;
+        z-index: +4;
+        right: 0;
+    }
+
+    .block_figure_right_05 {
+        bottom: 25%;
+        left: unset;
+        width: 35%;
+        z-index: +5;
+        right: 0;
+    }
+
+    .block_figure_right_06 {
+        bottom: unset;
+        right: 0;
+        width: 35%;
+        z-index: +6;
+        left: unset;
+        top: 0;
+    }
+}
+
+#natural_geography {
+    .block_figure_right_01 {
+        top: unset;
+        left: 0;
+        width: 48%;
+        z-index: +1;
+        right: 17%;
+        bottom: 0;
+    }
+
+    .block_figure_right_02 {
+        bottom: 27%;
+        left: 0;
+        width: 54%;
+        z-index: +2;
+        right: 20%;
+        top: unset;
+    }
+
+    .block_figure_right_03 {
+        top: 0;
+        left: 0;
+        width: 33%;
+        z-index: +3;
+    }
+
+    .block_figure_right_04 {
+        bottom: 0;
+        left: unset;
+        width: 70%;
+        z-index: +4;
+        right: 0;
+    }
+
+    .block_figure_right_05 {
+        bottom: unset;
+        left: unset;
+        width: 100%;
+        z-index: +5;
+        right: 0;
+        top: 0;
+    }
+
+    .block_figure_right_06 {
+        bottom: 0;
+        right: 0;
+        width: 33%;
+        z-index: +6;
+        left: unset;
+    }
+}
+
+#atmosphere {
+    .block_figure_right_01 {
+        top: 0;
+        left: unset;
+        width: 50%;
+        z-index: +1;
+        right: 0%;
+    }
+
+    .block_figure_right_02 {
+        bottom: 0;
+        left: 0;
+        width: 50%;
+        z-index: +2;
+        right: 0;
+        top: unset;
+    }
+
+    .block_figure_right_03 {
+        top: 0%;
+        left: 0;
+        width: 100%;
+        z-index: +3;
+    }
+
+    .block_figure_right_04 {
+        bottom: 0;
+        left: unset;
+        width: 50%;
+        z-index: +4;
+        right: 0;
+    }
+
+    .block_figure_right_05 {
+        bottom: unset;
+        left: 0;
+        width: 50%;
+        z-index: +5;
+        right: unset;
+        top: 0;
+    }
+
+    .block_figure_right_06 {
+        bottom: 30%;
+        right: unset;
+        width: 50%;
+        z-index: +6;
+        left: 0;
+    }
+}
+
+#astronomy {
+    .block_figure_right_01 {
+        top: 0;
+        left: unset;
+        width: 48%;
+        z-index: +1;
+        right: 17%;
+    }
+
+    .block_figure_right_02 {
+        bottom: 25%;
+        left: unset;
+        width: 100%;
+        z-index: +2;
+        right: 0;
+        top: unset;
+    }
+
+    .block_figure_right_03 {
+        top: 0;
+        left: 0;
+        width: 35%;
+        z-index: +3;
+    }
+
+    .block_figure_right_04 {
+        bottom: 0;
+        left: unset;
+        width: 60%;
+        z-index: +4;
+        right: 0;
+    }
+
+    .block_figure_right_05 {
+        bottom: unset;
+        left: unset;
+        width: 60%;
+        z-index: +5;
+        right: 0;
+        top: 20%;
+    }
+
+    .block_figure_right_06 {
+        bottom: 0;
+        right: unset;
+        width: 33%;
+        z-index: +6;
+        left: 0;
     }
 }
