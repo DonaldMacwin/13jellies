@@ -1,13 +1,13 @@
 .first_view.chemistry {
     .jelly_map {
-    margin: 0 0 0 -5%;
+        margin: 0 0 0 -5%;
 
-    img {
-      width: 65%;
-      height: auto;
-      object-fit: unset;
+        img {
+            width: 65%;
+            height: auto;
+            object-fit: unset;
+        }
     }
-  }
 }
 
 h1.chemistry_h1 {
@@ -21,40 +21,392 @@ h1.chemistry_h1 {
         width: 11%;
         height: 17%;
     }
+
     .applied a {
         top: 17%;
         left: 25%;
         width: 7%;
         height: 16%;
     }
-    .analytical a{
+
+    .analytical a {
         top: 8%;
         left: 34%;
         width: 20%;
         height: 13%;
     }
-    .theoretical a{
+
+    .theoretical a {
         top: 38%;
         left: 22%;
         width: 20%;
         height: 19%;
     }
-    .inorganic a{
+
+    .inorganic a {
         bottom: 26%;
         left: 7%;
         width: 15%;
         height: 24%;
     }
-    .organic a{
+
+    .organic a {
         top: 57%;
         left: 34%;
         width: 18%;
         height: 19%;
     }
-    .biochemistry a{
+
+    .biochemistry a {
         bottom: 12%;
         left: 25%;
         width: 11%;
         height: 12%;
+    }
+}
+
+#polymer {
+    .block_figure_left_01 {
+        top: 0;
+        left: 0%;
+        width: 50%;
+        z-index: +1;
+    }
+
+    .block_figure_left_02 {
+        top: unset;
+        left: unset;
+        width: 50%;
+        z-index: +2;
+        right: 0;
+        bottom: 0;
+    }
+
+    .block_figure_left_03 {
+        top: unset;
+        left: 0;
+        width: 50%;
+        z-index: +3;
+        bottom: 0;
+    }
+
+    .block_figure_left_04 {
+        bottom: unset;
+        left: unset;
+        width: 40%;
+        z-index: +4;
+        right: 0;
+        top: 0;
+    }
+
+    .block_figure_left_05 {
+        bottom: 20%;
+        left: 0;
+        width: 70%;
+        z-index: +5;
+    }
+
+    .block_figure_left_06 {
+        bottom: 10%;
+        right: 0%;
+        width: 75%;
+        z-index: +6;
+    }
+}
+
+#analytical {
+    .block_figure_left_01 {
+        top: 0;
+        left: 0%;
+        width: 50%;
+        z-index: +1;
+    }
+
+    .block_figure_left_02 {
+        top: 0;
+        left: unset;
+        width: 50%;
+        z-index: +2;
+        right: 0;
+    }
+
+    .block_figure_left_03 {
+        top: unset;
+        left: 0;
+        width: 50%;
+        z-index: +3;
+        bottom: 0;
+    }
+
+    .block_figure_left_04 {
+        bottom: 40%;
+        left: unset;
+        width: 50%;
+        z-index: +4;
+        right: 0;
+    }
+
+    .block_figure_left_05 {
+        bottom: 30%;
+        left: 0;
+        width: 87%;
+        z-index: +5;
+    }
+
+    .block_figure_left_06 {
+        bottom: 0;
+        right: 0%;
+        width: 50%;
+        z-index: +6;
+    }
+}
+
+#inorganic {
+    .block_figure_left_01 {
+        top: 0;
+        left: 0%;
+        width: 50%;
+        z-index: +1;
+    }
+
+    .block_figure_left_02 {
+        top: 0;
+        left: unset;
+        width: 50%;
+        z-index: +2;
+        right: 0;
+    }
+
+    .block_figure_left_03 {
+        top: unset;
+        left: 0;
+        width: 50%;
+        z-index: +3;
+        bottom: 0;
+    }
+
+    .block_figure_left_04 {
+        bottom: 41%;
+        left: unset;
+        width: 50%;
+        z-index: +4;
+        right: 0;
+    }
+
+    .block_figure_left_05 {
+        bottom: 20%;
+        left: 0;
+        width: 100%;
+        z-index: +5;
+    }
+
+    .block_figure_left_06 {
+        bottom: 0;
+        right: 0%;
+        width: 50%;
+        z-index: +6;
+    }
+}
+
+#biochemistry {
+    .block_figure_left_01 {
+        top: 0;
+        left: 0%;
+        width: 50%;
+        z-index: +1;
+    }
+
+    .block_figure_left_02 {
+        top: 0;
+        left: unset;
+        width: 50%;
+        z-index: +2;
+        right: 0;
+    }
+
+    .block_figure_left_03 {
+        top: unset;
+        left: 0;
+        width: 50%;
+        z-index: +3;
+        bottom: 0;
+    }
+
+    .block_figure_left_04 {
+        bottom: 25%;
+        left: unset;
+        width: 72%;
+        z-index: +4;
+        right: 0;
+    }
+
+    .block_figure_left_05 {
+        bottom: 20%;
+        left: 0;
+        width: 70%;
+        z-index: +5;
+    }
+
+    .block_figure_left_06 {
+        bottom: 0;
+        right: 0%;
+        width: 50%;
+        z-index: +6;
+    }
+}
+
+#applied {
+    .block_figure_right_01 {
+        top: 0;
+        left: unset;
+        width: 100%;
+        z-index: +1;
+        right: 0;
+    }
+
+    .block_figure_right_02 {
+        bottom: 0;
+        left: 0;
+        width: 66%;
+        z-index: +2;
+        right: unset;
+        top: unset;
+    }
+
+    .block_figure_right_03 {
+        top: unset;
+        left: 0;
+        width: 33%;
+        z-index: +3;
+        bottom: 40%;
+    }
+
+    .block_figure_right_04 {
+        bottom: 0;
+        left: unset;
+        width: 35%;
+        z-index: +4;
+        right: 0;
+    }
+
+    .block_figure_right_05 {
+        bottom: 25%;
+        left: unset;
+        width: 35%;
+        z-index: +5;
+        right: 0;
+    }
+
+    .block_figure_right_06 {
+        bottom: unset;
+        right: 0;
+        width: 50%;
+        z-index: +6;
+        left: unset;
+        top: 0;
+    }
+}
+
+#theoretical {
+    .block_figure_right_01 {
+        top: 0;
+        left: 0;
+        width: 50%;
+        z-index: +1;
+        right: unset;
+    }
+
+    .block_figure_right_02 {
+        bottom: unset;
+        left: 0;
+        width: 100%;
+        z-index: +2;
+        right: unset;
+        top: 25%;
+    }
+
+    .block_figure_right_03 {
+        top: unset;
+        left: 0;
+        width: 50%;
+        z-index: +3;
+        bottom: 0;
+    }
+
+    .block_figure_right_04 {
+        bottom: 0;
+        left: unset;
+        width: 35%;
+        z-index: +4;
+        right: 0;
+    }
+
+    .block_figure_right_05 {
+        bottom: 40%;
+        left: unset;
+        width: 60%;
+        z-index: +5;
+        right: 0;
+    }
+
+    .block_figure_right_06 {
+        bottom: unset;
+        right: 0;
+        width: 35%;
+        z-index: +6;
+        left: unset;
+        top: 0;
+    }
+}
+
+#organic {
+    .block_figure_right_01 {
+        top: 0;
+        left: unset;
+        width: 75%;
+        z-index: +1;
+        right: 0;
+    }
+
+    .block_figure_right_02 {
+        bottom: 0;
+        left: 0;
+        width: 66%;
+        z-index: +2;
+        right: unset;
+        top: unset;
+    }
+
+    .block_figure_right_03 {
+        top: unset;
+        left: 0;
+        width: 33%;
+        z-index: +3;
+        bottom: 40%;
+    }
+
+    .block_figure_right_04 {
+        bottom: 0;
+        left: unset;
+        width: 35%;
+        z-index: +4;
+        right: 0;
+    }
+
+    .block_figure_right_05 {
+        bottom: 25%;
+        left: 30%;
+        width: 70%;
+        z-index: +5;
+        right: unset;
+    }
+
+    .block_figure_right_06 {
+        bottom: unset;
+        right: 0;
+        width: 35%;
+        z-index: +6;
+        left: unset;
+        top: 0;
     }
 }
