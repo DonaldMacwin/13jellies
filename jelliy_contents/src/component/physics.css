@@ -64,3 +64,393 @@ h1.physics_h1 {
         height: 5%;
     }
 }
+
+#elementary {
+    .block_figure_left_01 {
+        top: 0;
+        left: 0%;
+        width: 50%;
+        z-index: +1;
+    }
+
+    .block_figure_left_02 {
+        top: 0;
+        left: unset;
+        width: 50%;
+        z-index: +2;
+        right: 0;
+    }
+
+    .block_figure_left_03 {
+        top: unset;
+        left: 0;
+        width: 50%;
+        z-index: +3;
+        bottom: 0;
+    }
+
+    .block_figure_left_04 {
+    bottom: 25%;
+    left: unset;
+    width: 50%;
+    z-index: +4;
+    right: 0;
+}
+
+    .block_figure_left_05 {
+        bottom: 20%;
+        left: 0;
+        width: 70%;
+        z-index: +5;
+    }
+
+    .block_figure_left_06 {
+        bottom: 0;
+        right: 0%;
+        width: 50%;
+        z-index: +6;
+    }
+}
+#math {
+    .block_figure_left_01 {
+        top: 0;
+        left: 0%;
+        width: 50%;
+        z-index: +1;
+    }
+
+    .block_figure_left_02 {
+        top: 0;
+        left: unset;
+        width: 50%;
+        z-index: +2;
+        right: 0;
+    }
+
+    .block_figure_left_03 {
+        top: unset;
+        left: 0;
+        width: 50%;
+        z-index: +3;
+        bottom: 0;
+    }
+
+    .block_figure_left_04 {
+        bottom: 25%;
+        left: unset;
+        width: 72%;
+        z-index: +4;
+        right: 0;
+    }
+
+    .block_figure_left_05 {
+        bottom: 20%;
+        left: 0;
+        width: 70%;
+        z-index: +5;
+    }
+
+    .block_figure_left_06 {
+        bottom: 0;
+        right: 0%;
+        width: 50%;
+        z-index: +6;
+    }
+}
+#fluid {
+    .block_figure_left_01 {
+        top: 0;
+        left: 0%;
+        width: 50%;
+        z-index: +1;
+    }
+
+    .block_figure_left_02 {
+    top: 4%;
+    left: unset;
+    width: 75%;
+    z-index: +2;
+    right: 0;
+}
+
+    .block_figure_left_03 {
+        top: unset;
+        left: 0;
+        width: 50%;
+        z-index: +3;
+        bottom: 0;
+    }
+
+    .block_figure_left_04 {
+    bottom: 37%;
+    left: unset;
+    width: 50%;
+    z-index: +4;
+    right: 0;
+}
+
+    .block_figure_left_05 {
+        bottom: 20%;
+        left: 0;
+        width: 70%;
+        z-index: +5;
+    }
+
+    .block_figure_left_06 {
+        bottom: 0;
+        right: 0%;
+        width: 50%;
+        z-index: +6;
+    }
+}
+#em {
+    .block_figure_left_01 {
+        top: 0;
+        left: 0%;
+        width: 50%;
+        z-index: +1;
+    }
+
+    .block_figure_left_02 {
+        top: 0;
+        left: unset;
+        width: 50%;
+        z-index: +2;
+        right: 0;
+    }
+
+    .block_figure_left_03 {
+        top: unset;
+        left: 0;
+        width: 50%;
+        z-index: +3;
+        bottom: 0;
+    }
+
+    .block_figure_left_04 {
+        bottom: 25%;
+        left: unset;
+        width: 72%;
+        z-index: +4;
+        right: 0;
+    }
+
+    .block_figure_left_05 {
+        bottom: 20%;
+        left: 0;
+        width: 70%;
+        z-index: +5;
+    }
+
+    .block_figure_left_06 {
+        bottom: 0;
+        right: 0%;
+        width: 50%;
+        z-index: +6;
+    }
+}
+
+#condensed {
+    .block_figure_right_01 {
+    top: 0;
+    left: 0;
+    width: 50%;
+    z-index: +1;
+    right: unset;
+}
+
+    .block_figure_right_02 {
+        bottom: 0;
+        left: 0;
+        width: 66%;
+        z-index: +2;
+        right: unset;
+        top: unset;
+    }
+
+    .block_figure_right_03 {
+        top: unset;
+        left: 0;
+        width: 33%;
+        z-index: +3;
+        bottom: 40%;
+    }
+
+    .block_figure_right_04 {
+        bottom: 0;
+        left: unset;
+        width: 35%;
+        z-index: +4;
+        right: 0;
+    }
+
+    .block_figure_right_05 {
+        bottom: 25%;
+        left: unset;
+        width: 35%;
+        z-index: +5;
+        right: 0;
+    }
+
+    .block_figure_right_06 {
+        bottom: unset;
+        right: 0;
+        width: 50%;
+        z-index: +6;
+        left: unset;
+        top: 0;
+    }
+}
+#thermo {
+    .block_figure_right_01 {
+    top: 0;
+    left: 0;
+    width: 50%;
+    z-index: +1;
+    right: unset;
+}
+
+    .block_figure_right_02 {
+        bottom: 0;
+        left: 0;
+        width: 66%;
+        z-index: +2;
+        right: unset;
+        top: unset;
+    }
+
+    .block_figure_right_03 {
+    top: unset;
+    left: 0;
+    width: 40%;
+    z-index: +3;
+    bottom: 33%;
+}
+
+    .block_figure_right_04 {
+        bottom: 0;
+        left: unset;
+        width: 35%;
+        z-index: +4;
+        right: 0;
+    }
+
+    .block_figure_right_05 {
+    bottom: 30%;
+    left: unset;
+    width: 65%;
+    z-index: +5;
+    right: 10%;
+}
+
+    .block_figure_right_06 {
+        bottom: unset;
+        right: 0;
+        width: 50%;
+        z-index: +6;
+        left: unset;
+        top: 0;
+    }
+}
+#relativity {
+    .block_figure_right_01 {
+    top: 0;
+    left: 0;
+    width: 50%;
+    z-index: +1;
+    right: unset;
+}
+
+    .block_figure_right_02 {
+        bottom: 0;
+        left: 0;
+        width: 66%;
+        z-index: +2;
+        right: unset;
+        top: unset;
+    }
+
+    .block_figure_right_03 {
+        top: unset;
+        left: 0;
+        width: 33%;
+        z-index: +3;
+        bottom: 40%;
+    }
+
+    .block_figure_right_04 {
+        bottom: 0;
+        left: unset;
+        width: 35%;
+        z-index: +4;
+        right: 0;
+    }
+
+    .block_figure_right_05 {
+    bottom: 30%;
+    left: unset;
+    width: 70%;
+    z-index: +5;
+    right: 0;
+}
+
+    .block_figure_right_06 {
+        bottom: unset;
+        right: 0;
+        width: 50%;
+        z-index: +6;
+        left: unset;
+        top: 0;
+    }
+}
+#classical {
+    .block_figure_right_01 {
+    top: 0;
+    left: 0;
+    width: 50%;
+    z-index: +1;
+    right: unset;
+}
+
+    .block_figure_right_02 {
+    bottom: 0;
+    left: 0;
+    width: 49%;
+    z-index: +2;
+    right: unset;
+    top: unset;
+}
+
+    .block_figure_right_03 {
+    top: unset;
+    left: 35%;
+    width: 33%;
+    z-index: +3;
+    bottom: 40%;
+}
+
+    .block_figure_right_04 {
+    bottom: 0;
+    left: unset;
+    width: 50%;
+    z-index: +4;
+    right: 0;
+}
+
+    .block_figure_right_05 {
+        bottom: 25%;
+        left: unset;
+        width: 35%;
+        z-index: +5;
+        right: 0;
+    }
+
+    .block_figure_right_06 {
+        bottom: unset;
+        right: 0;
+        width: 50%;
+        z-index: +6;
+        left: unset;
+        top: 0;
+    }
+}
