@@ -120,3 +120,750 @@ h1.linguistics_h1 {
         height: 14%;
     }
 }
+
+#discourse {
+    .block_figure_left_01 {
+        top: 0;
+        left: 0%;
+        width: 50%;
+        z-index: +1;
+    }
+
+    .block_figure_left_02 {
+        top: 0;
+        left: unset;
+        width: 50%;
+        z-index: +2;
+        right: 0;
+    }
+
+    .block_figure_left_03 {
+        top: unset;
+        left: 0;
+        width: 40%;
+        z-index: +3;
+        bottom: 0;
+    }
+
+    .block_figure_left_04 {
+        bottom: 25%;
+        left: unset;
+        width: 72%;
+        z-index: +4;
+        right: 0;
+    }
+
+    .block_figure_left_04 {
+        bottom: 25%;
+        left: unset;
+        width: 40%;
+        z-index: +4;
+        right: 0;
+    }
+
+    .block_figure_left_05 {
+        bottom: 0%;
+        left: 0;
+        width: 70%;
+        z-index: +5;
+    }
+
+    .block_figure_left_06 {
+        bottom: 0;
+        right: 0%;
+        width: 40%;
+        z-index: +6;
+    }
+}
+
+#grammar {
+    .block_figure_left_01 {
+        top: 0;
+        left: 0%;
+        width: 50%;
+        z-index: +1;
+    }
+
+    .block_figure_left_02 {
+        top: 0;
+        left: unset;
+        width: 50%;
+        z-index: +2;
+        right: 0;
+    }
+
+    .block_figure_left_03 {
+        top: unset;
+        left: 0;
+        width: 50%;
+        z-index: +3;
+        bottom: 0;
+    }
+
+    .block_figure_left_04 {
+        bottom: 24%;
+        left: 0;
+        width: 72%;
+        z-index: +4;
+        right: unset;
+    }
+
+    .block_figure_left_05 {
+        bottom: 20%;
+        left: 0;
+        width: 50%;
+        z-index: +5;
+    }
+
+    .block_figure_left_06 {
+        bottom: 0;
+        right: 0%;
+        width: 50%;
+        z-index: +6;
+    }
+}
+
+#philosophy {
+    .block_figure_left_01 {
+        top: 20%;
+        left: 0%;
+        width: 50%;
+        z-index: +1;
+    }
+
+    .block_figure_left_02 {
+        top: 0;
+        left: unset;
+        width: 75%;
+        z-index: +2;
+        right: 0;
+    }
+
+    .block_figure_left_03 {
+        top: unset;
+        left: 0;
+        width: 33%;
+        z-index: +3;
+        bottom: 0;
+    }
+
+    .block_figure_left_04 {
+        bottom: 10%;
+        left: 25%;
+        width: 50%;
+        z-index: +4;
+    }
+
+    .block_figure_left_05 {
+        bottom: 20%;
+        left: 0;
+        width: 33%;
+        z-index: +5;
+    }
+
+    .block_figure_left_06 {
+        bottom: 0;
+        right: 0%;
+        width: 40%;
+        z-index: +6;
+    }
+}
+
+#writing {
+    .block_figure_left_01 {
+        top: 0;
+        left: 0%;
+        width: 50%;
+        z-index: +1;
+    }
+
+    .block_figure_left_02 {
+        top: 0;
+        left: unset;
+        width: 50%;
+        z-index: +2;
+        right: 0;
+    }
+
+    .block_figure_left_03 {
+        top: unset;
+        left: 0;
+        width: 33%;
+        z-index: +3;
+        bottom: 0;
+    }
+
+    .block_figure_left_04 {
+        bottom: 25%;
+        left: unset;
+        width: 72%;
+        z-index: +4;
+        right: 0;
+    }
+
+    .block_figure_left_05 {
+        bottom: 20%;
+        left: 0;
+        width: 65%;
+        z-index: +5;
+    }
+
+    .block_figure_left_06 {
+        bottom: 0;
+        right: 0%;
+        width: 70%;
+        z-index: +6;
+    }
+}
+
+#body {
+    .block_figure_left_01 {
+        top: 0;
+        left: 0%;
+        width: 50%;
+        z-index: +1;
+    }
+
+    .block_figure_left_02 {
+        top: 0;
+        left: unset;
+        width: 50%;
+        z-index: +2;
+        right: 0;
+    }
+
+    .block_figure_left_03 {
+        top: unset;
+        left: 0;
+        width: 50%;
+        z-index: +3;
+        bottom: 0;
+    }
+
+    .block_figure_left_04 {
+        bottom: 25%;
+        left: unset;
+        width: 60%;
+        z-index: +4;
+        right: 0;
+    }
+
+    .block_figure_left_05 {
+        bottom: 20%;
+        left: 0;
+        width: 50%;
+        z-index: +5;
+    }
+
+    .block_figure_left_06 {
+        bottom: 0;
+        right: 0%;
+        width: 50%;
+        z-index: +6;
+    }
+}
+
+#syntax {
+    .block_figure_left_01 {
+        top: 10%;
+        left: 0%;
+        width: 50%;
+        z-index: +1;
+    }
+
+    .block_figure_left_02 {
+        top: 0;
+        left: unset;
+        width: 88%;
+        z-index: +2;
+        right: 0;
+    }
+
+    .block_figure_left_03 {
+        top: unset;
+        left: 15%;
+        width: 50%;
+        z-index: +3;
+        bottom: 0;
+    }
+
+    .block_figure_left_04 {
+        bottom: 25%;
+        left: unset;
+        width: 50%;
+        z-index: +4;
+        right: 0;
+    }
+
+    .block_figure_left_05 {
+        bottom: 20%;
+        left: 0;
+        width: 60%;
+        z-index: +5;
+    }
+
+    .block_figure_left_06 {
+        bottom: 0;
+        right: 0%;
+        width: 50%;
+        z-index: +6;
+    }
+}
+
+#phonology {
+    .block_figure_left_01 {
+        top: 0;
+        left: 0%;
+        width: 60%;
+        z-index: +1;
+    }
+
+    .block_figure_left_02 {
+        top: 0;
+        left: unset;
+        width: 35%;
+        z-index: +2;
+        right: 0;
+    }
+
+    .block_figure_left_03 {
+        top: unset;
+        left: 0;
+        width: 50%;
+        z-index: +3;
+        bottom: 0;
+    }
+
+    .block_figure_left_04 {
+        bottom: 25%;
+        left: unset;
+        width: 72%;
+        z-index: +4;
+        right: 0;
+    }
+
+    .block_figure_left_05 {
+        bottom: 20%;
+        left: 0;
+        width: 35%;
+        z-index: +5;
+    }
+
+    .block_figure_left_06 {
+        bottom: 0;
+        right: 0%;
+        width: 50%;
+        z-index: +6;
+    }
+}
+
+#morphology {
+    .block_figure_left_01 {
+        top: 0;
+        left: 0%;
+        width: 35%;
+        z-index: +1;
+    }
+
+    .block_figure_left_02 {
+        top: 0;
+        left: unset;
+        width: 35%;
+        z-index: +2;
+        right: 0;
+    }
+
+    .block_figure_left_03 {
+        top: unset;
+        left: 0;
+        width: 40%;
+        z-index: +3;
+        bottom: 0;
+    }
+
+    .block_figure_left_04 {
+        bottom: 25%;
+        left: unset;
+        width: 72%;
+        z-index: +4;
+        right: 0;
+    }
+
+    .block_figure_left_05 {
+        bottom: 20%;
+        left: 0;
+        width: 40%;
+        z-index: +5;
+    }
+
+    .block_figure_left_06 {
+        bottom: 0;
+        right: 0%;
+        width: 80%;
+        z-index: +6;
+    }
+}
+
+#acquisition {
+    .block_figure_right_01 {
+        top: 0;
+        left: 0;
+        width: 33%;
+        z-index: +1;
+        right: unset;
+    }
+
+    .block_figure_right_02 {
+        bottom: 0;
+        left: 0;
+        width: 66%;
+        z-index: +2;
+        right: unset;
+        top: unset;
+    }
+
+    .block_figure_right_03 {
+        top: unset;
+        left: 25%;
+        width: 33%;
+        z-index: +3;
+        bottom: 40%;
+    }
+
+    .block_figure_right_04 {
+        bottom: 0;
+        left: unset;
+        width: 35%;
+        z-index: +4;
+        right: 0;
+    }
+
+    .block_figure_right_05 {
+        bottom: 25%;
+        left: unset;
+        width: 35%;
+        z-index: +5;
+        right: 0;
+    }
+
+    .block_figure_right_06 {
+        bottom: unset;
+        right: 0;
+        width: 50%;
+        z-index: +6;
+        left: unset;
+        top: 0;
+    }
+}
+
+#corpus {
+    .block_figure_right_01 {
+        top: 0;
+        left: 0;
+        width: 33%;
+        z-index: +1;
+        right: unset;
+    }
+
+    .block_figure_right_02 {
+        bottom: 0;
+        left: 0;
+        width: 50%;
+        z-index: +2;
+        right: unset;
+        top: unset;
+    }
+
+    .block_figure_right_03 {
+        top: unset;
+        left: 0;
+        width: 33%;
+        z-index: +3;
+        bottom: 40%;
+    }
+
+    .block_figure_right_04 {
+        bottom: 0;
+        left: unset;
+        width: 75%;
+        z-index: +4;
+        right: 0;
+    }
+
+    .block_figure_right_05 {
+        bottom: 0;
+        left: unset;
+        width: 35%;
+        z-index: +5;
+        right: 0;
+    }
+
+    .block_figure_right_06 {
+        bottom: unset;
+        right: 0;
+        width: 33%;
+        z-index: +6;
+        left: unset;
+        top: 0;
+    }
+}
+
+#individual {
+    .block_figure_right_01 {
+        top: 0;
+        left: 0;
+        width: 50%;
+        z-index: +1;
+        right: unset;
+    }
+
+    .block_figure_right_02 {
+        bottom: 0;
+        left: 0;
+        width: 66%;
+        z-index: +2;
+        right: unset;
+        top: unset;
+    }
+
+    .block_figure_right_03 {
+        top: unset;
+        left: 0;
+        width: 33%;
+        z-index: +3;
+        bottom: 40%;
+    }
+
+    .block_figure_right_04 {
+        bottom: 0;
+        left: unset;
+        width: 35%;
+        z-index: +4;
+        right: 0;
+    }
+
+    .block_figure_right_05 {
+        bottom: 25%;
+        left: unset;
+        width: 35%;
+        z-index: +5;
+        right: 0;
+    }
+
+    .block_figure_right_06 {
+        bottom: unset;
+        right: 0;
+        width: 50%;
+        z-index: +6;
+        left: unset;
+        top: 0;
+    }
+}
+
+#sign {
+    .block_figure_right_01 {
+        top: 0;
+        left: 0;
+        width: 50%;
+        z-index: +1;
+        right: unset;
+    }
+
+    .block_figure_right_02 {
+        bottom: 0;
+        left: 0;
+        width: 66%;
+        z-index: +2;
+        right: unset;
+        top: unset;
+    }
+
+    .block_figure_right_03 {
+        top: 35%;
+        left: 0;
+        width: 33%;
+        z-index: +3;
+        bottom: unset;
+    }
+
+    .block_figure_right_04 {
+        bottom: 0;
+        left: unset;
+        width: 35%;
+        z-index: +4;
+        right: 0;
+    }
+
+    .block_figure_right_05 {
+        bottom: 25%;
+        left: unset;
+        width: 75%;
+        z-index: +5;
+        right: 0;
+    }
+
+    .block_figure_right_06 {
+        bottom: unset;
+        right: 0;
+        width: 35%;
+        z-index: +6;
+        left: unset;
+        top: 15%;
+    }
+}
+
+#pragmatics {
+    .block_figure_right_01 {
+        top: 0;
+        left: 0;
+        width: 50%;
+        z-index: +1;
+        right: unset;
+    }
+
+    .block_figure_right_02 {
+        bottom: 10%;
+        left: 0;
+        width: 35%;
+        z-index: +2;
+        right: unset;
+        top: unset;
+    }
+
+    .block_figure_right_03 {
+        top: unset;
+        left: 0;
+        width: 33%;
+        z-index: +3;
+        bottom: 40%;
+    }
+
+    .block_figure_right_04 {
+        bottom: 0;
+        left: unset;
+        width: 35%;
+        z-index: +4;
+        right: 0;
+    }
+
+    .block_figure_right_05 {
+        bottom: 8%;
+        left: unset;
+        width: 70%;
+        z-index: +5;
+        right: 0;
+    }
+
+    .block_figure_right_06 {
+        bottom: unset;
+        right: 0;
+        width: 50%;
+        z-index: +6;
+        left: unset;
+        top: 0;
+    }
+}
+
+#phonetics {
+    .block_figure_right_01 {
+        top: 0;
+        left: 0;
+        width: 50%;
+        z-index: +1;
+        right: unset;
+    }
+
+    .block_figure_right_02 {
+        bottom: 0;
+        left: 0;
+        width: 66%;
+        z-index: +2;
+        right: unset;
+        top: unset;
+    }
+
+    .block_figure_right_03 {
+        top: unset;
+        left: 0;
+        width: 33%;
+        z-index: +3;
+        bottom: 40%;
+    }
+
+    .block_figure_right_04 {
+        bottom: 0;
+        left: unset;
+        width: 35%;
+        z-index: +4;
+        right: 0;
+    }
+
+    .block_figure_right_05 {
+        bottom: 25%;
+        left: unset;
+        width: 35%;
+        z-index: +5;
+        right: 0;
+    }
+
+    .block_figure_right_06 {
+        bottom: unset;
+        right: 0;
+        width: 50%;
+        z-index: +6;
+        left: unset;
+        top: 0;
+    }
+}
+
+#lexical {
+    .block_figure_right_01 {
+        top: 15%;
+        left: 0;
+        width: 80%;
+        z-index: +1;
+        right: unset;
+    }
+
+    .block_figure_right_02 {
+        bottom: 0;
+        left: 0;
+        width: 33%;
+        z-index: +2;
+        right: unset;
+        top: unset;
+    }
+
+    .block_figure_right_03 {
+        top: unset;
+        left: 0;
+        width: 33%;
+        z-index: +3;
+        bottom: 40%;
+    }
+
+    .block_figure_right_04 {
+        bottom: 0;
+        left: unset;
+        width: 35%;
+        z-index: +4;
+        right: 0;
+    }
+
+    .block_figure_right_05 {
+        bottom: 25%;
+        left: unset;
+        width: 35%;
+        z-index: +5;
+        right: 0;
+    }
+
+    .block_figure_right_06 {
+        bottom: unset;
+        right: 0;
+        width: 50%;
+        z-index: +6;
+        left: unset;
+        top: 0;
+    }
+}

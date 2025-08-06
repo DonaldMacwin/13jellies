@@ -1,13 +1,13 @@
 .first_view.physics {
     .jelly_map {
-    margin: 0 0 0 -5%;
+        margin: 0 0 0 -5%;
 
-    img {
-      width: 65%;
-      height: auto;
-      object-fit: unset;
+        img {
+            width: 65%;
+            height: auto;
+            object-fit: unset;
+        }
     }
-  }
 }
 
 h1.physics_h1 {
@@ -21,43 +21,50 @@ h1.physics_h1 {
         width: 17%;
         height: 12%;
     }
+
     .condensed a {
         top: 28%;
         left: 22%;
         width: 22%;
         height: 17%;
     }
-    .math a{
+
+    .math a {
         top: 18%;
         left: 41%;
         width: 12%;
         height: 10%;
     }
-    .thermo a{
+
+    .thermo a {
         top: 50%;
         left: 17%;
         width: 11%;
         height: 11%;
     }
-    .fluid a{
+
+    .fluid a {
         top: 51%;
         left: 31%;
         width: 8%;
         height: 8%;
     }
-    .relativity a{
+
+    .relativity a {
         bottom: 28%;
         left: 37%;
         width: 9%;
         height: 9%;
     }
-    .em a{
+
+    .em a {
         bottom: 31%;
         left: 13%;
         width: 7%;
         height: 7%;
     }
-    .classical a{
+
+    .classical a {
         bottom: 21%;
         left: 25%;
         width: 8%;
@@ -90,12 +97,12 @@ h1.physics_h1 {
     }
 
     .block_figure_left_04 {
-    bottom: 25%;
-    left: unset;
-    width: 50%;
-    z-index: +4;
-    right: 0;
-}
+        bottom: 25%;
+        left: unset;
+        width: 50%;
+        z-index: +4;
+        right: 0;
+    }
 
     .block_figure_left_05 {
         bottom: 20%;
@@ -111,6 +118,7 @@ h1.physics_h1 {
         z-index: +6;
     }
 }
+
 #math {
     .block_figure_left_01 {
         top: 0;
@@ -157,6 +165,7 @@ h1.physics_h1 {
         z-index: +6;
     }
 }
+
 #fluid {
     .block_figure_left_01 {
         top: 0;
@@ -166,12 +175,12 @@ h1.physics_h1 {
     }
 
     .block_figure_left_02 {
-    top: 4%;
-    left: unset;
-    width: 75%;
-    z-index: +2;
-    right: 0;
-}
+        top: 4%;
+        left: unset;
+        width: 75%;
+        z-index: +2;
+        right: 0;
+    }
 
     .block_figure_left_03 {
         top: unset;
@@ -182,12 +191,12 @@ h1.physics_h1 {
     }
 
     .block_figure_left_04 {
-    bottom: 37%;
-    left: unset;
-    width: 50%;
-    z-index: +4;
-    right: 0;
-}
+        bottom: 37%;
+        left: unset;
+        width: 50%;
+        z-index: +4;
+        right: 0;
+    }
 
     .block_figure_left_05 {
         bottom: 20%;
@@ -203,6 +212,7 @@ h1.physics_h1 {
         z-index: +6;
     }
 }
+
 #em {
     .block_figure_left_01 {
         top: 0;
@@ -252,12 +262,12 @@ h1.physics_h1 {
 
 #condensed {
     .block_figure_right_01 {
-    top: 0;
-    left: 0;
-    width: 50%;
-    z-index: +1;
-    right: unset;
-}
+        top: 0;
+        left: 0;
+        width: 50%;
+        z-index: +1;
+        right: unset;
+    }
 
     .block_figure_right_02 {
         bottom: 0;
@@ -301,14 +311,15 @@ h1.physics_h1 {
         top: 0;
     }
 }
+
 #thermo {
     .block_figure_right_01 {
-    top: 0;
-    left: 0;
-    width: 50%;
-    z-index: +1;
-    right: unset;
-}
+        top: 0;
+        left: 0;
+        width: 50%;
+        z-index: +1;
+        right: unset;
+    }
 
     .block_figure_right_02 {
         bottom: 0;
@@ -320,12 +331,12 @@ h1.physics_h1 {
     }
 
     .block_figure_right_03 {
-    top: unset;
-    left: 0;
-    width: 40%;
-    z-index: +3;
-    bottom: 33%;
-}
+        top: unset;
+        left: 0;
+        width: 40%;
+        z-index: +3;
+        bottom: 33%;
+    }
 
     .block_figure_right_04 {
         bottom: 0;
@@ -336,12 +347,12 @@ h1.physics_h1 {
     }
 
     .block_figure_right_05 {
-    bottom: 30%;
-    left: unset;
-    width: 65%;
-    z-index: +5;
-    right: 10%;
-}
+        bottom: 30%;
+        left: unset;
+        width: 65%;
+        z-index: +5;
+        right: 10%;
+    }
 
     .block_figure_right_06 {
         bottom: unset;
@@ -352,14 +363,15 @@ h1.physics_h1 {
         top: 0;
     }
 }
+
 #relativity {
     .block_figure_right_01 {
-    top: 0;
-    left: 0;
-    width: 50%;
-    z-index: +1;
-    right: unset;
-}
+        top: 0;
+        left: 0;
+        width: 50%;
+        z-index: +1;
+        right: unset;
+    }
 
     .block_figure_right_02 {
         bottom: 0;
@@ -387,12 +399,12 @@ h1.physics_h1 {
     }
 
     .block_figure_right_05 {
-    bottom: 30%;
-    left: unset;
-    width: 70%;
-    z-index: +5;
-    right: 0;
-}
+        bottom: 30%;
+        left: unset;
+        width: 70%;
+        z-index: +5;
+        right: 0;
+    }
 
     .block_figure_right_06 {
         bottom: unset;
@@ -403,39 +415,40 @@ h1.physics_h1 {
         top: 0;
     }
 }
+
 #classical {
     .block_figure_right_01 {
-    top: 0;
-    left: 0;
-    width: 50%;
-    z-index: +1;
-    right: unset;
-}
+        top: 0;
+        left: 0;
+        width: 50%;
+        z-index: +1;
+        right: unset;
+    }
 
     .block_figure_right_02 {
-    bottom: 0;
-    left: 0;
-    width: 49%;
-    z-index: +2;
-    right: unset;
-    top: unset;
-}
+        bottom: 0;
+        left: 0;
+        width: 49%;
+        z-index: +2;
+        right: unset;
+        top: unset;
+    }
 
     .block_figure_right_03 {
-    top: unset;
-    left: 35%;
-    width: 33%;
-    z-index: +3;
-    bottom: 40%;
-}
+        top: unset;
+        left: 35%;
+        width: 33%;
+        z-index: +3;
+        bottom: 40%;
+    }
 
     .block_figure_right_04 {
-    bottom: 0;
-    left: unset;
-    width: 50%;
-    z-index: +4;
-    right: 0;
-}
+        bottom: 0;
+        left: unset;
+        width: 50%;
+        z-index: +4;
+        right: 0;
+    }
 
     .block_figure_right_05 {
         bottom: 25%;
