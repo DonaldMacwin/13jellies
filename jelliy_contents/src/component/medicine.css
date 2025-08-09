@@ -78,3 +78,448 @@ h1.medicine_h1 {
         height: 27%;
     }
 }
+
+#medical_law {
+    .block_figure_left_01 {
+        top: 0;
+        left: 0%;
+        width: 35%;
+        z-index: +1;
+    }
+
+    .block_figure_left_02 {
+        top: 0;
+        left: unset;
+        width: 65%;
+        z-index: +2;
+        right: 0;
+    }
+
+    .block_figure_left_03 {
+        top: unset;
+        left: 15%;
+        width: 40%;
+        z-index: +3;
+        bottom: 0;
+    }
+
+    .block_figure_left_04 {
+        bottom: 40%;
+        left: unset;
+        width: 50%;
+        z-index: +4;
+        right: 0;
+    }
+
+    .block_figure_left_05 {
+        bottom: 25%;
+        left: 0;
+        width: 85%;
+        z-index: +5;
+    }
+
+    .block_figure_left_06 {
+        bottom: 0;
+        right: 0%;
+        width: 45%;
+        z-index: +6;
+    }
+}
+
+#anatomy {
+    .block_figure_left_01 {
+        top: 0;
+        left: 0%;
+        width: 45%;
+        z-index: +1;
+    }
+
+    .block_figure_left_02 {
+        top: 10%;
+        left: unset;
+        width: 60%;
+        z-index: +2;
+        right: 0;
+    }
+
+    .block_figure_left_03 {
+        top: unset;
+        left: 0;
+        width: 40%;
+        z-index: +3;
+        bottom: 45%;
+    }
+
+    .block_figure_left_04 {
+        bottom: 25%;
+        left: unset;
+        width: 50%;
+        z-index: +4;
+        right: 0;
+    }
+
+    .block_figure_left_05 {
+        bottom: 15%;
+        left: 0;
+        width: 85%;
+        z-index: +5;
+    }
+
+    .block_figure_left_06 {
+        bottom: 0;
+        right: 0%;
+        width: 45%;
+        z-index: +6;
+    }
+}
+
+#pathology {
+    .block_figure_left_01 {
+        top: 0;
+        left: 0%;
+        width: 35%;
+        z-index: +1;
+    }
+
+    .block_figure_left_02 {
+        top: 0;
+        left: unset;
+        width: 70%;
+        z-index: +2;
+        right: 0;
+    }
+
+    .block_figure_left_03 {
+        top: unset;
+        left: 15%;
+        width: 40%;
+        z-index: +3;
+        bottom: 0;
+    }
+
+    .block_figure_left_04 {
+        bottom: 25%;
+        left: unset;
+        width: 72%;
+        z-index: +4;
+        right: 0;
+    }
+
+    .block_figure_left_05 {
+        bottom: 20%;
+        left: 0;
+        width: 65%;
+        z-index: +5;
+    }
+
+    .block_figure_left_06 {
+        bottom: 0;
+        right: 0%;
+        width: 45%;
+        z-index: +6;
+    }
+}
+
+#pharmacology {
+    .block_figure_left_01 {
+        top: 0;
+        left: 0%;
+        width: 35%;
+        z-index: +1;
+    }
+
+    .block_figure_left_02 {
+        top: 35%;
+        left: 15%;
+        width: 35%;
+        z-index: +2;
+        right: unset;
+    }
+
+    .block_figure_left_03 {
+        top: unset;
+        left: 15%;
+        width: 40%;
+        z-index: +3;
+        bottom: 0;
+    }
+
+    .block_figure_left_04 {
+        bottom: unset;
+        left: unset;
+        width: 72%;
+        z-index: +4;
+        right: 0;
+        top: 0;
+    }
+
+    .block_figure_left_05 {
+        bottom: 20%;
+        left: 0;
+        width: 60%;
+        z-index: +5;
+    }
+
+    .block_figure_left_06 {
+        bottom: 0;
+        right: 0%;
+        width: 45%;
+        z-index: +6;
+    }
+}
+
+#biochemistry {
+    .block_figure_left_01 {
+        top: 0;
+        left: 0%;
+        width: 35%;
+        z-index: +1;
+    }
+
+    .block_figure_left_02 {
+        top: 0;
+        left: unset;
+        width: 75%;
+        z-index: +2;
+        right: 0;
+    }
+
+    .block_figure_left_03 {
+        top: unset;
+        left: 15%;
+        width: 40%;
+        z-index: +3;
+        bottom: 0;
+    }
+
+    .block_figure_left_04 {
+        bottom: unset;
+        left: unset;
+        width: 72%;
+        z-index: +4;
+        right: 0;
+        top: 5%;
+    }
+
+    .block_figure_left_05 {
+        bottom: 20%;
+        left: 0;
+        width: 40%;
+        z-index: +5;
+    }
+
+    .block_figure_left_06 {
+        bottom: 0;
+        right: 0%;
+        width: 45%;
+        z-index: +6;
+    }
+}
+
+#public_health {
+    .block_figure_right_01 {
+        top: 0;
+        left: 0;
+        width: 33%;
+        z-index: +1;
+        right: unset;
+    }
+
+    .block_figure_right_02 {
+        bottom: 0;
+        left: 0;
+        width: 50%;
+        z-index: +2;
+        right: unset;
+        top: unset;
+    }
+
+    .block_figure_right_03 {
+        top: 35%;
+        left: 0%;
+        width: 40%;
+        z-index: +3;
+        bottom: unset;
+    }
+
+    .block_figure_right_04 {
+        bottom: 0;
+        left: unset;
+        width: 35%;
+        z-index: +4;
+        right: 50%;
+    }
+
+    .block_figure_right_05 {
+        bottom: 0;
+        left: unset;
+        width: 55%;
+        z-index: +5;
+        right: 0;
+    }
+
+    .block_figure_right_06 {
+        bottom: unset;
+        right: 0;
+        width: 85%;
+        z-index: +6;
+        left: unset;
+        top: 0;
+    }
+}
+
+#clinical {
+    .block_figure_right_01 {
+        top: 0;
+        left: 0;
+        width: 33%;
+        z-index: +1;
+        right: unset;
+    }
+
+    .block_figure_right_02 {
+        bottom: 40%;
+        left: 0;
+        width: 65%;
+        z-index: +2;
+        right: unset;
+        top: unset;
+    }
+
+    .block_figure_right_03 {
+        top: 15%;
+        left: 10%;
+        width: 75%;
+        z-index: +3;
+        bottom: unset;
+    }
+
+    .block_figure_right_04 {
+        bottom: 0;
+        left: unset;
+        width: 35%;
+        z-index: +4;
+        right: 50%;
+    }
+
+    .block_figure_right_05 {
+        bottom: 0;
+        left: unset;
+        width: 55%;
+        z-index: +5;
+        right: 0;
+    }
+
+    .block_figure_right_06 {
+        bottom: unset;
+        right: 0;
+        width: 35%;
+        z-index: +6;
+        left: unset;
+        top: 0;
+    }
+}
+
+#physiology {
+    .block_figure_right_01 {
+        top: 0;
+        left: 0;
+        width: 33%;
+        z-index: +1;
+        right: unset;
+    }
+
+    .block_figure_right_02 {
+        bottom: 0;
+        left: 0;
+        width: 35%;
+        z-index: +2;
+        right: unset;
+        top: unset;
+    }
+
+    .block_figure_right_03 {
+        top: 15%;
+        left: 25%;
+        width: 49%;
+        z-index: +3;
+        bottom: unset;
+    }
+
+    .block_figure_right_04 {
+        bottom: 0;
+        left: unset;
+        width: 35%;
+        z-index: +4;
+        right: 13%;
+    }
+
+    .block_figure_right_05 {
+        bottom: 5%;
+        left: unset;
+        width: 85%;
+        z-index: +5;
+        right: 0;
+    }
+
+    .block_figure_right_06 {
+        bottom: unset;
+        right: 0;
+        width: 35%;
+        z-index: +6;
+        left: unset;
+        top: 0;
+    }
+}
+
+#microbiology {
+    .block_figure_right_01 {
+        top: 0;
+        left: 0;
+        width: 33%;
+        z-index: +1;
+        right: unset;
+    }
+
+    .block_figure_right_02 {
+        bottom: 0;
+        left: 0;
+        width: 65%;
+        z-index: +2;
+        right: unset;
+        top: 30%;
+    }
+
+    .block_figure_right_03 {
+        top: 15%;
+        left: 10%;
+        width: 75%;
+        z-index: +3;
+        bottom: unset;
+    }
+
+    .block_figure_right_04 {
+        bottom: 0;
+        left: 0;
+        width: 35%;
+        z-index: +4;
+        right: unset;
+    }
+
+    .block_figure_right_05 {
+        bottom: 0;
+        left: unset;
+        width: 70%;
+        z-index: +5;
+        right: 0;
+    }
+
+    .block_figure_right_06 {
+        bottom: unset;
+        right: 0;
+        width: 35%;
+        z-index: +6;
+        left: unset;
+        top: 0;
+    }
+}
