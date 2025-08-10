@@ -108,6 +108,20 @@ img {
     .demerit.animate {
       animation: slideInFromRight 0.8s ease-out 0.6s forwards;
     }
+
+    .h2-split {
+      display: flex;
+      gap: 0.5em;
+      /* 文字間の白い隙間 */
+    }
+
+    .h2-split-char {
+      background: #333;
+      color: #fff;
+      padding: 0.15em 0.25em;
+      letter-spacing: 0.2em;
+      display: inline-block;
+    }
   }
 
   .back_to_map {

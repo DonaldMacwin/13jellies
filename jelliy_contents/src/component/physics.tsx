@@ -270,14 +270,18 @@ function Physics() {
         </div>
         <div className='merit_and_demerit_block scroller_decoration'>
           <article className={`merit ${animateMerit ? 'animate' : ''}`}>
-            <h2>特長</h2>
+            <h2 className="h2-split">
+              <span className="h2-split-char">特</span><span className="h2-split-char">長</span>
+            </h2>
             <h3>自然法則の解明</h3><p>物理学は自然界に潜む法則を解明することを目指しており、その中には重力、電磁気力、強い力、弱い力など様々な基本的な力が含まれます。</p>
             <h3>数学との密接な関係</h3><p>物理学は数学と深い関わりがあります。物理学者は現象を数学的にモデル化し、方程式や数学的手法を用いて物理法則を導き出します。</p>
             <h3>新しい技術の発展</h3><p>物理学の研究成果はしばしば新しい技術の発展に繋がります。例えば、原子力や電磁気学の理論が原子力発電や電子機器の発展に寄与しています。</p>
             <h3>異分野との連携</h3><p>物理学は他の多くの科学分野とも密接に関連しています。天文学、化学、地学などとの協力によって、総合的な理解が進むことがあります。</p>
           </article>
           <article className={`demerit ${animateDemerit ? 'animate' : ''}`}>
-            <h2>難点</h2>
+            <h2 className="h2-split">
+              <span className="h2-split-char">難</span><span className="h2-split-char">点</span>
+            </h2>
             <h3>高度な数学の要求</h3><p>物理学は高度な数学的手法を多く使用します。学習者には数学の理解が求められ、一部の人にとってはハードルとなることがあります。</p>
             <h3>実験との依存</h3><p>一部の物理学の分野は理論だけでなく実験も重要です。実験が難しい場合やコストがかかる場合もあり、進展が遅れることがあります。</p>
             <h3>理論との齟齬</h3><p>理論と実験結果が合致しない場合があり、解決されるまでに時間がかかることがあります。これは理論と実際の世界との複雑な関係性に起因しています。</p>

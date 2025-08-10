@@ -229,7 +229,9 @@ function Philosophy() {
         </div>
         <div className='merit_and_demerit_block scroller_decoration'>
           <article className={`merit ${animateMerit ? 'animate' : ''}`}>
-            <h2>特長</h2>
+            <h2 className="h2-split">
+              <span className="h2-split-char">特</span><span className="h2-split-char">長</span>
+            </h2>
             <div className="h3-float-wrap">
               <h3 className="h3-float">思考の深化と問いの提起</h3>
               <p>哲学宗教は深い思索を通じて、存在、知識、道徳などに関する根本的な問いを提起します。哲学的なアプローチは問題の本質に迫り、より深い理解をもたらすことがあります。</p>
@@ -256,7 +258,9 @@ function Philosophy() {
             </div>
           </article>
           <article className={`demerit ${animateDemerit ? 'animate' : ''}`}>
-            <h2>難点</h2>
+            <h2 className="h2-split">
+              <span className="h2-split-char">難</span><span className="h2-split-char">点</span>
+            </h2>
             <div className="h3-float-wrap">
               <h3 className="h3-float">実用性の不足</h3>
               <p>哲学宗教のアプローチはしばしば抽象的であり、実用性が不透明な場合があります。一部の人は、哲学宗教が具体的な問題に対処するのに直接的ではないと感じることがあります。</p>
