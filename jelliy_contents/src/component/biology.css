@@ -1,13 +1,13 @@
 .first_view.biology {
     .jelly_map {
-    margin: 0 0 0 5%;
+        margin: 0 0 0 5%;
 
-    img {
-      width: 57%;
-      height: auto;
-      object-fit: unset;
+        img {
+            width: 57%;
+            height: auto;
+            object-fit: unset;
+        }
     }
-  }
 }
 
 h1.biology_h1 {
@@ -21,88 +21,851 @@ h1.biology_h1 {
         width: 8%;
         height: 14%;
     }
+
     .plant_research a {
         top: 45%;
         left: 14%;
         width: 6%;
         height: 9%;
     }
-    .biological_classification a{
+
+    .biological_classification a {
         bottom: 28%;
         left: 9.5%;
         width: 7%;
         height: 14%;
     }
-    .ecological_research a{
+
+    .ecological_research a {
         bottom: 7%;
         left: 6%;
         width: 10%;
         height: 17%;
     }
-    .animal_research a{
+
+    .animal_research a {
         bottom: 25%;
         left: 17%;
         width: 9%;
         height: 17%;
     }
-    .evolutionary_research a{
+
+    .evolutionary_research a {
         bottom: 7%;
         left: 17.5%;
         width: 10%;
         height: 17%;
     }
-    .extraterrestrial_life a{
+
+    .extraterrestrial_life a {
         top: 36%;
         left: 22.5%;
         width: 11%;
         height: 14%;
     }
-    .human_studies a{
+
+    .human_studies a {
         bottom: 23%;
         left: 27%;
         width: 7%;
         height: 19%;
     }
-    .neuroscience a{
+
+    .neuroscience a {
         top: 25%;
         left: 34%;
         width: 8%;
         height: 14%;
     }
-    .bioengineering a{
+
+    .bioengineering a {
         top: 41%;
         left: 36.5%;
         width: 11%;
         height: 14%;
     }
-    .bioinformatics a{
+
+    .bioinformatics a {
         top: 25%;
         left: 42.5%;
         width: 13%;
         height: 11%;
     }
-    .genetic_development a{
+
+    .genetic_development a {
         bottom: 30%;
         left: 35.5%;
         width: 10%;
         height: 13%;
     }
-    .cell a{
-       bottom: 13%;
+
+    .cell a {
+        bottom: 13%;
         left: 34%;
         width: 12%;
         height: 13%;
     }
-    .biophysics a{
+
+    .biophysics a {
         bottom: 35%;
         left: 46.5%;
         width: 7%;
         height: 11%;
     }
-    .biochemistry a{
+
+    .biochemistry a {
         bottom: 19%;
         left: 46.5%;
         width: 13%;
         height: 13%;
+    }
+}
+
+#agricultural_research {
+    .block_figure_left_01 {
+        top: 0;
+        left: 0%;
+        width: 50%;
+        z-index: +1;
+    }
+
+    .block_figure_left_02 {
+        top: 0;
+        left: unset;
+        width: 75%;
+        z-index: +2;
+        right: 0;
+    }
+
+    .block_figure_left_03 {
+        top: unset;
+        left: 15%;
+        width: 75%;
+        z-index: +3;
+        bottom: 0;
+    }
+
+    .block_figure_left_04 {
+        bottom: unset;
+        left: unset;
+        width: 35%;
+        z-index: +4;
+        right: 0;
+        top: 30%;
+    }
+
+    .block_figure_left_05 {
+        bottom: 20%;
+        left: 0;
+        width: 40%;
+        z-index: +5;
+    }
+
+    .block_figure_left_06 {
+        bottom: 0;
+        right: 0%;
+        width: 45%;
+        z-index: +6;
+    }
+}
+
+#biological_classification {
+    .block_figure_left_01 {
+        top: 0;
+        left: 0%;
+        width: 25%;
+        z-index: +1;
+    }
+
+    .block_figure_left_02 {
+        top: 25%;
+        left: 0;
+        width: 75%;
+        z-index: +2;
+        right: 0;
+    }
+
+    .block_figure_left_03 {
+        top: unset;
+        left: 15%;
+        width: 40%;
+        z-index: +3;
+        bottom: 0;
+    }
+
+    .block_figure_left_04 {
+        bottom: unset;
+        left: unset;
+        width: 72%;
+        z-index: +4;
+        right: 0;
+        top: 5%;
+    }
+
+    .block_figure_left_05 {
+        bottom: 20%;
+        left: 0%;
+        width: 55%;
+        z-index: +5;
+    }
+
+    .block_figure_left_06 {
+        bottom: 0;
+        right: 0%;
+        width: 45%;
+        z-index: +6;
+    }
+}
+
+#animal_research {
+    .block_figure_left_01 {
+        top: 15%;
+        left: 0%;
+        width: 65%;
+        z-index: +1;
+    }
+
+    .block_figure_left_02 {
+        top: 0;
+        left: unset;
+        width: 75%;
+        z-index: +2;
+        right: 0;
+    }
+
+    .block_figure_left_03 {
+        top: unset;
+        left: 15%;
+        width: 40%;
+        z-index: +3;
+        bottom: 0;
+    }
+
+    .block_figure_left_04 {
+        bottom: unset;
+        left: unset;
+        width: 60%;
+        z-index: +4;
+        right: 0;
+        top: 5%;
+    }
+
+    .block_figure_left_05 {
+        bottom: 20%;
+        left: 0;
+        width: 40%;
+        z-index: +5;
+    }
+
+    .block_figure_left_06 {
+        bottom: 0;
+        right: 0%;
+        width: 45%;
+        z-index: +6;
+    }
+}
+
+#extraterrestrial_life {
+    .block_figure_left_01 {
+        top: 0;
+        left: 0%;
+        width: 50%;
+        z-index: +1;
+    }
+
+    .block_figure_left_02 {
+        top: 30%;
+        left: unset;
+        width: 85%;
+        z-index: +2;
+        right: 0;
+    }
+
+    .block_figure_left_03 {
+        top: unset;
+        left: 15%;
+        width: 40%;
+        z-index: +3;
+        bottom: 0;
+    }
+
+    .block_figure_left_04 {
+        bottom: unset;
+        left: unset;
+        width: 50%;
+        z-index: +4;
+        right: 0;
+        top: 5%;
+    }
+
+    .block_figure_left_05 {
+        bottom: 20%;
+        left: 0;
+        width: 40%;
+        z-index: +5;
+    }
+
+    .block_figure_left_06 {
+        bottom: 0;
+        right: 0%;
+        width: 45%;
+        z-index: +6;
+    }
+}
+
+#neuroscience {
+    .block_figure_left_01 {
+        top: 0;
+        left: 0%;
+        width: 35%;
+        z-index: +1;
+    }
+
+    .block_figure_left_02 {
+        top: 0;
+        left: unset;
+        width: 75%;
+        z-index: +2;
+        right: 0;
+    }
+
+    .block_figure_left_03 {
+        top: unset;
+        left: 15%;
+        width: 70%;
+        z-index: +3;
+        bottom: 20%;
+    }
+
+    .block_figure_left_04 {
+        bottom: unset;
+        left: unset;
+        width: 40%;
+        z-index: +4;
+        right: 0;
+        top: 25%;
+    }
+
+    .block_figure_left_05 {
+        bottom: 20%;
+        left: 0;
+        width: 40%;
+        z-index: +5;
+    }
+
+    .block_figure_left_06 {
+        bottom: 0;
+        right: 0%;
+        width: 45%;
+        z-index: +6;
+    }
+}
+
+#bioinformatics {
+    .block_figure_left_01 {
+        top: 0;
+        left: 0%;
+        width: 35%;
+        z-index: +1;
+    }
+
+    .block_figure_left_02 {
+        top: 0;
+        left: unset;
+        width: 75%;
+        z-index: +2;
+        right: 0;
+    }
+
+    .block_figure_left_03 {
+        top: unset;
+        left: 30%;
+        width: 35%;
+        z-index: +3;
+        bottom: 0;
+    }
+
+    .block_figure_left_04 {
+        bottom: unset;
+        left: unset;
+        width: 85%;
+        z-index: +4;
+        right: 0;
+        top: 15%;
+    }
+
+    .block_figure_left_05 {
+        bottom: 20%;
+        left: 0;
+        width: 40%;
+        z-index: +5;
+    }
+
+    .block_figure_left_06 {
+        bottom: 0;
+        right: 0%;
+        width: 45%;
+        z-index: +6;
+    }
+}
+
+#cell {
+    .block_figure_left_01 {
+        top: 15%;
+        left: 10%;
+        width: 50%;
+        z-index: +1;
+    }
+
+    .block_figure_left_02 {
+        top: 0;
+        left: unset;
+        width: 75%;
+        z-index: +2;
+        right: 0;
+    }
+
+    .block_figure_left_03 {
+        top: unset;
+        left: 30%;
+        width: 40%;
+        z-index: +3;
+        bottom: 0;
+    }
+
+    .block_figure_left_04 {
+        bottom: unset;
+        left: unset;
+        width: 33%;
+        z-index: +4;
+        right: 0;
+        top: 5%;
+    }
+
+    .block_figure_left_05 {
+        bottom: 20%;
+        left: 0;
+        width: 40%;
+        z-index: +5;
+    }
+
+    .block_figure_left_06 {
+        bottom: 15%;
+        right: 15%;
+        width: 70%;
+        z-index: +6;
+    }
+}
+
+#biochemistry {
+    .block_figure_left_01 {
+        top: 0;
+        left: 0%;
+        width: 35%;
+        z-index: +1;
+    }
+
+    .block_figure_left_02 {
+        top: 0;
+        left: unset;
+        width: 75%;
+        z-index: +2;
+        right: 0;
+    }
+
+    .block_figure_left_03 {
+        top: 15%;
+        left: 5%;
+        width: 80%;
+        z-index: +3;
+        bottom: unset;
+    }
+
+    .block_figure_left_04 {
+        display: none;
+        bottom: unset;
+        left: unset;
+        width: 72%;
+        z-index: +4;
+        right: 0;
+        top: 5%;
+    }
+
+    .block_figure_left_05 {
+        bottom: 20%;
+        left: 0;
+        width: 40%;
+        z-index: +5;
+    }
+
+    .block_figure_left_06 {
+        bottom: 0;
+        right: 0%;
+        width: 45%;
+        z-index: +6;
+    }
+}
+
+#plant_research {
+    .block_figure_right_01 {
+        top: 0;
+        left: 0;
+        width: 60%;
+        z-index: +1;
+        right: unset;
+    }
+
+    .block_figure_right_02 {
+        bottom: 0;
+        left: 0;
+        width: 50%;
+        z-index: +2;
+        right: unset;
+        top: unset;
+    }
+
+    .block_figure_right_03 {
+        top: 35%;
+        left: 0%;
+        width: 40%;
+        z-index: +3;
+        bottom: unset;
+    }
+
+    .block_figure_right_04 {
+        bottom: 50%;
+        left: unset;
+        width: 50%;
+        z-index: +4;
+        right: 0;
+    }
+
+    .block_figure_right_05 {
+        bottom: 0;
+        left: unset;
+        width: 55%;
+        z-index: +5;
+        right: 0;
+    }
+
+    .block_figure_right_06 {
+        bottom: unset;
+        right: 0;
+        width: 85%;
+        z-index: +6;
+        left: unset;
+        top: 0;
+    }
+}
+
+#ecological_research {
+    .block_figure_right_01 {
+        top: 10%;
+        left: 0;
+        width: 50%;
+        z-index: +1;
+        right: unset;
+    }
+
+    .block_figure_right_02 {
+        bottom: 0;
+        left: 0;
+        width: 50%;
+        z-index: +2;
+        right: unset;
+        top: unset;
+    }
+
+    .block_figure_right_03 {
+        top: 35%;
+        left: 0%;
+        width: 40%;
+        z-index: +3;
+        bottom: unset;
+    }
+
+    .block_figure_right_04 {
+        bottom: 35%;
+        left: unset;
+        width: 50%;
+        z-index: +4;
+        right: 0;
+    }
+
+    .block_figure_right_05 {
+        bottom: 0;
+        left: unset;
+        width: 55%;
+        z-index: +5;
+        right: 0;
+    }
+
+    .block_figure_right_06 {
+        bottom: unset;
+        right: 0;
+        width: 85%;
+        z-index: +6;
+        left: unset;
+        top: 0;
+    }
+}
+
+#evolutionary_research {
+    .block_figure_right_01 {
+        top: 0;
+        left: 0;
+        width: 50%;
+        z-index: +1;
+        right: unset;
+    }
+
+    .block_figure_right_02 {
+        bottom: 0;
+        left: 0;
+        width: 50%;
+        z-index: +2;
+        right: unset;
+        top: unset;
+    }
+
+    .block_figure_right_03 {
+        top: 35%;
+        left: 0%;
+        width: 40%;
+        z-index: +3;
+        bottom: unset;
+    }
+
+    .block_figure_right_04 {
+        bottom: 50%;
+        left: unset;
+        width: 50%;
+        z-index: +4;
+        right: 0;
+    }
+
+    .block_figure_right_05 {
+        bottom: 0;
+        left: unset;
+        width: 55%;
+        z-index: +5;
+        right: 0;
+    }
+
+    .block_figure_right_06 {
+        bottom: unset;
+        right: 0;
+        width: 85%;
+        z-index: +6;
+        left: unset;
+        top: 0;
+    }
+}
+
+#human_studies {
+    .block_figure_right_01 {
+        top: 0;
+        left: 0;
+        width: 33%;
+        z-index: +1;
+        right: unset;
+    }
+
+    .block_figure_right_02 {
+        bottom: 0;
+        left: 0;
+        width: 50%;
+        z-index: +2;
+        right: unset;
+        top: unset;
+    }
+
+    .block_figure_right_03 {
+        top: 35%;
+        left: 0%;
+        width: 40%;
+        z-index: +3;
+        bottom: unset;
+    }
+
+    .block_figure_right_04 {
+        bottom: 55%;
+        left: unset;
+        width: 50%;
+        z-index: +4;
+        right: 0;
+    }
+
+    .block_figure_right_05 {
+        bottom: 0;
+        left: unset;
+        width: 70%;
+        z-index: +6;
+        right: 0;
+    }
+
+    .block_figure_right_06 {
+        bottom: unset;
+        right: 0;
+        width: 85%;
+        z-index: +5;
+        left: unset;
+        top: 0;
+    }
+}
+
+#bioengineering {
+    .block_figure_right_01 {
+        top: 0;
+        left: 0;
+        width: 33%;
+        z-index: +1;
+        right: unset;
+    }
+
+    .block_figure_right_02 {
+        bottom: 0;
+        left: 0;
+        width: 50%;
+        z-index: +2;
+        right: unset;
+        top: unset;
+    }
+
+    .block_figure_right_03 {
+        top: 35%;
+        left: 0%;
+        width: 40%;
+        z-index: +3;
+        bottom: unset;
+    }
+
+    .block_figure_right_04 {
+        bottom: 30%;
+        left: unset;
+        width: 50%;
+        z-index: +4;
+        right: 0;
+    }
+
+    .block_figure_right_05 {
+        bottom: 0;
+        left: unset;
+        width: 55%;
+        z-index: +5;
+        right: 0;
+    }
+
+    .block_figure_right_06 {
+        bottom: unset;
+        right: 0;
+        width: 85%;
+        z-index: +6;
+        left: unset;
+        top: 0;
+    }
+}
+
+#genetic_development {
+    .block_figure_right_01 {
+        top: 10%;
+        left: 10%;
+        width: 43%;
+        z-index: +1;
+        right: unset;
+    }
+
+    .block_figure_right_02 {
+        bottom: 0;
+        left: 0;
+        width: 50%;
+        z-index: +2;
+        right: unset;
+        top: unset;
+    }
+
+    .block_figure_right_03 {
+        top: 35%;
+        left: 0%;
+        width: 40%;
+        z-index: +3;
+        bottom: unset;
+    }
+
+    .block_figure_right_04 {
+        bottom: 0;
+        left: unset;
+        width: 35%;
+        z-index: +4;
+        right: 10%;
+    }
+
+    .block_figure_right_05 {
+        bottom: 18%;
+        left: unset;
+        width: 90%;
+        z-index: +5;
+        right: 0;
+    }
+
+    .block_figure_right_06 {
+        bottom: unset;
+        right: 0;
+        width: 50%;
+        z-index: +6;
+        left: unset;
+        top: 5%;
+    }
+}
+
+#biophysics {
+    .block_figure_right_01 {
+        top: 0;
+        left: 0;
+        width: 33%;
+        z-index: +1;
+        right: unset;
+    }
+
+    .block_figure_right_02 {
+        bottom: 0;
+        left: 10%;
+        width: 90%;
+        z-index: +2;
+        right: unset;
+        top: 20%;
+    }
+
+    .block_figure_right_03 {
+        top: 35%;
+        left: 0%;
+        width: 40%;
+        z-index: +3;
+        bottom: unset;
+    }
+
+    .block_figure_right_04 {
+        bottom: 0;
+        left: unset;
+        width: 35%;
+        z-index: +4;
+        right: 50%;
+    }
+
+    .block_figure_right_05 {
+        bottom: 0;
+        left: unset;
+        width: 50%;
+        z-index: +5;
+        right: 0;
+    }
+
+    .block_figure_right_06 {
+        bottom: unset;
+        right: 0;
+        width: 35%;
+        z-index: +6;
+        left: unset;
+        top: 15%;
     }
 }
