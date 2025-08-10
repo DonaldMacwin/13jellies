@@ -289,7 +289,9 @@ function Mathematics() {
         </div>
         <div className='merit_and_demerit_block scroller_decoration'>
           <article className={`merit ${animateMerit ? 'animate' : ''}`}>
-            <h2>特長</h2>
+            <h2 className="h2-split">
+              <span className="h2-split-char">特</span><span className="h2-split-char">長</span>
+            </h2>
             <div className="h3-float-wrap">
               <h3 className="h3-float">普遍的な言語としての数学</h3>
               <p>数学は自然科学から社会科学、工学まで広範な分野で使用される普遍的な言語です。異なる文化や言語圏でも通用し、国際的なコミュニケーションツールの役割があります。</p>
@@ -312,7 +314,9 @@ function Mathematics() {
             </div>
           </article>
           <article className={`demerit ${animateDemerit ? 'animate' : ''}`}>
-            <h2>難点</h2>
+            <h2 className="h2-split">
+              <span className="h2-split-char">難</span><span className="h2-split-char">点</span>
+            </h2>
             <div className="h3-float-wrap">
               <h3 className="h3-float">難解な表現と理解のハードル</h3>
               <p>数学は抽象的で複雑な概念を多く含むため、初学者にとっては理解が難しいことがあります。専門用語や数学的な記号体系は敷居を高くし、学習のハードルとなることがあります。</p>

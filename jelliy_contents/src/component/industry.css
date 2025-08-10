@@ -1,15 +1,15 @@
 .first_view.industry {
     .jelly_map {
-    margin: 0 0 0 -18%;
+        margin: 0 0 0 -18%;
 
-    img {
-      width: 60%;
-      height: auto;
-      object-fit: unset;
+        img {
+            width: 60%;
+            height: auto;
+            object-fit: unset;
+        }
     }
-  }
 
-      .merit_and_demerit_block {
+    .merit_and_demerit_block {
         width: 52%;
 
         .h3-float-wrap {
@@ -43,103 +43,120 @@ h1.industry_h1 {
         width: 18%;
         height: 15%;
     }
+
     .industrial_management a {
         bottom: 25%;
         left: -5%;
         width: 16%;
         height: 25%;
     }
-    .agriculture a{
+
+    .agriculture a {
         top: 28%;
         left: 24%;
         width: 4%;
         height: 4%;
     }
-    .forestry a{
+
+    .forestry a {
         top: 28%;
         left: 29%;
         width: 3%;
         height: 4%;
     }
-    .animal_husbandry a{
+
+    .animal_husbandry a {
         top: 28%;
         left: 33.5%;
         width: 5%;
         height: 4%;
     }
-    .fisheries a{
+
+    .fisheries a {
         top: 32%;
         left: 24%;
         width: 5%;
         height: 4%;
     }
-    .mining a{
+
+    .mining a {
         top: 32%;
         left: 31%;
         width: 3%;
         height: 4%;
     }
-    .energy_industry a{
+
+    .energy_industry a {
         top: 36.5%;
         left: 24%;
         width: 9%;
         height: 3%;
     }
-    .mechanical_engineering a{
+
+    .mechanical_engineering a {
         top: 48%;
         left: 24%;
         width: 8%;
         height: 4%;
     }
-    .electrical_electronic_engineering a{
+
+    .electrical_electronic_engineering a {
         top: 52%;
         left: 24%;
         width: 11%;
         height: 4%;
     }
-    .civil_engineering a{
+
+    .civil_engineering a {
         top: 56%;
         left: 24%;
         width: 7%;
         height: 4%;
     }
-    .architecture a{
+
+    .architecture a {
         top: 56%;
         left: 32.5%;
         width: 5%;
         height: 4%;
     }
-    .chemical_industry a{
+
+    .chemical_industry a {
         top: 60%;
         left: 24%;
         width: 7%;
         height: 4%;
     }
-    .food_industry a{
+
+    .food_industry a {
         top: 60%;
         left: 32.5%;
         width: 7%;
         height: 4%;
     }
-    .communication_transport a{
+
+    .communication_transport a {
         bottom: 22%;
         left: 29%;
         width: 11%;
         height: 4%;
     }
-    .materials_engineering a{
+
+    .materials_engineering a {
         bottom: 23%;
         left: 16.5%;
         width: 7%;
         height: 4%;
     }
-    .applied_physics a{
+
+    .applied_physics a {
         bottom: 19%;
         left: 16.5%;
         width: 6%;
         height: 3%;
     }
-    .applied_chemistry a{
+
+    .applied_chemistry a {
         bottom: 15.5%;
         left: 16.5%;
         width: 7%;
@@ -158,4 +175,956 @@ h1.industry_h1 {
     overflow-x: hidden;
     font-size: 0.80em;
     background-color: rgba(255, 255, 255, 0.5);
+}
+
+#industrial_control {
+    .block_figure_left_01 {
+        top: 0;
+        left: 0%;
+        width: 45%;
+        z-index: +1;
+    }
+
+    .block_figure_left_02 {
+        top: 0;
+        left: unset;
+        width: 75%;
+        z-index: +2;
+        right: 0;
+    }
+
+    .block_figure_left_03 {
+        top: 15%;
+        left: 5%;
+        width: 80%;
+        z-index: +3;
+        bottom: unset;
+    }
+
+    .block_figure_left_04 {
+        bottom: unset;
+        left: unset;
+        width: 40%;
+        z-index: +4;
+        right: 0;
+        top: 20%;
+    }
+
+    .block_figure_left_05 {
+        bottom: 20%;
+        left: 0;
+        width: 70%;
+        z-index: +5;
+    }
+
+    .block_figure_left_06 {
+        bottom: 0;
+        right: 0%;
+        width: 45%;
+        z-index: +6;
+    }
+}
+
+#agriculture {
+    .block_figure_left_01 {
+        top: 0;
+        left: 0%;
+        width: 45%;
+        z-index: +1;
+    }
+
+    .block_figure_left_02 {
+        top: 0;
+        left: unset;
+        width: 75%;
+        z-index: +2;
+        right: 0;
+    }
+
+    .block_figure_left_03 {
+        top: 15%;
+        left: 5%;
+        width: 80%;
+        z-index: +3;
+        bottom: unset;
+    }
+
+    .block_figure_left_04 {
+        bottom: unset;
+        left: unset;
+        width: 40%;
+        z-index: +4;
+        right: 0;
+        top: 20%;
+    }
+
+    .block_figure_left_05 {
+        bottom: 20%;
+        left: 0;
+        width: 70%;
+        z-index: +5;
+    }
+
+    .block_figure_left_06 {
+        bottom: 0;
+        right: 0%;
+        width: 45%;
+        z-index: +6;
+    }
+}
+
+#animal_husbandry {
+    .block_figure_left_01 {
+        top: 0;
+        left: 0%;
+        width: 45%;
+        z-index: +1;
+    }
+
+    .block_figure_left_02 {
+        top: 0;
+        left: unset;
+        width: 75%;
+        z-index: +2;
+        right: 0;
+    }
+
+    .block_figure_left_03 {
+        top: 15%;
+        left: 5%;
+        width: 80%;
+        z-index: +3;
+        bottom: unset;
+    }
+
+    .block_figure_left_04 {
+        bottom: unset;
+        left: unset;
+        width: 40%;
+        z-index: +4;
+        right: 0;
+        top: 20%;
+    }
+
+    .block_figure_left_05 {
+        bottom: 20%;
+        left: 0;
+        width: 70%;
+        z-index: +5;
+    }
+
+    .block_figure_left_06 {
+        bottom: 0;
+        right: 0%;
+        width: 45%;
+        z-index: +6;
+    }
+}
+
+#mining {
+    .block_figure_left_01 {
+        top: 0;
+        left: 0%;
+        width: 45%;
+        z-index: +1;
+    }
+
+    .block_figure_left_02 {
+        top: 0;
+        left: unset;
+        width: 75%;
+        z-index: +2;
+        right: 0;
+    }
+
+    .block_figure_left_03 {
+        top: 15%;
+        left: 5%;
+        width: 80%;
+        z-index: +3;
+        bottom: unset;
+    }
+
+    .block_figure_left_04 {
+        bottom: unset;
+        left: unset;
+        width: 40%;
+        z-index: +4;
+        right: 0;
+        top: 20%;
+    }
+
+    .block_figure_left_05 {
+        bottom: 20%;
+        left: 0;
+        width: 70%;
+        z-index: +5;
+    }
+
+    .block_figure_left_06 {
+        bottom: 0;
+        right: 0%;
+        width: 45%;
+        z-index: +6;
+    }
+}
+
+#mechanical_engineering {
+    .block_figure_left_01 {
+        top: 0;
+        left: 0%;
+        width: 45%;
+        z-index: +1;
+    }
+
+    .block_figure_left_02 {
+        top: 0;
+        left: unset;
+        width: 75%;
+        z-index: +2;
+        right: 0;
+    }
+
+    .block_figure_left_03 {
+        top: 15%;
+        left: 5%;
+        width: 80%;
+        z-index: +3;
+        bottom: unset;
+    }
+
+    .block_figure_left_04 {
+        bottom: unset;
+        left: unset;
+        width: 40%;
+        z-index: +4;
+        right: 0;
+        top: 20%;
+    }
+
+    .block_figure_left_05 {
+        bottom: 20%;
+        left: 0;
+        width: 70%;
+        z-index: +5;
+    }
+
+    .block_figure_left_06 {
+        bottom: 0;
+        right: 0%;
+        width: 45%;
+        z-index: +6;
+    }
+}
+
+#civil_engineering {
+    .block_figure_left_01 {
+        top: 0;
+        left: 0%;
+        width: 45%;
+        z-index: +1;
+    }
+
+    .block_figure_left_02 {
+        top: 0;
+        left: unset;
+        width: 75%;
+        z-index: +2;
+        right: 0;
+    }
+
+    .block_figure_left_03 {
+        top: 15%;
+        left: 5%;
+        width: 80%;
+        z-index: +3;
+        bottom: unset;
+    }
+
+    .block_figure_left_04 {
+        bottom: unset;
+        left: unset;
+        width: 40%;
+        z-index: +4;
+        right: 0;
+        top: 20%;
+    }
+
+    .block_figure_left_05 {
+        bottom: 20%;
+        left: 0;
+        width: 70%;
+        z-index: +5;
+    }
+
+    .block_figure_left_06 {
+        bottom: 0;
+        right: 0%;
+        width: 45%;
+        z-index: +6;
+    }
+}
+
+#chemical_industry {
+    .block_figure_left_01 {
+        top: 0;
+        left: 0%;
+        width: 45%;
+        z-index: +1;
+    }
+
+    .block_figure_left_02 {
+        top: 25%;
+        left: unset;
+        width: 85%;
+        z-index: +2;
+        right: 0;
+    }
+
+    .block_figure_left_03 {
+        top: 33%;
+        left: 5%;
+        width: 50%;
+        z-index: +3;
+        bottom: unset;
+    }
+
+    .block_figure_left_04 {
+        bottom: unset;
+        left: unset;
+        width: 40%;
+        z-index: +4;
+        right: 0;
+        top: 20%;
+    }
+
+    .block_figure_left_05 {
+        bottom: 7%;
+        left: 0;
+        width: 60%;
+        z-index: +5;
+    }
+
+    .block_figure_left_06 {
+        bottom: 0;
+        right: 0%;
+        width: 45%;
+        z-index: +6;
+    }
+}
+
+#communication_transport {
+    .block_figure_left_01 {
+        top: 0;
+        left: 0%;
+        width: 45%;
+        z-index: +1;
+    }
+
+    .block_figure_left_02 {
+        top: 0;
+        left: unset;
+        width: 75%;
+        z-index: +2;
+        right: 0;
+    }
+
+    .block_figure_left_03 {
+        top: 15%;
+        left: 5%;
+        width: 80%;
+        z-index: +3;
+        bottom: unset;
+    }
+
+    .block_figure_left_04 {
+        bottom: unset;
+        left: unset;
+        width: 40%;
+        z-index: +4;
+        right: 0;
+        top: 20%;
+    }
+
+    .block_figure_left_05 {
+        bottom: 20%;
+        left: 0;
+        width: 70%;
+        z-index: +5;
+    }
+
+    .block_figure_left_06 {
+        bottom: 0;
+        right: 0%;
+        width: 45%;
+        z-index: +6;
+    }
+}
+
+#applied_physics {
+    .block_figure_left_01 {
+        top: 0;
+        left: 0%;
+        width: 45%;
+        z-index: +1;
+    }
+
+    .block_figure_left_02 {
+        top: 0;
+        left: unset;
+        width: 75%;
+        z-index: +2;
+        right: 0;
+    }
+
+    .block_figure_left_03 {
+        top: 15%;
+        left: 5%;
+        width: 80%;
+        z-index: +3;
+        bottom: unset;
+    }
+
+    .block_figure_left_04 {
+        bottom: unset;
+        left: unset;
+        width: 40%;
+        z-index: +4;
+        right: 0;
+        top: 20%;
+    }
+
+    .block_figure_left_05 {
+        bottom: 20%;
+        left: 0;
+        width: 70%;
+        z-index: +5;
+    }
+
+    .block_figure_left_06 {
+        bottom: 0;
+        right: 0%;
+        width: 45%;
+        z-index: +6;
+    }
+}
+
+#industrial_management {
+    .block_figure_right_01 {
+        top: 0;
+        left: 0;
+        width: 60%;
+        z-index: +1;
+        right: unset;
+    }
+
+    .block_figure_right_02 {
+        bottom: 10%;
+        left: 0;
+        width: 50%;
+        z-index: +2;
+        right: unset;
+        top: unset;
+    }
+
+    .block_figure_right_03 {
+        top: 35%;
+        left: 10%;
+        width: 40%;
+        z-index: +3;
+        bottom: unset;
+    }
+
+    .block_figure_right_04 {
+        bottom: 50%;
+        left: unset;
+        width: 50%;
+        z-index: +4;
+        right: 0;
+    }
+
+    .block_figure_right_05 {
+        bottom: 0;
+        left: unset;
+        width: 55%;
+        z-index: +5;
+        right: 0;
+    }
+
+    .block_figure_right_06 {
+        bottom: unset;
+        right: 0;
+        width: 75%;
+        z-index: +6;
+        left: unset;
+        top: 5%;
+    }
+}
+
+#forestry {
+    .block_figure_right_01 {
+        top: 0;
+        left: 0;
+        width: 60%;
+        z-index: +1;
+        right: unset;
+    }
+
+    .block_figure_right_02 {
+        bottom: 10%;
+        left: 0;
+        width: 50%;
+        z-index: +2;
+        right: unset;
+        top: unset;
+    }
+
+    .block_figure_right_03 {
+        top: 35%;
+        left: 10%;
+        width: 40%;
+        z-index: +3;
+        bottom: unset;
+    }
+
+    .block_figure_right_04 {
+        bottom: 50%;
+        left: unset;
+        width: 50%;
+        z-index: +4;
+        right: 0;
+    }
+
+    .block_figure_right_05 {
+        bottom: 0;
+        left: unset;
+        width: 55%;
+        z-index: +5;
+        right: 0;
+    }
+
+    .block_figure_right_06 {
+        bottom: unset;
+        right: 0;
+        width: 75%;
+        z-index: +6;
+        left: unset;
+        top: 5%;
+    }
+}
+
+#fisheries {
+    .block_figure_right_01 {
+        top: 0;
+        left: 0;
+        width: 60%;
+        z-index: +1;
+        right: unset;
+    }
+
+    .block_figure_right_02 {
+        bottom: 10%;
+        left: 0;
+        width: 50%;
+        z-index: +2;
+        right: unset;
+        top: unset;
+    }
+
+    .block_figure_right_03 {
+        top: 35%;
+        left: 10%;
+        width: 40%;
+        z-index: +3;
+        bottom: unset;
+    }
+
+    .block_figure_right_04 {
+        bottom: 50%;
+        left: unset;
+        width: 50%;
+        z-index: +4;
+        right: 0;
+    }
+
+    .block_figure_right_05 {
+        bottom: 0;
+        left: unset;
+        width: 55%;
+        z-index: +5;
+        right: 0;
+    }
+
+    .block_figure_right_06 {
+        bottom: unset;
+        right: 0;
+        width: 75%;
+        z-index: +6;
+        left: unset;
+        top: 5%;
+    }
+}
+
+#energy_industry {
+    .block_figure_right_01 {
+        top: 0;
+        left: 0;
+        width: 60%;
+        z-index: +1;
+        right: unset;
+    }
+
+    .block_figure_right_02 {
+        bottom: 10%;
+        left: 0;
+        width: 50%;
+        z-index: +2;
+        right: unset;
+        top: unset;
+    }
+
+    .block_figure_right_03 {
+        top: 35%;
+        left: 10%;
+        width: 40%;
+        z-index: +3;
+        bottom: unset;
+    }
+
+    .block_figure_right_04 {
+        bottom: 50%;
+        left: unset;
+        width: 50%;
+        z-index: +4;
+        right: 0;
+    }
+
+    .block_figure_right_05 {
+        bottom: 0;
+        left: unset;
+        width: 55%;
+        z-index: +5;
+        right: 0;
+    }
+
+    .block_figure_right_06 {
+        bottom: unset;
+        right: 0;
+        width: 75%;
+        z-index: +6;
+        left: unset;
+        top: 5%;
+    }
+}
+
+#electrical_electronic_engineering {
+    .block_figure_right_01 {
+        top: 0;
+        left: 0;
+        width: 60%;
+        z-index: +1;
+        right: unset;
+    }
+
+    .block_figure_right_02 {
+        bottom: 10%;
+        left: 0;
+        width: 50%;
+        z-index: +2;
+        right: unset;
+        top: unset;
+    }
+
+    .block_figure_right_03 {
+        top: 35%;
+        left: 10%;
+        width: 40%;
+        z-index: +3;
+        bottom: unset;
+    }
+
+    .block_figure_right_04 {
+        bottom: 50%;
+        left: unset;
+        width: 50%;
+        z-index: +4;
+        right: 0;
+    }
+
+    .block_figure_right_05 {
+        bottom: 0;
+        left: unset;
+        width: 55%;
+        z-index: +5;
+        right: 0;
+    }
+
+    .block_figure_right_06 {
+        bottom: unset;
+        right: 0;
+        width: 75%;
+        z-index: +6;
+        left: unset;
+        top: 5%;
+    }
+}
+
+#architecture {
+    .block_figure_right_01 {
+        top: 0;
+        left: 0;
+        width: 80%;
+        z-index: +1;
+        right: unset;
+    }
+
+    .block_figure_right_02 {
+        bottom: 10%;
+        left: 0;
+        width: 50%;
+        z-index: +2;
+        right: unset;
+        top: unset;
+    }
+
+    .block_figure_right_03 {
+        top: 35%;
+        left: 26%;
+        width: 55%;
+        z-index: +3;
+        bottom: unset;
+    }
+
+    .block_figure_right_04 {
+        bottom: 50%;
+        left: unset;
+        width: 50%;
+        z-index: +4;
+        right: 0;
+    }
+
+    .block_figure_right_05 {
+        bottom: 0;
+        left: unset;
+        width: 55%;
+        z-index: +5;
+        right: 0;
+    }
+
+    .block_figure_right_06 {
+        bottom: unset;
+        right: 0;
+        width: 41%;
+        z-index: +6;
+        left: unset;
+        top: 5%;
+    }
+}
+
+#food_industry {
+    .block_figure_right_01 {
+        top: 0;
+        left: 0;
+        width: 60%;
+        z-index: +1;
+        right: unset;
+    }
+
+    .block_figure_right_02 {
+        bottom: 10%;
+        left: 0;
+        width: 50%;
+        z-index: +2;
+        right: unset;
+        top: unset;
+    }
+
+    .block_figure_right_03 {
+        top: 35%;
+        left: 10%;
+        width: 40%;
+        z-index: +3;
+        bottom: unset;
+    }
+
+    .block_figure_right_04 {
+        bottom: 50%;
+        left: unset;
+        width: 50%;
+        z-index: +4;
+        right: 0;
+    }
+
+    .block_figure_right_05 {
+        bottom: 0;
+        left: unset;
+        width: 55%;
+        z-index: +5;
+        right: 0;
+    }
+
+    .block_figure_right_06 {
+        bottom: unset;
+        right: 0;
+        width: 75%;
+        z-index: +6;
+        left: unset;
+        top: 5%;
+    }
+}
+
+#materials_engineering {
+    .block_figure_right_01 {
+        top: 0;
+        left: 0;
+        width: 35%;
+        z-index: +1;
+        right: unset;
+    }
+
+    .block_figure_right_02 {
+        bottom: 10%;
+        left: 0;
+        width: 50%;
+        z-index: +2;
+        right: unset;
+        top: unset;
+    }
+
+    .block_figure_right_03 {
+        top: 15%;
+        left: 10%;
+        width: 50%;
+        z-index: +3;
+        bottom: unset;
+    }
+
+    .block_figure_right_04 {
+        bottom: 50%;
+        left: unset;
+        width: 50%;
+        z-index: +4;
+        right: 0;
+    }
+
+    .block_figure_right_05 {
+        bottom: 0;
+        left: unset;
+        width: 55%;
+        z-index: +5;
+        right: 0;
+    }
+
+    .block_figure_right_06 {
+        bottom: unset;
+        right: 0;
+        width: 75%;
+        z-index: +6;
+        left: unset;
+        top: 5%;
+    }
+}
+
+#political_leadership {
+    .block_figure_right_01 {
+        top: 0;
+        left: 0;
+        width: 60%;
+        z-index: +1;
+        right: unset;
+    }
+
+    .block_figure_right_02 {
+        bottom: 10%;
+        left: 0;
+        width: 50%;
+        z-index: +2;
+        right: unset;
+        top: unset;
+    }
+
+    .block_figure_right_03 {
+        top: 35%;
+        left: 10%;
+        width: 40%;
+        z-index: +3;
+        bottom: unset;
+    }
+
+    .block_figure_right_04 {
+        bottom: 50%;
+        left: unset;
+        width: 50%;
+        z-index: +4;
+        right: 0;
+    }
+
+    .block_figure_right_05 {
+        bottom: 0;
+        left: unset;
+        width: 55%;
+        z-index: +5;
+        right: 0;
+    }
+
+    .block_figure_right_06 {
+        bottom: unset;
+        right: 0;
+        width: 75%;
+        z-index: +6;
+        left: unset;
+        top: 5%;
+    }
+}
+
+#applied_chemistry {
+    .block_figure_right_01 {
+        top: 0;
+        left: 0;
+        width: 60%;
+        z-index: +1;
+        right: unset;
+    }
+
+    .block_figure_right_02 {
+        bottom: 10%;
+        left: 0;
+        width: 50%;
+        z-index: +2;
+        right: unset;
+        top: unset;
+    }
+
+    .block_figure_right_03 {
+        top: 35%;
+        left: 10%;
+        width: 40%;
+        z-index: +3;
+        bottom: unset;
+    }
+
+    .block_figure_right_04 {
+        bottom: 50%;
+        left: unset;
+        width: 50%;
+        z-index: +4;
+        right: 0;
+    }
+
+    .block_figure_right_05 {
+        bottom: 0;
+        left: unset;
+        width: 55%;
+        z-index: +5;
+        right: 0;
+    }
+
+    .block_figure_right_06 {
+        bottom: unset;
+        right: 0;
+        width: 75%;
+        z-index: +6;
+        left: unset;
+        top: 5%;
+    }
 }

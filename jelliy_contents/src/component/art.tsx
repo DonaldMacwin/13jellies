@@ -257,14 +257,18 @@ function Art() {
         </div>
         <div className='merit_and_demerit_block scroller_decoration'>
           <article className={`merit ${animateMerit ? 'animate' : ''}`}>
-            <h2>特長</h2>
+            <h2 className="h2-split">
+              <span className="h2-split-char">特</span><span className="h2-split-char">長</span>
+            </h2>
             <h3>感情喚起</h3><p>芸術は私たちの心に深い感情を呼び起こします。絵画、音楽、演劇などが独自の手法で感動や驚き、喜びなどを引き起こし、観る者を感情の旅に誘います。</p>
             <h3>異なる文化との交流</h3><p>芸術は異なる文化や歴史に触れ、理解を深める手助けをします。美術館や劇場で異なる文化の作品を見ることで、広い視野を持つことができます。</p>
             <h3>共感の想起</h3><p>芸術を通じ発信者は自分の感情や考えを表現します。受信者（受け手）はその表現に共感し、自らの感情や経験と照らし合わせることができます。</p>
             <h3>人間関係の構築</h3><p>芸術は人々を結びつけ、共通の興味や感動を通じ新しい人間関係を築く手助けをします。共有された芸術体験は、人々を統合し、交流を深めます。</p>
           </article>
           <article className={`demerit ${animateDemerit ? 'animate' : ''}`}>
-            <h2>難点</h2>
+            <h2 className="h2-split">
+              <span className="h2-split-char">難</span><span className="h2-split-char">点</span>
+            </h2>
             <h3>個々の解釈の主観性</h3><p>芸術は主観的であり、同じ作品でも受信者個々によって異なる解釈がされることがあります。これが誤解や混乱を生む可能性があります。</p>
             <h3>感情の不安定さ</h3><p>芸術は時に深い感情を呼び起こすが影響は予測困難であり、作品によっては不安定な感情を引き起こすこともあります。</p>
             <h3>価値観の変動に対する適応</h3><p>芸術の価値観は社会の変動に影響されるため、一つの時期に愛された作品が別の時期には理解されなくなることがあります。これは感性の変化に対する適応が求められます。</p>

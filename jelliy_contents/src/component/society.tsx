@@ -181,7 +181,9 @@ function Physics() {
         </div>
         <div className='merit_and_demerit_block scroller_decoration'>
           <article className={`merit ${animateMerit ? 'animate' : ''}`}>
-            <h2>特長</h2>
+            <h2 className="h2-split">
+              <span className="h2-split-char">特</span><span className="h2-split-char">長</span>
+            </h2>
             <h3>社会問題の解明</h3><p>社会研究は貧困や差別、家族、教育など多様な社会問題の構造や原因を明らかにし、解決策を探る研究分野です。</p>
             <h3>多様な視点の獲得</h3><p>社会研究を学ぶことで、異なる文化や価値観、社会集団の視点を理解し、多角的なものの見方が身につきます。</p>
             <h3>政策立案への貢献</h3><p>社会調査やデータ分析を通じて、実証的な根拠に基づいた政策提言や社会制度の改善に寄与できます。</p>
@@ -189,7 +191,9 @@ function Physics() {
             <h3>社会変革への意識</h3><p>社会の仕組みや不平等の現実を知ることで、より良い社会を目指す意識や行動力が養われます。</p>
           </article>
           <article className={`demerit ${animateDemerit ? 'animate' : ''}`}>
-            <h2>難点</h2>
+            <h2 className="h2-split">
+              <span className="h2-split-char">難</span><span className="h2-split-char">点</span>
+            </h2>
             <h3>客観性の確保が難しい</h3><p>人間や社会を対象とするため、完全な客観性や再現性を保つことが難しい場合があります。</p>
             <h3>成果の即時性が低い</h3><p>社会研究の研究成果は社会全体への影響が現れるまで時間がかかることが多いです。</p>
             <h3>理論の多様性による混乱</h3><p>多くの理論やアプローチが存在し、初心者には全体像の把握や整理が難しいことがあります。</p>
