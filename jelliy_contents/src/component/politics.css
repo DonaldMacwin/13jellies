@@ -1,13 +1,13 @@
 .first_view.politics {
     .jelly_map {
-    margin: 0 0 0 -5%;
+        margin: 0 0 0 -5%;
 
-    img {
-      width: 65%;
-      height: auto;
-      object-fit: unset;
+        img {
+            width: 65%;
+            height: auto;
+            object-fit: unset;
+        }
     }
-  }
 }
 
 h1.politics_h1 {
@@ -22,64 +22,622 @@ h1.politics_h1 {
         width: 32%;
         height: 10%;
     }
+
     .political_leadership a {
         top: 11%;
         left: 3%;
         width: 16%;
         height: 17%;
     }
-    .decision_process a{
+
+    .decision_process a {
         top: 32%;
         left: 3%;
         width: 19%;
         height: 10%;
     }
-    .political_groups a{
+
+    .political_groups a {
         top: 46%;
         left: 3%;
         width: 13%;
         height: 15%;
     }
-    .institutional a{
+
+    .institutional a {
         bottom: 19%;
         left: 8%;
         width: 9%;
         height: 12%;
     }
-    .political_system a{
+
+    .political_system a {
         bottom: 18%;
         left: 20%;
         width: 17%;
         height: 13%;
     }
-    .ideology a{
+
+    .ideology a {
         bottom: 17%;
         left: 39%;
         width: 13%;
         height: 13%;
     }
-    .international a{
+
+    .international a {
         bottom: 3%;
         left: 23%;
         width: 11%;
         height: 14%;
     }
-    .policy_content a{
+
+    .policy_content a {
         top: 12%;
         left: 35%;
         width: 17%;
         height: 18%;
     }
-    .political_implementation a{
+
+    .political_implementation a {
         top: 33%;
         left: 35%;
         width: 18%;
         height: 14%;
     }
-    .public_studies a{
+
+    .public_studies a {
         top: 49%;
         left: 35%;
         width: 16%;
         height: 15%;
+    }
+}
+
+#economics {
+    .block_figure_left_01 {
+        top: 20%;
+        left: 0%;
+        width: 35%;
+        z-index: +1;
+    }
+
+    .block_figure_left_02 {
+        top: 20%;
+        left: unset;
+        width: 50%;
+        z-index: +2;
+        right: 0;
+    }
+
+    .block_figure_left_03 {
+        top: 15%;
+        left: 15%;
+        width: 50%;
+        z-index: +3;
+        bottom: unset;
+    }
+
+    .block_figure_left_04 {
+        bottom: unset;
+        left: unset;
+        width: 35%;
+        z-index: +4;
+        right: 0;
+        top: 5%;
+    }
+
+    .block_figure_left_05 {
+        bottom: 20%;
+        left: 0;
+        width: 85%;
+        z-index: +5;
+    }
+
+    .block_figure_left_06 {
+        bottom: 0;
+        right: 0%;
+        width: 45%;
+        z-index: +6;
+    }
+}
+
+#decision_process {
+    .block_figure_left_01 {
+        top: 0;
+        left: 0%;
+        width: 50%;
+        z-index: +1;
+    }
+
+    .block_figure_left_02 {
+        top: 0;
+        left: unset;
+        width: 75%;
+        z-index: +2;
+        right: 0;
+    }
+
+    .block_figure_left_03 {
+        top: 15%;
+        left: 5%;
+        width: 70%;
+        z-index: +3;
+        bottom: unset;
+    }
+
+    .block_figure_left_04 {
+        bottom: unset;
+        left: unset;
+        width: 50%;
+        z-index: +4;
+        right: 0;
+        top: 5%;
+    }
+
+    .block_figure_left_05 {
+        bottom: 20%;
+        left: 0;
+        width: 60%;
+        z-index: +5;
+    }
+
+    .block_figure_left_06 {
+        bottom: 0;
+        right: 0%;
+        width: 45%;
+        z-index: +6;
+    }
+}
+
+#institutional {
+    .block_figure_left_01 {
+        top: 0;
+        left: 0%;
+        width: 35%;
+        z-index: +1;
+    }
+
+    .block_figure_left_02 {
+        top: 0;
+        left: unset;
+        width: 75%;
+        z-index: +2;
+        right: 0;
+    }
+
+    .block_figure_left_03 {
+        top: 15%;
+        left: 5%;
+        width: 40%;
+        z-index: +3;
+        bottom: unset;
+    }
+
+    .block_figure_left_04 {
+        bottom: unset;
+        left: unset;
+        width: 72%;
+        z-index: +4;
+        right: 0;
+        top: 5%;
+    }
+
+    .block_figure_left_05 {
+        bottom: 20%;
+        left: 0;
+        width: 40%;
+        z-index: +5;
+    }
+
+    .block_figure_left_06 {
+        bottom: 0;
+        right: 0%;
+        width: 45%;
+        z-index: +6;
+    }
+}
+
+#ideology {
+    .block_figure_left_01 {
+        top: 0%;
+        left: 10%;
+        width: 70%;
+        z-index: +1;
+    }
+
+    .block_figure_left_02 {
+        top: 0;
+        left: unset;
+        width: 75%;
+        z-index: +2;
+        right: 0;
+    }
+
+    .block_figure_left_03 {
+        top: 15%;
+        left: 5%;
+        width: 40%;
+        z-index: +3;
+        bottom: unset;
+    }
+
+    .block_figure_left_04 {
+        bottom: unset;
+        left: unset;
+        width: 40%;
+        z-index: +4;
+        right: 0;
+        top: 5%;
+    }
+
+    .block_figure_left_05 {
+        bottom: 20%;
+        left: 0;
+        width: 80%;
+        z-index: +5;
+    }
+
+    .block_figure_left_06 {
+        bottom: 0;
+        right: 0%;
+        width: 45%;
+        z-index: +6;
+    }
+}
+
+#policy_content {
+    .block_figure_left_01 {
+        top: 0;
+        left: 0%;
+        width: 35%;
+        z-index: +1;
+    }
+
+    .block_figure_left_02 {
+        top: 30%;
+        left: unset;
+        width: 75%;
+        z-index: +2;
+        right: 0;
+    }
+
+    .block_figure_left_03 {
+        top: 15%;
+        left: 5%;
+        width: 80%;
+        z-index: +1;
+        bottom: unset;
+    }
+
+    .block_figure_left_04 {
+        bottom: unset;
+        left: unset;
+        width: 40%;
+        z-index: +4;
+        right: 0;
+        top: 5%;
+    }
+
+    .block_figure_left_05 {
+        bottom: 20%;
+        left: 0;
+        width: 40%;
+        z-index: +5;
+    }
+
+    .block_figure_left_06 {
+        bottom: 0;
+        right: 0%;
+        width: 45%;
+        z-index: +6;
+    }
+}
+
+#public_studies {
+    .block_figure_left_01 {
+        top: 0;
+        left: 0%;
+        width: 45%;
+        z-index: +1;
+    }
+
+    .block_figure_left_02 {
+        top: 0;
+        left: unset;
+        width: 75%;
+        z-index: +2;
+        right: 0;
+    }
+
+    .block_figure_left_03 {
+        top: 15%;
+        left: 5%;
+        width: 80%;
+        z-index: +3;
+        bottom: unset;
+    }
+
+    .block_figure_left_04 {
+        bottom: unset;
+        left: unset;
+        width: 40%;
+        z-index: +4;
+        right: 0;
+        top: 20%;
+    }
+
+    .block_figure_left_05 {
+        bottom: 20%;
+        left: 0;
+        width: 70%;
+        z-index: +5;
+    }
+
+    .block_figure_left_06 {
+        bottom: 0;
+        right: 0%;
+        width: 45%;
+        z-index: +6;
+    }
+}
+
+#political_leadership {
+    .block_figure_right_01 {
+        top: 0;
+        left: 0;
+        width: 60%;
+        z-index: +1;
+        right: unset;
+    }
+
+    .block_figure_right_02 {
+        bottom: 10%;
+        left: 0;
+        width: 50%;
+        z-index: +2;
+        right: unset;
+        top: unset;
+    }
+
+    .block_figure_right_03 {
+        top: 35%;
+        left: 10%;
+        width: 40%;
+        z-index: +3;
+        bottom: unset;
+    }
+
+    .block_figure_right_04 {
+        bottom: 50%;
+        left: unset;
+        width: 50%;
+        z-index: +4;
+        right: 0;
+    }
+
+    .block_figure_right_05 {
+        bottom: 0;
+        left: unset;
+        width: 55%;
+        z-index: +5;
+        right: 0;
+    }
+
+    .block_figure_right_06 {
+        bottom: unset;
+        right: 0;
+        width: 75%;
+        z-index: +6;
+        left: unset;
+        top: 5%;
+    }
+}
+
+#political_groups {
+    .block_figure_right_01 {
+        top: 0;
+        left: 0;
+        width: 60%;
+        z-index: +1;
+        right: unset;
+    }
+
+    .block_figure_right_02 {
+        bottom: 0;
+        left: 0;
+        width: 50%;
+        z-index: +2;
+        right: unset;
+        top: unset;
+    }
+
+    .block_figure_right_03 {
+        top: 35%;
+        left: 0%;
+        width: 40%;
+        z-index: +3;
+        bottom: unset;
+    }
+
+    .block_figure_right_04 {
+        bottom: 50%;
+        left: unset;
+        width: 50%;
+        z-index: +4;
+        right: 0;
+    }
+
+    .block_figure_right_05 {
+        bottom: 0;
+        left: unset;
+        width: 55%;
+        z-index: +5;
+        right: 0;
+    }
+
+    .block_figure_right_06 {
+        bottom: unset;
+        right: 0;
+        width: 85%;
+        z-index: 0;
+        left: unset;
+        top: 12%;
+    }
+}
+
+#political_system {
+    .block_figure_right_01 {
+        top: 0;
+        left: 0;
+        width: 60%;
+        z-index: +1;
+        right: unset;
+    }
+
+    .block_figure_right_02 {
+        bottom: 0;
+        left: 0;
+        width: 50%;
+        z-index: +2;
+        right: unset;
+        top: unset;
+    }
+
+    .block_figure_right_03 {
+        top: 35%;
+        left: 0%;
+        width: 40%;
+        z-index: +3;
+        bottom: unset;
+    }
+
+    .block_figure_right_04 {
+        bottom: 50%;
+        left: unset;
+        width: 50%;
+        z-index: +4;
+        right: 0;
+    }
+
+    .block_figure_right_05 {
+        bottom: 0;
+        left: unset;
+        width: 55%;
+        z-index: +5;
+        right: 0;
+    }
+
+    .block_figure_right_06 {
+        bottom: unset;
+        right: 0;
+        width: 85%;
+        z-index: +6;
+        left: unset;
+        top: 0;
+    }
+}
+
+#international {
+    .block_figure_right_01 {
+        top: 0;
+        left: 0;
+        width: 60%;
+        z-index: +1;
+        right: unset;
+    }
+
+    .block_figure_right_02 {
+        bottom: 0;
+        left: 0;
+        width: 50%;
+        z-index: +2;
+        right: unset;
+        top: unset;
+    }
+
+    .block_figure_right_03 {
+        top: 35%;
+        left: 0%;
+        width: 40%;
+        z-index: +3;
+        bottom: unset;
+    }
+
+    .block_figure_right_04 {
+        bottom: 50%;
+        left: unset;
+        width: 50%;
+        z-index: +4;
+        right: 0;
+    }
+
+    .block_figure_right_05 {
+        bottom: 0;
+        left: unset;
+        width: 55%;
+        z-index: +5;
+        right: 0;
+    }
+
+    .block_figure_right_06 {
+        bottom: unset;
+        right: 0;
+        width: 40%;
+        z-index: +6;
+        left: unset;
+        top: 0;
+    }
+}
+
+#political_implementation {
+    .block_figure_right_01 {
+        top: 0;
+        left: 5%;
+        width: 60%;
+        z-index: +1;
+        right: unset;
+    }
+
+    .block_figure_right_02 {
+        bottom: 10%;
+        left: 0;
+        width: 80%;
+        z-index: +2;
+        right: unset;
+        top: unset;
+    }
+
+    .block_figure_right_03 {
+        top: 35%;
+        left: 15%;
+        width: 40%;
+        z-index: +3;
+        bottom: unset;
+    }
+
+    .block_figure_right_04 {
+        bottom: 50%;
+        left: unset;
+        width: 50%;
+        z-index: +4;
+        right: 0;
+    }
+
+    .block_figure_right_05 {
+        bottom: 0;
+        left: unset;
+        width: 55%;
+        z-index: +5;
+        right: 0;
+    }
+
+    .block_figure_right_06 {
+        bottom: unset;
+        right: 0;
+        width: 40%;
+        z-index: +6;
+        left: unset;
+        top: 0;
     }
 }
