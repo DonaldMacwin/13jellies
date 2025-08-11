@@ -1,6 +1,7 @@
 .first_view.society {
     .jelly_map {
         margin: 0 0 0 -20%;
+
         @media (max-width: 960px) {
             margin: 0;
         }
@@ -9,6 +10,7 @@
             width: 55%;
             height: auto;
             object-fit: unset;
+
             @media (max-width: 960px) {
                 width: 100%;
             }
@@ -30,6 +32,11 @@ h1.society_h1 {
         left: -19%;
         width: 10%;
         height: 43%;
+
+        @media (max-width: 960px) {
+            left: 1%;
+            width: 16%;
+        }
     }
 
     .positioning a {
@@ -37,6 +44,10 @@ h1.society_h1 {
         left: 5%;
         width: 16%;
         height: 35%;
+
+        @media (max-width: 960px) {
+            left: 39%;
+        }
     }
 
     .institution a {
@@ -44,6 +55,10 @@ h1.society_h1 {
         left: 28%;
         width: 16%;
         height: 31%;
+
+        @media (max-width: 960px) {
+            left: 72%;
+        }
     }
 }
 

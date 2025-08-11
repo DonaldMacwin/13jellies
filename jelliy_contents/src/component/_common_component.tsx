@@ -479,7 +479,6 @@ export const AnimatedFigureBlock: React.FC<AnimatedFigureBlockProps> = ({
     );
 };
 
-
 // ----------------- スマホ時のみiframeでスクロール表示する
 export const ScrollableIframeBlock: React.FC<{
     children: React.ReactNode;
@@ -489,7 +488,7 @@ export const ScrollableIframeBlock: React.FC<{
     const isMobile = window.matchMedia('(max-width: 960px)').matches;
     if (isMobile) {
         const html = ReactDOMServer.renderToStaticMarkup(<>{children}</>);
-        const cssPath = 'https://cf268321.cloudfree.jp/13jellies/jelliy_contents/dist/mobile_iframe.css';
+        const cssPath = 'https://cf268321.cloudfree.jp/13jellies/asset/css/mobile_iframe.css';
         return (
             <iframe
                 srcDoc={`

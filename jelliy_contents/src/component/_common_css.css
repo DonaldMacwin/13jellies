@@ -76,7 +76,7 @@ img {
       left: unset;
       transform: unset;
       margin: 0 auto;
-      font-size: 4rem;
+      font-size: 3.25rem;
     }
   }
 
@@ -162,6 +162,11 @@ img {
     height: 7%;
     opacity: 0.8;
     z-index: +1;
+
+    @media (max-width: 960px) {
+      width: 35%;
+      height: 8%;
+    }
 
     .back_to_map_figure {
       position: absolute;
