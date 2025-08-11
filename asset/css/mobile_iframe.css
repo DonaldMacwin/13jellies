@@ -1,0 +1,15 @@
+/* /jelliy_contents 内、メリット・デメリットブロック(スマホ表示時のみ)*/
+.merit_and_demerit_block {
+.h2-split {
+      display: flex;
+      gap: 0.5em;
+    }
+
+    .h2-split-char {
+      background: #333;
+      color: #fff;
+      padding: 0.15em 0.25em;
+      letter-spacing: 0.2em;
+      display: inline-block;
+    }
+}
