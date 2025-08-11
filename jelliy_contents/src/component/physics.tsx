@@ -9,7 +9,8 @@ import {
   useStepImagePreload,
   useSectionHtmlLoader,
   createImageArrays,
-  useTopScroll
+  useTopScroll,
+  ScrollableIframeBlock
 } from './_common_component';
 import Society_1stView from '../assets/img/Physics_1stView01.png';
 import { TopButton } from './_common_component';
@@ -268,7 +269,7 @@ function Physics() {
             <li className='classical'><a href="#classical" onClick={(e) => { e.preventDefault(); setCurrentSection(8); }}></a></li>{/* 古典力学 */}
           </ul>
         </div>
-        <div className='merit_and_demerit_block scroller_decoration'>
+        <ScrollableIframeBlock className='merit_and_demerit_block scroller_decoration'>
           <article className={`merit ${animateMerit ? 'animate' : ''}`}>
             <h2 className="h2-split">
               <span className="h2-split-char">特</span><span className="h2-split-char">長</span>
@@ -287,7 +288,7 @@ function Physics() {
             <h3>理論との齟齬</h3><p>理論と実験結果が合致しない場合があり、解決されるまでに時間がかかることがあります。これは理論と実際の世界との複雑な関係性に起因しています。</p>
             <h3>一般の理解の難しさ</h3><p>物理学の一部の概念は高度で抽象的で、一般の人々には理解が難しいことがあります。これが普及を妨げることがあります。</p>
           </article>
-        </div>
+        </ScrollableIframeBlock>
         <div className='back_to_map'>
           <a href="https://cf268321.cloudfree.jp/13jellies/#jellies_map">
             <figure className='back_to_map_figure'><img src='https://cf268321.cloudfree.jp/13jellies/asset/img/13jellies_A.png' /></figure>

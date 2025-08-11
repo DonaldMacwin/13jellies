@@ -9,7 +9,8 @@ import {
   useStepImagePreload,
   useSectionHtmlLoader,
   createImageArrays,
-  useTopScroll
+  useTopScroll,
+  ScrollableIframeBlock
 } from './_common_component';
 import Politics_1stView from '../assets/img/Philosophy_1stView01.png';
 import { TopButton } from './_common_component';
@@ -227,7 +228,7 @@ function Philosophy() {
             <li className='logic'><a href="#logic" onClick={(e) => { e.preventDefault(); setCurrentSection(6); }}></a></li>{/* 論理研究 */}
           </ul>
         </div>
-        <div className='merit_and_demerit_block scroller_decoration'>
+        <ScrollableIframeBlock className='merit_and_demerit_block scroller_decoration'>
           <article className={`merit ${animateMerit ? 'animate' : ''}`}>
             <h2 className="h2-split">
               <span className="h2-split-char">特</span><span className="h2-split-char">長</span>
@@ -286,7 +287,7 @@ function Philosophy() {
               <p>一部の哲学宗教体系は、個人の自由や表現の自由を制限し、厳格な規律を要求することがあります。これが個人の発展や多様性を妨げることがあります。</p>
             </div>
           </article>
-        </div>
+        </ScrollableIframeBlock>
         <div className='back_to_map'>
           <a href="https://cf268321.cloudfree.jp/13jellies/#jellies_map">
             <figure className='back_to_map_figure'><img src='https://cf268321.cloudfree.jp/13jellies/asset/img/13jellies_A.png' /></figure>

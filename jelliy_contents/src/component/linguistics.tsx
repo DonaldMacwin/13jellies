@@ -9,7 +9,8 @@ import {
   useStepImagePreload,
   useSectionHtmlLoader,
   createImageArrays,
-  useTopScroll
+  useTopScroll,
+  ScrollableIframeBlock
 } from './_common_component';
 import Linguistics_1stView from '../assets/img/Linguistics_1stView01.png';
 import { TopButton } from './_common_component';
@@ -344,7 +345,7 @@ function Linguistics() {
             <li className='morphology'><a href="#morphology" onClick={(e) => { e.preventDefault(); setCurrentSection(15); }}></a></li>{/* 形態論 */}
           </ul>
         </div>
-        <div className='merit_and_demerit_block scroller_decoration'>
+        <ScrollableIframeBlock className='merit_and_demerit_block scroller_decoration'>
           <article className={`merit ${animateMerit ? 'animate' : ''}`}>
             <h2 className="h2-split">
               <span className="h2-split-char">特</span><span className="h2-split-char">長</span>
@@ -363,7 +364,7 @@ function Linguistics() {
             <h3>言語変化の速さ</h3><p>言語は絶えず変化しており、その変化の速さが研究者にとって追いつきにくい一因となっています。古典的な研究が現代の言語に十分に適用できない場合があります。</p>
             <h3>異なるアプローチの複雑性</h3><p>現状の言語学には物理・化学・数学のように国際的に明確に取り決めた統一基軸が未だ策定されていません。このため様々なアプローチがあり、それぞれが異なる枠組みや用語を使用しています。これが学際的な協力を難しくし、コミュニケーションの障害となることがあります。</p>
           </article>
-        </div>
+        </ScrollableIframeBlock>
         <div className='back_to_map'>
           <a href="https://cf268321.cloudfree.jp/13jellies/#jellies_map">
             <figure className='back_to_map_figure'><img src='https://cf268321.cloudfree.jp/13jellies/asset/img/13jellies_A.png' /></figure>

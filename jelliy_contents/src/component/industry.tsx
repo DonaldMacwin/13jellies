@@ -9,7 +9,8 @@ import {
   useStepImagePreload,
   useSectionHtmlLoader,
   createImageArrays,
-  useTopScroll
+  useTopScroll,
+  ScrollableIframeBlock
 } from './_common_component';
 import Industry_1stView from '../assets/img/Industry_1stView01.png';
 import { TopButton } from './_common_component';
@@ -420,7 +421,7 @@ function Industry() {
             </ul>
           </div>
         </div>
-        <div className='merit_and_demerit_block scroller_decoration'>
+        <ScrollableIframeBlock className='merit_and_demerit_block scroller_decoration'>
           <article className={`merit ${animateMerit ? 'animate' : ''}`}>
             <h2 className="h2-split">
               <span className="h2-split-char">特</span><span className="h2-split-char">長</span>
@@ -449,7 +450,7 @@ function Industry() {
             <div className="h3-float-wrap">
               <h3 className="h3-float">倫理的な問題と法規制の課題</h3><p>産業技術の進化には倫理的な問題が絡むことがあります。例えば、人工知能や生命工学などの分野では、個人や社会全体に対する影響が深刻であり、それに対する適切な法規制や倫理規範が必要です。</p></div>
           </article>
-        </div>
+        </ScrollableIframeBlock>
         <div className='back_to_map'>
           <a href="https://cf268321.cloudfree.jp/13jellies/#jellies_map">
             <figure className='back_to_map_figure'><img src='https://cf268321.cloudfree.jp/13jellies/asset/img/13jellies_A.png' /></figure>

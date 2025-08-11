@@ -9,7 +9,8 @@ import {
   useStepImagePreload,
   useSectionHtmlLoader,
   createImageArrays,
-  useTopScroll
+  useTopScroll,
+  ScrollableIframeBlock
 } from './_common_component';
 import Society_1stView from '../assets/img/Society_1stView01.png';
 import { TopButton } from './_common_component';
@@ -179,7 +180,7 @@ function Physics() {
             <li className='institution'><a href="#institution" onClick={(e) => { e.preventDefault(); setCurrentSection(3); }}></a></li>{/* 制度系 */}
           </ul>
         </div>
-        <div className='merit_and_demerit_block scroller_decoration'>
+        <ScrollableIframeBlock className='merit_and_demerit_block scroller_decoration'>
           <article className={`merit ${animateMerit ? 'animate' : ''}`}>
             <h2 className="h2-split">
               <span className="h2-split-char">特</span><span className="h2-split-char">長</span>
@@ -200,7 +201,7 @@ function Physics() {
             <h3>数値化しにくい現象の扱い</h3><p>人間の感情や価値観など、数値化や定量化が難しいテーマも多く、分析に限界が生じることがあります。</p>
             <h3>社会的・政治的影響を受けやすい</h3><p>研究テーマや結果が社会的・政治的な影響を受けやすく、中立性の維持が課題となることがあります。</p>
           </article>
-        </div>
+        </ScrollableIframeBlock>
         <div className='back_to_map'>
           <a href="https://cf268321.cloudfree.jp/13jellies/#jellies_map">
             <figure className='back_to_map_figure'><img src='https://cf268321.cloudfree.jp/13jellies/asset/img/13jellies_A.png' /></figure>

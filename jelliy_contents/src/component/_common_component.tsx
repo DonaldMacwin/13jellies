@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactDOMServer from 'react-dom/server';
 import { useState, useEffect, useRef } from 'react';
 import type { CSSProperties, RefObject } from 'react';
 
@@ -76,7 +77,7 @@ export function useSectionScroll(
 
     // スクロール可能な要素のスタイル関数を追加
     const scrollableStyle = (isActive: boolean): CSSProperties => {
-        const isMobile = window.matchMedia('(max-width: 690px)').matches;
+        const isMobile = window.matchMedia('(max-width: 960px)').matches;
         return {
             overflowY: isActive ? 'auto' : 'hidden',
             maxHeight: isMobile ? '50vh' : '96vh',
@@ -474,6 +475,47 @@ export const AnimatedFigureBlock: React.FC<AnimatedFigureBlockProps> = ({
                     />
                 </figure>
             ))}
+        </div>
+    );
+};
+
+
+// ----------------- スマホ時のみiframeでスクロール表示する
+export const ScrollableIframeBlock: React.FC<{
+    children: React.ReactNode;
+    className?: string;
+    style?: React.CSSProperties;
+}> = ({ children, className = '', style = {} }) => {
+    const isMobile = window.matchMedia('(max-width: 960px)').matches;
+    if (isMobile) {
+        const html = ReactDOMServer.renderToStaticMarkup(<>{children}</>);
+        const cssPath = 'https://cf268321.cloudfree.jp/13jellies/jelliy_contents/dist/mobile_iframe.css';
+        return (
+            <iframe
+                srcDoc={`
+          <html>
+            <head>
+              <link rel="stylesheet" href="${cssPath}">
+            </head>
+            <body class="${className}" style="margin:0;padding:0;background:rgba(255,255,255,0.5);font-size:0.95em;">
+              ${html}
+            </body>
+          </html>
+        `}
+                style={{
+                    width: '100%',
+                    height: '50vh',
+                    border: 'none',
+                    background: 'rgba(255,255,255,0.5)',
+                    ...style
+                }}
+                title="scrollable_iframe_block"
+            />
+        );
+    }
+    return (
+        <div className={className} style={style}>
+            {children}
         </div>
     );
 };
