@@ -236,24 +236,26 @@ function Art() {
       <SharedImageFilters />
 
       <section className='first_view art' ref={firstViewRef} style={sectionStyle(0)}>
-        <h1 className='art_h1'>芸術</h1>
-        <div className='position_relative'>
-          <figure className='jelly_map'>
-            <img
-              src={Art_1stView}
-              alt=""
-              className={imageAnimationClass}
-            />
-          </figure>
-          <ul className='page_anchor_list'>
-            <li className='planar_modeling'><a href="#planar_modeling" onClick={(e) => { e.preventDefault(); setCurrentSection(1); }}></a></li>{/* 平面造形 */}
-            <li className='three_D_modeling'><a href="#three_D_modeling" onClick={(e) => { e.preventDefault(); setCurrentSection(2); }}></a></li>{/* 立体造形 */}
-            <li className='literature'><a href="#literature" onClick={(e) => { e.preventDefault(); setCurrentSection(3); }}></a></li>{/* 文学 */}
-            <li className='communication_technique'><a href="#communication_technique" onClick={(e) => { e.preventDefault(); setCurrentSection(4); }}></a></li>{/* 伝達技法研究 */}
-            <li className='music'><a href="#music" onClick={(e) => { e.preventDefault(); setCurrentSection(5); }}></a></li>{/* 音楽 */}
-            <li className='cooking'><a href="#cooking" onClick={(e) => { e.preventDefault(); setCurrentSection(6); }}></a></li>{/* 料理 */}
-            <li className='performing'><a href="#performing" onClick={(e) => { e.preventDefault(); setCurrentSection(7); }}></a></li>{/* 舞台芸術 */}
-          </ul>
+        <div className="firstview_main_sp">
+          <h1 className='art_h1'>芸術</h1>
+          <div className='position_relative'>
+            <figure className='jelly_map'>
+              <img
+                src={Art_1stView}
+                alt=""
+                className={imageAnimationClass}
+              />
+            </figure>
+            <ul className='page_anchor_list'>
+              <li className='planar_modeling'><a href="#planar_modeling" onClick={(e) => { e.preventDefault(); setCurrentSection(1); }}></a></li>{/* 平面造形 */}
+              <li className='three_D_modeling'><a href="#three_D_modeling" onClick={(e) => { e.preventDefault(); setCurrentSection(2); }}></a></li>{/* 立体造形 */}
+              <li className='literature'><a href="#literature" onClick={(e) => { e.preventDefault(); setCurrentSection(3); }}></a></li>{/* 文学 */}
+              <li className='communication_technique'><a href="#communication_technique" onClick={(e) => { e.preventDefault(); setCurrentSection(4); }}></a></li>{/* 伝達技法研究 */}
+              <li className='music'><a href="#music" onClick={(e) => { e.preventDefault(); setCurrentSection(5); }}></a></li>{/* 音楽 */}
+              <li className='cooking'><a href="#cooking" onClick={(e) => { e.preventDefault(); setCurrentSection(6); }}></a></li>{/* 料理 */}
+              <li className='performing'><a href="#performing" onClick={(e) => { e.preventDefault(); setCurrentSection(7); }}></a></li>{/* 舞台芸術 */}
+            </ul>
+          </div>
         </div>
         <div className='merit_and_demerit_block scroller_decoration'>
           <article className={`merit ${animateMerit ? 'animate' : ''}`}>

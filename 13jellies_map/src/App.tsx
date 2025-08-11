@@ -12,16 +12,33 @@ function App() {
   const [offsetX, setOffsetX] = useState<number>(0);
   const [offsetY, setOffsetY] = useState<number>(0);
   const [scale, setScale] = useState<number>(1);
+  const [isMobile, setIsMobile] = useState<boolean>(false);
   const imageWrapRef = useRef<HTMLDivElement>(null);
   const dragStartPosRef = useRef({ x: 0, y: 0 });
   const [clickStarted, setClickStarted] = useState(false);
   
+  // ウィンドウサイズの監視
+  useEffect(() => {
+    const checkIsMobile = () => {
+      setIsMobile(window.innerWidth <= 690);
+    };
+
+    checkIsMobile();
+    window.addEventListener('resize', checkIsMobile);
+
+    return () => {
+      window.removeEventListener('resize', checkIsMobile);
+    };
+  }, []);
+
   // ホイール処理 - スクロールとの連携
   useEffect(() => {
     const imageWrap = imageWrapRef.current;
 
     const handleWheel = (e: WheelEvent) => {
       const scaleFactor = 1.2;
+      const maxScale = isMobile ? 4.5 : 2.5; // スマホ時は4.5、PC時は2.5
+      
       let newScale = scale;
       if (e.deltaY > 0) {
         // 縮小
@@ -30,12 +47,12 @@ function App() {
         // 拡大
         newScale = scale * scaleFactor;
       }
-      // 最小0.9倍、最大2.5倍に制限
-      const clampedScale = Math.min(Math.max(newScale, 0.9), 2.5);
+      // 最小0.9倍、最大値はデバイスに応じて変更
+      const clampedScale = Math.min(Math.max(newScale, 0.9), maxScale);
 
       // 拡大・縮小が限界値に達しているか判定
       const atMin = scale <= 0.9 && e.deltaY > 0;
-      const atMax = scale >= 2.5 && e.deltaY < 0;
+      const atMax = scale >= maxScale && e.deltaY < 0;
 
       if (atMin || atMax) {
         // 限界値ならpreventDefaultしない（親ページに伝播させる）
@@ -56,7 +73,7 @@ function App() {
         imageWrap.removeEventListener('wheel', handleWheel);
       }
     };
-  }, [scale]);
+  }, [scale, isMobile]); // isMobileも依存配列に追加
 
   // ここからマウスドラッグ操作用の処理
   const handleMouseDown = (e: MouseEvent<HTMLDivElement>) => {

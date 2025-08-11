@@ -4,49 +4,49 @@ import type { CSSProperties, RefObject } from 'react';
 
 // 外部HTMLロードの共通フック
 export function useSectionHtmlLoader(
-  prefix: string,
-  sectionNames: string[]
+    prefix: string,
+    sectionNames: string[]
 ) {
-  const [htmlContents, setHtmlContents] = useState<Record<string, string>>({});
-  const [loadingStates, setLoadingStates] = useState<Record<string, boolean>>({});
-  const [errorStates, setErrorStates] = useState<Record<string, string | null>>({});
+    const [htmlContents, setHtmlContents] = useState<Record<string, string>>({});
+    const [loadingStates, setLoadingStates] = useState<Record<string, boolean>>({});
+    const [errorStates, setErrorStates] = useState<Record<string, string | null>>({});
 
-  const basePath =
-    window.location.hostname === 'localhost'
-      ? '/texts/'
-      : `${import.meta.env.VITE_TEXTS_BASE_URL}/13jellies/jelliy_contents/dist/texts/`;
+    const basePath =
+        window.location.hostname === 'localhost'
+            ? '/texts/'
+            : `${import.meta.env.VITE_TEXTS_BASE_URL}/13jellies/jelliy_contents/dist/texts/`;
 
-  useEffect(() => {
-    setLoadingStates(Object.fromEntries(sectionNames.map(name => [name, true])));
-    setErrorStates(Object.fromEntries(sectionNames.map(name => [name, null])));
-    sectionNames.forEach(sectionName => {
-      fetch(`${basePath}${prefix}_${sectionName}.html`)
-        .then(res => {
-          if (!res.ok) throw new Error('ファイル取得エラー');
-          return res.text();
-        })
-        .then(html => {
-          setHtmlContents(prev => ({ ...prev, [sectionName]: html }));
-          setLoadingStates(prev => ({ ...prev, [sectionName]: false }));
-        })
-        .catch(() => {
-          setErrorStates(prev => ({ ...prev, [sectionName]: '読み込みにエラーが発生しました。再読込してみてください。' }));
-          setLoadingStates(prev => ({ ...prev, [sectionName]: false }));
+    useEffect(() => {
+        setLoadingStates(Object.fromEntries(sectionNames.map(name => [name, true])));
+        setErrorStates(Object.fromEntries(sectionNames.map(name => [name, null])));
+        sectionNames.forEach(sectionName => {
+            fetch(`${basePath}${prefix}_${sectionName}.html`)
+                .then(res => {
+                    if (!res.ok) throw new Error('ファイル取得エラー');
+                    return res.text();
+                })
+                .then(html => {
+                    setHtmlContents(prev => ({ ...prev, [sectionName]: html }));
+                    setLoadingStates(prev => ({ ...prev, [sectionName]: false }));
+                })
+                .catch(() => {
+                    setErrorStates(prev => ({ ...prev, [sectionName]: '読み込みにエラーが発生しました。再読込してみてください。' }));
+                    setLoadingStates(prev => ({ ...prev, [sectionName]: false }));
+                });
         });
-    });
-  }, [basePath, prefix, sectionNames.join(',')]);
+    }, [basePath, prefix, sectionNames.join(',')]);
 
-  return { htmlContents, loadingStates, errorStates };
+    return { htmlContents, loadingStates, errorStates };
 }
 
 // 画像配列生成共通関数
-export function createImageArrays(sectionImageData: Record<string, string[]>): Record<string, {src: string}[]> {
-  return Object.fromEntries(
-    Object.entries(sectionImageData).map(([key, images]) => [
-      key,
-      images.map(src => ({ src }))
-    ])
-  );
+export function createImageArrays(sectionImageData: Record<string, string[]>): Record<string, { src: string }[]> {
+    return Object.fromEntries(
+        Object.entries(sectionImageData).map(([key, images]) => [
+            key,
+            images.map(src => ({ src }))
+        ])
+    );
 }
 
 // -----------------画面セクション移動・スクロール制御用カスタムフック
@@ -75,11 +75,14 @@ export function useSectionScroll(
     });
 
     // スクロール可能な要素のスタイル関数を追加
-    const scrollableStyle = (isActive: boolean): CSSProperties => ({
-        overflowY: isActive ? 'auto' : 'hidden',
-        maxHeight: '96vh',
-        transition: 'all 0.3s ease'
-    });
+    const scrollableStyle = (isActive: boolean): CSSProperties => {
+        const isMobile = window.matchMedia('(max-width: 690px)').matches;
+        return {
+            overflowY: isActive ? 'auto' : 'hidden',
+            maxHeight: isMobile ? '50vh' : '96vh',
+            transition: 'all 0.3s ease'
+        };
+    };
 
     // 標準スクロール無効化
     useEffect(() => {
@@ -493,26 +496,26 @@ export const topButtonStyle: CSSProperties = {
 };
 
 type TopButtonProps = {
-  show: boolean;
-  onClick: () => void;
+    show: boolean;
+    onClick: () => void;
 };
 
 export const TopButton: React.FC<TopButtonProps> = ({ show, onClick }) =>
-  show ? (
-    <button
-      onClick={onClick}
-      style={topButtonStyle}
-      className='topButtonStyle'
-      onMouseOver={e => {
-        e.currentTarget.style.backgroundColor = 'rgba(0, 0, 0, 0.8)';
-      }}
-      onMouseOut={e => {
-        e.currentTarget.style.backgroundColor = 'rgba(0, 0, 0, 0.6)';
-      }}
-    >
-      ▲
-    </button>
-  ) : null;
+    show ? (
+        <button
+            onClick={onClick}
+            style={topButtonStyle}
+            className='topButtonStyle'
+            onMouseOver={e => {
+                e.currentTarget.style.backgroundColor = 'rgba(0, 0, 0, 0.8)';
+            }}
+            onMouseOut={e => {
+                e.currentTarget.style.backgroundColor = 'rgba(0, 0, 0, 0.6)';
+            }}
+        >
+            ▲
+        </button>
+    ) : null;
 
 /**
  * ページトップへ戻る共通フック
@@ -522,16 +525,16 @@ export const TopButton: React.FC<TopButtonProps> = ({ show, onClick }) =>
  * @param duration ロック解除までのミリ秒（デフォルト600ms）
  */
 export function useTopScroll(
-  setCurrentSection: (n: number) => void,
-  setScrollLocked: (b: boolean) => void,
-  scrollLocked: boolean,
-  duration: number = 600
+    setCurrentSection: (n: number) => void,
+    setScrollLocked: (b: boolean) => void,
+    scrollLocked: boolean,
+    duration: number = 600
 ) {
-  return () => {
-    if (!scrollLocked) {
-      setScrollLocked(true);
-      setCurrentSection(0);
-      setTimeout(() => setScrollLocked(false), duration);
-    }
-  };
+    return () => {
+        if (!scrollLocked) {
+            setScrollLocked(true);
+            setCurrentSection(0);
+            setTimeout(() => setScrollLocked(false), duration);
+        }
+    };
 }

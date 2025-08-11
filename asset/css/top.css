@@ -14,9 +14,13 @@
             font-weight: 700;
             letter-spacing: 0.25em;
             color: #fff;
-                        text-align: center;
-                        opacity: 0;
+            text-align: center;
+            opacity: 0;
             animation: fadeIn 1.5s ease-in-out forwards;
+
+            @media (max-width: 690px) {
+                font-size: 1.0rem;
+            }
         }
     }
 
@@ -24,6 +28,10 @@
         margin: 6rem auto;
         width: fit-content;
         line-height: 3.0;
+
+        @media (max-width: 690px) {
+            margin: 2rem auto;
+        }
     }
 
     .jellies_map {
@@ -32,6 +40,10 @@
             height: 100vh;
             border: none;
             overflow: hidden;
+
+            @media (max-width: 690px) {
+                height: 80vh;
+            }
         }
     }
 }
@@ -41,6 +53,7 @@
     from {
         opacity: 0;
     }
+
     to {
         opacity: 1;
     }
