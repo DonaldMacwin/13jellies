@@ -10,7 +10,8 @@ import {
   createImageArrays,
   useSectionHtmlLoader,
   TopButton,
-  useTopScroll
+  useTopScroll,
+  ScrollableIframeBlock
 } from './_common_component';
 import Art_1stView from '../assets/img/Art_1stView01.png';
 
@@ -237,27 +238,27 @@ function Art() {
 
       <section className='first_view art' ref={firstViewRef} style={sectionStyle(0)}>
         <div className="firstview_main_sp">
-          <h1 className='art_h1'>芸術</h1>
-          <div className='position_relative'>
-            <figure className='jelly_map'>
-              <img
-                src={Art_1stView}
-                alt=""
-                className={imageAnimationClass}
-              />
-            </figure>
-            <ul className='page_anchor_list'>
-              <li className='planar_modeling'><a href="#planar_modeling" onClick={(e) => { e.preventDefault(); setCurrentSection(1); }}></a></li>{/* 平面造形 */}
-              <li className='three_D_modeling'><a href="#three_D_modeling" onClick={(e) => { e.preventDefault(); setCurrentSection(2); }}></a></li>{/* 立体造形 */}
-              <li className='literature'><a href="#literature" onClick={(e) => { e.preventDefault(); setCurrentSection(3); }}></a></li>{/* 文学 */}
-              <li className='communication_technique'><a href="#communication_technique" onClick={(e) => { e.preventDefault(); setCurrentSection(4); }}></a></li>{/* 伝達技法研究 */}
-              <li className='music'><a href="#music" onClick={(e) => { e.preventDefault(); setCurrentSection(5); }}></a></li>{/* 音楽 */}
-              <li className='cooking'><a href="#cooking" onClick={(e) => { e.preventDefault(); setCurrentSection(6); }}></a></li>{/* 料理 */}
-              <li className='performing'><a href="#performing" onClick={(e) => { e.preventDefault(); setCurrentSection(7); }}></a></li>{/* 舞台芸術 */}
-            </ul>
-          </div>
+        <h1 className='art_h1'>芸術</h1>
+        <div className='position_relative'>
+          <figure className='jelly_map'>
+            <img
+              src={Art_1stView}
+              alt=""
+              className={imageAnimationClass}
+            />
+          </figure>
+          <ul className='page_anchor_list'>
+            <li className='planar_modeling'><a href="#planar_modeling" onClick={(e) => { e.preventDefault(); setCurrentSection(1); }}></a></li>{/* 平面造形 */}
+            <li className='three_D_modeling'><a href="#three_D_modeling" onClick={(e) => { e.preventDefault(); setCurrentSection(2); }}></a></li>{/* 立体造形 */}
+            <li className='literature'><a href="#literature" onClick={(e) => { e.preventDefault(); setCurrentSection(3); }}></a></li>{/* 文学 */}
+            <li className='communication_technique'><a href="#communication_technique" onClick={(e) => { e.preventDefault(); setCurrentSection(4); }}></a></li>{/* 伝達技法研究 */}
+            <li className='music'><a href="#music" onClick={(e) => { e.preventDefault(); setCurrentSection(5); }}></a></li>{/* 音楽 */}
+            <li className='cooking'><a href="#cooking" onClick={(e) => { e.preventDefault(); setCurrentSection(6); }}></a></li>{/* 料理 */}
+            <li className='performing'><a href="#performing" onClick={(e) => { e.preventDefault(); setCurrentSection(7); }}></a></li>{/* 舞台芸術 */}
+          </ul>
         </div>
-        <div className='merit_and_demerit_block scroller_decoration'>
+        </div>
+        <ScrollableIframeBlock className='merit_and_demerit_block scroller_decoration'>
           <article className={`merit ${animateMerit ? 'animate' : ''}`}>
             <h2 className="h2-split">
               <span className="h2-split-char">特</span><span className="h2-split-char">長</span>
@@ -276,7 +277,7 @@ function Art() {
             <h3>価値観の変動に対する適応</h3><p>芸術の価値観は社会の変動に影響されるため、一つの時期に愛された作品が別の時期には理解されなくなることがあります。これは感性の変化に対する適応が求められます。</p>
             <h3>狭い意図の範囲</h3><p>発信者が作品に込めた意図がひとりよがりだったり狭い範囲でしか通じない文脈であるために、受信者へ意図が伝わらないことがあります。</p>
           </article>
-        </div>
+        </ScrollableIframeBlock>
         <div className='back_to_map'>
           <a href="https://cf268321.cloudfree.jp/13jellies/#jellies_map">
             <figure className='back_to_map_figure'><img src='https://cf268321.cloudfree.jp/13jellies/asset/img/13jellies_A.png' /></figure>

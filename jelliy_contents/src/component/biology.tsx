@@ -10,7 +10,8 @@ import {
   useSectionHtmlLoader,
   createImageArrays,
   TopButton,
-  useTopScroll
+  useTopScroll,
+  ScrollableIframeBlock
 } from './_common_component';
 import Biology_1stView from '../assets/img/Biology_1stView01.png';
 
@@ -397,7 +398,7 @@ function Biology() {
             <li className='biochemistry'><a href="#biochemistry" onClick={(e) => { e.preventDefault(); setCurrentSection(15); }}></a></li>{/* 生化学研究 */}
           </ul>
         </div>
-        <div className='merit_and_demerit_block scroller_decoration'>
+        <ScrollableIframeBlock className='merit_and_demerit_block scroller_decoration'>
           <article className={`merit ${animateMerit ? 'animate' : ''}`}>
             <h2 className="h2-split">
               <span className="h2-split-char">特</span><span className="h2-split-char">長</span>
@@ -414,7 +415,7 @@ function Biology() {
             <h3>倫理的な課題</h3><p>生物学の進歩には倫理的な問題も伴います。例えば、遺伝子編集技術が進む中、個体の遺伝子を改変することが可能になり、その倫理的な側面が複雑になっています。人間の倫理観と科学の進歩のバランスを取ることが重要です。</p>
             <h3>実験の複雑性</h3><p>生物学の研究はしばしば生きた組織や生命体を対象とするため、実験の複雑性が高いです。これには適切な倫理規定や安全対策が必要であり、研究者にとっては技術的な挑戦も伴います。</p>
           </article>
-        </div>
+        </ScrollableIframeBlock>
         <div className='back_to_map'>
           <a href="https://cf268321.cloudfree.jp/13jellies/#jellies_map">
             <figure className='back_to_map_figure'><img src='https://cf268321.cloudfree.jp/13jellies/asset/img/13jellies_A.png' /></figure>

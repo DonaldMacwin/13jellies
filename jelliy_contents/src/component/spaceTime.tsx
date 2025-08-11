@@ -10,6 +10,7 @@ import {
   createImageArrays,
   useSectionHtmlLoader,
   useTopScroll,
+  ScrollableIframeBlock,
   TopButton
 } from './_common_component';
 import SpaceTime_1stView from '../assets/img/SpaceTime_1stView01.png';
@@ -267,7 +268,7 @@ function SpaceTime() {
             <li className='astronomy'><a href="#astronomy" onClick={(e) => { e.preventDefault(); setCurrentSection(8); }}></a></li>{/* 天文 */}
           </ul>
         </div>
-        <div className='merit_and_demerit_block scroller_decoration'>
+        <ScrollableIframeBlock className='merit_and_demerit_block scroller_decoration'>
           <article className={`merit ${animateMerit ? 'animate' : ''}`}>
             <h2 className="h2-split">
               <span className="h2-split-char">特</span><span className="h2-split-char">長</span>
@@ -286,7 +287,7 @@ function SpaceTime() {
             <h3>時間スケールの難解さ</h3><p>非常に広範な時間を対象としているため、そのスケールの理解が難しいことがあります。数千年・数百万年・数億年といった単位は、人の日常的な時間感覚とはかけ離れています。</p>
             <h3>未解明の謎がまだ多い</h3><p>地史には未だ解明されていない謎や疑問が多く存在します。過去の地球の出来事や進化の過程に関して、研究が進んでいるものの完全な解明には至っていない点があります。</p>
           </article>
-        </div>
+        </ScrollableIframeBlock>
         <div className='back_to_map'>
           <a href="https://cf268321.cloudfree.jp/13jellies/#jellies_map">
             <figure className='back_to_map_figure'><img src='https://cf268321.cloudfree.jp/13jellies/asset/img/13jellies_A.png' /></figure>

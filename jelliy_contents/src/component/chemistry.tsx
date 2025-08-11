@@ -10,6 +10,7 @@ import {
   useSectionHtmlLoader,
   createImageArrays,
   useTopScroll,
+  ScrollableIframeBlock,
   TopButton
 } from './_common_component';
 import Society_1stView from '../assets/img/Chemistry_1stView01.png';
@@ -242,7 +243,7 @@ function Chemistry() {
             <li className='biochemistry'><a href="#biochemistry" onClick={(e) => { e.preventDefault(); setCurrentSection(7); }}></a></li>{/* 生化学 */}
           </ul>
         </div>
-        <div className='merit_and_demerit_block scroller_decoration'>
+        <ScrollableIframeBlock className='merit_and_demerit_block scroller_decoration'>
           <article className={`merit ${animateMerit ? 'animate' : ''}`}>
             <h2 className="h2-split">
               <span className="h2-split-char">特</span><span className="h2-split-char">長</span>
@@ -261,7 +262,7 @@ function Chemistry() {
             <h3>倫理的な問題</h3><p>化学の応用は時折、倫理的な問題を引き起こすことがあります。例えば、特定の化学物質の濫用や兵器の開発といった側面が挙げられます。</p>
             <h3>高度な知識が必要</h3><p>化学は高度な知識と実践的なスキルを要求します。これが敷居を高くし、一般の人々には理解しにくい面もあります。</p>
           </article>
-        </div>
+        </ScrollableIframeBlock>
         <div className='back_to_map'>
           <a href="https://cf268321.cloudfree.jp/13jellies/#jellies_map">
             <figure className='back_to_map_figure'><img src='https://cf268321.cloudfree.jp/13jellies/asset/img/13jellies_A.png' /></figure>

@@ -10,6 +10,7 @@ import {
   createImageArrays,
   useSectionHtmlLoader,
   useTopScroll,
+  ScrollableIframeBlock,
   TopButton
 } from './_common_component';
 import Medicine_1stView from '../assets/img/Medicine_1stView01.png';
@@ -284,7 +285,7 @@ function Medicine() {
             <li className='biochemistry'><a href="#biochemistry" onClick={e => { e.preventDefault(); setCurrentSection(9); }}></a></li>{ /* 生化学 */ }
           </ul>
         </div>
-        <div className='merit_and_demerit_block scroller_decoration'>
+        <ScrollableIframeBlock className='merit_and_demerit_block scroller_decoration'>
           <article className={`merit ${animateMerit ? 'animate' : ''}`}>
             <h2 className="h2-split">
               <span className="h2-split-char">特</span><span className="h2-split-char">長</span>
@@ -303,7 +304,7 @@ function Medicine() {
             <h3>専門化と情報過多</h3><p>医学の分野はますます専門化が進んでおり、患者や一般の人々にとって理解が難しいほどの複雑な情報が存在します。これが医療情報の誤解や混乱を招く可能性があります。</p>
             <h3>労働環境の厳しさ</h3><p>医学の現場では長時間労働やストレスが慢性的に発生することがあり、これが医療従事者の健康やワークライフバランスに悪影響を与えることがあります。</p>
           </article>
-        </div>
+        </ScrollableIframeBlock>
         <div className='back_to_map'>
           <a href="https://cf268321.cloudfree.jp/13jellies/#jellies_map">
             <figure className='back_to_map_figure'><img src='https://cf268321.cloudfree.jp/13jellies/asset/img/13jellies_A.png' /></figure>

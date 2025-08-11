@@ -9,7 +9,8 @@ import {
   useStepImagePreload,
   useSectionHtmlLoader,
   createImageArrays,
-  useTopScroll
+  useTopScroll,
+  ScrollableIframeBlock
 } from './_common_component';
 import Politics_1stView from '../assets/img/Politics_1stView01.png';
 import { TopButton } from './_common_component';
@@ -319,7 +320,7 @@ function Politics() {
             <li className='public_studies'><a href="#public_studies" onClick={(e) => { e.preventDefault(); setCurrentSection(11); }}></a></li>{/* 大衆研究 */}
           </ul>
         </div>
-        <div className='merit_and_demerit_block scroller_decoration'>
+        <ScrollableIframeBlock className='merit_and_demerit_block scroller_decoration'>
           <article className={`merit ${animateMerit ? 'animate' : ''}`}>
             <h2 className="h2-split">
               <span className="h2-split-char">特</span><span className="h2-split-char">長</span>
@@ -338,7 +339,7 @@ function Politics() {
             <h3>思想バイアスがかかりがち</h3><p>政治学の研究や理論構築において、研究者学習者の思想バイアスが影響を与えることがあります。これが客観性を損なっています。</p>
             <h3>複雑な現実とのギャップ</h3><p>政治経済モデルは、現実の複雑さや変動に対応しきれないことがあります。そのため、理論と実際の現象とのギャップが生じることがあります。</p>
           </article>
-        </div>
+        </ScrollableIframeBlock>
         <div className='back_to_map'>
           <a href="https://cf268321.cloudfree.jp/13jellies/#jellies_map">
             <figure className='back_to_map_figure'><img src='https://cf268321.cloudfree.jp/13jellies/asset/img/13jellies_A.png' /></figure>

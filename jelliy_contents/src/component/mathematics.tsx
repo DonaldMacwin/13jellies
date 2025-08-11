@@ -9,7 +9,8 @@ import {
   useStepImagePreload,
   useSectionHtmlLoader,
   createImageArrays,
-  useTopScroll
+  useTopScroll,
+  ScrollableIframeBlock
 } from './_common_component';
 import Mathematics_1stView from '../assets/img/Mathematics_1stView01.png';
 import { TopButton } from './_common_component';
@@ -287,7 +288,7 @@ function Mathematics() {
             <li className='foundations'><a href="#foundations" onClick={(e) => { e.preventDefault(); setCurrentSection(11); }}></a></li> {/* 基礎論 */}
           </ul>
         </div>
-        <div className='merit_and_demerit_block scroller_decoration'>
+        <ScrollableIframeBlock className='merit_and_demerit_block scroller_decoration'>
           <article className={`merit ${animateMerit ? 'animate' : ''}`}>
             <h2 className="h2-split">
               <span className="h2-split-char">特</span><span className="h2-split-char">長</span>
@@ -338,7 +339,7 @@ function Mathematics() {
               <p>数学は厳密性と論理性が重視される一方で、創造的な側面も求められます。しかしそのバランスが難しく、創造性を発揮するための余地が限られていると感じる人もいます。</p>
             </div>
           </article>
-        </div>
+        </ScrollableIframeBlock>
         <div className='back_to_map'>
           <a href="https://cf268321.cloudfree.jp/13jellies/#jellies_map">
             <figure className='back_to_map_figure'><img src='https://cf268321.cloudfree.jp/13jellies/asset/img/13jellies_A.png' /></figure>
