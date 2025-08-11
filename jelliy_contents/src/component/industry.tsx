@@ -388,35 +388,37 @@ function Industry() {
       <SharedImageFilters />
 
       <section className='first_view industry' ref={firstViewRef} style={sectionStyle(0)}>
-        <h1 className='industry_h1'>産業<br />技術</h1>
-        <div className='position_relative'>
-          <figure className='jelly_map'>
-            <img
-              src={Industry_1stView}
-              alt=""
-              className={imageAnimationClass}
-            />
-          </figure>
-          <ul className='page_anchor_list'>
-            <li className='industrial_control'><a href="#industrial_control" onClick={(e) => { e.preventDefault(); setCurrentSection(1); }}></a></li>{/* 産業制御 */}
-            <li className='industrial_management'><a href="#industrial_management" onClick={(e) => { e.preventDefault(); setCurrentSection(2); }}></a></li>{/* 産業マネジメント */}
-            <li className='agriculture'><a href="#agriculture" onClick={(e) => { e.preventDefault(); setCurrentSection(3); }}></a></li>{/* 農業 */}
-            <li className='forestry'><a href="#forestry" onClick={(e) => { e.preventDefault(); setCurrentSection(4); }}></a></li>{/* 林業 */}
-            <li className='animal_husbandry'><a href="#animal_husbandry" onClick={(e) => { e.preventDefault(); setCurrentSection(5); }}></a></li>{/* 畜産業 */}
-            <li className='fisheries'><a href="#fisheries" onClick={(e) => { e.preventDefault(); setCurrentSection(6); }}></a></li>{/* 水産業 */}
-            <li className='mining'><a href="#mining" onClick={(e) => { e.preventDefault(); setCurrentSection(7); }}></a></li>{/* 鉱業 */}
-            <li className='energy_industry'><a href="#energy_industry" onClick={(e) => { e.preventDefault(); setCurrentSection(8); }}></a></li>{/* エネルギー業 */}
-            <li className='mechanical_engineering'><a href="#mechanical_engineering" onClick={(e) => { e.preventDefault(); setCurrentSection(9); }}></a></li>{/* 機械工学 */}
-            <li className='electrical_electronic_engineering'><a href="#electrical_electronic_engineering" onClick={(e) => { e.preventDefault(); setCurrentSection(10); }}></a></li>{/* 電気電子工学 */}
-            <li className='civil_engineering'><a href="#civil_engineering" onClick={(e) => { e.preventDefault(); setCurrentSection(11); }}></a></li>{/* 土木工学 */}
-            <li className='architecture'><a href="#architecture" onClick={(e) => { e.preventDefault(); setCurrentSection(12); }}></a></li>{/* 建築学 */}
-            <li className='chemical_industry'><a href="#chemical_industry" onClick={(e) => { e.preventDefault(); setCurrentSection(13); }}></a></li>{/* 化学工業 */}
-            <li className='food_industry'><a href="#food_industry" onClick={(e) => { e.preventDefault(); setCurrentSection(14); }}></a></li>{/* 食品工業 */}
-            <li className='communication_transport'><a href="#communication_transport" onClick={(e) => { e.preventDefault(); setCurrentSection(15); }}></a></li>{/* 通信運輸交通 */}
-            <li className='materials_engineering'><a href="#materials_engineering" onClick={(e) => { e.preventDefault(); setCurrentSection(16); }}></a></li>{/* 材料工学 */}
-            <li className='applied_physics'><a href="#applied_physics" onClick={(e) => { e.preventDefault(); setCurrentSection(17); }}></a></li>{/* 応用物理 */}
-            <li className='applied_chemistry'><a href="#applied_chemistry" onClick={(e) => { e.preventDefault(); setCurrentSection(18); }}></a></li>{/* 応用化学 */}
-          </ul>
+        <div className="firstview_main_sp">
+          <h1 className='industry_h1'>産業<br />技術</h1>
+          <div className='position_relative'>
+            <figure className='jelly_map'>
+              <img
+                src={Industry_1stView}
+                alt=""
+                className={imageAnimationClass}
+              />
+            </figure>
+            <ul className='page_anchor_list'>
+              <li className='industrial_control'><a href="#industrial_control" onClick={(e) => { e.preventDefault(); setCurrentSection(1); }}></a></li>{/* 産業制御 */}
+              <li className='industrial_management'><a href="#industrial_management" onClick={(e) => { e.preventDefault(); setCurrentSection(2); }}></a></li>{/* 産業マネジメント */}
+              <li className='agriculture'><a href="#agriculture" onClick={(e) => { e.preventDefault(); setCurrentSection(3); }}></a></li>{/* 農業 */}
+              <li className='forestry'><a href="#forestry" onClick={(e) => { e.preventDefault(); setCurrentSection(4); }}></a></li>{/* 林業 */}
+              <li className='animal_husbandry'><a href="#animal_husbandry" onClick={(e) => { e.preventDefault(); setCurrentSection(5); }}></a></li>{/* 畜産業 */}
+              <li className='fisheries'><a href="#fisheries" onClick={(e) => { e.preventDefault(); setCurrentSection(6); }}></a></li>{/* 水産業 */}
+              <li className='mining'><a href="#mining" onClick={(e) => { e.preventDefault(); setCurrentSection(7); }}></a></li>{/* 鉱業 */}
+              <li className='energy_industry'><a href="#energy_industry" onClick={(e) => { e.preventDefault(); setCurrentSection(8); }}></a></li>{/* エネルギー業 */}
+              <li className='mechanical_engineering'><a href="#mechanical_engineering" onClick={(e) => { e.preventDefault(); setCurrentSection(9); }}></a></li>{/* 機械工学 */}
+              <li className='electrical_electronic_engineering'><a href="#electrical_electronic_engineering" onClick={(e) => { e.preventDefault(); setCurrentSection(10); }}></a></li>{/* 電気電子工学 */}
+              <li className='civil_engineering'><a href="#civil_engineering" onClick={(e) => { e.preventDefault(); setCurrentSection(11); }}></a></li>{/* 土木工学 */}
+              <li className='architecture'><a href="#architecture" onClick={(e) => { e.preventDefault(); setCurrentSection(12); }}></a></li>{/* 建築学 */}
+              <li className='chemical_industry'><a href="#chemical_industry" onClick={(e) => { e.preventDefault(); setCurrentSection(13); }}></a></li>{/* 化学工業 */}
+              <li className='food_industry'><a href="#food_industry" onClick={(e) => { e.preventDefault(); setCurrentSection(14); }}></a></li>{/* 食品工業 */}
+              <li className='communication_transport'><a href="#communication_transport" onClick={(e) => { e.preventDefault(); setCurrentSection(15); }}></a></li>{/* 通信運輸交通 */}
+              <li className='materials_engineering'><a href="#materials_engineering" onClick={(e) => { e.preventDefault(); setCurrentSection(16); }}></a></li>{/* 材料工学 */}
+              <li className='applied_physics'><a href="#applied_physics" onClick={(e) => { e.preventDefault(); setCurrentSection(17); }}></a></li>{/* 応用物理 */}
+              <li className='applied_chemistry'><a href="#applied_chemistry" onClick={(e) => { e.preventDefault(); setCurrentSection(18); }}></a></li>{/* 応用化学 */}
+            </ul>
+          </div>
         </div>
         <div className='merit_and_demerit_block scroller_decoration'>
           <article className={`merit ${animateMerit ? 'animate' : ''}`}>

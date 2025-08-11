@@ -2,10 +2,19 @@
     .jelly_map {
         margin: 0 0 0 -20%;
 
+        @media (max-width: 690px) {
+            margin: 0;
+        }
+
+
         img {
             width: 65%;
             height: auto;
             object-fit: unset;
+
+            @media (max-width: 690px) {
+                width: 100%;
+            }
         }
     }
 }

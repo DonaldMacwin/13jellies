@@ -47,7 +47,10 @@ img {
   align-items: center;
   height: 100vh;
   max-width: 1440px;
-  /*margin: 0 0 100px 0;*/
+
+  @media (max-width: 690px) {
+    height: unset;
+  }
 
   h1 {
     position: absolute;
@@ -60,6 +63,15 @@ img {
     font-family: 'Noto Serif JP', serif;
     letter-spacing: 0.25rem;
     z-index: +2;
+
+    @media (max-width: 690px) {
+      position: relative;
+      top: unset;
+      left: unset;
+      transform: unset;
+      margin: 0 auto;
+      font-size: 4rem;
+    }
   }
 
   /*.jelly_map {
@@ -92,6 +104,17 @@ img {
     overflow-x: hidden;
     font-size: 0.80em;
     background-color: rgba(255, 255, 255, 0.5);
+
+    @media (max-width: 690px) {
+      position: relative;
+      top: unset;
+      right: unset;
+      transform: unset;
+      width: 100%;
+      height: unset;
+      overflow-y: auto;
+      overflow-x: hidden;
+    }
 
     .merit {
       opacity: 0;
@@ -187,6 +210,11 @@ img {
     width: 50%;
     height: 100vh;
     margin: 0 auto;
+
+    @media (max-width: 690px) {
+      width: 100%;
+      height: 40vh;
+    }
 
     .position_absolute {
       position: absolute;
@@ -289,6 +317,12 @@ img {
     background-color: rgba(255, 255, 255, 0.5);
     font-size: 1.0em;
     line-height: 2.0em;
+
+    @media (max-width: 690px) {
+      width: 100%;
+      max-width: 50vh;
+      padding: 0rem 0rem 5rem 0rem;
+    }
 
     p {
       line-height: 2.0em;
