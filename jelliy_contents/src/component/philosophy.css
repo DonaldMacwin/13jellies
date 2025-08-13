@@ -49,6 +49,10 @@ h1.philosophy_h1 {
         left: -12%;
         width: 18%;
         height: 16%;
+
+        @media (max-width: 960px) {
+            left: 17%;
+        }
     }
 
     .philosophy_history a {
@@ -56,6 +60,10 @@ h1.philosophy_h1 {
         left: -7%;
         width: 12%;
         height: 15%;
+
+        @media (max-width: 960px) {
+            left: 21%;
+        }
     }
 
     .religious_studies a {
@@ -63,6 +71,10 @@ h1.philosophy_h1 {
         left: 4%;
         width: 22%;
         height: 12%;
+
+        @media (max-width: 960px) {
+            left: 43%;
+        }
     }
 
     .philosophy_of_science a {
@@ -70,6 +82,10 @@ h1.philosophy_h1 {
         left: 11%;
         width: 11%;
         height: 10%;
+
+        @media (max-width: 960px) {
+            left: 50%;
+        }
     }
 
     .ethics a {
@@ -78,6 +94,9 @@ h1.philosophy_h1 {
         width: 13%;
         height: 10%;
 
+        @media (max-width: 960px) {
+            left: 72%;
+        }
     }
 
     .logic a {
@@ -85,6 +104,10 @@ h1.philosophy_h1 {
         left: 25%;
         width: 15%;
         height: 13%;
+
+        @media (max-width: 960px) {
+            left: 72%;
+        }
     }
 }
 
