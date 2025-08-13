@@ -30,6 +30,10 @@ h1.space_time_h1 {
         left: 13%;
         width: 17%;
         height: 14%;
+
+        @media (max-width: 960px) {
+            left: 26%;
+        }
     }
 
     .social_geography a {
@@ -37,6 +41,10 @@ h1.space_time_h1 {
         left: 32%;
         width: 22%;
         height: 15%;
+
+        @media (max-width: 960px) {
+            left: 58%;
+        }
     }
 
     .earth_history a {
@@ -44,6 +52,10 @@ h1.space_time_h1 {
         left: 24%;
         width: 9%;
         height: 13%;
+
+        @media (max-width: 960px) {
+            left: 40%;
+        }
     }
 
     .natural_geography a {
@@ -51,6 +63,10 @@ h1.space_time_h1 {
         left: 38%;
         width: 15%;
         height: 13%;
+
+        @media (max-width: 960px) {
+            left: 63%;
+        }
     }
 
     .geology a {
@@ -58,6 +74,10 @@ h1.space_time_h1 {
         left: 25%;
         width: 15%;
         height: 19%;
+
+        @media (max-width: 960px) {
+            left: 44%;
+        }
     }
 
     .atmosphere a {
@@ -65,6 +85,10 @@ h1.space_time_h1 {
         left: 41%;
         width: 13%;
         height: 15%;
+
+        @media (max-width: 960px) {
+            left: 68%;
+        }
     }
 
     .oceanography a {
@@ -72,6 +96,10 @@ h1.space_time_h1 {
         left: 42%;
         width: 11%;
         height: 12%;
+
+        @media (max-width: 960px) {
+            left: 68%;
+        }
     }
 
     .astronomy a {
@@ -79,6 +107,10 @@ h1.space_time_h1 {
         left: 32%;
         width: 7%;
         height: 13%;
+
+        @media (max-width: 960px) {
+            left: 52%;
+        }
     }
 }
 

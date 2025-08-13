@@ -210,7 +210,7 @@ function Philosophy() {
       <SharedImageFilters />
 
       <section className='first_view philosophy' ref={firstViewRef} style={sectionStyle(0)}>
-        <h1 className='philosophy_h1'>哲学<br />宗教</h1>
+        <h1 className='philosophy_h1'>哲学<br className='pc_display' />宗教</h1>
         <div className='position_relative'>
           <figure className='jelly_map'>
             <img
