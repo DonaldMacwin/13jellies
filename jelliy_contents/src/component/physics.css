@@ -28,6 +28,10 @@ h1.physics_h1 {
         left: 7%;
         width: 17%;
         height: 12%;
+
+        @media (max-width: 960px) {
+            left: 18%;
+        }
     }
 
     .condensed a {
@@ -35,6 +39,10 @@ h1.physics_h1 {
         left: 22%;
         width: 22%;
         height: 17%;
+
+        @media (max-width: 960px) {
+            left: 43%;
+        }
     }
 
     .math a {
@@ -42,6 +50,10 @@ h1.physics_h1 {
         left: 41%;
         width: 12%;
         height: 10%;
+
+        @media (max-width: 960px) {
+            left: 70%;
+        }
     }
 
     .thermo a {
@@ -49,6 +61,10 @@ h1.physics_h1 {
         left: 17%;
         width: 11%;
         height: 11%;
+
+        @media (max-width: 960px) {
+            left: 35%;
+        }
     }
 
     .fluid a {
@@ -56,6 +72,11 @@ h1.physics_h1 {
         left: 31%;
         width: 8%;
         height: 8%;
+
+        @media (max-width: 960px) {
+            left: 54%;
+            width: 9%;
+        }
     }
 
     .relativity a {
@@ -63,6 +84,11 @@ h1.physics_h1 {
         left: 37%;
         width: 9%;
         height: 9%;
+
+        @media (max-width: 960px) {
+            left: 62%;
+            width: 13%;
+        }
     }
 
     .em a {
@@ -70,6 +96,12 @@ h1.physics_h1 {
         left: 13%;
         width: 7%;
         height: 7%;
+
+        @media (max-width: 960px) {
+            bottom: 30%;
+            left: 26%;
+            width: 12%;
+        }
     }
 
     .classical a {
@@ -77,6 +109,11 @@ h1.physics_h1 {
         left: 25%;
         width: 8%;
         height: 5%;
+
+        @media (max-width: 960px) {
+            left: 45%;
+            width: 10%;
+        }
     }
 }
 
