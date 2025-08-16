@@ -41,6 +41,14 @@
 h1.philosophy_h1 {
     left: 0;
     font-size: 4.2rem;
+    @media (max-width: 960px) {
+      position: relative;
+      top: unset;
+      left: unset;
+      transform: unset;
+      margin: 0 auto;
+      font-size: 3.25rem;
+    }
 }
 
 .page_anchor_list {
