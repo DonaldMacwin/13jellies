@@ -16,6 +16,12 @@
             }
         }
     }
+
+    @media (max-width: 960px) {
+        .back_to_map {
+            bottom: 2rem;
+        }
+    }
 }
 
 h1.politics_h1 {

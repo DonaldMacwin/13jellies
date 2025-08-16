@@ -18,6 +18,12 @@
             }
         }
     }
+
+    @media (max-width: 960px) {
+        .back_to_map {
+            bottom: 7rem;
+        }
+    }
 }
 
 h1.space_time_h1 {
