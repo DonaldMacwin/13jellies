@@ -390,7 +390,7 @@ function Industry() {
 
       <section className='first_view industry' ref={firstViewRef} style={sectionStyle(0)}>
         <div className="firstview_main_sp">
-          <h1 className='industry_h1'>産業<br />技術</h1>
+          <h1 className='industry_h1'>産業<br className ='pc_display' />技術</h1>
           <div className='position_relative'>
             <figure className='jelly_map'>
               <img
