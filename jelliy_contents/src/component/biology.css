@@ -28,6 +28,11 @@ h1.biology_h1 {
         left: 14%;
         width: 8%;
         height: 14%;
+
+        @media (max-width: 960px) {
+            left: 17%;
+            width: 15%;
+        }
     }
 
     .plant_research a {
@@ -35,6 +40,11 @@ h1.biology_h1 {
         left: 14%;
         width: 6%;
         height: 9%;
+
+        @media (max-width: 960px) {
+            left: 17%;
+            width: 10%;
+        }
     }
 
     .biological_classification a {
@@ -42,6 +52,10 @@ h1.biology_h1 {
         left: 9.5%;
         width: 7%;
         height: 14%;
+
+        @media (max-width: 960px) {
+            width: 11%;
+        }
     }
 
     .ecological_research a {
@@ -49,6 +63,10 @@ h1.biology_h1 {
         left: 6%;
         width: 10%;
         height: 17%;
+
+        @media (max-width: 960px) {
+            width: 15%;
+        }
     }
 
     .animal_research a {
@@ -56,6 +74,11 @@ h1.biology_h1 {
         left: 17%;
         width: 9%;
         height: 17%;
+
+        @media (max-width: 960px) {
+            left: 23%;
+            width: 16%;
+        }
     }
 
     .evolutionary_research a {
@@ -63,6 +86,11 @@ h1.biology_h1 {
         left: 17.5%;
         width: 10%;
         height: 17%;
+
+        @media (max-width: 960px) {
+            left: 23.5%;
+            width: 16%;
+        }
     }
 
     .extraterrestrial_life a {
@@ -70,6 +98,11 @@ h1.biology_h1 {
         left: 22.5%;
         width: 11%;
         height: 14%;
+
+        @media (max-width: 960px) {
+            left: 32.5%;
+            width: 20%;
+        }
     }
 
     .human_studies a {
@@ -77,6 +110,11 @@ h1.biology_h1 {
         left: 27%;
         width: 7%;
         height: 19%;
+
+        @media (max-width: 960px) {
+            left: 40%;
+            width: 14%;
+        }
     }
 
     .neuroscience a {
@@ -84,6 +122,11 @@ h1.biology_h1 {
         left: 34%;
         width: 8%;
         height: 14%;
+
+        @media (max-width: 960px) {
+            left: 54%;
+            width: 14%;
+        }
     }
 
     .bioengineering a {
@@ -91,6 +134,11 @@ h1.biology_h1 {
         left: 36.5%;
         width: 11%;
         height: 14%;
+
+        @media (max-width: 960px) {
+            left: 58.5%;
+            width: 18%;
+        }
     }
 
     .bioinformatics a {
@@ -98,6 +146,11 @@ h1.biology_h1 {
         left: 42.5%;
         width: 13%;
         height: 11%;
+
+        @media (max-width: 960px) {
+            left: 69.5%;
+            width: 24%;
+        }
     }
 
     .genetic_development a {
@@ -105,6 +158,11 @@ h1.biology_h1 {
         left: 35.5%;
         width: 10%;
         height: 13%;
+
+        @media (max-width: 960px) {
+            left: 56.5%;
+            width: 19%;
+        }
     }
 
     .cell a {
@@ -112,6 +170,11 @@ h1.biology_h1 {
         left: 34%;
         width: 12%;
         height: 13%;
+
+        @media (max-width: 960px) {
+            left: 54%;
+            width: 22%;
+        }
     }
 
     .biophysics a {
@@ -119,13 +182,23 @@ h1.biology_h1 {
         left: 46.5%;
         width: 7%;
         height: 11%;
+
+        @media (max-width: 960px) {
+            left: 76.5%;
+            width: 14%;
+        }
     }
 
-    .biochemistry a {
+    .biology_biochemistry a {
         bottom: 19%;
         left: 46.5%;
         width: 13%;
         height: 13%;
+
+        @media (max-width: 960px) {
+            left: 76.5%;
+            width: 23%;
+        }
     }
 }
 
@@ -465,7 +538,7 @@ h1.biology_h1 {
     }
 }
 
-#biochemistry {
+#biology_biochemistry {
     .block_figure_left_01 {
         top: 0;
         left: 0%;

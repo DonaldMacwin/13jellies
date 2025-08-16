@@ -240,7 +240,7 @@ function Chemistry() {
             <li className='theoretical'><a href="#theoretical" onClick={(e) => { e.preventDefault(); setCurrentSection(4); }}></a></li>{/* 化学理論 */}
             <li className='inorganic'><a href="#inorganic" onClick={(e) => { e.preventDefault(); setCurrentSection(5); }}></a></li>{/* 無機化学 */}
             <li className='organic'><a href="#organic" onClick={(e) => { e.preventDefault(); setCurrentSection(6); }}></a></li>{/* 有機化学 */}
-            <li className='biochemistry'><a href="#biochemistry" onClick={(e) => { e.preventDefault(); setCurrentSection(7); }}></a></li>{/* 生化学 */}
+            <li className='chemistry_biochemistry'><a href="#biochemistry" onClick={(e) => { e.preventDefault(); setCurrentSection(7); }}></a></li>{/* 生化学 */}
           </ul>
         </div>
         <ScrollableIframeBlock className='merit_and_demerit_block scroller_decoration'>

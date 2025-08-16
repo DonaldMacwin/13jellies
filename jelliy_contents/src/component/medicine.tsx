@@ -282,7 +282,7 @@ function Medicine() {
             <li className='physiology'><a href="#physiology" onClick={e => { e.preventDefault(); setCurrentSection(6); }}></a></li>{ /* 生理学 */ }
             <li className='pharmacology'><a href="#pharmacology" onClick={e => { e.preventDefault(); setCurrentSection(7); }}></a></li>{ /* 薬理学 */ }
             <li className='microbiology'><a href="#microbiology" onClick={e => { e.preventDefault(); setCurrentSection(8); }}></a></li>{ /* 微生物学 */ }
-            <li className='biochemistry'><a href="#biochemistry" onClick={e => { e.preventDefault(); setCurrentSection(9); }}></a></li>{ /* 生化学 */ }
+            <li className='medicine_biochemistry'><a href="#biochemistry" onClick={e => { e.preventDefault(); setCurrentSection(9); }}></a></li>{ /* 生化学 */ }
           </ul>
         </div>
         <ScrollableIframeBlock className='merit_and_demerit_block scroller_decoration'>

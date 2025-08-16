@@ -28,6 +28,11 @@ h1.medicine_h1 {
         left: 2%;
         width: 10%;
         height: 23%;
+
+        @media (max-width: 960px) {
+            left: 12%;
+            width: 16%;
+        }
     }
 
     .public_health a {
@@ -35,6 +40,11 @@ h1.medicine_h1 {
         left: 2%;
         width: 15%;
         height: 30%;
+
+        @media (max-width: 960px) {
+            left: 13%;
+            width: 20%;
+        }
     }
 
     .anatomy a {
@@ -42,6 +52,11 @@ h1.medicine_h1 {
         left: 2%;
         width: 11%;
         height: 23%;
+
+        @media (max-width: 960px) {
+            left: 13%;
+            width: 16%;
+        }
     }
 
     .clinical a {
@@ -49,13 +64,23 @@ h1.medicine_h1 {
         left: 18%;
         width: 17%;
         height: 24%;
+
+        @media (max-width: 960px) {
+            left: 37%;
+            width: 25%;
+        }
     }
 
     .pathology a {
         bottom: 5%;
         left: 15%;
         width: 16%;
-        height: 30%
+        height: 30%;
+
+        @media (max-width: 960px) {
+            left: 33%;
+            width: 24%;
+        }
     }
 
     .physiology a {
@@ -63,6 +88,11 @@ h1.medicine_h1 {
         left: 32%;
         width: 12%;
         height: 21%;
+
+        @media (max-width: 960px) {
+            left: 58%;
+            width: 18%;
+        }
     }
 
     .pharmacology a {
@@ -70,6 +100,11 @@ h1.medicine_h1 {
         left: 35%;
         width: 19%;
         height: 29%;
+
+        @media (max-width: 960px) {
+            left: 63%;
+            width: 28%;
+        }
     }
 
     .microbiology a {
@@ -77,13 +112,24 @@ h1.medicine_h1 {
         left: 41%;
         width: 10%;
         height: 16%;
+
+        @media (max-width: 960px) {
+            left: 72%;
+            width: 15%;
+        }
     }
 
-    .biochemistry a {
+    .medicine_biochemistry a {
         bottom: 14%;
         left: 45.5%;
         width: 13%;
         height: 27%;
+
+        @media (max-width: 960px) {
+            left: 79%;
+            width: 20%;
+            height: 28%;
+        }
     }
 }
 
@@ -529,5 +575,53 @@ h1.medicine_h1 {
         z-index: +6;
         left: unset;
         top: 0;
+    }
+}
+
+#medicine_biochemistry {
+    .block_figure_left_01 {
+        top: 0;
+        left: 0%;
+        width: 35%;
+        z-index: +1;
+    }
+
+    .block_figure_left_02 {
+        top: 0;
+        left: unset;
+        width: 75%;
+        z-index: +2;
+        right: 0;
+    }
+
+    .block_figure_left_03 {
+        top: unset;
+        left: 15%;
+        width: 40%;
+        z-index: +3;
+        bottom: 0;
+    }
+
+    .block_figure_left_04 {
+        bottom: unset;
+        left: unset;
+        width: 72%;
+        z-index: +4;
+        right: 0;
+        top: 5%;
+    }
+
+    .block_figure_left_05 {
+        bottom: 20%;
+        left: 0;
+        width: 40%;
+        z-index: +5;
+    }
+
+    .block_figure_left_06 {
+        bottom: 0;
+        right: 0%;
+        width: 45%;
+        z-index: +6;
     }
 }
