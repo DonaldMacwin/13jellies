@@ -395,7 +395,7 @@ function Biology() {
             <li className='genetic_development'><a href="#genetic_development" onClick={(e) => { e.preventDefault(); setCurrentSection(12); }}></a></li>{/* 遺伝発生研究 */}
             <li className='cell'><a href="#cell" onClick={(e) => { e.preventDefault(); setCurrentSection(13); }}></a></li>{/* 細胞研究 */}
             <li className='biophysics'><a href="#biophysics" onClick={(e) => { e.preventDefault(); setCurrentSection(14); }}></a></li>{/* 生物物理 */}
-            <li className='biochemistry'><a href="#biochemistry" onClick={(e) => { e.preventDefault(); setCurrentSection(15); }}></a></li>{/* 生化学研究 */}
+            <li className='biology_biochemistry'><a href="#biochemistry" onClick={(e) => { e.preventDefault(); setCurrentSection(15); }}></a></li>{/* 生化学研究 */}
           </ul>
         </div>
         <ScrollableIframeBlock className='merit_and_demerit_block scroller_decoration'>

@@ -90,14 +90,15 @@ h1.chemistry_h1 {
         }
     }
 
-    .biochemistry a {
+    .chemistry_biochemistry a {
         bottom: 12%;
         left: 25%;
         width: 11%;
         height: 12%;
 
         @media (max-width: 960px) {
-            left: 46%;
+            left: 44%;
+            width: 16%;
         }
     }
 }
@@ -246,6 +247,53 @@ h1.chemistry_h1 {
 }
 
 #biochemistry {
+    .block_figure_left_01 {
+        top: 0;
+        left: 0%;
+        width: 50%;
+        z-index: +1;
+    }
+
+    .block_figure_left_02 {
+        top: 0;
+        left: unset;
+        width: 50%;
+        z-index: +2;
+        right: 0;
+    }
+
+    .block_figure_left_03 {
+        top: unset;
+        left: 0;
+        width: 50%;
+        z-index: +3;
+        bottom: 0;
+    }
+
+    .block_figure_left_04 {
+        bottom: 25%;
+        left: unset;
+        width: 72%;
+        z-index: +4;
+        right: 0;
+    }
+
+    .block_figure_left_05 {
+        bottom: 20%;
+        left: 0;
+        width: 70%;
+        z-index: +5;
+    }
+
+    .block_figure_left_06 {
+        bottom: 0;
+        right: 0%;
+        width: 50%;
+        z-index: +6;
+    }
+}
+
+#chemistry_biochemistry {
     .block_figure_left_01 {
         top: 0;
         left: 0%;
