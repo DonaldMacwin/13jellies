@@ -16,6 +16,13 @@
             }
         }
     }
+
+    @media (max-width: 960px) {
+        .back_to_map {
+            bottom: 4rem;
+        }
+    }
+
 }
 
 h1.linguistics_h1 {

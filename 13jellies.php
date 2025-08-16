@@ -9,7 +9,7 @@
     }
     ?>
     <?php include "./asset/html/meta.html"; ?>
-    <link rel="stylesheet" href="./assets/css/top.css" />
+    <link rel="stylesheet" href="./asset/css/top.css" />
     <title>13個のゼリー</title>
 </head>
 
