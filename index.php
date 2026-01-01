@@ -48,16 +48,10 @@
                 つまり「手軽な学問の世界地図」というわけだ。<br />
             </p>
         </section>
-        <!--
-        <section>
-            <h2>このページの作者よりも、もっとグンッ！と頭のいいかたへ</h2>
-            <p></p>
-        </section>
-        -->
     </main>
     
     <?php 
-    // include "./asset/html/footer.html"; 
+    include "./asset/html/footer.html"; 
     ?>
     <script src="./asset/js/common.js"></script>
 
