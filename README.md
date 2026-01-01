@@ -8,7 +8,7 @@
 
 nodeJS: nvm use  20.11.0
 
-「13jellies_map」と「13jellies_map」の2つのReactソースを別々に記述してあります。
+「13jellies_map」と「jelliy_contents」の2つのReactソースを別々に記述してあります。
 
 マージ後はnpm install をそれぞれ別に行ってください。
 
