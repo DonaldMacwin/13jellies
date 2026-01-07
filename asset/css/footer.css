@@ -24,7 +24,7 @@ footer {
 
     .footer-logo{
         position: relative;
-        width: 150px;
+        width: 120px;
         margin-bottom: 9.0em;
         img{
             /*width: 100%;*/
@@ -34,7 +34,7 @@ footer {
     
     .SNS-list{
             display: flex;
-            justify-content: flex-start;
+            justify-content: space-between;
             align-items: center;
             gap: 16px;
             opacity: 0.3;
