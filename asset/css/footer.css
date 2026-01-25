@@ -2,68 +2,80 @@
 
 footer {
     border-top: 1px solid #000;
-    width:99vw;
+    width: 99vw;
 
     @media (max-width: 1020px) {
-    display: none;
-  }
-    .inner{
+        display: none;
+    }
+
+    .inner {
         max-width: 1240px;
-        display:flex;
+        display: flex;
         justify-content: space-between;
         align-items: flex-start;
     }
 
-    a{
+    a {
         color: #333;
         text-decoration: none;
-        &:hover{
+
+        &:hover {
             text-decoration: underline;
         }
     }
 
-    .footer-logo{
+    .footer-logo {
         position: relative;
         width: 120px;
         margin-bottom: 9.0em;
-        img{
-            /*width: 100%;*/
-            height: auto; }
-        }
 
-    
-    .SNS-list{
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: 16px;
-            opacity: 0.3;
-            img{
-                /*width: 24px;*/
-                height: auto;
-            &.X{
+        img {
+            /*width: 100%;*/
+            height: auto;
+        }
+    }
+
+    .SNS-list {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 16px;
+        opacity: 0.3;
+
+        img {
+            /*width: 24px;*/
+            height: auto;
+
+            &.X {
                 width: 16px;
                 height: auto;
             }
 
-            &.note{
+            &.note {
                 width: 80px;
                 height: auto;
             }
-
-            }
         }
-    .footer-menu {
-    > li:not(:first-child) {
-      margin-top: 2em;
     }
-  }
 
-    .menu-name{
-        font-size:1.25em;
+    .comment {
+        font-size: 0.75em;
+        color: #666;
+        margin-top: 0.5em;
     }
-    .sub-menu a{
-        margin-left:1em;
+
+    .footer-menu {
+        >li:not(:first-child) {
+            margin-top: 2em;
+        }
+    }
+
+    .menu-name {
+        font-size: 1.25em;
+    }
+
+    .sub-menu a {
+        margin-left: 1em;
         font-size: 0.7em;
     }
 }
