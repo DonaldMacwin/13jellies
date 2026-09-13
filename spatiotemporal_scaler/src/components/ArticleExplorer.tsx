@@ -121,13 +121,6 @@ const ArticleExplorer: React.FC<Props> = ({ articles = [], initialSlug, updateUr
 					spaceIndex={selection.spaceIndex}
 					timeIndex={selection.timeIndex}
 				/>
-				<nav className="sample-links article-links">
-					{articles.map((article) => (
-						<a key={article.slug} href={buildArticlePath(article.slug)}>
-							{article.title}
-						</a>
-					))}
-				</nav>
 			</div>
 
 			<article className="dummy-article article-preview">
