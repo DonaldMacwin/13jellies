@@ -1,5 +1,5 @@
 import React, { useEffect, useMemo, useState } from 'react';
-import './css/Slider.css';
+import './styles/Slider.css';
 
 export type SpaceTick = { label: string; km?: number; ly?: number };
 export type TimeTick = { label: string; yearsOffset: number }; // years relative to now
