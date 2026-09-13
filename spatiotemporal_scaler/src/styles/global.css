@@ -38,7 +38,7 @@ body {
 
 .page-fragment {
 	width: 100%;
-	max-width: 900px;
+	max-width: 1200px;
 	margin: 0 auto;
 	box-sizing: border-box;
 	padding-top: 132px;
@@ -97,7 +97,7 @@ body {
 }
 
 .article-preview {
-	max-width: 900px;
+	/*max-width: 900px;*/
 	margin: 0 auto;
 }
 
