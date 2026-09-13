@@ -32,9 +32,9 @@ body {
 	box-sizing: border-box;
 }
 
-.scaling-page.active {
-	/*width: 96vw;*/
-}
+/*.scaling-page.active {
+	width: 96vw;
+}*/
 
 .page-fragment {
 	width: 100%;
