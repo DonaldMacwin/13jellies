@@ -31,9 +31,9 @@ const spaceTicks: Array<SpaceTick & { readout: ScaleReadout }> = [
   { label: '5×10^3 km', km: 5e3, readout: { prefix: '5×', base: '10', exponent: '3', suffix: 'km' } },
   { label: '5×10^5 km', km: 5e5, readout: { prefix: '5×', base: '10', exponent: '5', suffix: 'km' } },
   { label: '5×10^10 km', km: 5e10, readout: { prefix: '5×', base: '10', exponent: '10', suffix: 'km' } },
-  { label: '10^0 ly', ly: 1, readout: { base: '10', exponent: '0', suffix: 'ly' } },
-  { label: '10^1 ly', ly: 10, readout: { base: '10', exponent: '1', suffix: 'ly' } },
-  { label: '10^10 ly', ly: 1e10, readout: { base: '10', exponent: '10', suffix: 'ly' } },
+  { label: '10^0 ly', ly: 1, readout: { base: '10', exponent: '0', suffix: '光年' } },
+  { label: '10^1 ly', ly: 10, readout: { base: '10', exponent: '1', suffix: '光年' } },
+  { label: '10^10 ly', ly: 1e10, readout: { base: '10', exponent: '10', suffix: '光年' } },
 ];
 
 // Time magnitudes increasing from nearest to far (used outward from center)
