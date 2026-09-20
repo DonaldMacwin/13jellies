@@ -13,6 +13,9 @@
   pointer-events: auto;
 }
 
+/* Prevent superscript digit changes from forcing line-wrap on the vertical slider */
+.scaling-slider-wrapper { width: auto; min-width: 120px; max-width: 240px; box-sizing: border-box; }
+
 .vertical-rotator {
   position: relative;
   width: 12px;
@@ -65,15 +68,19 @@
   margin-top: 4px;
 }
 
-.slider-counter sup { position: relative; top: -0.6em; font-size: 1.25rem; line-height: 1; display: inline-block; }
+/* Keep readout area stable so slider doesn't shift */
+.slider-counter { display: flex; align-items: baseline; justify-content: center; min-width: 0; white-space: nowrap; overflow: visible; }
+
+.slider-counter sup { position: relative; top: -1.25em; font-size: 1.25rem; line-height: 1; display: inline-block; }
 .slider-counter .unit { font-size: 0.5em; margin-left: 4px; }
 
 .time-slider-shell {
   position: fixed;
   top: 8px;
-  left: 12px;
+  left: 6px;
   right: 72px;
   z-index: 998;
+  overflow: visible;
 }
 
 .time-slider-root {
@@ -83,20 +90,37 @@
   gap: 12px;
 }
 
+/* keep the slider above the fading overlay */
+.time-slider-root { position: relative; z-index: +1; background: #FFF;}
+
+/* Layering: overlay should sit between the text and the slider track/thumb */
+.slider-counter-time { position: relative; z-index: +2; overflow: visible; }
+.time-slider { position: relative; z-index: +3;}
+
 .slider-counter-time {
   margin: 0;
-  min-width: 140px;
+  width: 200px; /* fixed width to prevent layout jitter */
+  min-width: 160px;
   text-align: left;
+  box-sizing: border-box;
 }
 
 .time-slider {
   -webkit-appearance: none;
   appearance: none;
-  width: min(960px, calc(100vw - 120px));
+  flex: 1; /* fill remaining horizontal space */
+  width: auto;
+  max-width: none;
   height: 12px;
   background: transparent;
   cursor: pointer;
 }
+
+/* Prefix: keep number normal, make only '×' smaller */
+.readout-prefix-num { font-size: 1em; display: inline-block; margin-right: 0.1rem; }
+.readout-prefix-x { font-size: 0.55em; vertical-align: baseline; display: inline-block; margin-right: 0.25rem; }
+.readout-base { display: inline-block; }
+.readout-exp { position: relative; top: -1.5em; font-size: 1.25rem; line-height: 1; display: inline-block; min-width: 2ch; text-align: left; }
 
 .time-slider::-webkit-slider-runnable-track {
   height: 12px;
@@ -134,6 +158,20 @@
   margin-top: 4px;
   font-size: 0.95rem;
   color: #444;
+}
+
+/* Bottom white gradient to fade out scrolling text naturally */
+/* Background gradient placed behind text and slider so it acts as a true background */
+.time-slider-shell::before {
+  content: "";
+  position: absolute;
+  left: 6px; /* align with the left edge of the shell content */
+  top: 0;
+  bottom: 0;
+  width: 220px; /* width of the faded background area */
+  pointer-events: none;
+  z-index: 0; /* behind .time-slider-root */
+  background: linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(255,255,255,0.6) 60%, #ffffff 100%);
 }
 
 /* removed small time ticks */

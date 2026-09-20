@@ -75,14 +75,26 @@ const timeReadout = (tick: TimeTick): ScaleReadout => {
   };
 };
 
-const renderReadout = (readout: ScaleReadout) => (
-  <>
-    {readout.prefix ? <span>{readout.prefix}</span> : null}
-    <span>{readout.base}</span>
-    {readout.exponent ? <sup>{readout.exponent}</sup> : null}
-    {readout.suffix ? <span className="unit">{readout.suffix}</span> : null}
-  </>
-);
+const renderReadout = (readout: ScaleReadout) => {
+  // split prefix like '5×' into number and multiplication sign so only '×' can be smaller
+  const prefix = readout.prefix ?? '';
+  const hasX = prefix.includes('×');
+  const numPart = hasX ? prefix.replace('×', '') : prefix;
+
+  return (
+    <>
+      {prefix ? (
+        <>
+          <span className="readout-prefix-num">{numPart}</span>
+          {hasX ? <span className="readout-prefix-x">×</span> : null}
+        </>
+      ) : null}
+      <span className="readout-base">{readout.base}</span>
+      {readout.exponent ? <sup className="readout-exp">{readout.exponent}</sup> : null}
+      {readout.suffix ? <span className="unit">{readout.suffix}</span> : null}
+    </>
+  );
+};
 
 const timeTickShortLabel = (tick: TimeTick) => {
   if (tick.yearsOffset === 0) {
