@@ -29,7 +29,6 @@ const spaceTicks: Array<SpaceTick & { readout: ScaleReadout }> = [
   { label: '5×10^1 km', km: 5e1, readout: { prefix: '5×', base: '10', exponent: '1', suffix: 'km' } },
   { label: '5×10^2 km', km: 5e2, readout: { prefix: '5×', base: '10', exponent: '2', suffix: 'km' } },
   { label: '5×10^3 km', km: 5e3, readout: { prefix: '5×', base: '10', exponent: '3', suffix: 'km' } },
-  { label: '5×10^5 km', km: 5e5, readout: { prefix: '5×', base: '10', exponent: '5', suffix: 'km' } },
   { label: '5×10^10 km', km: 5e10, readout: { prefix: '5×', base: '10', exponent: '10', suffix: 'km' } },
   { label: '5×10^20 km', km: 5e20, readout: { prefix: '5×', base: '10', exponent: '20', suffix: 'km' } },
   { label: '5×10^24 km', km: 5e24, readout: { prefix: '5×', base: '10', exponent: '24', suffix: 'km' } },

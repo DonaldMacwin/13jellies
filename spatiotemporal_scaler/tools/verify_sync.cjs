@@ -1,0 +1,20 @@
+const fs = require('fs');
+const path = require('path');
+const dir = path.join(__dirname, '..', 'content', 'articles');
+const files = fs.readdirSync(dir).filter(f => /^2026-09-13-s\d+_t\d+\.md$/.test(f));
+let bad = [];
+files.forEach(f => {
+  const m = f.match(/s(\d+)_t(\d+)\.md$/);
+  const s = Number(m[1]);
+  const t = Number(m[2]);
+  const c = fs.readFileSync(path.join(dir, f), 'utf8');
+  const slugMatch = c.match(/slug:\s*"([^"]+)"/);
+  const spaceMatch = c.match(/space_index:\s*(\d+)/);
+  const timeMatch = c.match(/time_index:\s*(\d+)/);
+  const slug = slugMatch ? slugMatch[1] : null;
+  const si = spaceMatch ? Number(spaceMatch[1]) : null;
+  const ti = timeMatch ? Number(timeMatch[1]) : null;
+  if (slug !== `s${s}_t${t}` || si !== s || ti !== t) bad.push({ file: f, slug, space_index: si, time_index: ti });
+});
+console.log('checked', files.length, 'bad', bad.length);
+if (bad.length) console.log(JSON.stringify(bad.slice(0, 20), null, 2));
