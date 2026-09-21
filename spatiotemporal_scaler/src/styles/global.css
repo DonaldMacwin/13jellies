@@ -41,7 +41,7 @@ body {
 	max-width: 1000px;
 	margin: 0 auto;
 	box-sizing: border-box;
-	padding-top: 132px;
+	/* padding-top: 132px;	*/
 }
 
 .page-title {
