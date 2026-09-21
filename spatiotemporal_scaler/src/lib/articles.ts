@@ -1,7 +1,12 @@
 import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
-import { marked } from 'marked';
+import { unified } from 'unified';
+import remarkParse from 'remark-parse';
+import remarkMath from 'remark-math';
+import remarkRehype from 'remark-rehype';
+import rehypeKatex from 'rehype-katex';
+import rehypeStringify from 'rehype-stringify';
 
 export type ArticleRecord = {
 	title: string;
@@ -25,49 +30,39 @@ export type ArticleRecord = {
 
 const articlesDir = path.resolve(process.cwd(), 'content', 'articles');
 
-marked.setOptions({
-	gfm: true,
-	breaks: true,
-});
-
 const toStringArray = (value: unknown): string[] => {
-	if (!Array.isArray(value)) {
-		return [];
-	}
-
+	if (!Array.isArray(value)) return [];
 	return value.map((item) => String(item));
 };
 
 const toNumber = (value: unknown, fallback = 0): number => {
-	if (typeof value === 'number' && Number.isFinite(value)) {
-		return value;
-	}
-
+	if (typeof value === 'number' && Number.isFinite(value)) return value;
 	if (typeof value === 'string' && value.trim() !== '') {
 		const parsed = Number(value);
-		if (Number.isFinite(parsed)) {
-			return parsed;
-		}
+		if (Number.isFinite(parsed)) return parsed;
 	}
-
 	return fallback;
 };
 
 const toBoolean = (value: unknown, fallback = true): boolean => {
-	if (typeof value === 'boolean') {
-		return value;
-	}
-
+	if (typeof value === 'boolean') return value;
 	if (typeof value === 'string') {
-		if (value.toLowerCase() === 'true') {
-			return true;
-		}
-		if (value.toLowerCase() === 'false') {
-			return false;
-		}
+		if (value.toLowerCase() === 'true') return true;
+		if (value.toLowerCase() === 'false') return false;
 	}
-
 	return fallback;
+};
+
+// unified synchronous pipeline for Markdown -> HTML with math support
+const markdownToHtmlSync = (source: string): string => {
+	const file = unified()
+		.use(remarkParse)
+		.use(remarkMath)
+		.use(remarkRehype)
+		.use(rehypeKatex)
+		.use(rehypeStringify)
+		.processSync(source);
+	return String(file);
 };
 
 export const parseArticleFile = (filePath: string): ArticleRecord => {
@@ -75,7 +70,7 @@ export const parseArticleFile = (filePath: string): ArticleRecord => {
 	const { data, content } = matter(source);
 	const fileName = path.basename(filePath);
 	const slugFromFile = fileName.replace(/\.md$/i, '');
-	const html = String(marked.parse(content));
+	const html = markdownToHtmlSync(content);
 
 	return {
 		title: String(data.title ?? slugFromFile),
@@ -99,9 +94,7 @@ export const parseArticleFile = (filePath: string): ArticleRecord => {
 };
 
 export const getAllArticles = (): ArticleRecord[] => {
-	if (!fs.existsSync(articlesDir)) {
-		return [];
-	}
+	if (!fs.existsSync(articlesDir)) return [];
 
 	return fs
 		.readdirSync(articlesDir)
@@ -110,9 +103,7 @@ export const getAllArticles = (): ArticleRecord[] => {
 		.map((name) => parseArticleFile(path.join(articlesDir, name)))
 		.filter((article) => article.published)
 		.sort((left, right) => {
-			if (left.date === right.date) {
-				return left.slug.localeCompare(right.slug, 'ja');
-			}
+			if (left.date === right.date) return left.slug.localeCompare(right.slug, 'ja');
 			return right.date.localeCompare(left.date);
 		});
 };
@@ -126,9 +117,7 @@ export const findNearestArticle = (
 	spaceIndex: number,
 	timeIndex: number,
 ): ArticleRecord | undefined => {
-	if (articles.length === 0) {
-		return undefined;
-	}
+	if (articles.length === 0) return undefined;
 
 	return articles
 		.slice()
@@ -136,9 +125,7 @@ export const findNearestArticle = (
 			const leftDistance = Math.abs(left.spaceIndex - spaceIndex) + Math.abs(left.timeIndex - timeIndex);
 			const rightDistance = Math.abs(right.spaceIndex - spaceIndex) + Math.abs(right.timeIndex - timeIndex);
 
-			if (leftDistance !== rightDistance) {
-				return leftDistance - rightDistance;
-			}
+			if (leftDistance !== rightDistance) return leftDistance - rightDistance;
 
 			return right.date.localeCompare(left.date);
 		})[0];
