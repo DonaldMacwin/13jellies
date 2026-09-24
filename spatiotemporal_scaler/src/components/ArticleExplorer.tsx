@@ -51,7 +51,7 @@ const ArticleExplorer: React.FC<Props> = ({ articles = [], initialSlug, updateUr
 	const [currentSlug, setCurrentSlug] = useState(initialArticle?.slug ?? '');
 	const [selection, setSelection] = useState({
 		spaceIndex: initialArticle?.spaceIndex ?? 0,
-		timeIndex: initialArticle?.timeIndex ?? 10,
+		timeIndex: initialArticle?.timeIndex ?? 9,
 	});
 
 	useEffect(() => {
