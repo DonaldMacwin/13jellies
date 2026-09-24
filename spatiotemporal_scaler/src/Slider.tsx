@@ -39,7 +39,7 @@ const spaceTicks: Array<SpaceTick & { readout: ScaleReadout }> = [
 ];
 
 // Time magnitudes increasing from nearest to far (used outward from center)
-const timeMagnitudes = [5e0, 5e1, 5e2, 5e3, 5e4, 5e5, 5e6, 5e8, 5e10, 5e12];
+const timeMagnitudes = [5e0, 5e1, 5e2, 5e3, 5e4, 5e5, 5e6, 5e8, 5e10];
 
 const formatExp = (v: number) => {
   const k = Math.round(Math.log10(v / 5));

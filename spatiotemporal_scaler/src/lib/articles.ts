@@ -85,7 +85,7 @@ export const parseArticleFile = (filePath: string): ArticleRecord => {
 		tags: toStringArray(data.tags),
 		spaceIndex: toNumber(data.space_index),
 		spaceUnit: String(data.space_unit ?? ''),
-		timeIndex: toNumber(data.time_index, 10),
+		timeIndex: toNumber(data.time_index, 9),
 		published: toBoolean(data.published, true),
 		fileName,
 		body: content,
