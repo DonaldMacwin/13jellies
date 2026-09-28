@@ -1,0 +1,21 @@
+# spatiotemporal_scaler 配下は改行コードを LF に統一する。
+# リポジトリ内部（index/commit）は従来から LF で正規化されているため、
+# この指定により作業ツリー側もチェックアウト時点で LF に揃い、
+# core.autocrlf=true による LF→CRLF 変換の対象外になる。
+# .gitattributes は core.autocrlf より優先される。
+
+*.md     text eol=lf
+*.astro  text eol=lf
+*.ts     text eol=lf
+*.tsx    text eol=lf
+*.js     text eol=lf
+*.mjs    text eol=lf
+*.cjs    text eol=lf
+*.json   text eol=lf
+*.css    text eol=lf
+*.html   text eol=lf
+*.yml    text eol=lf
+*.yaml   text eol=lf
+*.txt    text eol=lf
+.gitignore text eol=lf
+.gitattributes text eol=lf
