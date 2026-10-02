@@ -39,6 +39,10 @@ const nearestArticle = (articles: ArticleSummary[], spaceIndex: number, timeInde
 				return leftDistance - rightDistance;
 			}
 
+			if (left.slug.startsWith('sagan_') !== right.slug.startsWith('sagan_')) {
+				return left.slug.startsWith('sagan_') ? -1 : 1;
+			}
+
 			return right.date.localeCompare(left.date);
 		})[0];
 };
@@ -78,6 +82,14 @@ const ArticleExplorer: React.FC<Props> = ({ articles = [], initialSlug, updateUr
 	const currentArticle = useMemo(() => {
 		return articles.find((article) => article.slug === currentSlug) ?? initialArticle;
 	}, [articles, currentSlug, initialArticle]);
+
+	useEffect(() => {
+		if (typeof document === 'undefined') {
+			return;
+		}
+
+		document.title = currentArticle?.title ?? 'Spatiotemporal Scaler';
+	}, [currentArticle]);
 
 	const hasExactMatch = useMemo(() => {
 		return articles.some(
@@ -124,13 +136,6 @@ const ArticleExplorer: React.FC<Props> = ({ articles = [], initialSlug, updateUr
 			</div>
 
 			<article className="dummy-article article-preview">
-				<h1 className="page-title">{currentArticle.title}</h1>
-				{currentArticle.summary ? <p className="page-description">{currentArticle.summary}</p> : null}
-				<p className="article-meta">
-					<span>{currentArticle.author}</span>
-					<span>{currentArticle.date}</span>
-					<span>{currentArticle.slug}</span>
-				</p>
 				{!hasExactMatch ? (
 					<p className="article-hint">この位置に完全一致する記事がないため、最寄りの記事を表示しています。</p>
 				) : null}

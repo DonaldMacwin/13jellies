@@ -53,15 +53,45 @@ const toBoolean = (value: unknown, fallback = true): boolean => {
 	return fallback;
 };
 
+const preprocessMarkdown = (source: string): string => {
+	return source
+		.replace(/｜([^｜《\n\r]+)《([^》\n\r]+)》/g, '<ruby>$1<rt>$2</rt></ruby>')
+		.replace(/^\s*[—―─]+\s*$/gm, '---');
+};
+
+const isPreferredArticleFile = (fileName: string): boolean => fileName.startsWith('sagan_');
+
+const isGeneratedFallbackFile = (fileName: string): boolean => /^\d{4}-\d{2}-\d{2}-/.test(fileName);
+
+const articlePriority = (article: ArticleRecord): number => {
+	if (isPreferredArticleFile(article.fileName)) return 2;
+	if (isGeneratedFallbackFile(article.fileName)) return 1;
+	return 0;
+};
+
+const isDisplayableArticle = (article: ArticleRecord): boolean => {
+	return isPreferredArticleFile(article.fileName) || article.published;
+};
+
+const comparePreferredArticle = (left: ArticleRecord, right: ArticleRecord): number => {
+	const priorityDiff = articlePriority(right) - articlePriority(left);
+	if (priorityDiff !== 0) return priorityDiff;
+
+	const dateDiff = right.date.localeCompare(left.date);
+	if (dateDiff !== 0) return dateDiff;
+
+	return left.fileName.localeCompare(right.fileName, 'ja');
+};
+
 // unified synchronous pipeline for Markdown -> HTML with math support
 const markdownToHtmlSync = (source: string): string => {
 	const file = unified()
 		.use(remarkParse)
 		.use(remarkMath)
-		.use(remarkRehype)
+		.use(remarkRehype, { allowDangerousHtml: true })
 		.use(rehypeKatex)
-		.use(rehypeStringify)
-		.processSync(source);
+		.use(rehypeStringify, { allowDangerousHtml: true })
+		.processSync(preprocessMarkdown(source));
 	return String(file);
 };
 
@@ -96,12 +126,23 @@ export const parseArticleFile = (filePath: string): ArticleRecord => {
 export const getAllArticles = (): ArticleRecord[] => {
 	if (!fs.existsSync(articlesDir)) return [];
 
-	return fs
+	const parsedArticles = fs
 		.readdirSync(articlesDir)
 		.filter((name) => name.toLowerCase().endsWith('.md'))
 		.filter((name) => name.toLowerCase() !== 'readme.md')
 		.map((name) => parseArticleFile(path.join(articlesDir, name)))
-		.filter((article) => article.published)
+		.filter(isDisplayableArticle);
+
+	const selectedByCoordinate = new Map<string, ArticleRecord>();
+	for (const article of parsedArticles) {
+		const coordinateKey = `${article.spaceIndex}:${article.timeIndex}`;
+		const current = selectedByCoordinate.get(coordinateKey);
+		if (!current || comparePreferredArticle(article, current) < 0) {
+			selectedByCoordinate.set(coordinateKey, article);
+		}
+	}
+
+	return Array.from(selectedByCoordinate.values())
 		.sort((left, right) => {
 			if (left.date === right.date) return left.slug.localeCompare(right.slug, 'ja');
 			return right.date.localeCompare(left.date);
@@ -127,6 +168,6 @@ export const findNearestArticle = (
 
 			if (leftDistance !== rightDistance) return leftDistance - rightDistance;
 
-			return right.date.localeCompare(left.date);
+			return comparePreferredArticle(left, right);
 		})[0];
 };
