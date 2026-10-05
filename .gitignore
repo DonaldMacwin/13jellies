@@ -44,3 +44,4 @@ spatiotemporal_scaler/echo.mjs
 # git filter-repo の作業用ベアリポジトリ（リポジトリをリポジトリに入れない）
 13jellies-rewrite.git/
 *-rewrite.git/
+spatiotemporal_scaler/chkp.mjs
