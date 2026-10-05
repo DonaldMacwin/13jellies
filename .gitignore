@@ -45,3 +45,4 @@ spatiotemporal_scaler/echo.mjs
 13jellies-rewrite.git/
 *-rewrite.git/
 spatiotemporal_scaler/chkp.mjs
+spatiotemporal_scaler/used.mjs
