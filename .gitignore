@@ -46,3 +46,4 @@ spatiotemporal_scaler/echo.mjs
 *-rewrite.git/
 spatiotemporal_scaler/chkp.mjs
 spatiotemporal_scaler/used.mjs
+spatiotemporal_scaler/addbr.mjs
