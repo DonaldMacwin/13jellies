@@ -47,3 +47,5 @@ spatiotemporal_scaler/echo.mjs
 spatiotemporal_scaler/chkp.mjs
 spatiotemporal_scaler/used.mjs
 spatiotemporal_scaler/addbr.mjs
+spatiotemporal_scaler/content/image
+spatiotemporal_scaler/content/image/*

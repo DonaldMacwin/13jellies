@@ -1,9 +1,42 @@
-import React, { useCallback, useEffect, useMemo, useState } from 'react';
+import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import Slider, { type SliderChange } from '../Slider';
 
 const baseUrl = import.meta.env.BASE_URL;
 
 const buildArticlePath = (slug: string) => `${baseUrl}articles/${slug}/`;
+
+const getScrollableElement = (): HTMLElement | null => {
+	if (typeof document === 'undefined') {
+		return null;
+	}
+
+	const page = document.querySelector<HTMLElement>('.scaling-page.active, .scaling-page');
+	if (page) {
+		const overflowY = window.getComputedStyle(page).overflowY;
+		if ((overflowY === 'auto' || overflowY === 'scroll') && page.scrollHeight > page.clientHeight) {
+			return page;
+		}
+	}
+
+	return document.scrollingElement instanceof HTMLElement ? document.scrollingElement : document.documentElement;
+};
+
+const readScrollTop = () => {
+	const element = getScrollableElement();
+	return element?.scrollTop ?? 0;
+};
+
+const restoreScrollTop = (top: number) => {
+	const element = getScrollableElement();
+	if (!element) {
+		return;
+	}
+
+	element.scrollTop = top;
+	if (typeof window !== 'undefined' && element === document.scrollingElement) {
+		window.scrollTo({ top, behavior: 'auto' });
+	}
+};
 
 export type ArticleSummary = {
 	title: string;
@@ -51,6 +84,7 @@ const ArticleExplorer: React.FC<Props> = ({ articles = [], initialSlug, updateUr
 	const initialArticle = useMemo(() => {
 		return articles.find((article) => article.slug === initialSlug) ?? articles[0];
 	}, [articles, initialSlug]);
+	const scrollPositionsRef = useRef<Record<string, number>>({});
 
 	const [currentSlug, setCurrentSlug] = useState(initialArticle?.slug ?? '');
 	const [selection, setSelection] = useState({
@@ -91,6 +125,27 @@ const ArticleExplorer: React.FC<Props> = ({ articles = [], initialSlug, updateUr
 		document.title = currentArticle?.title ?? 'Spatiotemporal Scaler';
 	}, [currentArticle]);
 
+	useEffect(() => {
+		if (!currentArticle || typeof window === 'undefined') {
+			return;
+		}
+
+		const nextScrollTop = scrollPositionsRef.current[currentArticle.slug] ?? 0;
+		const restore = () => {
+			restoreScrollTop(nextScrollTop);
+		};
+
+		restore();
+		window.requestAnimationFrame(restore);
+		const timeoutIds = [window.setTimeout(restore, 120), window.setTimeout(restore, 300)];
+
+		return () => {
+			for (const timeoutId of timeoutIds) {
+				window.clearTimeout(timeoutId);
+			}
+		};
+	}, [currentArticle]);
+
 	const hasExactMatch = useMemo(() => {
 		return articles.some(
 			(article) => article.spaceIndex === selection.spaceIndex && article.timeIndex === selection.timeIndex,
@@ -112,6 +167,11 @@ const ArticleExplorer: React.FC<Props> = ({ articles = [], initialSlug, updateUr
 			return;
 		}
 
+		if (currentSlug && currentSlug !== nextArticle.slug) {
+			scrollPositionsRef.current[currentSlug] = readScrollTop();
+			restoreScrollTop(scrollPositionsRef.current[nextArticle.slug] ?? 0);
+		}
+
 		setCurrentSlug((current) => (current === nextArticle.slug ? current : nextArticle.slug));
 		if (updateUrl && typeof window !== 'undefined') {
 			const nextPath = buildArticlePath(nextArticle.slug);
@@ -119,7 +179,7 @@ const ArticleExplorer: React.FC<Props> = ({ articles = [], initialSlug, updateUr
 				window.history.replaceState({}, '', nextPath);
 			}
 		}
-	}, [articles, updateUrl]);
+	}, [articles, currentSlug, updateUrl]);
 
 	if (!currentArticle) {
 		return <article className="article-preview"><p>記事がありません。</p></article>;
