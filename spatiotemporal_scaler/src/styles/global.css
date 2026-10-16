@@ -59,7 +59,7 @@ body {
 }
 
 .dummy-article p {
-	font-size: 1.2rem;
+	font-size: 1.3rem;
 	font-weight: 300;
 	line-height: 2.5;
 	margin: 0 0 0rem;
@@ -128,8 +128,8 @@ body {
 .article-body p,
 .article-body ul,
 .article-body pre {
-	margin: 0 0 1.2rem;
-	line-height: 3.0;
+	/*margin: 0 0 1.2rem;*/
+	line-height: 2.5;
 }
 
 .article-body h1,
