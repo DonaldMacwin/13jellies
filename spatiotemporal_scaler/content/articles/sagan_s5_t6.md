@@ -5,7 +5,7 @@ slug: "sagan_s5_t6"
 summary: "戯曲版: Space 5 / Time 6（直近過去500年内・半径5×10^20 km圏内）"
 author: "未設定"
 space_index: 5
-space_unit: "ly"
+space_unit: "km"
 time_index: 6
 published: false
 ---

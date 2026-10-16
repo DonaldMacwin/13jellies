@@ -5,7 +5,7 @@ slug: "sagan_s6_t15"
 summary: "一人称版: Space 6 / Time 15（直近未来50万年内・半径5×10^24 km圏内）"
 author: "未設定"
 space_index: 6
-space_unit: "ly"
+space_unit: "km"
 time_index: 15
 published: false
 ---
@@ -50,7 +50,7 @@ published: false
 
 ## 二　50万年という幅
 
-球の寸法は、最後まで同じだった。5×10^24キロメートルの半径。パーセクで162ギガ。光年にして5285億。<br><br>
+球のスケールは、最後まで同じだった。5×10^24キロメートルの半径。パーセクで162ギガ。光年にして5285億。<br><br>
 
 時間は、これから50万年を取る。52万6026年。<br><br>
 

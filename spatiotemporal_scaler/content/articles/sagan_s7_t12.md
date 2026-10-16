@@ -5,7 +5,7 @@ slug: "sagan_s7_t12"
 summary: "一人称版: Space 7 / Time 12（直近未来500年内・半径5×10^25 km圏内）"
 author: "未設定"
 space_index: 7
-space_unit: "ly"
+space_unit: "km"
 time_index: 12
 published: false
 ---

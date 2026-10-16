@@ -7,7 +7,7 @@ if (!fs.existsSync(outDir)) fs.mkdirSync(outDir, { recursive: true });
 const date = '2026-09-13T00:00:00Z';
 
 function spaceUnit(i){
-  return i >= 6 ? 'ly' : 'km';
+  return 'km';
 }
 
 for(let s=0;s<=8;s++){

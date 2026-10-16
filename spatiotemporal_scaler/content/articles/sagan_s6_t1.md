@@ -5,7 +5,7 @@ slug: "sagan_s6_t1"
 summary: "一人称版: Space 6 / Time 1（直近過去5億年内・半径5×10^24 km圏内）"
 author: "未設定"
 space_index: 6
-space_unit: "ly"
+space_unit: "km"
 time_index: 1
 published: false
 ---
@@ -60,7 +60,7 @@ published: false
 
 ## 5億年という幅
 
-今日の寸法は半径5×10^24キロメートルで、162ギガパーセク、5285億光年になる。<br><br>
+今日のスケールは半径5×10^24キロメートルで、162ギガパーセク、5285億光年になる。<br><br>
 
 時間のほうは、過去5億年を取る。<br><br>
 

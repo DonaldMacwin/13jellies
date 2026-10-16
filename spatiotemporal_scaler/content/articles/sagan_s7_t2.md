@@ -5,7 +5,7 @@ slug: "sagan_s7_t2"
 summary: "一人称版: Space 7 / Time 2（直近過去500万年内・半径5×10^25 km圏内）"
 author: "未設定"
 space_index: 7
-space_unit: "ly"
+space_unit: "km"
 time_index: 2
 published: false
 ---
@@ -50,7 +50,7 @@ published: false
 
 ## 500万年という幅
 
-今日の寸法は、半径5×10^25キロメートル。1.62テラパーセク、光年にして5兆2850億になる。<br><br>
+今日のスケールは、半径5×10^25キロメートル。1.62テラパーセク、光年にして5兆2850億になる。<br><br>
 
 この球について、500万年に何が起きたかを、わたしは言える立場にない。<br><br>
 

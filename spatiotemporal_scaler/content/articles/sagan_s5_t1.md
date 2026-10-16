@@ -5,7 +5,7 @@ slug: "sagan_s5_t1"
 summary: "一人称版: Space 5 / Time 1（直近過去5億年内・半径5×10^20 km圏内）"
 author: "未設定"
 space_index: 5
-space_unit: "ly"
+space_unit: "km"
 time_index: 1
 published: false
 ---
@@ -102,7 +102,7 @@ published: false
 
 ## 5億年で動くもの
 
-内側の寸法では、どれだけ時間を取っても構造は動かなかった。<br><br>
+内側のスケールでは、どれだけ時間を取っても構造は動かなかった。<br><br>
 
 この幅では、動く。<br><br>
 

@@ -5,7 +5,7 @@ slug: "sagan_s7_t8"
 summary: "一人称版: Space 7 / Time 8（直近過去5年内・半径5×10^25 km圏内）"
 author: "未設定"
 space_index: 7
-space_unit: "ly"
+space_unit: "km"
 time_index: 8
 published: false
 ---
@@ -59,7 +59,7 @@ published: false
 
 ## 5年という幅
 
-球の半径は5×10^25キロメートル、1.62テラパーセク、5兆2850億光年である。寸法については、もう何も言うことがない。<br><br>
+球の半径は5×10^25キロメートル、1.62テラパーセク、5兆2850億光年である。スケールについては、もう何も言うことがない。<br><br>
 
 時間の幅は、過去へ5年。<br><br>
 

@@ -5,7 +5,7 @@ slug: "sagan_s6_t12"
 summary: "一人称版: Space 6 / Time 12（直近未来500年内・半径5×10^24 km圏内）"
 author: "未設定"
 space_index: 6
-space_unit: "ly"
+space_unit: "km"
 time_index: 12
 published: false
 ---
@@ -51,7 +51,7 @@ published: false
 
 ## 二　500年という幅
 
-寸法のほうは、もう暗記してしまった。半径5×10^24キロメートル。162ギガパーセク。光年でいえば5285億。<br><br>
+スケールのほうは、もう暗記してしまった。半径5×10^24キロメートル。162ギガパーセク。光年でいえば5285億。<br><br>
 
 そこに、これから500年を入れる。2526年まで。<br><br>
 

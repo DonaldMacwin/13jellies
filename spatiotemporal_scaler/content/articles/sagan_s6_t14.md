@@ -5,7 +5,7 @@ slug: "sagan_s6_t14"
 summary: "一人称版: Space 6 / Time 14（直近未来5万年内・半径5×10^24 km圏内）"
 author: "未設定"
 space_index: 6
-space_unit: "ly"
+space_unit: "km"
 time_index: 14
 published: false
 ---
@@ -58,7 +58,7 @@ published: false
 
 ## 二　5万年という幅
 
-寸法は、もう書くのも面倒になってきた。半径5×10^24キロメートル。162ギガパーセク。5285億光年。<br><br>
+スケールは、もう書くのも面倒になってきた。半径5×10^24キロメートル。162ギガパーセク。5285億光年。<br><br>
 
 時間は、これから5万年を取る。7万6026年までということになる。<br><br>
 

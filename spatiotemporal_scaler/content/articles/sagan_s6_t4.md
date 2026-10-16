@@ -5,7 +5,7 @@ slug: "sagan_s6_t4"
 summary: "一人称版: Space 6 / Time 4（直近過去5万年内・半径5×10^24 km圏内）"
 author: "未設定"
 space_index: 6
-space_unit: "ly"
+space_unit: "km"
 time_index: 4
 published: false
 ---

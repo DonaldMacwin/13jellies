@@ -5,7 +5,7 @@ slug: "sagan_s7_t10"
 summary: "一人称版: Space 7 / Time 10（直近未来5年内・半径5×10^25 km圏内）"
 author: "未設定"
 space_index: 7
-space_unit: "ly"
+space_unit: "km"
 time_index: 10
 published: false
 ---
@@ -62,7 +62,7 @@ published: false
 
 嘘という語が強すぎるなら、見通し、と言い換えてもいい。言い換えたところで、当たらないことは変わらない。<br><br>
 
-そういうことを、荷物をまとめながら考えていた。寸法のほうは、相変わらず確かめようがない。<br><br>
+そういうことを、荷物をまとめながら考えていた。スケールのほうは、相変わらず確かめようがない。<br><br>
 
 ## 5年という幅
 
