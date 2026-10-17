@@ -17,6 +17,9 @@ export type ArticleRecord = {
 	author: string;
 	image: string;
 	imageAlt: string;
+	footerImage: string;
+	footerImageAlt: string;
+	footerImageEnabled: boolean;
 	categories: string[];
 	tags: string[];
 	spaceIndex: number;
@@ -111,6 +114,9 @@ export const parseArticleFile = (filePath: string): ArticleRecord => {
 		author: String(data.author ?? ''),
 		image: String(data.image ?? ''),
 		imageAlt: String(data.image_alt ?? ''),
+		footerImage: String(data.footer_image ?? ''),
+		footerImageAlt: String(data.footer_image_alt ?? ''),
+		footerImageEnabled: toBoolean(data.footer_image_enabled, false),
 		categories: toStringArray(data.categories),
 		tags: toStringArray(data.tags),
 		spaceIndex: toNumber(data.space_index),

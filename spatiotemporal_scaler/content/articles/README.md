@@ -89,8 +89,11 @@ published: true
 ## frontmatter の任意項目
 
 - `id`: 内部識別用の固定 ID。未指定なら `slug` を使います。
-- `image`: 画像 URL。
-- `image_alt`: 画像の代替テキスト。
+- `image`: H1 タイトルの上に出す画像。`content/image/xxx.jpg`、`public/xxx.jpg`、絶対 URL のいずれかを書けます。未指定時は仮画像が出ます。
+- `image_alt`: 上部画像の代替テキスト。
+- `footer_image`: 本文末尾に出す画像。`content/image/xxx.jpg`、`public/xxx.jpg`、絶対 URL のいずれかを書けます。未指定時は仮画像が出ます。
+- `footer_image_alt`: 末尾画像の代替テキスト。
+- `footer_image_enabled`: 互換用フラグです。現状では未指定記事にも仮画像が出るため、通常は不要です。
 - `categories`: カテゴリ配列。
 - `tags`: タグ配列。
 

@@ -2,8 +2,53 @@ import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import Slider, { type SliderChange } from '../Slider';
 
 const baseUrl = import.meta.env.BASE_URL;
+type BundledImageModule = string | { src?: string };
+const bundledArticleImages = import.meta.glob('../../content/image/*.{avif,gif,jpeg,jpg,png,webp}', {
+	eager: true,
+	import: 'default',
+}) as Record<string, BundledImageModule>;
+
+const toImageSrc = (module: BundledImageModule | undefined): string => {
+	if (!module) {
+		return '';
+	}
+
+	if (typeof module === 'string') {
+		return module;
+	}
+
+	return typeof module.src === 'string' ? module.src : '';
+};
+
+const defaultArticleImage = toImageSrc(bundledArticleImages['../../content/image/libretto01.jpg']);
 
 const buildArticlePath = (slug: string) => `${baseUrl}articles/${slug}/`;
+
+const resolveArticleImagePath = (imagePath: string): string => {
+	const normalizedPath = imagePath.trim().replace(/\\/g, '/');
+	if (!normalizedPath) {
+		return '';
+	}
+
+	if (/^(?:https?:)?\/\//.test(normalizedPath) || normalizedPath.startsWith('data:')) {
+		return normalizedPath;
+	}
+
+	const trimmedPath = normalizedPath.replace(/^\/+/, '');
+	if (trimmedPath.startsWith('content/image/')) {
+		return toImageSrc(bundledArticleImages[`../../${trimmedPath}`]);
+	}
+
+	if (trimmedPath.startsWith('public/')) {
+		return `${baseUrl}${trimmedPath.slice('public/'.length)}`;
+	}
+
+	if (normalizedPath.startsWith('/')) {
+		return normalizedPath;
+	}
+
+	return `${baseUrl}${trimmedPath}`;
+};
 
 const getScrollableElement = (): HTMLElement | null => {
 	if (typeof document === 'undefined') {
@@ -47,6 +92,9 @@ export type ArticleSummary = {
 	author: string;
 	image: string;
 	imageAlt: string;
+	footerImage: string;
+	footerImageAlt: string;
+	footerImageEnabled: boolean;
 	categories: string[];
 	tags: string[];
 	spaceIndex: number;
@@ -116,6 +164,22 @@ const ArticleExplorer: React.FC<Props> = ({ articles = [], initialSlug, updateUr
 	const currentArticle = useMemo(() => {
 		return articles.find((article) => article.slug === currentSlug) ?? initialArticle;
 	}, [articles, currentSlug, initialArticle]);
+
+	const heroImageSrc = useMemo(() => {
+		if (!currentArticle) {
+			return defaultArticleImage;
+		}
+
+		return resolveArticleImagePath(currentArticle.image) || defaultArticleImage;
+	}, [currentArticle]);
+
+	const footerImageSrc = useMemo(() => {
+		if (!currentArticle) {
+			return defaultArticleImage;
+		}
+
+		return resolveArticleImagePath(currentArticle.footerImage) || defaultArticleImage;
+	}, [currentArticle]);
 
 	useEffect(() => {
 		if (typeof document === 'undefined') {
@@ -199,7 +263,25 @@ const ArticleExplorer: React.FC<Props> = ({ articles = [], initialSlug, updateUr
 				{!hasExactMatch ? (
 					<p className="article-hint">この位置に完全一致する記事がないため、最寄りの記事を表示しています。</p>
 				) : null}
+				{heroImageSrc ? (
+					<figure className="article-figure article-figure-top">
+						<img
+							className="article-image"
+							src={heroImageSrc}
+							alt={currentArticle.imageAlt || `${currentArticle.title} の扉画像`}
+						/>
+					</figure>
+				) : null}
 				<div className="article-body" dangerouslySetInnerHTML={{ __html: currentArticle.html }} />
+				{footerImageSrc ? (
+					<figure className="article-figure article-figure-bottom">
+						<img
+							className="article-image"
+							src={footerImageSrc}
+							alt={currentArticle.footerImageAlt || `${currentArticle.title} の末尾画像`}
+						/>
+					</figure>
+				) : null}
 			</article>
 		</>
 	);
