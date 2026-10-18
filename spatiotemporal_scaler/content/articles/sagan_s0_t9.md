@@ -5,9 +5,9 @@ slug: "sagan_s0_t9"
 summary: "戯曲版: Space 0 / Time 9（今・半径5km圏内）"
 author: "未設定"
 image: "content/image/libretto01.jpg"
-image_alt: "『稲妻のあとで』の仮扉画像"
+image_alt: "『稲妻のあとで』冒頭画像"
 footer_image: "content/image/libretto01.jpg"
-footer_image_alt: "『稲妻のあとで』の仮末尾画像"
+footer_image_alt: "『稲妻のあとで』文末画像"
 footer_image_enabled: true
 space_index: 0
 space_unit: "km"
