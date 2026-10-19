@@ -4,10 +4,15 @@ date: "2026-09-13T00:00:00Z"
 slug: "sagan_s5_t18"
 summary: "一人称版: Space 5 / Time 18（直近未来500億年内・半径5×10^20km圏内）"
 author: "未設定"
+image: "content/image/libretto01.jpg"
+image_alt: "『門灯』冒頭画像"
+footer_image: "content/image/libretto01.jpg"
+footer_image_alt: "『門灯』文末画像"
+footer_image_enabled: true
 space_index: 5
 space_unit: "km"
 time_index: 18
-published: false
+published: true
 ---
 
 # 門灯

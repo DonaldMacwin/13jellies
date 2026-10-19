@@ -4,10 +4,15 @@ date: "2026-09-13T00:00:00Z"
 slug: "sagan_s3_t4"
 summary: "戯曲版: Space 3 / Time 4（直近過去5万年内・半径5000km圏内）"
 author: "未設定"
+image: "content/image/libretto01.jpg"
+image_alt: "『名を残したひとつ』冒頭画像"
+footer_image: "content/image/libretto01.jpg"
+footer_image_alt: "『名を残したひとつ』文末画像"
+footer_image_enabled: true
 space_index: 3
 space_unit: "km"
 time_index: 4
-published: false
+published: true
 ---
 
 # 名を残したひとつ

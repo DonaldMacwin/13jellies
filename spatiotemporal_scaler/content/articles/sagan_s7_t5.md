@@ -4,10 +4,15 @@ date: "2026-09-13T00:00:00Z"
 slug: "sagan_s7_t5"
 summary: "一人称版: Space 7 / Time 5（直近過去5000年内・半径5×10^25 km圏内）"
 author: "未設定"
+image: "content/image/libretto01.jpg"
+image_alt: "『余白』冒頭画像"
+footer_image: "content/image/libretto01.jpg"
+footer_image_alt: "『余白』文末画像"
+footer_image_enabled: true
 space_index: 7
 space_unit: "km"
 time_index: 5
-published: false
+published: true
 ---
 
 # 余白

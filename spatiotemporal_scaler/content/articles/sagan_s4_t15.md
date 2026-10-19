@@ -4,10 +4,15 @@ date: "2026-09-13T00:00:00Z"
 slug: "sagan_s4_t15"
 summary: "戯曲版: Space 4 / Time 15（直近未来50万年内・半径5×10^10 km圏内）"
 author: "未設定"
+image: "content/image/libretto01.jpg"
+image_alt: "『黙って聞いていた時間』冒頭画像"
+footer_image: "content/image/libretto01.jpg"
+footer_image_alt: "『黙って聞いていた時間』文末画像"
+footer_image_enabled: true
 space_index: 4
 space_unit: "km"
 time_index: 15
-published: false
+published: true
 ---
 
 # 黙って聞いていた時間

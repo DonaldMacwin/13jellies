@@ -4,10 +4,15 @@ date: "2026-09-13T00:00:00Z"
 slug: "sagan_s6_t2"
 summary: "一人称版: Space 6 / Time 2（直近過去500万年内・半径5×10^24 km圏内）"
 author: "未設定"
+image: "content/image/libretto01.jpg"
+image_alt: "『いとこ』冒頭画像"
+footer_image: "content/image/libretto01.jpg"
+footer_image_alt: "『いとこ』文末画像"
+footer_image_enabled: true
 space_index: 6
 space_unit: "km"
 time_index: 2
-published: false
+published: true
 ---
 
 # いとこ

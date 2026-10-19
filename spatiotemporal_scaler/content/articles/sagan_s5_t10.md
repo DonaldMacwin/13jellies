@@ -4,10 +4,15 @@ date: "2026-09-13T00:00:00Z"
 slug: "sagan_s5_t10"
 summary: "戯曲版: Space 5 / Time 10（直近未来5年内・半径5×10^20 km圏内）"
 author: "未設定"
+image: "content/image/libretto01.jpg"
+image_alt: "『引き裂かれた星の糸』冒頭画像"
+footer_image: "content/image/libretto01.jpg"
+footer_image_alt: "『引き裂かれた星の糸』文末画像"
+footer_image_enabled: true
 space_index: 5
 space_unit: "km"
 time_index: 10
-published: false
+published: true
 ---
 
 # 引き裂かれた星の糸

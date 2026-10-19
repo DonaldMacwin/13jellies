@@ -53,11 +53,13 @@ Astro の静的サイト。`content/articles/` 配下の Markdown を `src/lib/a
 
 `2026-09-13-sN_tM.md` には一切手を入れない。戯曲版は別ファイルとして新規に作る。原典側の執筆規約は `content/articles/README.md` を参照。
 
-### 1.4 published: false で退避する理由
+### 1.4 published の扱い（2026-10-19 に切り替え）
 
-`src/lib/articles.ts` は `content/articles/` 内の `.md` を `README.md` 以外すべて読み込み、`published` が未指定なら true として扱う。戯曲版は原典と同じ座標を持つため、`published: true` にするとスライダー上で原典の表示を奪う恐れがある。公開方式が決まるまで全ファイル `published: false` とする。
+**全152座標の sagan 版がそろったので、sagan 版を `published: true`、原典（`2026-09-13-*`）を `published: false` にした。** 原典の frontmatter は §1.3 の例外として、ユーザーの指示で `published` の1行だけ変えている（`space_unit` も 2026-10-16 に同様）。
 
-公開する場合は、同一座標に「論文版」と「戯曲版」を持たせて記事ページで切り替える仕組みをローダ側に作る必要がある。スライダー側の改修は不要の見込み。
+`src/lib/articles.ts` は、ファイル名が `sagan_` で始まる記事を `published` の値にかかわらず表示対象にし、同じ座標に原典があっても sagan 版を優先する。したがって表示は切り替え前から sagan 版で、今回の変更はフラグを実態に合わせたものである。原典は `published: false` なので、sagan 版が欠けた座標が出ても代わりには表示されない。
+
+旧稿のバックアップ `bk_sagan_s6_t9.md`・`bk_sagan_s7_t9.md` はファイル名が `sagan_` で始まらないため優先されず、`published: false` のまま表示されない。
 
 ---
 
@@ -199,13 +201,13 @@ author: "未設定"
 space_index: 3
 space_unit: "km"
 time_index: 9
-published: false
+published: true
 ---
 ```
 
 - `slug` はファイル名（拡張子を除く）と一致させる。
 - `space_index` / `time_index` / `space_unit` は原典と同値にする。`space_unit` は原典・sagan とも全段 `"km"`（§1.2）。
-- `published` は必ず `false`。
+- `published` は `true`（2026-10-19 から。§1.4）。
 - `author` は原典にならい `"未設定"` のままとする。
 
 ### 4.2 本文の骨格
@@ -509,7 +511,7 @@ node chk.mjs --stat   # 数値だけを一覧表示（SHOW_STAT=1 を付ける�
 検査するのは次のとおり。
 
 - **書式**: CR混入、キリル文字、LaTeX残り、H1がちょうど1個、コメントの閉じ忘れ、未知の話者名、太字名の直後が全角スペースか、括弧の全半角混在。
-- **座標**: `slug` とファイル名の一致、`published: false`、`space_index` / `time_index` / `space_unit` の整合。
+- **座標**: `slug` とファイル名の一致、`published: true`、`space_index` / `time_index` / `space_unit` の整合。
 - **声**: エドモンの敬体とルイ・アンリの常体の混線、男性キャラの「あら」。
 - **重複**: ファイルをまたいだ決め台詞の重複（先頭40字で照合。12字未満は対象外）。
 - **埋め草**: 規則（5）の各上限。閾値は §5.3 規則（5）の表が正。
@@ -550,7 +552,7 @@ node chkp.mjs --stat   # 数値だけを一覧表示
 検査するのは次のとおり。
 
 - **書式**: CR混入、キリル文字、H1がちょうど1個、コメントの閉じ忘れ、括弧の全半角、`summary` が `一人称版:` で始まるか。
-- **座標**: `slug` とファイル名の一致、`published: false`、`space_index` / `time_index` の整合。
+- **座標**: `slug` とファイル名の一致、`published: true`、`space_index` / `time_index` の整合。
 - **行頭 `**`**: 戯曲版の話者行と誤認されるため禁止。強調は文の途中で使う。
 - **漢数字**: §4.3 の慣用句リストに当たらない数量表現を列挙する。
 - **文単位の横断重複**: 句点で切った16字以上の文を全ファイルで照合する。**箴言の衝突を止めるのが主目的で、これが一人称版でいちばん効く検査である。** 戯曲版の重複台詞チェックに相当する。
@@ -589,5 +591,5 @@ node used.mjs --names                          使用済みのカタカナ固有
 
 ## 8. 未決事項
 
-- **公開方式。** 同一座標に論文版と戯曲版を併置して切り替える仕組みが未実装。現状は `published: false` で退避しているだけ。`src/lib/articles.ts` の改修が要る（スライダー側は不要の見込み）。
+- **公開方式。** 2026-10-19 に sagan 版を公開（`published: true`）、原典を非公開にした（§1.4）。同一座標で論文版と sagan 版を読み手が切り替える仕組みは作っていない。必要になったら `src/lib/articles.ts` の改修で対応する。
 - **全話そろったあとの通し見直し。** 残存するおうむ返し、段をまたいだ構図の重複、t4〜t10 段の書き癖。初稿152本が揃ってから一括で扱う。

@@ -4,10 +4,15 @@ date: "2026-09-13T00:00:00Z"
 slug: "sagan_s3_t15"
 summary: "戯曲版: Space 3 / Time 15（直近未来50万年内・半径5000 km圏内）"
 author: "未設定"
+image: "content/image/libretto01.jpg"
+image_alt: "『書き換えられない帳面』冒頭画像"
+footer_image: "content/image/libretto01.jpg"
+footer_image_alt: "『書き換えられない帳面』文末画像"
+footer_image_enabled: true
 space_index: 3
 space_unit: "km"
 time_index: 15
-published: false
+published: true
 ---
 
 # 書き換えられない帳面

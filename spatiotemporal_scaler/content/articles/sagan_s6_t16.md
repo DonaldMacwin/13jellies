@@ -4,10 +4,15 @@ date: "2026-09-13T00:00:00Z"
 slug: "sagan_s6_t16"
 summary: "一人称版: Space 6 / Time 16（直近未来500万年内・半径5×10^24 km圏内）"
 author: "未設定"
+image: "content/image/libretto01.jpg"
+image_alt: "『瓶』冒頭画像"
+footer_image: "content/image/libretto01.jpg"
+footer_image_alt: "『瓶』文末画像"
+footer_image_enabled: true
 space_index: 6
 space_unit: "km"
 time_index: 16
-published: false
+published: true
 ---
 
 # 瓶

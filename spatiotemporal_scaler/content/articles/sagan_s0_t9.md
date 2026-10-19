@@ -12,7 +12,7 @@ footer_image_enabled: true
 space_index: 0
 space_unit: "km"
 time_index: 9
-published: false
+published: true
 ---
 
 # 稲妻のあとで

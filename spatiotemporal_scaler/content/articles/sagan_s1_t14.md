@@ -4,10 +4,15 @@ date: "2026-09-13T00:00:00Z"
 slug: "sagan_s1_t14"
 summary: "戯曲版: Space 1 / Time 14（直近未来5万年内・半径50km圏内）"
 author: "未設定"
+image: "content/image/libretto01.jpg"
+image_alt: "『沈んだ飛び石』冒頭画像"
+footer_image: "content/image/libretto01.jpg"
+footer_image_alt: "『沈んだ飛び石』文末画像"
+footer_image_enabled: true
 space_index: 1
 space_unit: "km"
 time_index: 14
-published: false
+published: true
 ---
 
 # 沈んだ飛び石

@@ -4,10 +4,15 @@ date: "2026-09-13T00:00:00Z"
 slug: "sagan_s0_t17"
 summary: "一人称版: Space 0 / Time 17（直近未来5億年内・半径5km圏内）"
 author: "未設定"
+image: "content/image/libretto01.jpg"
+image_alt: "『屋根裏』冒頭画像"
+footer_image: "content/image/libretto01.jpg"
+footer_image_alt: "『屋根裏』文末画像"
+footer_image_enabled: true
 space_index: 0
 space_unit: "km"
 time_index: 17
-published: false
+published: true
 ---
 
 # 屋根裏

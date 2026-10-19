@@ -4,10 +4,15 @@ date: "2026-09-13T00:00:00Z"
 slug: "sagan_s6_t18"
 summary: "一人称版: Space 6 / Time 18（直近未来500億年内・半径5×10^24km圏内）"
 author: "未設定"
+image: "content/image/libretto01.jpg"
+image_alt: "『釣銭』冒頭画像"
+footer_image: "content/image/libretto01.jpg"
+footer_image_alt: "『釣銭』文末画像"
+footer_image_enabled: true
 space_index: 6
 space_unit: "km"
 time_index: 18
-published: false
+published: true
 ---
 
 # 釣銭

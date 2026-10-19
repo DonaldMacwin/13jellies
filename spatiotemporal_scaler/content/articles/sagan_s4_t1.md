@@ -4,10 +4,15 @@ date: "2026-09-13T00:00:00Z"
 slug: "sagan_s4_t1"
 summary: "一人称版: Space 4 / Time 1（直近過去5億年内・半径5×10^10 km圏内）"
 author: "未設定"
+image: "content/image/libretto01.jpg"
+image_alt: "『回転木馬』冒頭画像"
+footer_image: "content/image/libretto01.jpg"
+footer_image_alt: "『回転木馬』文末画像"
+footer_image_enabled: true
 space_index: 4
 space_unit: "km"
 time_index: 1
-published: false
+published: true
 ---
 
 # 回転木馬
@@ -56,9 +61,7 @@ published: false
 
 ## 5億年という幅
 
-今日のスケールは半径5×10^10キロメートル。天文単位でいえば334。太陽系の、いちばん外の棚のあたりだ。
-
-時間は、過去5億年を取る。
+今日のスケールは半径5×10^10キロメートル。天文単位でいえば334。時間は、過去5億年を取る。
 
 このスケールの内側は、前にも考えたとおり、ほとんど入れ替わらない。惑星が同じ軌道をまわり、外縁の天体が同じ軌道をまわる。5億年なら、何百万周もしている。
 

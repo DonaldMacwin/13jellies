@@ -4,10 +4,15 @@ date: "2026-09-13T00:00:00Z"
 slug: "sagan_s6_t1"
 summary: "一人称版: Space 6 / Time 1（直近過去5億年内・半径5×10^24 km圏内）"
 author: "未設定"
+image: "content/image/libretto01.jpg"
+image_alt: "『手帳』冒頭画像"
+footer_image: "content/image/libretto01.jpg"
+footer_image_alt: "『手帳』文末画像"
+footer_image_enabled: true
 space_index: 6
 space_unit: "km"
 time_index: 1
-published: false
+published: true
 ---
 
 # 手帳

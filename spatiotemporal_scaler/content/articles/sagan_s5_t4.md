@@ -4,10 +4,15 @@ date: "2026-09-13T00:00:00Z"
 slug: "sagan_s5_t4"
 summary: "戯曲版: Space 5 / Time 4（直近過去5万年内・半径5×10^20 km圏内）"
 author: "未設定"
+image: "content/image/libretto01.jpg"
+image_alt: "『通りすがりの星』冒頭画像"
+footer_image: "content/image/libretto01.jpg"
+footer_image_alt: "『通りすがりの星』文末画像"
+footer_image_enabled: true
 space_index: 5
 space_unit: "km"
 time_index: 4
-published: false
+published: true
 ---
 
 # 通りすがりの星

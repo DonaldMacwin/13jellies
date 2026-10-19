@@ -4,10 +4,15 @@ date: "2026-09-13T00:00:00Z"
 slug: "sagan_s4_t3"
 summary: "戯曲版: Space 4 / Time 3（直近過去50万年内・半径5×10^10 km圏内）"
 author: "未設定"
+image: "content/image/libretto01.jpg"
+image_alt: "『二度と見えない形』冒頭画像"
+footer_image: "content/image/libretto01.jpg"
+footer_image_alt: "『二度と見えない形』文末画像"
+footer_image_enabled: true
 space_index: 4
 space_unit: "km"
 time_index: 3
-published: false
+published: true
 ---
 
 # 二度と見えない形

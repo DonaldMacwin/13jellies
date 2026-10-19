@@ -4,10 +4,15 @@ date: "2026-09-13T00:00:00Z"
 slug: "sagan_s7_t9"
 summary: "一人称版: Space 7 / Time 9（今・半径5×10^25 km圏以上）"
 author: "未設定"
+image: "content/image/libretto01.jpg"
+image_alt: "『歩幅』冒頭画像"
+footer_image: "content/image/libretto01.jpg"
+footer_image_alt: "『歩幅』文末画像"
+footer_image_enabled: true
 space_index: 7
 space_unit: "km"
 time_index: 9
-published: false
+published: true
 ---
 
 # 歩幅

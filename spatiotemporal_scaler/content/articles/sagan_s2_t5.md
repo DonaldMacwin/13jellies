@@ -4,10 +4,15 @@ date: "2026-09-13T00:00:00Z"
 slug: "sagan_s2_t5"
 summary: "戯曲版: Space 2 / Time 5（直近過去5000年内・半径500km圏内）"
 author: "未設定"
+image: "content/image/libretto01.jpg"
+image_alt: "『遠くから来た青』冒頭画像"
+footer_image: "content/image/libretto01.jpg"
+footer_image_alt: "『遠くから来た青』文末画像"
+footer_image_enabled: true
 space_index: 2
 space_unit: "km"
 time_index: 5
-published: false
+published: true
 ---
 
 # 遠くから来た青

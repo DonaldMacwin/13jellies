@@ -4,10 +4,15 @@ date: "2026-09-13T00:00:00Z"
 slug: "sagan_s0_t3"
 summary: "戯曲版: Space 0 / Time 3（直近過去50万年内・半径5 km圏内）"
 author: "未設定"
+image: "content/image/libretto01.jpg"
+image_alt: "『塩はお好き』冒頭画像"
+footer_image: "content/image/libretto01.jpg"
+footer_image_alt: "『塩はお好き』文末画像"
+footer_image_enabled: true
 space_index: 0
 space_unit: "km"
 time_index: 3
-published: false
+published: true
 ---
 
 # 塩はお好き
