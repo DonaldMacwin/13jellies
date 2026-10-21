@@ -33,6 +33,9 @@ export type ArticleRecord = {
 
 const articlesDir = path.resolve(process.cwd(), 'content', 'articles');
 
+let cachedArticles: ArticleRecord[] | null = null;
+let cachedArticleBySlug: Map<string, ArticleRecord> | null = null;
+
 const toStringArray = (value: unknown): string[] => {
 	if (!Array.isArray(value)) return [];
 	return value.map((item) => String(item));
@@ -129,7 +132,7 @@ export const parseArticleFile = (filePath: string): ArticleRecord => {
 	};
 };
 
-export const getAllArticles = (): ArticleRecord[] => {
+const buildAllArticles = (): ArticleRecord[] => {
 	if (!fs.existsSync(articlesDir)) return [];
 
 	const parsedArticles = fs
@@ -155,8 +158,21 @@ export const getAllArticles = (): ArticleRecord[] => {
 		});
 };
 
+export const getAllArticles = (): ArticleRecord[] => {
+	if (!cachedArticles) {
+		cachedArticles = buildAllArticles();
+		cachedArticleBySlug = new Map(cachedArticles.map((article) => [article.slug, article]));
+	}
+
+	return cachedArticles;
+};
+
 export const getArticleBySlug = (slug: string): ArticleRecord | undefined => {
-	return getAllArticles().find((article) => article.slug === slug);
+	if (!cachedArticleBySlug) {
+		getAllArticles();
+	}
+
+	return cachedArticleBySlug?.get(slug);
 };
 
 export const findNearestArticle = (
