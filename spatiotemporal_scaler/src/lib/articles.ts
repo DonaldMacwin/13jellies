@@ -35,6 +35,27 @@ const articlesDir = path.resolve(process.cwd(), 'content', 'articles');
 
 let cachedArticles: ArticleRecord[] | null = null;
 let cachedArticleBySlug: Map<string, ArticleRecord> | null = null;
+let cachedArticlesRevision = '';
+
+const isDevRuntime = process.env.NODE_ENV !== 'production';
+
+const buildArticlesRevision = (): string => {
+	if (!fs.existsSync(articlesDir)) return 'missing';
+
+	const mdFiles = fs
+		.readdirSync(articlesDir)
+		.filter((name) => name.toLowerCase().endsWith('.md'))
+		.filter((name) => name.toLowerCase() !== 'readme.md')
+		.sort((left, right) => left.localeCompare(right, 'ja'));
+
+	const parts = mdFiles.map((name) => {
+		const filePath = path.join(articlesDir, name);
+		const stat = fs.statSync(filePath);
+		return `${name}:${stat.size}:${Math.trunc(stat.mtimeMs)}`;
+	});
+
+	return parts.join('|');
+};
 
 const toStringArray = (value: unknown): string[] => {
 	if (!Array.isArray(value)) return [];
@@ -159,9 +180,14 @@ const buildAllArticles = (): ArticleRecord[] => {
 };
 
 export const getAllArticles = (): ArticleRecord[] => {
-	if (!cachedArticles) {
+	const nextRevision = buildArticlesRevision();
+	const shouldRebuildCache =
+		!cachedArticles || (isDevRuntime && cachedArticlesRevision !== nextRevision);
+
+	if (shouldRebuildCache) {
 		cachedArticles = buildAllArticles();
 		cachedArticleBySlug = new Map(cachedArticles.map((article) => [article.slug, article]));
+		cachedArticlesRevision = nextRevision;
 	}
 
 	return cachedArticles;

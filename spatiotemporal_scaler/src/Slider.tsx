@@ -11,6 +11,11 @@ export type SliderChange = {
   time: TimeTick;
 };
 
+type SliderMark = {
+  label: string;
+  tooltip: string;
+};
+
 export interface SliderProps {
   onChange?: (v: SliderChange) => void;
   spaceIndex?: number;
@@ -57,6 +62,39 @@ const buildTimeTicks = (): TimeTick[] => {
 };
 
 const timeTicks: TimeTick[] = buildTimeTicks();
+
+const timeMarks: SliderMark[] = [
+  { label: "5×10^10年前", tooltip: "宇宙初期の時代\n（ダミー）" },
+  { label: "5×10^8年前", tooltip: "生命進化の大転換\n（ダミー）" },
+  { label: "5×10^6年前", tooltip: "人類以前の環境\n（ダミー）" },
+  { label: "5×10^5年前", tooltip: "原人の活動期\n（ダミー）" },
+  { label: "5×10^4年前", tooltip: "旧石器文化\n（ダミー）" },
+  { label: "5×10^3年前", tooltip: "古代文明\n（ダミー）" },
+  { label: "5×10^2年前", tooltip: "近世への移行\n（ダミー）" },
+  { label: "5×10^1年前", tooltip: "現代の記憶\n（ダミー）" },
+  { label: "5×10^0年前", tooltip: "最近の出来事\n（ダミー）" },
+  { label: "今", tooltip: "現在" },
+  { label: "5×10^0年後", tooltip: "近未来\n（ダミー）" },
+  { label: "5×10^1年後", tooltip: "社会変化期\n（ダミー）" },
+  { label: "5×10^2年後", tooltip: "都市再編\n（ダミー）" },
+  { label: "5×10^3年後", tooltip: "文明長期変化\n（ダミー）" },
+  { label: "5×10^4年後", tooltip: "地形変化\n（ダミー）" },
+  { label: "5×10^5年後", tooltip: "気候長周期\n（ダミー）" },
+  { label: "5×10^6年後", tooltip: "生態系再編\n（ダミー）" },
+  { label: "5×10^8年後", tooltip: "地球規模変化\n（ダミー）" },
+  { label: "5×10^10年後", tooltip: "恒星進化スケール\n（ダミー）" },
+];
+
+const spaceMarks: SliderMark[] = [
+  { label: "5×10^0 km", tooltip: "観測可能宇宙級（ダミー）" },
+  { label: "5×10^1 km", tooltip: "宇宙大規模構造（ダミー）" },
+  { label: "5×10^2 km", tooltip: "銀河間スケール（ダミー）" },
+  { label: "5×10^3 km", tooltip: "太陽系内スケール（ダミー）" },
+  { label: "5×10^10 km", tooltip: "国家圏スケール（ダミー）" },
+  { label: "5×10^20 km", tooltip: "広域圏スケール（ダミー）" },
+  { label: "5×10^24 km", tooltip: "地域圏スケール（ダミー）" },
+  { label: "5×10^25 km", tooltip: "都市圏スケール（ダミー）" },
+];
 
 const formatTimeLabel = (t: TimeTick) => t.label;
 
@@ -112,6 +150,8 @@ export const Slider: React.FC<SliderProps> = ({ onChange, spaceIndex: controlled
 
   const [spaceIndex, setSpaceIndex] = useState<number>(controlledSpaceIndex ?? initialSpaceIndex);
   const [timeIndex, setTimeIndex] = useState<number>(controlledTimeIndex ?? initialTimeIndex);
+  const [hoveredTimeMark, setHoveredTimeMark] = useState<number | null>(null);
+  const [hoveredSpaceMark, setHoveredSpaceMark] = useState<number | null>(null);
 
   useEffect(() => {
     if (typeof controlledSpaceIndex === 'number') {
@@ -138,16 +178,37 @@ export const Slider: React.FC<SliderProps> = ({ onChange, spaceIndex: controlled
       <div className="time-slider-shell">
         <div className="time-slider-root">
           <div className="slider-counter slider-counter-time">{renderReadout(currentTimeReadout)}</div>
-          <input
-            className="time-slider"
-            type="range"
-            min={0}
-            max={timeTicks.length - 1}
-            step={1}
-            value={timeIndex}
-            onChange={(e) => setTimeIndex(Number(e.target.value))}
-            aria-label="時間スケール"
-          />
+          <div className="time-slider-wrap">
+            <input
+              className="time-slider"
+              type="range"
+              min={0}
+              max={timeTicks.length - 1}
+              step={1}
+              value={timeIndex}
+              onChange={(e) => setTimeIndex(Number(e.target.value))}
+              aria-label="時間スケール"
+            />
+            <div className="time-slider-marks" aria-hidden={false}>
+              {timeMarks.map((mark, idx) => (
+                <button
+                  key={mark.label}
+                  type="button"
+                  className="slider-mark slider-mark-time"
+                  style={{ left: `${(idx / (timeMarks.length - 1)) * 100}%` }}
+                  onClick={() => setTimeIndex(idx)}
+                  onMouseEnter={() => setHoveredTimeMark(idx)}
+                  onMouseLeave={() => setHoveredTimeMark(null)}
+                  onFocus={() => setHoveredTimeMark(idx)}
+                  onBlur={() => setHoveredTimeMark(null)}
+                  aria-label={mark.label}
+                >
+                  <span className="slider-mark-dot" />
+                  {hoveredTimeMark === idx ? <span className="slider-mark-tooltip">{mark.tooltip}</span> : null}
+                </button>
+              ))}
+            </div>
+          </div>
           {/*<div className="time-label">{formatTimeLabel(currentTime)}</div>*/}
         </div>
       </div>
@@ -165,6 +226,25 @@ export const Slider: React.FC<SliderProps> = ({ onChange, spaceIndex: controlled
             onChange={(e) => setSpaceIndex(Number(e.target.value))}
             aria-label="空間スケール"
           />
+          <div className="space-slider-marks" aria-hidden={false}>
+            {spaceMarks.map((mark, idx) => (
+              <button
+                key={mark.label}
+                type="button"
+                className="slider-mark slider-mark-space"
+                style={{ top: `${(idx / (spaceMarks.length - 1)) * 100}%` }}
+                onClick={() => setSpaceIndex(idx)}
+                onMouseEnter={() => setHoveredSpaceMark(idx)}
+                onMouseLeave={() => setHoveredSpaceMark(null)}
+                onFocus={() => setHoveredSpaceMark(idx)}
+                onBlur={() => setHoveredSpaceMark(null)}
+                aria-label={mark.label}
+              >
+                <span className="slider-mark-dot" />
+                {hoveredSpaceMark === idx ? <span className="slider-mark-tooltip slider-mark-tooltip-space">{mark.tooltip}</span> : null}
+              </button>
+            ))}
+          </div>
         </div>
       </div>
     </>

@@ -139,6 +139,13 @@ body {
 	height: auto;
 }
 
+.article-body img {
+	display: block;
+	width: 100%;
+	height: auto;
+	margin: 1.5rem 0;
+}
+
 .article-body p,
 .article-body ul,
 .article-body pre {

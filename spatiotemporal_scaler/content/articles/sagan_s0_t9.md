@@ -4,9 +4,9 @@ date: "2026-09-13T00:00:00Z"
 slug: "sagan_s0_t9"
 summary: "戯曲版: Space 0 / Time 9（今・半径5km圏内）"
 author: "未設定"
-image: "content/image/libretto01.jpg"
+image: "content/image/libretto01_01.jpg"
 image_alt: "『稲妻のあとで』の仮扉画像"
-footer_image: "content/image/libretto01.jpg"
+footer_image: "content/image/libretto01_01.jpg"
 footer_image_alt: "『稲妻のあとで』の仮末尾画像"
 footer_image_enabled: true
 space_index: 0
@@ -188,6 +188,8 @@ published: true
 **ルイ**　そう。夜の空気は耳のいい隣人みたいなものでね。昼は知らんぷりをしている。
 
 **アンリ**　その比喩は要らなかったと思うがね。
+
+![本文内テスト画像](content/image/libretto01.jpg)
 
 ## 第三場　猶予がない
 
@@ -410,6 +412,8 @@ published: true
 **モード**　海だけが、先の予定を知っているのね。
 
 **アンリ**　海には都合というものが無いからな。
+
+![本文内テスト画像](content/image/libretto01.jpg)
 
 ## 第七場　上書きされる
 

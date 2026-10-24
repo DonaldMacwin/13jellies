@@ -50,6 +50,30 @@ const resolveArticleImagePath = (imagePath: string): string => {
 	return `${baseUrl}${trimmedPath}`;
 };
 
+const normalizeInlineImagePath = (src: string): string => {
+	const normalized = src.trim().replace(/\\/g, '/');
+	if (!normalized) {
+		return normalized;
+	}
+
+	const marker = 'content/image/';
+	const markerIndex = normalized.indexOf(marker);
+	if (markerIndex >= 0) {
+		return normalized.slice(markerIndex);
+	}
+
+	return normalized;
+};
+
+const rewriteInlineImageSources = (html: string): string => {
+	return html.replace(/<img([^>]*?)src=(['"])([^'"]+)\2([^>]*)>/gi, (_match, pre, quote, src, post) => {
+		const candidate = normalizeInlineImagePath(String(src));
+		const resolved = resolveArticleImagePath(candidate) || resolveArticleImagePath(String(src));
+		const nextSrc = resolved || String(src);
+		return `<img${pre}src=${quote}${nextSrc}${quote}${post}>`;
+	});
+};
+
 const getScrollableElement = (): HTMLElement | null => {
 	if (typeof document === 'undefined') {
 		return null;
@@ -181,6 +205,14 @@ const ArticleExplorer: React.FC<Props> = ({ articles = [], initialSlug, updateUr
 		return resolveArticleImagePath(currentArticle.footerImage) || defaultArticleImage;
 	}, [currentArticle]);
 
+	const articleHtmlWithResolvedImages = useMemo(() => {
+		if (!currentArticle) {
+			return '';
+		}
+
+		return rewriteInlineImageSources(currentArticle.html);
+	}, [currentArticle]);
+
 	useEffect(() => {
 		if (typeof document === 'undefined') {
 			return;
@@ -272,7 +304,7 @@ const ArticleExplorer: React.FC<Props> = ({ articles = [], initialSlug, updateUr
 						/>
 					</figure>
 				) : null}
-				<div className="article-body" dangerouslySetInnerHTML={{ __html: currentArticle.html }} />
+				<div className="article-body" dangerouslySetInnerHTML={{ __html: articleHtmlWithResolvedImages }} />
 				{footerImageSrc ? (
 					<figure className="article-figure article-figure-bottom">
 						<img
