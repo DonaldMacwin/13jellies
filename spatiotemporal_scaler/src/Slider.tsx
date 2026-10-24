@@ -147,6 +147,10 @@ const timeTickShortLabel = (tick: TimeTick) => {
 export const Slider: React.FC<SliderProps> = ({ onChange, spaceIndex: controlledSpaceIndex, timeIndex: controlledTimeIndex }) => {
   const initialSpaceIndex = 0; // smallest at start
   const initialTimeIndex = Math.floor(timeTicks.length / 2); // center = 今
+  const maxSpaceIndex = spaceTicks.length - 1;
+
+  const visualToLogicalSpaceIndex = (visualIndex: number) => maxSpaceIndex - visualIndex;
+  const logicalToVisualSpaceIndex = (logicalIndex: number) => maxSpaceIndex - logicalIndex;
 
   const [spaceIndex, setSpaceIndex] = useState<number>(controlledSpaceIndex ?? initialSpaceIndex);
   const [timeIndex, setTimeIndex] = useState<number>(controlledTimeIndex ?? initialTimeIndex);
@@ -222,8 +226,8 @@ export const Slider: React.FC<SliderProps> = ({ onChange, spaceIndex: controlled
             min={0}
             max={spaceTicks.length - 1}
             step={1}
-            value={spaceIndex}
-            onChange={(e) => setSpaceIndex(Number(e.target.value))}
+            value={logicalToVisualSpaceIndex(spaceIndex)}
+            onChange={(e) => setSpaceIndex(visualToLogicalSpaceIndex(Number(e.target.value)))}
             aria-label="空間スケール"
           />
           <div className="space-slider-marks" aria-hidden={false}>
@@ -233,7 +237,7 @@ export const Slider: React.FC<SliderProps> = ({ onChange, spaceIndex: controlled
                 type="button"
                 className="slider-mark slider-mark-space"
                 style={{ top: `${(idx / (spaceMarks.length - 1)) * 100}%` }}
-                onClick={() => setSpaceIndex(idx)}
+                onClick={() => setSpaceIndex(visualToLogicalSpaceIndex(idx))}
                 onMouseEnter={() => setHoveredSpaceMark(idx)}
                 onMouseLeave={() => setHoveredSpaceMark(null)}
                 onFocus={() => setHoveredSpaceMark(idx)}
