@@ -4,9 +4,9 @@ date: "2026-09-13T00:00:00Z"
 slug: "sagan_s0_t10"
 summary: "戯曲版: Space 0 / Time 10（直近未来5年内・半径5km圏内）"
 author: "未設定"
-image: "content/image/libretto01.jpg"
+image: "content/image/libretto00-10_01.png"
 image_alt: "『別荘を売る前に』冒頭画像"
-footer_image: "content/image/libretto01.jpg"
+footer_image: "content/image/libretto00-10_01.png"
 footer_image_alt: "『別荘を売る前に』文末画像"
 footer_image_enabled: true
 space_index: 0
@@ -162,6 +162,8 @@ published: true
 
 **モード**　では、今朝の散歩も、どこかで数えられているのね。イザベルが石を見つけたことは数えられないけれど。
 
+![alt](content/image/libretto00-10_02.jpg)
+
 ## 第四場　畳むということ
 
 **ルイ**　この5年でいちばん重くのしかかるのは、たぶん「畳み方」だ。古い木造が密集した区画や、高度成長期に山を削って造った斜面の宅地をどうするか、という話でな。全部を同じように維持するのはもう無理だから、危ないところから順に緑地や遊水地へ戻して、安全な高台や駅のそばへ住まいを寄せようとしている。
@@ -265,6 +267,8 @@ published: true
 **ルイ**　隠したほうが土地が使えるからな。
 
 **アンリ**　効率のためだ、と言えば何でも通る。それはそうなのだ。私はただ、通ったことを覚えておきたいだけでね。
+
+![alt](content/image/libretto00-10_03.png)
 
 ## 第七場　百年の森と、側溝の蓋の裏
 

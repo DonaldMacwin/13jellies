@@ -4,9 +4,9 @@ date: "2026-09-13T00:00:00Z"
 slug: "sagan_s0_t11"
 summary: "戯曲版: Space 0 / Time 11（直近未来50年内・半径5km圏内）"
 author: "未設定"
-image: "content/image/libretto01.jpg"
+image: "content/image/libretto00-11_01.png"
 image_alt: "『なしくずしの坂』冒頭画像"
-footer_image: "content/image/libretto01.jpg"
+footer_image: "content/image/libretto00-11_01.png"
 footer_image_alt: "『なしくずしの坂』文末画像"
 footer_image_enabled: true
 space_index: 0
@@ -92,6 +92,8 @@ published: true
 **ルイ**　屋根が落ちているやつか。
 
 **アンリ**　（うなずいて）誰かが持っていったんだろう。あれはなかなか良い木だったからな。
+
+![alt](content/image/libretto00-11_02.jpg)
 
 ## 第四場　勝手に戻ってくる
 
@@ -232,6 +234,8 @@ published: true
 **アンリ**　珍しく君が褒めたな。
 
 **モード**　小さいものを数千集めるという発想が好きなのよ。大きいものを1つ作る人は、たいてい自分の名前を彫りたがるもの。
+
+![alt](content/image/libretto00-11_03.png)
 
 ## 第九場　移し替え
 

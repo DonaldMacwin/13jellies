@@ -64,16 +64,16 @@ const buildTimeTicks = (): TimeTick[] => {
 const timeTicks: TimeTick[] = buildTimeTicks();
 
 const timeMarks: SliderMark[] = [
-  { label: "5×10^10年前", tooltip: "宇宙初期の時代\n（ダミー）" },
-  { label: "5×10^8年前", tooltip: "生命進化の大転換\n（ダミー）" },
-  { label: "5×10^6年前", tooltip: "人類以前の環境\n（ダミー）" },
-  { label: "5×10^5年前", tooltip: "原人の活動期\n（ダミー）" },
-  { label: "5×10^4年前", tooltip: "旧石器文化\n（ダミー）" },
-  { label: "5×10^3年前", tooltip: "古代文明\n（ダミー）" },
-  { label: "5×10^2年前", tooltip: "近世への移行\n（ダミー）" },
-  { label: "5×10^1年前", tooltip: "現代の記憶\n（ダミー）" },
-  { label: "5×10^0年前", tooltip: "最近の出来事\n（ダミー）" },
-  { label: "今", tooltip: "現在" },
+  { label: "5×10^10年前", tooltip: "宇宙初期の時代\n500億年前" },
+  { label: "5×10^8年前", tooltip: "生命進化の大転換\n5億年前" },
+  { label: "5×10^6年前", tooltip: "人類以前の環境\n500万年前" },
+  { label: "5×10^5年前", tooltip: "原人の活動期\n50万年前" },
+  { label: "5×10^4年前", tooltip: "旧石器文化\n5万年前" },
+  { label: "5×10^3年前", tooltip: "古代文明\n5000年前" },
+  { label: "5×10^2年前", tooltip: "近世への移行\n500年前" },
+  { label: "5×10^1年前", tooltip: "現代の記憶\n50年前" },
+  { label: "5×10^0年前", tooltip: "最近の出来事\n5年前" },
+  { label: "今", tooltip: "今" },
   { label: "5×10^0年後", tooltip: "近未来\n5年後" },
   { label: "5×10^1年後", tooltip: "社会変化期\n50年後(5×10^1)" },
   { label: "5×10^2年後", tooltip: "都市再編\n500年後(5×10^2)" },
@@ -86,14 +86,14 @@ const timeMarks: SliderMark[] = [
 ];
 
 const spaceMarks: SliderMark[] = [
-  { label: "5×10^25 km", tooltip: "観測可能宇宙級（ダミー）" },
-  { label: "5×10^24 km", tooltip: "宇宙大規模構造（ダミー）" },
-  { label: "5×10^20 km", tooltip: "銀河間スケール（ダミー）" },
-  { label: "5×10^10 km", tooltip: "太陽系内スケール（ダミー）" },
-  { label: "5×10^3 km", tooltip: "国家圏スケール（ダミー）" },
-  { label: "5×10^2 km", tooltip: "広域圏スケール（ダミー）" },
-  { label: "5×10^1 km", tooltip: "地域圏スケール（ダミー）" },
-  { label: "5×10^0 km", tooltip: "都市圏スケール（ダミー）" },
+  { label: "5×10^25 km", tooltip: "計算宇宙圏 半径50杼km以上\n10^12 光年以上" },
+  { label: "5×10^24 km", tooltip: "観測可能宇宙圏 半径5杼km\n10^11 光年" },
+  { label: "5×10^20 km", tooltip: "銀河間 半径5垓km\n5,285万光年" },
+  { label: "5×10^10 km", tooltip: "太陽系内 半径500億km" },
+  { label: "5×10^3 km", tooltip: "国家圏 半径5000km" },
+  { label: "5×10^2 km", tooltip: "広域圏 半径500km" },
+  { label: "5×10^1 km", tooltip: "地域圏 半径50km" },
+  { label: "5×10^0 km", tooltip: "都市圏 半径5km" },
 ];
 
 const formatTimeLabel = (t: TimeTick) => t.label;
