@@ -39,14 +39,20 @@ let cachedArticlesRevision = '';
 
 const isDevRuntime = process.env.NODE_ENV !== 'production';
 
+// Only sagan_*.md are articles; the original 2026-09-13-* sources live in content/articles/元素材/
+const isArticleFile = (fileName: string): boolean =>
+	fileName.startsWith('sagan_') && fileName.toLowerCase().endsWith('.md');
+
+const listArticleFiles = (): string[] =>
+	fs
+		.readdirSync(articlesDir)
+		.filter(isArticleFile)
+		.sort((left, right) => left.localeCompare(right, 'ja'));
+
 const buildArticlesRevision = (): string => {
 	if (!fs.existsSync(articlesDir)) return 'missing';
 
-	const mdFiles = fs
-		.readdirSync(articlesDir)
-		.filter((name) => name.toLowerCase().endsWith('.md'))
-		.filter((name) => name.toLowerCase() !== 'readme.md')
-		.sort((left, right) => left.localeCompare(right, 'ja'));
+	const mdFiles = listArticleFiles();
 
 	const parts = mdFiles.map((name) => {
 		const filePath = path.join(articlesDir, name);
@@ -86,24 +92,7 @@ const preprocessMarkdown = (source: string): string => {
 		.replace(/^\s*[—―─]+\s*$/gm, '---');
 };
 
-const isPreferredArticleFile = (fileName: string): boolean => fileName.startsWith('sagan_');
-
-const isGeneratedFallbackFile = (fileName: string): boolean => /^\d{4}-\d{2}-\d{2}-/.test(fileName);
-
-const articlePriority = (article: ArticleRecord): number => {
-	if (isPreferredArticleFile(article.fileName)) return 2;
-	if (isGeneratedFallbackFile(article.fileName)) return 1;
-	return 0;
-};
-
-const isDisplayableArticle = (article: ArticleRecord): boolean => {
-	return isPreferredArticleFile(article.fileName) || article.published;
-};
-
 const comparePreferredArticle = (left: ArticleRecord, right: ArticleRecord): number => {
-	const priorityDiff = articlePriority(right) - articlePriority(left);
-	if (priorityDiff !== 0) return priorityDiff;
-
 	const dateDiff = right.date.localeCompare(left.date);
 	if (dateDiff !== 0) return dateDiff;
 
@@ -156,12 +145,7 @@ export const parseArticleFile = (filePath: string): ArticleRecord => {
 const buildAllArticles = (): ArticleRecord[] => {
 	if (!fs.existsSync(articlesDir)) return [];
 
-	const parsedArticles = fs
-		.readdirSync(articlesDir)
-		.filter((name) => name.toLowerCase().endsWith('.md'))
-		.filter((name) => name.toLowerCase() !== 'readme.md')
-		.map((name) => parseArticleFile(path.join(articlesDir, name)))
-		.filter(isDisplayableArticle);
+	const parsedArticles = listArticleFiles().map((name) => parseArticleFile(path.join(articlesDir, name)));
 
 	const selectedByCoordinate = new Map<string, ArticleRecord>();
 	for (const article of parsedArticles) {

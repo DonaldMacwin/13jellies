@@ -144,10 +144,6 @@ const nearestArticle = (articles: ArticleSummary[], spaceIndex: number, timeInde
 				return leftDistance - rightDistance;
 			}
 
-			if (left.slug.startsWith('sagan_') !== right.slug.startsWith('sagan_')) {
-				return left.slug.startsWith('sagan_') ? -1 : 1;
-			}
-
 			return right.date.localeCompare(left.date);
 		})[0];
 };
