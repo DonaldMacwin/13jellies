@@ -4,9 +4,9 @@ date: "2026-09-13T00:00:00Z"
 slug: "sagan_s4_t10"
 summary: "戯曲版: Space 4 / Time 10（直近未来5年内・半径500億km圏内）"
 author: "未設定"
-image: "content/image/libretto01.jpg"
+image: "content/image/libretto04-10_01.jpg"
 image_alt: "『来るかもしれない客』冒頭画像"
-footer_image: "content/image/libretto01.jpg"
+footer_image: "content/image/libretto04-10_01.jpg"
 footer_image_alt: "『来るかもしれない客』文末画像"
 footer_image_enabled: true
 space_index: 4
@@ -53,8 +53,6 @@ published: true
 
 **エドモン**　見送りました。3度とも。
 
-
-
 **アンリ**　それで、先に船を停めておくことにしたと。
 
 **エドモン**　そうです。
@@ -66,9 +64,6 @@ published: true
 **イザベル**　会わなければ、がっかりもしないわね。
 
 **モード**　それ以上に、がっかりさせずに済むのよ。お互いにね。知っているわ。来なかったでしょう。
-
-
-
 
 **アンリ**　来なかった。2幕とも来なかった。だが、あの芝居が半世紀たっても上演され続けているのは、待つという行為だけで舞台が成立すると証明したからでな。
 
@@ -125,6 +120,8 @@ published: true
 **エドモン**　望遠鏡のほうが長いと思います。
 
 **アンリ**　では、悪い取引ではない。本人がそう思ったかどうかは、別の話だがね。
+
+![alt](content/image/libretto04-10_02.jpg)
 
 ## 第三場　消していく
 
@@ -200,6 +197,8 @@ published: true
 
 **ルイ**　今日は出来がいいからだ。無理に壊すこともない。
 
+![alt](content/image/libretto04-10_03.jpg)
+
 ## 第五場　暗さを測る
 
 **イザベル**　外は、どのくらい暗いのかしら。
@@ -269,6 +268,8 @@ published: true
 **アンリ**　それを聞くと、急いで何かをする気が失せるな。
 
 **モード**　あなたはもともと失せているでしょう。
+
+![alt](content/image/libretto04-10_04.jpg)
 
 ## 第七場　重心
 

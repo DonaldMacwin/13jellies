@@ -4,9 +4,9 @@ date: "2026-09-13T00:00:00Z"
 slug: "sagan_s4_t8"
 summary: "戯曲版: Space 4 / Time 8（直近過去5年内・半径500億km圏内）"
 author: "未設定"
-image: "content/image/libretto01.jpg"
+image: "content/image/libretto04-08_01.jpg"
 image_alt: "『名づけないという選択』冒頭画像"
-footer_image: "content/image/libretto01.jpg"
+footer_image: "content/image/libretto04-08_01.jpg"
 footer_image_alt: "『名づけないという選択』文末画像"
 footer_image_enabled: true
 space_index: 4
@@ -99,6 +99,8 @@ published: true
 
 **アンリ**　誰も行ったことのない場所については、誰でも自信を持って間違えられる。
 
+![alt](content/image/libretto04-08_02.jpg)
+
 ## 第三場　ル・ヴェリエの二つの仕事
 
 **イザベル**　そのスケールに、まだ見つかっていない星があるって本当。
@@ -182,6 +184,8 @@ published: true
 **ルイ**　つまり、太陽系の果てがどこかという問いが、また書き換わる。
 
 **アンリ**　果てというのは、いつもそうだ。近づくと後ろへ下がる。
+
+![alt](content/image/libretto04-08_03.jpg)
 
 ## 第五場　暗室
 
@@ -269,6 +273,8 @@ published: true
 
 **ルイ**　配送に数千万年かかっているがな。
 
+![alt](content/image/libretto04-08_04.jpg)
+
 ## 第七場　重心が動く
 
 **アンリ**　ところでエドモン。このスケールは、宇宙論とは関係ないのだろう。
@@ -287,7 +293,7 @@ published: true
 
 **エドモン**　そこで決定的に重要になるのが、観測している地球の位置、正確には太陽系の重心の位置です。
 
-**アンリ**　（少し考えて）……待ちたまえ。もしこのスケールに未発見の惑星があったら。
+**アンリ**　……待ちたまえ。もしこのスケールに未発見の惑星があったら。
 
 **エドモン**　重心がずれます。
 

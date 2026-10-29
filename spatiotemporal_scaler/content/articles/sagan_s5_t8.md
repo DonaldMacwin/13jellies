@@ -4,9 +4,9 @@ date: "2026-09-13T00:00:00Z"
 slug: "sagan_s5_t8"
 summary: "戯曲版: Space 5 / Time 8（直近過去5年内・半径5×10^20 km圏内）"
 author: "未設定"
-image: "content/image/libretto01.jpg"
+image: "content/image/libretto05-08_01.jpg"
 image_alt: "『誰でもない肖像』冒頭画像"
-footer_image: "content/image/libretto01.jpg"
+footer_image: "content/image/libretto05-08_01.jpg"
 footer_image_alt: "『誰でもない肖像』文末画像"
 footer_image_enabled: true
 space_index: 5
@@ -102,6 +102,8 @@ published: true
 **ルイ**　そうだ。しかも、かなり真剣にな。
 
 **アンリ**　私はその種の議論を、生涯でずいぶん長くやってきた気がする。
+
+![alt](content/image/libretto05-08_02.jpg)
 
 ## 第三場　中心の火事の跡
 
@@ -201,6 +203,8 @@ published: true
 
 **アンリ**　宇宙が他人の残骸を呑み込んで、さも昔からの由緒ある姿であるかのように見せかけているのと、まったく同じ手続きだな。
 
+![alt](content/image/libretto05-08_03.jpg)
+
 ## 第五場　まだ食べている
 
 **モード**　昔の話ばかりね。いまはもう、落ち着いているのでしょう。
@@ -266,6 +270,8 @@ published: true
 **モード**　誰から譲り受けたかも分からない莫大な遺産で、毎夜シャンパンを開ける……これ以上のエレガンスがあるかしら？
 
 **アンリ**　そして破産したときに初めて、自分が一度も働いたことがなかった事実に驚いてみせるわけだ。
+
+![alt](content/image/libretto05-08_04.jpg)
 
 ## 第七場　氷の上の化学
 

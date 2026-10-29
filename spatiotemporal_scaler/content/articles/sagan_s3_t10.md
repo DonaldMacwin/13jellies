@@ -4,9 +4,9 @@ date: "2026-09-13T00:00:00Z"
 slug: "sagan_s3_t10"
 summary: "戯曲版: Space 3 / Time 10（直近未来5年内・半径5000km圏内）"
 author: "未設定"
-image: "content/image/libretto01.jpg"
+image: "content/image/libretto03-10_01.jpg"
 image_alt: "『知っていて動かなかった人』冒頭画像"
-footer_image: "content/image/libretto01.jpg"
+footer_image: "content/image/libretto03-10_01.jpg"
 footer_image_alt: "『知っていて動かなかった人』文末画像"
 footer_image_enabled: true
 space_index: 3
@@ -99,6 +99,8 @@ published: true
 
 **アンリ**　相続とは、たいてい、直す番のことだ。
 
+![alt](content/image/libretto03-10_02.jpg)
+
 ## 第三場　水をめぐる政治
 
 **イザベル**　海には、線が引いてあるの。
@@ -168,6 +170,8 @@ published: true
 **イザベル**　工場が来ると、水が減るの。
 
 **ルイ**　使い方次第だ。ただ、工場は誘致できるが、地下水は誘致できない。誘致できないものを、我々はいつも後から数える。
+
+![alt](content/image/libretto03-10_03.jpg)
 
 ## 第五場　60から90パーセント
 
@@ -248,6 +252,8 @@ published: true
 **エドモン**　はい。ですから、知っていても動かないのは、人の怠慢ではなく、人がそういう生き物だということです。そこを責めても、何も進みません。
 
 **ルイ**　（笑って）……それは、今日いちばん容赦のない慰め方だな。
+
+![alt](content/image/libretto03-10_04.jpg)
 
 ## 第七場　凍土と珊瑚
 

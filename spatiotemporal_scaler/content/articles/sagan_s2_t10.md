@@ -4,9 +4,9 @@ date: "2026-09-13T00:00:00Z"
 slug: "sagan_s2_t10"
 summary: "戯曲版: Space 2 / Time 10（直近未来5年内・半径500km圏内）"
 author: "未設定"
-image: "content/image/libretto01.jpg"
+image: "content/image/libretto02-10_01.jpg"
 image_alt: "『見知らぬ町との縁組』冒頭画像"
-footer_image: "content/image/libretto01.jpg"
+footer_image: "content/image/libretto02-10_01.jpg"
 footer_image_alt: "『見知らぬ町との縁組』文末画像"
 footer_image_enabled: true
 space_index: 2
@@ -129,6 +129,8 @@ published: true
 
 **アンリ**　強制ではない。強制でないというのは、誰も責任を取らんという意味だ。
 
+![alt](content/image/libretto02-10_02.jpg)
+
 ## 第三場　運ぶ人がいない
 
 **ルイ**　次は物の話だ。この5年で、500キロを運ぶことが難しくなる。
@@ -197,6 +199,8 @@ published: true
 
 **モード**　でもアンリ、井戸を掘る男の退屈な話を聞くくらいなら、わたしは詩人の差し出す毒杯を飲むわ。スタイルを失うくらいなら、喉が渇いた方がマシよ。
 
+![alt](content/image/libretto02-10_03.jpg)
+
 ## 第五場　60から90
 
 **イザベル**　地震のことも、訊いておいたほうがいいかしら。
@@ -236,6 +240,8 @@ published: true
 **モード**　……さっきから水の話ばかりね。
 
 **ルイ**　このスケールの話をすると、たいてい最後は水になる。
+
+![alt](content/image/libretto02-10_04.jpg)
 
 ## 第六場　半日前へ
 

@@ -4,9 +4,9 @@ date: "2026-09-13T00:00:00Z"
 slug: "sagan_s1_t8"
 summary: "戯曲版: Space 1 / Time 8（直近過去5年内・半径50km圏内）"
 author: "未設定"
-image: "content/image/libretto01.jpg"
+image: "content/image/libretto01-08_01.jpg"
 image_alt: "『裏返って、また裏返る』冒頭画像"
-footer_image: "content/image/libretto01.jpg"
+footer_image: "content/image/libretto01-08_01.jpg"
 footer_image_alt: "『裏返って、また裏返る』文末画像"
 footer_image_enabled: true
 space_index: 1
@@ -39,7 +39,9 @@ published: true
 
 ## 第一場　道が1本しかない
 
-　　　　　　　（夕刻。テラス。4人が食事を終えている。坂の下で車のドアが閉まる音がして、ルイが遅れて到着する）
+　　　　　　　（夕刻。テラス。4人が食事を終えている。）
+
+　　　　　　　（坂の下で車のドアが閉まる音がして、ルイが遅れて到着する）
 
 **ルイ**　（入ってきて）食うものは残っているか。
 
@@ -110,6 +112,8 @@ published: true
 **アンリ**　砂漠の位置が動いただけだ。中心から50キロのあたりに、新しい湿地が何か所かできている。
 
 **ルイ**　それが次の話だな。
+
+![alt](content/image/libretto01-08_02.jpg)
 
 ## 第三場　送電網の空き容量
 
@@ -184,6 +188,8 @@ published: true
 **モード**　鶏の話は聞いていないの。本人の話も、人づてなのよ。
 
 **アンリ**　……統計というのは、そういう人を何万人ぶんか集めたものだ。一人ずつには、たいてい鶏がいる。
+
+![alt](content/image/libretto01-08_03.jpg)
 
 ## 第五場　黒い幕
 
@@ -276,6 +282,8 @@ published: true
 **ルイ**　土地を貸したからだ。それ以来、巡る者は必ずその家の庭を通る。100年たって、いまでは由緒ある場所ということになっている。
 
 **モード**　（取り合わずに）……100年あれば、ただの庭も由緒になるのね。
+
+![alt](content/image/libretto01-08_04.jpg)
 
 ## 第七場　半日前
 

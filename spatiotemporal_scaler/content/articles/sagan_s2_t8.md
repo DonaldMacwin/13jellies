@@ -4,9 +4,9 @@ date: "2026-09-13T00:00:00Z"
 slug: "sagan_s2_t8"
 summary: "戯曲版: Space 2 / Time 8（直近過去5年内・半径500km圏内）"
 author: "未設定"
-image: "content/image/libretto01.jpg"
+image: "content/image/libretto02-08_01.jpg"
 image_alt: "『一枚の空』冒頭画像"
-footer_image: "content/image/libretto01.jpg"
+footer_image: "content/image/libretto02-08_01.jpg"
 footer_image_alt: "『一枚の空』文末画像"
 footer_image_enabled: true
 space_index: 2
@@ -113,6 +113,8 @@ published: true
 
 **ルイ**　去年は去年だ。
 
+![alt](content/image/libretto02-08_02.jpg)
+
 ## 第三場　日帰りの上限
 
 **ルイ**　この距離には、もっと即物的な意味もあるぞ。500キロというのは、陸の上を日帰りで往復できる上限にかなり近い。
@@ -195,6 +197,8 @@ published: true
 
 **モード**　あの夜、わたしがいた場所は、どの国家の統計にも載せられないような、ただの曖昧なベッドの上だったもの。役人の数字なんて、昼間に生きている真面目な人たちだけのものよ。
 
+![alt](content/image/libretto02-08_03.jpg)
+
 ## 第五場　プロヴァンス
 
 **イザベル**　500キロ離れたら、言葉は通じるのかしら。
@@ -274,6 +278,8 @@ published: true
 **モード**　みんな、線が邪魔だったのね。
 
 **アンリ**　線が邪魔だと言うために、学者は20年かける。君は2秒だ。
+
+![alt](content/image/libretto02-08_04.jpg)
 
 ## 第七場　蝸牛
 

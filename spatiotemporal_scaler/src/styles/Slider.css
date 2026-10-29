@@ -68,7 +68,7 @@
 }
 
 /* Keep readout area stable so slider doesn't shift */
-.slider-counter { display: flex; align-items: baseline; justify-content: center; min-width: 0; white-space: nowrap; overflow: visible; color: #3578e5; }
+.slider-counter { display: flex; align-items: baseline; justify-content: center; min-width: 0; white-space: nowrap; overflow: visible; color: #ddd; }
 
 .slider-counter sup { position: relative; top: -1.25em; font-size: 1.25rem; line-height: 1; display: inline-block; }
 .slider-counter .unit { font-size: 0.5em; margin-left: 4px; }
@@ -103,7 +103,7 @@
 .time-slider-root { position: relative; z-index: +1; background: #FFF;}
 
 /* Layering: overlay should sit between the text and the slider track/thumb */
-.slider-counter-time { position: relative; z-index: +2; overflow: visible; color: #3578e5; }
+.slider-counter-time { position: relative; z-index: +2; overflow: visible; }
 .time-slider { position: relative; z-index: +3;}
 
 .slider-counter-time {

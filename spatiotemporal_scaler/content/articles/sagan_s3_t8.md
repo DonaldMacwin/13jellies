@@ -4,9 +4,9 @@ date: "2026-09-13T00:00:00Z"
 slug: "sagan_s3_t8"
 summary: "戯曲版: Space 3 / Time 8（直近過去5年内・半径5000km圏内）"
 author: "未設定"
-image: "content/image/libretto01.jpg"
+image: "content/image/libretto03-08_01.png"
 image_alt: "『久しぶりの顔ぶれ』冒頭画像"
-footer_image: "content/image/libretto01.jpg"
+footer_image: "content/image/libretto03-08_01.png"
 footer_image_alt: "『久しぶりの顔ぶれ』文末画像"
 footer_image_enabled: true
 space_index: 3
@@ -101,6 +101,8 @@ published: true
 
 **モード**　同意なんて求めないのが、本当の別れよ。黙って軽い鞄をひとつ廊下に置けば十分だわ。
 
+![alt](content/image/libretto03-08_02.jpg)
+
 ## 第三場　止まった空
 
 　　　　　　　（イザベル、脚を組み替える）
@@ -168,6 +170,8 @@ published: true
 **エドモン**　睡眠はもともと邪魔されています。子どもが2人いますので。
 
 **アンリ**　エドモン、君は今夜、初めて面白いことを言った。
+
+![alt](content/image/libretto03-08_03.jpg)
 
 ## 第五場　足の下の火星
 
@@ -278,6 +282,8 @@ published: true
 **アンリ**　……エドモン。君は、いつからそういう性格になった。
 
 **エドモン**　性格ではありません。観測ですよ。
+
+![alt](content/image/libretto03-08_04.jpg)
 
 ## 第七場　地球という開口
 
