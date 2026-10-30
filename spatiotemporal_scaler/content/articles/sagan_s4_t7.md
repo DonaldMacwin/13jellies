@@ -4,9 +4,9 @@ date: "2026-09-13T00:00:00Z"
 slug: "sagan_s4_t7"
 summary: "戯曲版: Space 4 / Time 7（直近過去50年内・半径500億km圏内）"
 author: "未設定"
-image: "content/image/libretto01.jpg"
+image: "content/image/libretto04-07_01.jpg"
 image_alt: "『格下げされた星』冒頭画像"
-footer_image: "content/image/libretto01.jpg"
+footer_image: "content/image/libretto04-07_01.jpg"
 footer_image_alt: "『格下げされた星』文末画像"
 footer_image_enabled: true
 space_index: 4
