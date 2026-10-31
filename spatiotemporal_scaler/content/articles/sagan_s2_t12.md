@@ -4,9 +4,9 @@ date: "2026-09-13T00:00:00Z"
 slug: "sagan_s2_t12"
 summary: "戯曲版: Space 2 / Time 12（直近未来500年内・半径500km圏内）"
 author: "未設定"
-image: "content/image/libretto01.jpg"
+image: "content/image/libretto02-12_01.jpg"
 image_alt: "『沈んだ別荘』冒頭画像"
-footer_image: "content/image/libretto01.jpg"
+footer_image: "content/image/libretto02-12_01.jpg"
 footer_image_alt: "『沈んだ別荘』文末画像"
 footer_image_enabled: true
 space_index: 2

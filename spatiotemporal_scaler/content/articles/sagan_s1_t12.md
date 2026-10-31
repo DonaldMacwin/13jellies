@@ -4,9 +4,9 @@ date: "2026-09-13T00:00:00Z"
 slug: "sagan_s1_t12"
 summary: "戯曲版: Space 1 / Time 12（直近未来500年内・半径50km圏内）"
 author: "未設定"
-image: "content/image/libretto01.jpg"
+image: "content/image/libretto01-12_01.jpg"
 image_alt: "『直しつづける人たち』冒頭画像"
-footer_image: "content/image/libretto01.jpg"
+footer_image: "content/image/libretto01-12_01.jpg"
 footer_image_alt: "『直しつづける人たち』文末画像"
 footer_image_enabled: true
 space_index: 1

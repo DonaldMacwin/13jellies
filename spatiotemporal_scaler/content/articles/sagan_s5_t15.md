@@ -4,9 +4,9 @@ date: "2026-09-13T00:00:00Z"
 slug: "sagan_s5_t15"
 summary: "戯曲版: Space 5 / Time 15（直近未来50万年内・半径5×10^20 km圏内）"
 author: "未設定"
-image: "content/image/libretto01.jpg"
+image: "content/image/libretto05-15_01.jpg"
 image_alt: "『封をしない招待状』冒頭画像"
-footer_image: "content/image/libretto01.jpg"
+footer_image: "content/image/libretto05-15_01.jpg"
 footer_image_alt: "『封をしない招待状』文末画像"
 footer_image_enabled: true
 space_index: 5

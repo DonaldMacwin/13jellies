@@ -4,9 +4,9 @@ date: "2026-09-13T00:00:00Z"
 slug: "sagan_s1_t6"
 summary: "戯曲版: Space 1 / Time 6（直近過去500年内・半径50km圏内）"
 author: "未設定"
-image: "content/image/libretto01.jpg"
+image: "content/image/libretto01-06_01.jpg"
 image_alt: "『年輪の告げ口』冒頭画像"
-footer_image: "content/image/libretto01.jpg"
+footer_image: "content/image/libretto01-06_01.jpg"
 footer_image_alt: "『年輪の告げ口』文末画像"
 footer_image_enabled: true
 space_index: 1

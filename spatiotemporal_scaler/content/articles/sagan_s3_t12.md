@@ -4,9 +4,9 @@ date: "2026-09-13T00:00:00Z"
 slug: "sagan_s3_t12"
 summary: "戯曲版: Space 3 / Time 12（直近未来500年内・半径5000km圏内）"
 author: "未設定"
-image: "content/image/libretto01.jpg"
+image: "content/image/libretto03-12_01.jpg"
 image_alt: "『灰の残す隙間』冒頭画像"
-footer_image: "content/image/libretto01.jpg"
+footer_image: "content/image/libretto03-12_01.jpg"
 footer_image_alt: "『灰の残す隙間』文末画像"
 footer_image_enabled: true
 space_index: 3
