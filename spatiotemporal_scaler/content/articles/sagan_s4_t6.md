@@ -6,7 +6,7 @@ summary: "戯曲版: Space 4 / Time 6（直近過去500年内・半径500億km�
 author: "未設定"
 image: "content/image/libretto04-06_01.jpg"
 image_alt: "『なぜ夜は暗いのか』冒頭画像"
-footer_image: "content/image/libretto04-06_01.jpg
+footer_image: "content/image/libretto04-06_01.jpg"
 footer_image_alt: "『なぜ夜は暗いのか』文末画像"
 footer_image_enabled: true
 space_index: 4
