@@ -1,16 +1,16 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import ArticleExplorer from '../../components/ArticleExplorer';
-import { getAllArticles } from '../../lib/articles';
+import { getAllArticleSummaries, getArticleBySlug } from '../../lib/articles';
 
 export async function getStaticPaths() {
-	const articles = getAllArticles();
+	const articles = getAllArticleSummaries();
 	return articles.map((a) => ({ params: { slug: a.slug } }));
 }
 
 const { slug } = Astro.params;
-const articles = getAllArticles();
-const article = slug ? articles.find((entry) => entry.slug === slug) : undefined;
+const articles = getAllArticleSummaries();
+const article = slug ? getArticleBySlug(slug) : undefined;
 
 if (!article) {
 	return Astro.redirect(import.meta.env.BASE_URL);
@@ -18,5 +18,5 @@ if (!article) {
 ---
 
 <BaseLayout title={article.title}>
-	<ArticleExplorer client:load articles={articles} initialSlug={article.slug} />
+	<ArticleExplorer client:load articles={articles} initialArticle={article} />
 </BaseLayout>

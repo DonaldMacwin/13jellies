@@ -31,10 +31,13 @@ export type ArticleRecord = {
 	html: string;
 };
 
+export type ArticleSummaryRecord = Omit<ArticleRecord, 'body' | 'html' | 'published' | 'fileName'>;
+
 const articlesDir = path.resolve(process.cwd(), 'content', 'articles');
 
 let cachedArticles: ArticleRecord[] | null = null;
 let cachedArticleBySlug: Map<string, ArticleRecord> | null = null;
+let cachedArticleSummaries: ArticleSummaryRecord[] | null = null;
 let cachedArticlesRevision = '';
 
 const isDevRuntime = process.env.NODE_ENV !== 'production';
@@ -99,15 +102,16 @@ const comparePreferredArticle = (left: ArticleRecord, right: ArticleRecord): num
 	return left.fileName.localeCompare(right.fileName, 'ja');
 };
 
+const markdownProcessor = unified()
+	.use(remarkParse)
+	.use(remarkMath)
+	.use(remarkRehype, { allowDangerousHtml: true })
+	.use(rehypeKatex)
+	.use(rehypeStringify, { allowDangerousHtml: true });
+
 // unified synchronous pipeline for Markdown -> HTML with math support
 const markdownToHtmlSync = (source: string): string => {
-	const file = unified()
-		.use(remarkParse)
-		.use(remarkMath)
-		.use(remarkRehype, { allowDangerousHtml: true })
-		.use(rehypeKatex)
-		.use(rehypeStringify, { allowDangerousHtml: true })
-		.processSync(preprocessMarkdown(source));
+	const file = markdownProcessor.processSync(preprocessMarkdown(source));
 	return String(file);
 };
 
@@ -163,14 +167,43 @@ const buildAllArticles = (): ArticleRecord[] => {
 		});
 };
 
-export const getAllArticles = (): ArticleRecord[] => {
-	const nextRevision = buildArticlesRevision();
-	const shouldRebuildCache =
-		!cachedArticles || (isDevRuntime && cachedArticlesRevision !== nextRevision);
+const toArticleSummary = (article: ArticleRecord): ArticleSummaryRecord => ({
+	title: article.title,
+	date: article.date,
+	slug: article.slug,
+	id: article.id,
+	summary: article.summary,
+	author: article.author,
+	image: article.image,
+	imageAlt: article.imageAlt,
+	footerImage: article.footerImage,
+	footerImageAlt: article.footerImageAlt,
+	footerImageEnabled: article.footerImageEnabled,
+	categories: article.categories,
+	tags: article.tags,
+	spaceIndex: article.spaceIndex,
+	spaceUnit: article.spaceUnit,
+	timeIndex: article.timeIndex,
+});
 
-	if (shouldRebuildCache) {
+export const getAllArticles = (): ArticleRecord[] => {
+	if (!cachedArticles) {
 		cachedArticles = buildAllArticles();
 		cachedArticleBySlug = new Map(cachedArticles.map((article) => [article.slug, article]));
+		cachedArticleSummaries = cachedArticles.map(toArticleSummary);
+		cachedArticlesRevision = isDevRuntime ? buildArticlesRevision() : 'production';
+		return cachedArticles;
+	}
+
+	if (!isDevRuntime) {
+		return cachedArticles;
+	}
+
+	const nextRevision = buildArticlesRevision();
+	if (cachedArticlesRevision !== nextRevision) {
+		cachedArticles = buildAllArticles();
+		cachedArticleBySlug = new Map(cachedArticles.map((article) => [article.slug, article]));
+		cachedArticleSummaries = cachedArticles.map(toArticleSummary);
 		cachedArticlesRevision = nextRevision;
 	}
 
@@ -183,6 +216,14 @@ export const getArticleBySlug = (slug: string): ArticleRecord | undefined => {
 	}
 
 	return cachedArticleBySlug?.get(slug);
+};
+
+export const getAllArticleSummaries = (): ArticleSummaryRecord[] => {
+	if (!cachedArticles || !cachedArticleSummaries) {
+		getAllArticles();
+	}
+
+	return cachedArticleSummaries ?? [];
 };
 
 export const findNearestArticle = (

@@ -174,12 +174,15 @@ export type ArticleSummary = {
 	spaceIndex: number;
 	spaceUnit: string;
 	timeIndex: number;
+};
+
+export type ArticleDetail = ArticleSummary & {
 	html: string;
 };
 
 type Props = {
 	articles: ArticleSummary[];
-	initialSlug?: string;
+	initialArticle?: ArticleDetail;
 	updateUrl?: boolean;
 };
 
@@ -198,43 +201,123 @@ const nearestArticle = (articles: ArticleSummary[], spaceIndex: number, timeInde
 		})[0];
 };
 
-const ArticleExplorer: React.FC<Props> = ({ articles = [], initialSlug, updateUrl = true }) => {
-	const initialArticle = useMemo(() => {
-		return articles.find((article) => article.slug === initialSlug) ?? articles[0];
-	}, [articles, initialSlug]);
+const ArticleExplorer: React.FC<Props> = ({ articles = [], initialArticle, updateUrl = true }) => {
+	const initialArticleSummary = useMemo(() => {
+		if (!initialArticle) {
+			return articles[0];
+		}
+
+		return articles.find((article) => article.slug === initialArticle.slug) ?? initialArticle;
+	}, [articles, initialArticle]);
+	const initialArticleDetail = useMemo(() => {
+		return initialArticle;
+	}, [initialArticle]);
 	const scrollPositionsRef = useRef<Record<string, number>>({});
 
-	const [currentSlug, setCurrentSlug] = useState(initialArticle?.slug ?? '');
+	const [currentSlug, setCurrentSlug] = useState(initialArticleSummary?.slug ?? '');
 	const [selection, setSelection] = useState({
-		spaceIndex: initialArticle?.spaceIndex ?? 0,
-		timeIndex: initialArticle?.timeIndex ?? 9,
+		spaceIndex: initialArticleSummary?.spaceIndex ?? 0,
+		timeIndex: initialArticleSummary?.timeIndex ?? 9,
 	});
+	const [loadedArticles, setLoadedArticles] = useState<Record<string, ArticleDetail>>(() => {
+		if (!initialArticleDetail) {
+			return {};
+		}
+
+		return { [initialArticleDetail.slug]: initialArticleDetail };
+	});
+	const [articleLoadErrors, setArticleLoadErrors] = useState<Record<string, string>>({});
 	const [isSiteInfoOpen, setIsSiteInfoOpen] = useState(false);
 
 	useEffect(() => {
-		if (!initialArticle) {
+		if (!initialArticleSummary) {
 			return;
 		}
 
-		setCurrentSlug((current) => (current === initialArticle.slug ? current : initialArticle.slug));
+		setCurrentSlug((current) =>
+			current === initialArticleSummary.slug ? current : initialArticleSummary.slug,
+		);
 		setSelection((current) => {
 			if (
-				current.spaceIndex === initialArticle.spaceIndex &&
-				current.timeIndex === initialArticle.timeIndex
+				current.spaceIndex === initialArticleSummary.spaceIndex &&
+				current.timeIndex === initialArticleSummary.timeIndex
 			) {
 				return current;
 			}
 
 			return {
-				spaceIndex: initialArticle.spaceIndex,
-				timeIndex: initialArticle.timeIndex,
+				spaceIndex: initialArticleSummary.spaceIndex,
+				timeIndex: initialArticleSummary.timeIndex,
 			};
 		});
-	}, [initialArticle]);
+	}, [initialArticleSummary]);
 
-	const currentArticle = useMemo(() => {
-		return articles.find((article) => article.slug === currentSlug) ?? initialArticle;
-	}, [articles, currentSlug, initialArticle]);
+	useEffect(() => {
+		if (!initialArticleDetail) {
+			return;
+		}
+
+		setLoadedArticles((current) => {
+			if (current[initialArticleDetail.slug]) {
+				return current;
+			}
+
+			return { ...current, [initialArticleDetail.slug]: initialArticleDetail };
+		});
+	}, [initialArticleDetail]);
+
+	const currentArticleSummary = useMemo(() => {
+		return articles.find((article) => article.slug === currentSlug) ?? initialArticleSummary;
+	}, [articles, currentSlug, initialArticleSummary]);
+	const currentArticleDetail = useMemo(() => {
+		if (!currentSlug) {
+			return undefined;
+		}
+
+		return loadedArticles[currentSlug];
+	}, [currentSlug, loadedArticles]);
+	const currentArticle = currentArticleDetail ?? currentArticleSummary;
+
+	useEffect(() => {
+		if (!currentSlug || loadedArticles[currentSlug] || typeof window === 'undefined') {
+			return;
+		}
+
+		const controller = new AbortController();
+		const fetchArticle = async () => {
+			try {
+				const endpoint = `${baseUrl}api/articles/${encodeURIComponent(currentSlug)}.json`;
+				const response = await fetch(endpoint, { signal: controller.signal });
+				if (!response.ok) {
+					throw new Error(`記事データの取得に失敗しました（${response.status}）`);
+				}
+
+				const payload = (await response.json()) as ArticleDetail;
+				setLoadedArticles((current) => ({ ...current, [currentSlug]: payload }));
+				setArticleLoadErrors((current) => {
+					if (!current[currentSlug]) {
+						return current;
+					}
+
+					const next = { ...current };
+					delete next[currentSlug];
+					return next;
+				});
+			} catch (error) {
+				if (controller.signal.aborted) {
+					return;
+				}
+
+				const message = error instanceof Error ? error.message : '記事データの取得に失敗しました。';
+				setArticleLoadErrors((current) => ({ ...current, [currentSlug]: message }));
+			}
+		};
+
+		void fetchArticle();
+		return () => {
+			controller.abort();
+		};
+	}, [currentSlug, loadedArticles]);
 
 	const heroImageSrc = useMemo(() => {
 		if (!currentArticle) {
@@ -257,6 +340,10 @@ const ArticleExplorer: React.FC<Props> = ({ articles = [], initialSlug, updateUr
 			return '';
 		}
 
+		if (!('html' in currentArticle)) {
+			return '';
+		}
+
 		return rewriteInlineImageSources(currentArticle.html);
 	}, [currentArticle]);
 	const { headingHtml, contentHtml } = useMemo(() => {
@@ -271,8 +358,8 @@ const ArticleExplorer: React.FC<Props> = ({ articles = [], initialSlug, updateUr
 			return;
 		}
 
-		document.title = currentArticle?.title ?? 'Spatiotemporal Scaler';
-	}, [currentArticle]);
+		document.title = currentArticleSummary?.title ?? 'Spatiotemporal Scaler';
+	}, [currentArticleSummary]);
 
 	useEffect(() => {
 		if (!currentArticle || typeof window === 'undefined') {
@@ -347,7 +434,7 @@ const ArticleExplorer: React.FC<Props> = ({ articles = [], initialSlug, updateUr
 		}
 	}, [articles, currentSlug, updateUrl]);
 
-	if (!currentArticle) {
+	if (!currentArticleSummary) {
 		return <article className="article-preview"><p>記事がありません。</p></article>;
 	}
 
@@ -391,10 +478,20 @@ const ArticleExplorer: React.FC<Props> = ({ articles = [], initialSlug, updateUr
 						</button>
 					) : null}
 				</div>
-				<div
-					className="article-body"
-					dangerouslySetInnerHTML={{ __html: contentHtml || articleHtmlWithResolvedImages }}
-				/>
+				{articleLoadErrors[currentSlug] ? (
+					<div className="article-body">
+						<p>記事の読み込みに失敗しました: {articleLoadErrors[currentSlug]}</p>
+					</div>
+				) : currentArticleDetail ? (
+					<div
+						className="article-body"
+						dangerouslySetInnerHTML={{ __html: contentHtml || articleHtmlWithResolvedImages }}
+					/>
+				) : (
+					<div className="article-body">
+						<p>記事を読み込み中です...</p>
+					</div>
+				)}
 				{footerImageSrc ? (
 					<figure className="article-figure article-figure-bottom">
 						<img
