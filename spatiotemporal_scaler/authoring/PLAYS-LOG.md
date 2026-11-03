@@ -643,9 +643,9 @@ s0〜s5 は t0〜t2・t16〜t18 が、セシルの一人称へ全面的に書き
 **手書きの台帳は持たない。** 152本を直接検索する `used.mjs` を正とする（`PLAYS.md` §7.4）。
 
 ```
-node used.mjs <語> <語> …     # 既出なら使ったファイルを並べる
-node used.mjs --names          # 固有名の一覧
-node used.mjs --years          # 年号の一覧
+node authoring/used.mjs <語> <語> …     # 既出なら使ったファイルを並べる
+node authoring/used.mjs --names          # 固有名の一覧
+node authoring/used.mjs --years          # 年号の一覧
 ```
 
 一人称版を書き足すとき・直すときは、固有名と年号を必ずこれに通す。
