@@ -49,3 +49,4 @@ spatiotemporal_scaler/authoring/addbr.mjs
 spatiotemporal_scaler/authoring/chk.mjs
 spatiotemporal_scaler/authoring/chkp.mjs
 spatiotemporal_scaler/authoring/used.mjs
+jelliy_contents/dist/assets/*

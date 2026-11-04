@@ -27,7 +27,6 @@ import Medicine_medicalLaw06 from '../assets/img/Medicine_medicalLaw06.png';
 import Medicine_publicHealth01 from '../assets/img/Medicine_publicHealth01.jpg';
 import Medicine_publicHealth02 from '../assets/img/Medicine_publicHealth02.jpg';
 import Medicine_publicHealth03 from '../assets/img/Medicine_publicHealth03.png';
-import Medicine_publicHealth04 from '../assets/img/Medicine_publicHealth04.jpg';
 import Medicine_publicHealth05 from '../assets/img/Medicine_publicHealth05.jpg';
 import Medicine_publicHealth06 from '../assets/img/Medicine_publicHealth06.png';
 
@@ -98,7 +97,7 @@ const sectionImageData = {
   ],
   publicHealth: [
     Medicine_publicHealth01, Medicine_publicHealth02, Medicine_publicHealth03,
-    Medicine_publicHealth04, Medicine_publicHealth05, Medicine_publicHealth06
+    Medicine_publicHealth05, Medicine_publicHealth05, Medicine_publicHealth06
   ],
   anatomy: [
     Medicine_anatomy01, Medicine_anatomy02, Medicine_anatomy03,
