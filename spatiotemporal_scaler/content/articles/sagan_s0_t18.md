@@ -4,9 +4,9 @@ date: "2026-09-13T00:00:00Z"
 slug: "sagan_s0_t18"
 summary: "一人称版: Space 0 / Time 18（直近未来500億年内・半径5km圏内）"
 author: "未設定"
-image: "content/image/libretto01.jpg"
+image: "content/image/libretto00-18_01.jpg"
 image_alt: "『消しゴム』冒頭画像"
-footer_image: "content/image/libretto01.jpg"
+footer_image: "content/image/libretto00-18_01.jpg"
 footer_image_alt: "『消しゴム』文末画像"
 footer_image_enabled: true
 space_index: 0
@@ -115,7 +115,7 @@ published: true
 
 あのときは、スケールが過去にはみ出した。宇宙が138億年しかないので、362億年ぶんの空欄ができた。<br><br>
 
-今度は、後ろにはみ出す。空欄は、スケールの手前ではなく、奥にできる。
+今度は、後ろにはみ出す。空欄は、時間スケールの手前ではなく、奥にできる。
 
 手前の空欄は、埋まる見込みがない。奥の空欄も、埋まる見込みがない。どちらも同じく空だが、こちらの気分は同じにならない。
 
