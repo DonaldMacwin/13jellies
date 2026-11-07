@@ -4,9 +4,9 @@ date: "2026-09-13T00:00:00Z"
 slug: "sagan_s1_t0"
 summary: "一人称版: Space 1 / Time 0（直近過去500億年内・半径50km圏内）"
 author: "未設定"
-image: "content/image/libretto01.jpg"
+image: "content/image/libretto00-01_01.jpg"
 image_alt: "『縮尺』冒頭画像"
-footer_image: "content/image/libretto01.jpg"
+footer_image: "content/image/libretto00-01_01.jpg"
 footer_image_alt: "『縮尺』文末画像"
 footer_image_enabled: true
 space_index: 1
