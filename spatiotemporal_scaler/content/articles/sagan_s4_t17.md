@@ -4,9 +4,9 @@ date: "2026-09-13T00:00:00Z"
 slug: "sagan_s4_t17"
 summary: "一人称版: Space 4 / Time 17（直近未来5億年内・半径5×10^10km圏内）"
 author: "未設定"
-image: "content/image/libretto01.jpg"
+image: "content/image/libretto04-17_01.jpg"
 image_alt: "『火加減』冒頭画像"
-footer_image: "content/image/libretto01.jpg"
+footer_image: "content/image/libretto04-17_01.jpg"
 footer_image_alt: "『火加減』文末画像"
 footer_image_enabled: true
 space_index: 4
