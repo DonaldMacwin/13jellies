@@ -98,7 +98,7 @@ const siteInfoDummyParagraphs: React.ReactNode[] = [
     <strong>エドモン：　</strong>46歳。天文学者。<br />
     <strong>ジャン：　</strong>皆と知り合いの男性。<br />
     <strong>シルヴィアーヌ：　</strong>ジャンの妻。<br /><br />
-    <strong>セシル：　</strong>32歳。翻訳と書評の下請けで食べている。<br />
+    <strong>セシル：　</strong>32歳。翻訳と書評の下請けで暮らしている。<br />
     <strong>マルト：　</strong>セシルの姉。<br />
     <strong>ドミニク：　</strong>セシルの友人。研究所の広報スタッフ。<br />
     <strong>ローラン：　</strong>セシルと5年前に別れた相手。<br />
@@ -512,7 +512,13 @@ const ArticleExplorer: React.FC<Props> = ({ articles = [], initialArticle, updat
             onClick={(event) => event.stopPropagation()}
           >
             <div className="site-info-dialog-header">
-              <h2 id="site-info-dialog-title">バカンス時空間スケーラー</h2>
+              <h2 id="site-info-dialog-title">
+                {logoImageSrc ? (
+                  <img className="site-info-dialog-title-image" src={logoImageSrc} alt="バカンス時空間スケーラー" />
+                ) : (
+                  'バカンス時空間スケーラー'
+                )}
+              </h2>
               <button
                 type="button"
                 className="site-info-dialog-close"
