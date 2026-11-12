@@ -149,6 +149,8 @@ published: true
 
 宇宙はこちらを嫌わないし、人は忙しい。
 
+![alt](content/image/libretto07-03_02.jpg)
+
 ## 鎧戸の内側
 
 2時から5時まで、鎧戸を閉めている。
@@ -276,6 +278,8 @@ published: true
 著者の顔は知らない。
 
 知らないので、一行で済ませられた。
+
+![alt](content/image/libretto07-03_03.jpg)
 
 ## 夫人の蝉
 
