@@ -177,6 +177,8 @@ published: true
 
 道が無い。
 
+![alt](content/image/libretto06-00_02.jpg)
+
 ## 162ギガパーセクのほう
 
 時空間スケールの側の数字も、一応置いておく。
@@ -290,6 +292,8 @@ published: true
 扱ってきたことを、この夏に何度か思い返した。思い返したうえで、今日まで来なかった。
 
 考えることは、対処ではない。
+
+![alt](content/image/libretto06-00_03.jpg)
 
 ## 考えることと行くこと
 
