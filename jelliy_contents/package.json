@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
+    "postbuild": "php ../generate_sitemap.php",
     "lint": "eslint .",
     "preview": "vite preview"
   },
