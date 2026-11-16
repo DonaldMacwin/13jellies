@@ -171,6 +171,8 @@ published: true
 
 そのほんの少しが、5億年というかけ方をされると、効いてくる。
 
+![alt](content/image/libretto04-17_02.jpg)
+
 ## 近いものから効く
 
 火を強めると、近いものから先に変わる。
@@ -316,6 +318,8 @@ published: true
 丸めているあいだは、何も起きない。
 
 丸めきれなくなった日に、はじめて段が変わる。
+
+![alt](content/image/libretto04-17_03.jpg)
 
 ## パリの台所
 
