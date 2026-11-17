@@ -195,6 +195,8 @@ published: true
 
 言わないが、釘の缶を持っているときには、少し思う。
 
+![alt](content/image/libretto03-00_02.jpg)
+
 ## 混ざったものを分ける
 
 材料が混ざっていると、出どころが分からなくなる。
@@ -318,6 +320,8 @@ published: true
 いまの地球は、ずいぶん落ち着いた状態にある。
 
 落ち着いているのは、燃料が減ったから。
+
+![alt](content/image/libretto03-00_03.jpg)
 
 ## 外の衣
 
