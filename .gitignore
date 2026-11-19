@@ -27,6 +27,7 @@ dist-ssr
 memo.txt
 .env
 biology_scaling/biology_scaling
+asset/img/*
 
 art_matrix/art_matrix
 art_matrix/art-matrix - データベース - データ - Firebase コンソール.url
