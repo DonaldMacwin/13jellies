@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState } from 'react';
+import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import './styles/Slider.css';
 
 export type SpaceTick = { label: string; km?: number; ly?: number };
@@ -156,6 +156,48 @@ export const Slider: React.FC<SliderProps> = ({ onChange, spaceIndex: controlled
   const [timeIndex, setTimeIndex] = useState<number>(controlledTimeIndex ?? initialTimeIndex);
   const [hoveredTimeMark, setHoveredTimeMark] = useState<number | null>(null);
   const [hoveredSpaceMark, setHoveredSpaceMark] = useState<number | null>(null);
+  const isDraggingRef = useRef(false);
+  const onChangeRef = useRef(onChange);
+  const selectionRef = useRef({
+    spaceIndex,
+    timeIndex,
+    space: spaceTicks[spaceIndex],
+    time: timeTicks[timeIndex],
+  });
+
+  onChangeRef.current = onChange;
+  selectionRef.current = {
+    spaceIndex,
+    timeIndex,
+    space: spaceTicks[spaceIndex],
+    time: timeTicks[timeIndex],
+  };
+
+  const emitCurrentSelection = useCallback(() => {
+    onChangeRef.current?.(selectionRef.current);
+  }, []);
+
+  const beginDragging = useCallback(() => {
+    isDraggingRef.current = true;
+  }, []);
+
+  useEffect(() => {
+    const finishDragging = () => {
+      if (!isDraggingRef.current) {
+        return;
+      }
+
+      isDraggingRef.current = false;
+      window.requestAnimationFrame(emitCurrentSelection);
+    };
+
+    window.addEventListener('pointerup', finishDragging);
+    window.addEventListener('pointercancel', finishDragging);
+    return () => {
+      window.removeEventListener('pointerup', finishDragging);
+      window.removeEventListener('pointercancel', finishDragging);
+    };
+  }, [emitCurrentSelection]);
 
   useEffect(() => {
     if (typeof controlledSpaceIndex === 'number') {
@@ -174,8 +216,10 @@ export const Slider: React.FC<SliderProps> = ({ onChange, spaceIndex: controlled
   const currentTimeReadout = useMemo(() => timeReadout(currentTime), [currentTime]);
 
   useEffect(() => {
-    onChange?.({ spaceIndex, timeIndex, space: currentSpace, time: currentTime });
-  }, [currentSpace, currentTime, onChange, spaceIndex, timeIndex]);
+    if (!isDraggingRef.current) {
+      emitCurrentSelection();
+    }
+  }, [currentSpace, currentTime, emitCurrentSelection, onChange, spaceIndex, timeIndex]);
 
   return (
     <>
@@ -190,6 +234,7 @@ export const Slider: React.FC<SliderProps> = ({ onChange, spaceIndex: controlled
               max={timeTicks.length - 1}
               step={1}
               value={timeIndex}
+              onPointerDown={beginDragging}
               onChange={(e) => setTimeIndex(Number(e.target.value))}
               aria-label="時間スケール"
             />
@@ -227,6 +272,7 @@ export const Slider: React.FC<SliderProps> = ({ onChange, spaceIndex: controlled
             max={spaceTicks.length - 1}
             step={1}
             value={logicalToVisualSpaceIndex(spaceIndex)}
+            onPointerDown={beginDragging}
             onChange={(e) => setSpaceIndex(visualToLogicalSpaceIndex(Number(e.target.value)))}
             aria-label="空間スケール"
           />
